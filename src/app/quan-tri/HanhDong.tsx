@@ -80,3 +80,67 @@ export function NutDoiSoat() {
     </span>
   );
 }
+
+export function NutMoKhoaHoc({ daMo }: { daMo: boolean }) {
+  const [dang, setDang] = useState(false);
+  return (
+    <button
+      disabled={dang}
+      className={`rounded-lg px-5 py-2.5 text-sm font-bold text-white disabled:opacity-60 ${daMo ? "bg-red-700" : "bg-emerald-700"}`}
+      onClick={async () => {
+        const hoi = daMo
+          ? "Khóa lại nội dung khóa học? Học viên sẽ chỉ còn thấy lịch học và phần chuẩn bị."
+          : "Mở nội dung khóa học cho TẤT CẢ học viên đã đóng học phí?";
+        if (!window.confirm(hoi)) return;
+        setDang(true);
+        const { ok, d } = await goi({ loai: "mo-khoa-hoc", mo: !daMo });
+        if (ok) window.location.reload();
+        else { setDang(false); window.alert(d?.error || "Lỗi"); }
+      }}
+    >
+      {daMo ? "Khóa lại nội dung" : "Mở khóa học"}
+    </button>
+  );
+}
+
+export function NutEmailThu() {
+  const [kq, setKq] = useState("");
+  return (
+    <span className="inline-flex flex-col gap-1">
+      <button className={nutCss} onClick={async () => {
+        const den = window.prompt("Gửi email thử tới địa chỉ:");
+        if (!den) return;
+        setKq("Đang gửi…");
+        const { ok, d } = await goi({ loai: "gui-email-thu", den });
+        setKq(ok ? d.thongBao : d?.error || "Lỗi");
+      }}>Gửi email thử</button>
+      {kq && <span className="max-w-md text-xs text-muted">{kq}</span>}
+    </span>
+  );
+}
+
+export function NutGuiLaiEmail({ hocVienId }: { hocVienId: string }) {
+  const [kq, setKq] = useState("");
+  return (
+    <span className="inline-flex flex-col gap-1">
+      <button className={nutCss} onClick={async () => {
+        setKq("Đang gửi…");
+        const { ok, d } = await goi({ loai: "gui-lai-email", hocVienId });
+        setKq(ok ? d.thongBao : d?.error || "Lỗi");
+      }}>Gửi lại email</button>
+      {kq && <span className="max-w-xs text-xs text-muted">{kq}</span>}
+    </span>
+  );
+}
+
+export function NutSuaEmail({ hocVienId, email }: { hocVienId: string; email: string }) {
+  return (
+    <button className={nutCss} onClick={async () => {
+      const moi = window.prompt("Email đúng của học viên:", email);
+      if (!moi || moi.trim().toLowerCase() === email) return;
+      const { ok, d } = await goi({ loai: "sua-email", hocVienId, email: moi.trim() });
+      window.alert(ok ? d.thongBao : d?.error || "Lỗi");
+      if (ok) window.location.reload();
+    }}>Sửa email</button>
+  );
+}

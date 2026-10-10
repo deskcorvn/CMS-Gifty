@@ -3,6 +3,7 @@ import Link from "next/link";
 import NutSaoChep from "@/components/NutSaoChep";
 import { tinhTrangHocVien } from "@/lib/hoan-thanh";
 import { khoaHoc, tatCaPrompt, type MaSanPham } from "@/lib/noi-dung";
+import { batBuocDaMo } from "@/lib/mo-khoa";
 import { batBuocHocVien } from "@/lib/phien";
 import { FORM_SAN_PHAM } from "@/lib/san-pham";
 
@@ -19,6 +20,7 @@ function thanhVanBan(ma: MaSanPham, d: Record<string, unknown>) {
 }
 
 export default async function ThuVien() {
+  await batBuocDaMo();
   const hv = await batBuocHocVien();
   const tt = await tinhTrangHocVien(hv.id);
 

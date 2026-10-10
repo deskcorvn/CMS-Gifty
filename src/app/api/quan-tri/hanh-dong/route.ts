@@ -1,7 +1,9 @@
 import { db } from "@/lib/db";
 import { taoLinkDangNhap } from "@/lib/dang-nhap";
 import { doiSoat } from "@/lib/doi-soat";
-import { chuoiSach, docJson, traJson } from "@/lib/http";
+import { ghiCaiDat } from "@/lib/cai-dat";
+import { emailThu, guiEmailChiTiet } from "@/lib/email";
+import { chuoiSach, docJson, emailHopLe, traJson } from "@/lib/http";
 import { laQuanTri } from "@/lib/quan-tri";
 import { guiEmailKichHoat } from "@/lib/sau-thanh-toan";
 import { congTienVaoDon } from "@/lib/thanh-toan";
@@ -29,8 +31,40 @@ export async function POST(req: Request) {
         update don_hang set trang_thai = 'HUY', ghi_chu = concat_ws(' | ', ghi_chu, ${"hủy do kích hoạt tay: " + ghiChu})
         where hoc_vien_id = ${hv.id} and trang_thai = 'CHO'
       `;
-      const daGui = await guiEmailKichHoat(hv.id);
-      return traJson(200, { ok: true, thongBao: daGui ? "Đã kích hoạt và gửi email." : "Đã kích hoạt. Chưa gửi được email — lấy link đăng nhập để gửi qua Zalo." });
+      const email = await guiEmailKichHoat(hv.id);
+      return traJson(200, {
+        ok: true,
+        thongBao: email.ok ? "Đã kích hoạt và gửi email." : `Đã kích hoạt. Chưa gửi được email (${email.loi}) — lấy link đăng nhập để gửi qua Zalo.`,
+      });
+    }
+    case "gui-lai-email": {
+      const id = chuoiSach(b?.hocVienId, 60);
+      const [hv] = await sql`select id from hoc_vien where id = ${id} and kich_hoat_at is not null`;
+      if (!hv) return traJson(400, { error: "Học viên chưa được kích hoạt." });
+      const email = await guiEmailKichHoat(id);
+      return email.ok ? traJson(200, { ok: true, thongBao: "Đã gửi lại email đăng ký thành công." }) : traJson(502, { error: `Gửi thất bại: ${email.loi}` });
+    }
+    case "sua-email": {
+      const id = chuoiSach(b?.hocVienId, 60);
+      const email = chuoiSach(b?.email, 200).toLowerCase();
+      if (!emailHopLe(email)) return traJson(400, { error: "Email mới chưa đúng định dạng." });
+      const [trung] = await sql`select id from hoc_vien where email = ${email} and id <> ${id}`;
+      if (trung) return traJson(409, { error: "Email này đã thuộc một học viên khác." });
+      const [hv] = await sql`update hoc_vien set email = ${email} where id = ${id} returning id`;
+      if (!hv) return traJson(404, { error: "Không có học viên này." });
+      return traJson(200, { ok: true, thongBao: `Đã đổi email thành ${email}. Bấm "Gửi lại email" để gửi link vào học.` });
+    }
+    case "gui-email-thu": {
+      const den = chuoiSach(b?.den, 200);
+      if (!emailHopLe(den)) return traJson(400, { error: "Email nhận chưa đúng." });
+      const m = emailThu();
+      const kq = await guiEmailChiTiet(den, m.tieuDe, m.html, m.vanBan);
+      return kq.ok ? traJson(200, { ok: true, thongBao: `Đã gửi email thử tới ${den}.` }) : traJson(502, { error: `Gửi thất bại: ${kq.loi}` });
+    }
+    case "mo-khoa-hoc": {
+      const mo = b?.mo === true;
+      await ghiCaiDat("mo_khoa_hoc", { mo, luc: new Date().toISOString() });
+      return traJson(200, { ok: true, mo });
     }
     case "link-dang-nhap": {
       const id = chuoiSach(b?.hocVienId, 60);

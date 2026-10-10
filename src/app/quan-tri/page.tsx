@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
-import { dinhDangTien, khoaHoc, tongSoBuoc } from "@/lib/noi-dung";
+import { dinhDangTien, dsChang, khoaHoc } from "@/lib/noi-dung";
 import { DO_DAI_KHOA_TOI_THIEU, khoaMayChuHopLe, laQuanTri } from "@/lib/quan-tri";
-import { NutDoiSoat, NutKhopTay, NutKichHoat, NutLinkDangNhap, NutThuHoi } from "./HanhDong";
+import { docCaiDat } from "@/lib/cai-dat";
+import { emailDaCauHinh } from "@/lib/email";
+import { NutDoiSoat, NutEmailThu, NutGuiLaiEmail, NutKhopTay, NutKichHoat, NutLinkDangNhap, NutMoKhoaHoc, NutSuaEmail, NutThuHoi } from "./HanhDong";
 
 export const metadata: Metadata = { title: "Quản trị", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
@@ -11,7 +13,7 @@ type Dong = {
   id: string; ho_ten: string; email: string; sdt: string | null; created_at: Date;
   kich_hoat_at: Date | null; nguon_kich_hoat: string | null;
   ma_don: string | null; trang_thai: string | null; da_nhan: number | null; ghi_chu: string | null;
-  so_buoc: number; so_sp: number; ma_cc: string | null; cc_thu_hoi: Date | null;
+  buoc_xong: string[]; so_sp: number; ma_cc: string | null; cc_thu_hoi: Date | null;
 };
 
 const gio = (d: Date | null) =>
@@ -42,11 +44,11 @@ function DangNhapQuanTri({ loi }: { loi?: string }) {
 export default async function QuanTri({ searchParams }: { searchParams: Promise<{ loi?: string }> }) {
   if (!(await laQuanTri())) return <DangNhapQuanTri loi={(await searchParams).loi} />;
   const sql = db();
-  const [ds, gdChuaKhop] = await Promise.all([
+  const [ds, gdChuaKhop, moKhoa, emailGanNhat] = await Promise.all([
     sql<Dong[]>`
       select h.id, h.ho_ten, h.email, h.sdt, h.created_at, h.kich_hoat_at, h.nguon_kich_hoat,
              d.ma as ma_don, d.trang_thai, d.da_nhan, d.ghi_chu,
-             (select count(*)::int from tien_do t where t.hoc_vien_id = h.id) as so_buoc,
+             (select coalesce(array_agg(t.buoc_id), '{}') from tien_do t where t.hoc_vien_id = h.id) as buoc_xong,
              (select count(*)::int from san_pham s where s.hoc_vien_id = h.id) as so_sp,
              c.ma as ma_cc, c.thu_hoi_at as cc_thu_hoi
       from hoc_vien h
@@ -57,12 +59,16 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
     sql<{ id: number; so_tien: number; noi_dung: string | null; ly_do: string | null; thoi_gian: Date }[]>`
       select id, so_tien, noi_dung, ly_do, thoi_gian from giao_dich where not da_khop order by thoi_gian desc limit 100
     `,
+    docCaiDat<{ mo: boolean; luc: string }>("mo_khoa_hoc"),
+    docCaiDat<{ ok: boolean; loi?: string; den: string; tieuDe: string; luc: string }>("email_gan_nhat"),
   ]);
+  const daMo = moKhoa?.mo === true;
+  const soChang = (d: Dong) => dsChang.filter((c) => c.buoc.every((b) => d.buoc_xong.includes(b.id))).length;
   const daKichHoat = ds.filter((d) => d.kich_hoat_at).length;
   const tongThu = ds.reduce((n, d) => n + (d.da_nhan ?? 0), 0);
   const fileCsv = csv([
-    ["Họ tên", "Email", "SĐT", "Đăng ký", "Mã đơn", "Trạng thái", "Đã nhận", "Kích hoạt", "Bước", "Sản phẩm", "Chứng chỉ"],
-    ...ds.map((d) => [d.ho_ten, d.email, d.sdt, gio(d.created_at), d.ma_don, d.trang_thai, d.da_nhan, d.nguon_kich_hoat, `${d.so_buoc}/${tongSoBuoc}`, `${d.so_sp}/4`, d.ma_cc]),
+    ["Họ tên", "Email", "SĐT", "Đăng ký", "Mã đơn", "Trạng thái", "Đã nhận", "Kích hoạt", "Chặng", "Sản phẩm", "Chứng chỉ"],
+    ...ds.map((d) => [d.ho_ten, d.email, d.sdt, gio(d.created_at), d.ma_don, d.trang_thai, d.da_nhan, d.nguon_kich_hoat, `${soChang(d)}/${dsChang.length} chặng`, `${d.so_sp}/4`, d.ma_cc]),
   ]);
 
   return (
@@ -78,6 +84,31 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
       <p className="mt-2 text-sm text-body">
         {ds.length} người đăng ký · {daKichHoat} đã kích hoạt · đã thu {dinhDangTien(tongThu)} · {ds.filter((d) => d.ma_cc && !d.cc_thu_hoi).length} chứng chỉ
       </p>
+
+      <section className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className={`rounded-xl border p-5 ${daMo ? "border-emerald-300 bg-emerald-50" : "border-amber/50 bg-amber-soft"}`}>
+          <p className="text-sm font-bold text-navy">Nội dung khóa học</p>
+          <p className={`mt-1 text-lg font-bold ${daMo ? "text-emerald-800" : "text-amber-ink"}`}>{daMo ? "Đang mở" : "Đang khóa"}</p>
+          <p className="mt-1 text-sm text-body">
+            {daMo
+              ? `Học viên đã đóng học phí vào học được 9 chặng.${moKhoa?.luc ? ` Mở lúc ${gio(new Date(moKhoa.luc))}.` : ""}`
+              : "Học viên đã đóng học phí chỉ thấy lịch học và phần chuẩn bị. Bạn (đang đăng nhập quản trị) vẫn xem trước được."}
+          </p>
+          <div className="mt-3"><NutMoKhoaHoc daMo={daMo} /></div>
+        </div>
+        <div className="rounded-xl border border-line bg-white p-5">
+          <p className="text-sm font-bold text-navy">Gửi email</p>
+          <p className="mt-1 text-sm text-body">
+            {emailDaCauHinh() ? "Đã cấu hình." : "Chưa cấu hình EMAIL_USER/EMAIL_PASS — học viên không nhận được email."}
+          </p>
+          {emailGanNhat && (
+            <p className={`mt-1 text-sm ${emailGanNhat.ok ? "text-emerald-800" : "text-red-700"}`}>
+              Lần gần nhất ({gio(new Date(emailGanNhat.luc))}, tới {emailGanNhat.den}): {emailGanNhat.ok ? "gửi thành công" : `thất bại — ${emailGanNhat.loi}`}
+            </p>
+          )}
+          <div className="mt-3"><NutEmailThu /></div>
+        </div>
+      </section>
 
       {gdChuaKhop.length > 0 && (
         <section className="mt-6 rounded-xl border border-amber/50 bg-amber-soft p-4">
@@ -112,13 +143,14 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
                   {d.ma_don ? <><b>{d.ma_don}</b><br />{d.trang_thai} · {dinhDangTien(d.da_nhan ?? 0)}{d.ghi_chu && <><br /><span className="text-amber-ink">{d.ghi_chu}</span></>}</> : "—"}
                 </td>
                 <td className="px-3 py-2">{d.kich_hoat_at ? <>{gio(d.kich_hoat_at)}<br /><span className="text-muted">{d.nguon_kich_hoat}</span></> : <span className="text-muted">Chưa</span>}</td>
-                <td className="px-3 py-2">{d.so_buoc}/{tongSoBuoc} bước<br />{d.so_sp}/4 SP</td>
+                <td className="px-3 py-2">{soChang(d)}/{dsChang.length} chặng<br />{d.so_sp}/4 SP</td>
                 <td className="px-3 py-2">
                   {d.ma_cc ? <a href={`/chung-nhan/${d.ma_cc}`} target="_blank" className="underline">{d.ma_cc}</a> : "—"}
                   {d.cc_thu_hoi && <><br /><span className="text-red-700">đã thu hồi</span></>}
                 </td>
                 <td className="space-y-1 px-3 py-2">
-                  {d.kich_hoat_at ? <NutLinkDangNhap hocVienId={d.id} /> : <NutKichHoat hocVienId={d.id} />}
+                  {d.kich_hoat_at ? <><NutLinkDangNhap hocVienId={d.id} /><div><NutGuiLaiEmail hocVienId={d.id} /></div></> : <NutKichHoat hocVienId={d.id} />}
+                  <div><NutSuaEmail hocVienId={d.id} email={d.email} /></div>
                   {d.ma_cc && !d.cc_thu_hoi && <div><NutThuHoi ma={d.ma_cc} /></div>}
                 </td>
               </tr>

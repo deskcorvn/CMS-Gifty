@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import { MA_SAN_PHAM, timChang, timSanPham, type MaSanPham } from "@/lib/noi-dung";
+import { batBuocDaMo } from "@/lib/mo-khoa";
 import { batBuocHocVien } from "@/lib/phien";
 import { FORM_SAN_PHAM } from "@/lib/san-pham";
 import FormSanPham from "./FormSanPham";
@@ -17,6 +18,7 @@ export default async function TrangSanPham({ params }: Props) {
   const ma = (await params).ma.toUpperCase() as MaSanPham;
   if (!MA_SAN_PHAM.includes(ma)) notFound();
   const sp = timSanPham(ma)!;
+  await batBuocDaMo();
   const hv = await batBuocHocVien();
   const [r] = await db()<{ du_lieu: Record<string, unknown> }[]>`select du_lieu from san_pham where hoc_vien_id = ${hv.id} and ma = ${ma}`;
   const chang = timChang(sp.chang);

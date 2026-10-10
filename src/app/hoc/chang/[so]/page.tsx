@@ -3,8 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tinhTrangHocVien } from "@/lib/hoan-thanh";
 import { dsChang, khoaHoc, timChang, timNguon, timSanPham } from "@/lib/noi-dung";
+import { batBuocDaMo } from "@/lib/mo-khoa";
 import { batBuocHocVien } from "@/lib/phien";
-import DanhSachBuoc from "./DanhSachBuoc";
+import DanhSachBuoc, { NutHoanThanhChang } from "./DanhSachBuoc";
 
 type Props = { params: Promise<{ so: string }> };
 
@@ -22,10 +23,12 @@ function nhungVideo(url: string) {
 export default async function TrangChang({ params }: Props) {
   const c = timChang(Number((await params).so));
   if (!c) notFound();
+  await batBuocDaMo();
   const hv = await batBuocHocVien();
   const tt = await tinhTrangHocVien(hv.id);
   const truoc = timChang(c.so - 1);
   const sau = timChang(c.so + 1);
+  const changXong = c.buoc.every((b) => tt.buocXong.has(b.id));
 
   return (
     <main id="noi-dung-chinh">
@@ -50,7 +53,7 @@ export default async function TrangChang({ params }: Props) {
           </section>
         )}
 
-        <div className="mt-8"><DanhSachBuoc buoc={c.buoc} daXong={c.buoc.filter((b) => tt.buocXong.has(b.id)).map((b) => b.id)} /></div>
+        <div className="mt-8"><DanhSachBuoc buoc={c.buoc} xong={changXong} /></div>
 
         {c.noiDungHtml.trim() && (
           <section className="noi-dung mt-10 rounded-xl border border-line bg-white p-5 md:p-7" dangerouslySetInnerHTML={{ __html: c.noiDungHtml }} />
@@ -86,6 +89,16 @@ export default async function TrangChang({ params }: Props) {
             })}
           </p>
         )}
+
+        <div className="mt-10">
+          <NutHoanThanhChang
+            changSo={c.so}
+            soBuoc={c.buoc.length}
+            daXong={changXong}
+            sanPham={c.sanPham.map((ma) => ({ ma, daLuu: tt.sanPhamXong.includes(ma as never) }))}
+            lienKetSau={sau ? { href: `/hoc/chang/${sau.so}`, nhan: `Sang chặng ${sau.so} →` } : { href: "/hoc/chung-chi", nhan: "Nhận chứng chỉ →" }}
+          />
+        </div>
 
         <nav className="mt-10 flex flex-wrap justify-between gap-3">
           {truoc ? <Link href={`/hoc/chang/${truoc.so}`} className="rounded-lg border border-line bg-white px-5 py-3 font-semibold text-navy">← Chặng {truoc.so}</Link> : <span />}

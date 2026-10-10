@@ -6,8 +6,10 @@ import { useState } from "react";
 
 export default function DieuHuongHoc({
   chang,
+  daMo,
 }: {
   chang: { so: number; tieuDe: string }[];
+  daMo: boolean;
 }) {
   const pathname = usePathname();
   const [mo, setMo] = useState(false);
@@ -46,7 +48,12 @@ export default function DieuHuongHoc({
           <div className="learning-nav-divider" />
           {chang.map((c) => (
             <div key={c.so}>
-              {lienKet(
+              {!daMo ? (
+                <span className="chapter-nav-link" aria-disabled="true" title="Mở khi lớp bắt đầu" style={{ opacity: 0.55, cursor: "not-allowed" }}>
+                  <span>{String(c.so).padStart(2, "0")}</span>
+                  <span>{c.tieuDe} 🔒</span>
+                </span>
+              ) : lienKet(
                 `/hoc/chang/${c.so}`,
                 <>
                   <span>{String(c.so).padStart(2, "0")}</span>
@@ -57,8 +64,8 @@ export default function DieuHuongHoc({
             </div>
           ))}
           <div className="learning-nav-divider" />
-          {lienKet("/hoc/thu-vien", "Kết quả của tôi")}
-          {lienKet("/hoc/chung-chi", "Chứng chỉ")}
+          {daMo && lienKet("/hoc/thu-vien", "Kết quả của tôi")}
+          {daMo && lienKet("/hoc/chung-chi", "Chứng chỉ")}
         </nav>
       </div>
     </aside>

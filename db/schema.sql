@@ -80,3 +80,10 @@ create table if not exists chung_chi (
   thu_hoi_at    timestamptz,
   ly_do_thu_hoi text
 );
+
+-- Cài đặt chung do quản trị bật/tắt (vd mo_khoa_hoc) và nhật ký gửi email gần nhất để chẩn đoán.
+create table if not exists cai_dat (
+  khoa        text primary key,
+  gia_tri     jsonb not null,
+  cap_nhat_at timestamptz not null default now()
+);

@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { ghiCaiDat } from "./cai-dat";
 import { khoaHoc, nhanLichHoc } from "./noi-dung";
 
 /**
@@ -12,33 +13,48 @@ function taoTransport() {
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT || 587),
       secure: Number(process.env.SMTP_PORT) === 465,
-      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+      auth: { user: process.env.SMTP_USER?.trim(), pass: process.env.SMTP_PASS },
     });
   }
   if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
     return nodemailer.createTransport({
       service: "gmail",
-      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
+      // Google hiển thị App Password thành 4 cụm có dấu cách ("abcd efgh ijkl mnop"); bỏ dấu cách cho chắc.
+      auth: { user: process.env.EMAIL_USER.trim(), pass: process.env.EMAIL_PASS.replace(/\s+/g, "") },
     });
   }
   return null;
 }
 
-const nguoiGui = () => process.env.MAIL_FROM || `Gifty Tech <${process.env.SMTP_USER || process.env.EMAIL_USER}>`;
+export const emailDaCauHinh = () => Boolean(process.env.SMTP_HOST || (process.env.EMAIL_USER && process.env.EMAIL_PASS));
 
-export async function guiEmail(den: string, tieuDe: string, html: string, vanBan: string) {
+const nguoiGui = () => process.env.MAIL_FROM || `Gifty Tech <${(process.env.SMTP_USER || process.env.EMAIL_USER || "").trim()}>`;
+
+export type KetQuaEmail = { ok: boolean; loi?: string };
+
+/** Gửi và trả lý do lỗi (không chứa mật khẩu). Ghi lần gửi gần nhất vào cai_dat để trang quản trị hiện ra. */
+export async function guiEmailChiTiet(den: string, tieuDe: string, html: string, vanBan: string): Promise<KetQuaEmail> {
   const t = taoTransport();
+  let kq: KetQuaEmail;
   if (!t) {
     if (process.env.NODE_ENV !== "production") console.log(`[email:dev] → ${den} | ${tieuDe}\n${vanBan}`);
-    return false;
+    kq = { ok: false, loi: "Chưa cấu hình EMAIL_USER/EMAIL_PASS hoặc SMTP_*" };
+  } else {
+    try {
+      await t.sendMail({ from: nguoiGui(), to: den, subject: tieuDe, html, text: vanBan });
+      kq = { ok: true };
+    } catch (err) {
+      const e = err as { message?: string; code?: string; responseCode?: number };
+      console.error("[email] gửi thất bại", err);
+      kq = { ok: false, loi: [e.code, e.responseCode, e.message].filter(Boolean).join(" · ").slice(0, 400) };
+    }
   }
-  try {
-    await t.sendMail({ from: nguoiGui(), to: den, subject: tieuDe, html, text: vanBan });
-    return true;
-  } catch (err) {
-    console.error("[email] gửi thất bại", err);
-    return false;
-  }
+  await ghiCaiDat("email_gan_nhat", { ...kq, den, tieuDe, luc: new Date().toISOString() }).catch(() => {});
+  return kq;
+}
+
+export async function guiEmail(den: string, tieuDe: string, html: string, vanBan: string) {
+  return (await guiEmailChiTiet(den, tieuDe, html, vanBan)).ok;
 }
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -60,14 +76,23 @@ export function emailKichHoat(hoTen: string, link: string) {
   const diaDiem = khoaHoc.lop.diaDiem || "Gifty Tech sẽ gửi địa điểm trong email nhắc lịch.";
   const chuanBi = khoaHoc.chuanBi.map((c) => `<li>${esc(c)}</li>`).join("");
   return {
-    tieuDe: `Đã nhận học phí — ${khoaHoc.ten} (${nhanLichHoc()})`,
+    tieuDe: `Đăng ký thành công — ${khoaHoc.ten} (${nhanLichHoc()})`,
     html: khung(`<p>Chào ${esc(hoTen)},</p>
-<p>Gifty Tech đã nhận đủ học phí. Anh chị đã có chỗ trong lớp <b>${esc(khoaHoc.ten)}: ${esc(khoaHoc.tieuDePhu)}</b>.</p>
+<p>Anh chị đã <b>đăng ký thành công</b> lớp <b>${esc(khoaHoc.ten)}: ${esc(khoaHoc.tieuDePhu)}</b>. Gifty Tech đã nhận đủ học phí.</p>
 <p><b>Lịch học:</b> ${esc(nhanLichHoc())} · ${khoaHoc.thoiLuongPhut} phút<br><b>Địa điểm:</b> ${esc(diaDiem)}</p>
+<p>Nội dung 9 chặng sẽ mở khi lớp bắt đầu. Trước đó, anh chị vào trang học để xem lịch và danh sách chuẩn bị.</p>
 ${nut(link, "Vào trang học của tôi")}
 <p style="font-size:13px;color:#5b6b80">Link dùng được một lần trong 14 ngày. Hết hạn thì vào trang đăng nhập, nhập email này để nhận link mới.</p>
 <p><b>Chuẩn bị trước buổi học:</b></p><ul>${chuanBi}</ul>`),
-    vanBan: `Chào ${hoTen},\nGifty Tech đã nhận đủ học phí ${khoaHoc.ten}.\nLịch học: ${nhanLichHoc()}\nĐịa điểm: ${diaDiem}\nVào trang học: ${link}\n\nChuẩn bị:\n- ${khoaHoc.chuanBi.join("\n- ")}`,
+    vanBan: `Chào ${hoTen},\nAnh chị đã đăng ký thành công ${khoaHoc.ten}: ${khoaHoc.tieuDePhu}. Gifty Tech đã nhận đủ học phí.\nLịch học: ${nhanLichHoc()}\nĐịa điểm: ${diaDiem}\nNội dung 9 chặng mở khi lớp bắt đầu.\nVào trang học: ${link}\n\nChuẩn bị:\n- ${khoaHoc.chuanBi.join("\n- ")}`,
+  };
+}
+
+export function emailThu() {
+  return {
+    tieuDe: `Email thử — ${khoaHoc.ten}`,
+    html: khung(`<p>Đây là email thử từ trang quản trị. Nhận được email này nghĩa là cấu hình gửi email đã đúng.</p>`),
+    vanBan: "Đây là email thử từ trang quản trị. Nhận được email này nghĩa là cấu hình gửi email đã đúng.",
   };
 }
 

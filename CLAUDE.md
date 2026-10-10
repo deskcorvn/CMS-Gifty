@@ -6,7 +6,7 @@ Trang học "Khóa đào tạo AI" của Gifty Tech (Next.js 16, Postgres, Verce
 1. **Nội dung chỉ lấy từ giáo trình.** File `content/` bám *Giáo trình Buổi 1 v2.0 (10/10/2026)*. Không thêm
    con số, tính năng Claude/ChatGPT hay lời hứa không có trong giáo trình hoặc nguồn N01–N17. Giao diện AI thay đổi
    thì sửa theo nguồn chính thức và cập nhật `ngayRaSoatNguon`.
-2. **Không chấm điểm, không phân loại.** Ai xong 44 bước và lưu đủ 4 sản phẩm đều nhận "Hoàn thành xuất sắc" như
+2. **Không chấm điểm, không phân loại.** Ai bấm hoàn thành đủ 9 chặng và lưu đủ 4 sản phẩm đều nhận "Hoàn thành xuất sắc" như
    nhau (chốt 10/10/2026). Quiz làm sau, khi người vận hành yêu cầu.
 3. **Thanh toán giữ đúng quy tắc PTI** (`src/lib/thanh-toan.ts`):
    - chống cộng trùng;
@@ -15,7 +15,8 @@ Trang học "Khóa đào tạo AI" của Gifty Tech (Next.js 16, Postgres, Verce
    - webhook thiếu key là từ chối.
    Sửa phần này phải chạy lại bộ thử webhook (trả thiếu, gửi trùng, cùng mã tham chiếu khác id, sai tài khoản,
    không mã, trả thừa).
-4. **Không đổi mã bước đã phát hành.** Tiến độ lưu theo `cNN-bNN`; thêm bước mới vào cuối chặng.
+4. **Không đổi mã bước đã phát hành.** Học viên bấm "Hoàn thành chặng" (một nút cho cả chặng), nhưng tiến độ vẫn lưu theo từng `cNN-bNN`; thêm bước mới vào cuối chặng.
+7. **Nội dung khóa học mặc định khóa.** Trả tiền xong học viên chỉ thấy lịch và phần chuẩn bị; quản trị bấm "Mở khóa học" trong /quan-tri khi lớp bắt đầu (cai_dat.mo_khoa_hoc). Phiên quản trị luôn xem trước được.
 5. **Credential không vào repo.** Mọi khóa đọc từ env (xem `.env.example`). Không echo secret ra log.
 6. **Dữ liệu học viên:** chỉ dữ liệu giả lập KH01–KH12 trong bài tập; không thêm ô nhập dữ liệu khách hàng thật.
    Ảnh SP04 phải có ô đồng ý.

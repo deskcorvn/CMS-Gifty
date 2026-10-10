@@ -1,6 +1,7 @@
 import { del, put } from "@vercel/blob";
 import { db } from "@/lib/db";
 import { traJson } from "@/lib/http";
+import { THONG_BAO_CHUA_MO, duocVaoNoiDung } from "@/lib/mo-khoa";
 import { hocVienHienTai } from "@/lib/phien";
 
 const TOI_DA = 4 * 1024 * 1024; // dưới giới hạn 4,5 MB body của Vercel Functions
@@ -10,6 +11,7 @@ const LOAI = new Set(["image/jpeg", "image/png", "image/webp"]);
 export async function POST(req: Request) {
   const hv = await hocVienHienTai();
   if (!hv) return traJson(401, { error: "Phiên đăng nhập đã hết, vui lòng đăng nhập lại." });
+  if (!(await duocVaoNoiDung())) return traJson(403, { error: THONG_BAO_CHUA_MO });
   if (!process.env.BLOB_READ_WRITE_TOKEN) return traJson(503, { error: "Chưa bật nơi lưu ảnh. Tạm lưu câu lệnh chỉnh ảnh thay ảnh." });
   const form = await req.formData();
   if (form.get("dongY") !== "1") return traJson(400, { error: "Cần tick ô đồng ý trước khi tải ảnh." });
@@ -32,6 +34,7 @@ export async function POST(req: Request) {
 export async function DELETE() {
   const hv = await hocVienHienTai();
   if (!hv) return traJson(401, { error: "Phiên đăng nhập đã hết." });
+  if (!(await duocVaoNoiDung())) return traJson(403, { error: THONG_BAO_CHUA_MO });
   const [cu] = await db()<{ url: string | null }[]>`
     update san_pham sp set du_lieu = sp.du_lieu - 'anhUrl', cap_nhat_at = now()
     from (select du_lieu->>'anhUrl' as url from san_pham where hoc_vien_id = ${hv.id} and ma = 'SP04') old

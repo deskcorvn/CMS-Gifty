@@ -1,6 +1,7 @@
 import { db } from "@/lib/db";
 import { docJson, traJson } from "@/lib/http";
 import { MA_SAN_PHAM, type MaSanPham } from "@/lib/noi-dung";
+import { THONG_BAO_CHUA_MO, duocVaoNoiDung } from "@/lib/mo-khoa";
 import { hocVienHienTai } from "@/lib/phien";
 import { FORM_SAN_PHAM } from "@/lib/san-pham";
 
@@ -8,6 +9,7 @@ import { FORM_SAN_PHAM } from "@/lib/san-pham";
 export async function POST(req: Request, ctx: { params: Promise<{ ma: string }> }) {
   const hv = await hocVienHienTai();
   if (!hv) return traJson(401, { error: "Phiên đăng nhập đã hết, vui lòng đăng nhập lại." });
+  if (!(await duocVaoNoiDung())) return traJson(403, { error: THONG_BAO_CHUA_MO });
   const ma = (await ctx.params).ma.toUpperCase() as MaSanPham;
   if (!MA_SAN_PHAM.includes(ma)) return traJson(404, { error: "Không có sản phẩm này." });
   const b = await docJson(req);

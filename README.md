@@ -64,7 +64,9 @@ Kiểm tra trước khi push: `npm run lint && npm run typecheck && npm run buil
 
 ## Vận hành
 
-- **`/quan-tri`** (khóa `ADMIN_KEY`):
+- **`/quan-tri`** (khóa `ADMIN_KEY`, tối thiểu 16 ký tự):
+  - **Mở khóa học / Khóa lại nội dung**: mặc định khóa, học viên đã trả tiền chỉ thấy lịch và phần chuẩn bị; bấm mở khi lớp bắt đầu;
+  - **Gửi email thử**, xem lỗi gửi email gần nhất; **Gửi lại email** và **Sửa email** cho từng học viên;
   - xem danh sách học viên, tiền đã nhận, tiến độ, chứng chỉ; xuất CSV;
   - **Kích hoạt tay** cho người đóng tiền mặt (đơn chuyển khoản đang treo sẽ bị hủy);
   - **Link đăng nhập** (hạn 24 giờ) để gửi qua Zalo khi email không tới;

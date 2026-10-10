@@ -1,3 +1,5 @@
+> Cập nhật: giáo trình hiện có **45 bước**. Bước c06-b07 được tách thành phép thử 60 giây và c06-b08 rà soát/lưu SP02; giữ 180 phút, 9 chặng và tiến độ cũ. Các kết quả kiểm tra 44 bước bên dưới là lịch sử bản trước.
+
 # Khóa học và OG theo ảnh tham chiếu — 10/10/2026
 
 Nguồn khóa học: CMS main 3065531 (giá 299.000đ từ 9106e3b), giữ các chức năng quản trị/tiến độ mới của Claude. Hai repo công bố cùng khóa: 180 phút, 9 chặng, 44 bước, 4 sản phẩm; lớp tối đa 20 người, Zalo hỗ trợ, chứng chỉ khi hoàn thành 9 chặng, lưu sản phẩm tùy chọn. Đăng ký từ giftytech.com dẫn về daotao.giftytech.com để dùng chung số chỗ, tài khoản và thanh toán.

@@ -65,13 +65,19 @@ buoc:
       So với câu trả lời ở chặng 5 (chưa có Project). Nếu thông điệp còn chung chung hoặc có thông
       tin đoán, sửa lại hướng dẫn dự án rồi hỏi lại.
     ketQua: Anh chị thấy rõ khác biệt khi trợ lý có bối cảnh riêng.
-  - tieuDe: Phép thử 60 giây và lưu SP02
+  - tieuDe: Phép thử 60 giây
     huongDan: >-
       Thay một dòng bối cảnh nghề nghiệp trong hướng dẫn, hỏi lại đúng câu hỏi trên. Quan sát lời
-      nhắn có đúng ngôn ngữ ngành, thực tế hơn không. Xong thì bấm “Lưu sản phẩm SP02” ở cuối trang.
+      nhắn có đúng ngôn ngữ ngành, thực tế hơn không.
     ketQua: >-
-      SP02 đã lưu. Lưu ý: kết quả không có nghĩa “AI tự nhớ hết mọi thông tin”. Trợ lý chỉ dùng những
-      gì có trong dự án.
+      Anh chị đối chiếu được câu trả lời trước và sau khi sửa bối cảnh. Kết quả không có nghĩa
+      “AI tự nhớ hết mọi thông tin”; trợ lý chỉ dùng những gì có trong dự án.
+  - tieuDe: Rà soát và lưu cấu hình trợ lý SP02
+    huongDan: >-
+      Xem lại hướng dẫn dự án và câu hỏi vừa thử. Nếu muốn giữ để tra cứu sau lớp, bấm “Lưu sản phẩm
+      SP02” ở cuối trang, ghi lại hướng dẫn và câu hỏi thử vào phiếu “Trợ lý kinh doanh của tôi”.
+      Việc lưu sản phẩm là tùy chọn, không phải điều kiện nhận chứng chỉ.
+    ketQua: Anh chị biết cách lưu cấu hình trợ lý và câu hỏi thử để dùng lại sau buổi học.
 ---
 
 ## Phiếu “Trợ lý kinh doanh của tôi”

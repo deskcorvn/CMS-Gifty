@@ -1,3 +1,4 @@
+import { boSungBuocDaTach } from "./tien-do-tuong-thich";
 import { db } from "./db";
 import { MA_SAN_PHAM, tatCaBuocId, tongSoBuoc, type MaSanPham } from "./noi-dung";
 
@@ -35,7 +36,9 @@ export async function tinhTrangHocVien(hocVienId: string): Promise<TinhTrang> {
   ]);
   // Chỉ đếm bước còn trong nội dung hiện tại (bài bị sửa bớt bước thì bước cũ không làm lệch tiến độ).
   const hienCo = new Set(tatCaBuocId);
-  const buocXong = new Set(buoc.map((b) => b.buoc_id).filter((id) => hienCo.has(id)));
+  const buocXong = new Set(
+    [...boSungBuocDaTach(buoc.map((b) => b.buoc_id))].filter((id) => hienCo.has(id)),
+  );
   const sanPham = Object.fromEntries(sp.map((s) => [s.ma, s.du_lieu]));
   const sanPhamXong = MA_SAN_PHAM.filter((m) => sanPhamDuDieuKien(m, sanPham[m]));
   return {

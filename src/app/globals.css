@@ -1321,14 +1321,7 @@ summary::-webkit-details-marker {
 }
 
 /* Public course information: a compact home with dedicated detail pages. */
-.brand-lockup {
-  display: flex;
-  align-items: center;
-  padding: 4px 10px;
-  border-radius: 5px;
-  background: #b51f34;
-}
-.brand-lockup img { width: 124px; height: 44px; object-fit: contain; }
+.brand-mark { flex-shrink: 0; }
 .cover-person { width: 48%; object-fit: contain; object-position: center bottom; }
 .instructor-avatar { background: #f7f1f2; }
 .instructor-avatar img { object-position: center 12%; }
@@ -1363,8 +1356,6 @@ summary::-webkit-details-marker {
 .expert-content .course-section h2 { font-size: 19px; margin-bottom: 12px; }
 .expert-course-link { margin-top: 28px; }
 @media (max-width: 767px) {
-  .brand-lockup { padding: 3px 8px; }
-  .brand-lockup img { width: 105px; height: 38px; }
   .course-more { grid-template-columns: 1fr; gap: 22px; }
   .info-page { padding-top: 24px; padding-bottom: 40px; }
   .expert-layout { grid-template-columns: 1fr; gap: 28px; margin-top: 24px; }

@@ -16,10 +16,10 @@ Trang học "Khóa đào tạo AI" của Gifty Tech (Next.js 16, Postgres, Verce
    Sửa phần này phải chạy lại bộ thử webhook (trả thiếu, gửi trùng, cùng mã tham chiếu khác id, sai tài khoản,
    không mã, trả thừa).
 4. **Không đổi mã bước đã phát hành.** Học viên bấm "Hoàn thành chặng" (một nút cho cả chặng), nhưng tiến độ vẫn lưu theo từng `cNN-bNN`; thêm bước mới vào cuối chặng.
-7. **Nội dung khóa học mặc định khóa.** Trả tiền xong học viên chỉ thấy lịch và phần chuẩn bị; quản trị bấm "Mở khóa học" trong /quan-tri khi lớp bắt đầu (cai_dat.mo_khoa_hoc). Phiên quản trị luôn xem trước được.
 5. **Credential không vào repo.** Mọi khóa đọc từ env (xem `.env.example`). Không echo secret ra log.
 6. **Dữ liệu học viên:** chỉ dữ liệu giả lập KH01–KH12 trong bài tập; không thêm ô nhập dữ liệu khách hàng thật.
    Ảnh SP04 phải có ô đồng ý.
+7. **Nội dung khóa học mặc định khóa.** Trả tiền xong học viên chỉ thấy lịch và phần chuẩn bị; quản trị bấm "Mở khóa học" trong /quan-tri khi lớp bắt đầu (cai_dat.mo_khoa_hoc). Phiên quản trị luôn xem trước được.
 
 ## Kiểm tra trước khi push
 `npm run lint && npm run typecheck && npm run build`. Sửa giao diện thì chụp màn hình cả desktop lẫn 390px.

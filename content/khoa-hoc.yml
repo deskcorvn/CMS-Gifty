@@ -8,7 +8,7 @@ moTa: >-
 camKet: >-
   Học viên hiểu cách AI hoạt động, tự thiết lập Claude, biến danh sách mối quan hệ thành kế hoạch
   chăm sóc, khởi tạo trợ lý công việc có thể dùng lại và chuẩn bị hồ sơ thương hiệu cá nhân.
-hocPhi: 300000
+hocPhi: 2000 # TẠM ĐỂ THỬ CHUYỂN KHOẢN — đổi lại 300000 sau khi test
 thoiLuongPhut: 180
 phienBanGiaoTrinh: "2.0 · cập nhật 10/10/2026"
 lop:

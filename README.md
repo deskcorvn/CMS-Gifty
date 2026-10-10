@@ -1,7 +1,7 @@
 # CMS-Gifty: Khóa đào tạo AI
 
 Trang học của Gifty Tech cho **Khóa đào tạo AI: Hiểu AI và làm việc cùng AI**. Khóa học 180 phút, lớp đầu tiên
-lúc 14:00 thứ Tư 21/10/2026, học phí 300.000đ, tối đa 20 học viên. Hỏi khóa học: điện thoại/Zalo 0913 332 282.
+lúc 14:00 thứ Tư 21/10/2026, học phí 299.000đ, tối đa 20 học viên. Hỏi khóa học: điện thoại/Zalo 0913 332 282.
 
 Học viên đi theo trình tự:
 1. Đăng ký, quét VietQR để trả tiền. SePay xác nhận rồi hệ thống tự mở quyền học.
@@ -59,7 +59,7 @@ Kiểm tra trước khi push: `npm run lint && npm run typecheck && npm run buil
    `SEPAY_WEBHOOK_API_KEY`. Webhook này chỉ khớp nội dung có mã `GTAI…`; giao dịch khác hiện ở mục "Giao dịch cần
    đối chiếu" trong trang quản trị.
 5. **Email**: điền SMTP, hoặc Gmail App Password (`EMAIL_USER`/`EMAIL_PASS`).
-6. **Chạy thử**: tự đăng ký một tài khoản, chuyển 300.000đ thật (hoặc dùng SePay Test mode), kiểm tra email kích
+6. **Chạy thử**: tự đăng ký một tài khoản, chuyển học phí thật (hoặc dùng SePay Test mode), kiểm tra email kích
    hoạt, làm thử một chặng, rồi mở `/quan-tri`.
 
 ## Vận hành

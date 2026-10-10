@@ -38,6 +38,9 @@ export default async function TrangChang({ params }: Props) {
           <p className="mt-4 text-xs font-semibold text-muted">Chặng {c.so}/{dsChang.length} · {c.phut} phút</p>
           <h1 className="mt-2 text-2xl font-bold leading-snug md:text-3xl">{c.tieuDe}</h1>
           <p className="mt-4 max-w-2xl leading-7 text-body">{c.mucTieu}</p>
+          <a href="#hoan-thanh" className={`mt-4 inline-block rounded-full px-3 py-1 text-xs font-semibold ${changXong ? "bg-emerald-50 text-emerald-800" : "bg-amber-soft text-amber-ink"}`}>
+            {changXong ? "✓ Đã hoàn thành chặng này" : "Làm xong thì bấm “Hoàn thành chặng” ở cuối trang ↓"}
+          </a>
         </div>
       </header>
 

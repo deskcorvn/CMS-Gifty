@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { tinhTrangHocVien } from "@/lib/hoan-thanh";
-import { dsChang, khoaHoc, tongSoBuoc } from "@/lib/noi-dung";
+import { dsChang, khoaHoc } from "@/lib/noi-dung";
 import { batBuocDaMo } from "@/lib/mo-khoa";
 import { batBuocHocVien } from "@/lib/phien";
 import FormNhan from "./FormNhan";
+import NutXongChang from "./NutXongChang";
 
 export const metadata: Metadata = { title: "Nhận chứng chỉ" };
 
@@ -20,17 +21,17 @@ export default async function TrangNhanChungChi() {
   return (
     <main id="noi-dung-chinh" className="mx-auto max-w-2xl px-4 py-10">
       <h1 className="text-2xl font-bold text-navy">Chứng chỉ “{khoaHoc.chungChi.danhHieu}”</h1>
-      <p className="mt-2 text-body">
-        Không chấm điểm, không xếp loại. Hoàn thành đủ 9 chặng là nhận chứng chỉ.
-      </p>
       {tt.duDieuKien ? (
         <div className="mt-6"><FormNhan hoTen={hv.ho_ten} /></div>
       ) : (
         <div className="mt-6 rounded-xl border border-line bg-white p-6">
-          <p className="font-semibold text-navy">Còn thiếu một chút:</p>
-          <ul className="mt-3 space-y-2 text-sm">
+          <p className="font-semibold text-navy">Còn {changDo.length} chặng anh chị chưa bấm hoàn thành. Làm xong chặng nào thì bấm ngay ở đây, xong hết là nhận chứng chỉ.</p>
+          <ul className="mt-3 text-sm">
             {changDo.map((c) => (
-              <li key={c.so}><Link href={`/hoc/chang/${c.so}`} className="text-amber-ink underline">Chặng {c.so}: {c.tieuDe}</Link> · chưa bấm hoàn thành</li>
+              <li key={c.so} className="flex flex-wrap items-center justify-between gap-3 border-b border-line py-2 last:border-0">
+                <Link href={`/hoc/chang/${c.so}`} className="text-amber-ink underline">Chặng {c.so}: {c.tieuDe}</Link>
+                <NutXongChang changSo={c.so} />
+              </li>
             ))}
           </ul>
         </div>

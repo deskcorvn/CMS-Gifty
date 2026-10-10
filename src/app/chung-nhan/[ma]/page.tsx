@@ -23,11 +23,6 @@ export default async function TrangChungNhan({ params }: Props) {
   const cc = await docChungChi((await params).ma);
   if (!cc) notFound();
   const link = linkChungChi(cc.ma);
-  const ngay = new Date(cc.cap_at);
-  const linkedin =
-    "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME" +
-    `&name=${encodeURIComponent(`${khoaHoc.ten}: ${khoaHoc.tieuDePhu}`)}&organizationName=${encodeURIComponent("Gifty Tech")}` +
-    `&issueYear=${ngay.getFullYear()}&issueMonth=${ngay.getMonth() + 1}&certUrl=${encodeURIComponent(link)}&certId=${cc.ma}`;
 
   return (
     <>
@@ -49,7 +44,7 @@ export default async function TrangChungNhan({ params }: Props) {
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={`/chung-nhan/${cc.ma}/anh`} alt={`Chứng chỉ ${khoaHoc.chungChi.danhHieu} của ${cc.ho_ten}`} className="w-full rounded-lg shadow-lg ring-1 ring-line print:rounded-none print:shadow-none print:ring-0" />
-        <div className="mt-6"><NutChungChi ma={cc.ma} link={link} linkedin={linkedin} /></div>
+        <div className="mt-6"><NutChungChi ma={cc.ma} link={link} tieuDe={`${cc.ho_ten} hoàn thành ${khoaHoc.ten}: ${khoaHoc.tieuDePhu} — Gifty Tech`} /></div>
       </main>
     </>
   );

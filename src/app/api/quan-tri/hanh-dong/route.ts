@@ -89,6 +89,14 @@ export async function POST(req: Request) {
       if ("kichHoatMoi" in kq && kq.kichHoatMoi) await guiEmailKichHoat(kq.kichHoatMoi);
       return traJson(200, { ok: true, ...kq });
     }
+    case "sua-ten-cc": {
+      const ma = chuoiSach(b?.ma, 20);
+      const hoTen = chuoiSach(b?.hoTen, 80);
+      if (hoTen.length < 2) return traJson(400, { error: "Họ tên chưa hợp lệ." });
+      const [cc] = await sql`update chung_chi set ho_ten = ${hoTen} where ma = ${ma} returning ma`;
+      if (!cc) return traJson(404, { error: "Không có chứng chỉ này." });
+      return traJson(200, { ok: true });
+    }
     case "thu-hoi": {
       const ma = chuoiSach(b?.ma, 20);
       const lyDo = chuoiSach(b?.lyDo, 200) || "Thu hồi theo quyết định của Gifty Tech";

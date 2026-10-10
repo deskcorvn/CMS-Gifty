@@ -81,7 +81,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ ma: string }> 
         { name: "BVP", data: semibold, weight: 600, style: "normal" },
         { name: "BVP", data: bold, weight: 700, style: "normal" },
       ],
-      headers: { "Cache-Control": "public, max-age=300, s-maxage=3600" },
+      headers: { "Cache-Control": "public, max-age=60, s-maxage=300" },
     },
   );
 }

@@ -59,6 +59,7 @@ export function NutHoanThanhChang({
   const [xong, setXong] = useState(daXong);
   const [dang, setDang] = useState(false);
   const [loi, setLoi] = useState("");
+  const [chungChi, setChungChi] = useState<string | null>(null);
   const thieuSanPham = sanPham.filter((s) => !s.daLuu);
 
   async function danhDau(moi: boolean) {
@@ -75,15 +76,23 @@ export function NutHoanThanhChang({
       setLoi(r?.status === 401 ? "Phiên đăng nhập đã hết, vui lòng đăng nhập lại." : d?.error || "Chưa lưu được, kiểm tra mạng rồi bấm lại.");
       return;
     }
+    const d = await r.json().catch(() => null);
     setXong(moi);
+    if (moi && d?.moiCap && d.chungChi) setChungChi(d.chungChi);
     router.refresh();
   }
 
   return (
-      <section aria-live="polite" className={`mt-8 rounded-xl border-2 p-5 md:p-6 ${xong ? "border-emerald-400 bg-emerald-50" : "border-navy/20 bg-white"}`}>
+      <section id="hoan-thanh" aria-live="polite" className={`mt-8 rounded-xl border-2 p-5 md:p-6 ${xong ? "border-emerald-400 bg-emerald-50" : "border-navy/20 bg-white"}`}>
         {xong ? (
           <>
             <p className="text-lg font-bold text-emerald-800">✓ Đã hoàn thành chặng {changSo}</p>
+            {chungChi && (
+              <p className="mt-2 rounded-lg bg-white px-4 py-3 text-body ring-1 ring-emerald-300">
+                🎉 Chúc mừng anh chị đã hoàn thành cả khóa học! Chứng chỉ đã được cấp và gửi về email.{" "}
+                <a href={`/chung-nhan/${chungChi}`} className="font-bold text-emerald-800 underline">Xem chứng chỉ</a>
+              </p>
+            )}
             <div className="mt-3 flex flex-wrap items-center gap-3">
               <a href={lienKetSau.href} className="rounded-lg bg-amber px-5 py-3 font-bold text-[#1a1205] hover:bg-amber-light">{lienKetSau.nhan}</a>
               <button type="button" disabled={dang} onClick={() => danhDau(false)} className="text-sm text-muted underline disabled:opacity-60">

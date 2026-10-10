@@ -29,7 +29,7 @@ export default async function TrangSanPham({ params }: Props) {
       <p className="mt-4 text-sm font-bold text-amber-ink">{ma}</p>
       <h1 className="text-2xl font-bold text-navy">{sp.ten}</h1>
       <p className="mt-2 rounded-lg bg-white px-4 py-3 text-sm leading-6 text-body ring-1 ring-line"><b>Điều kiện:</b> {sp.dieuKien}</p>
-      <p className="mt-3 text-sm text-muted">Không chấm điểm. Ô có dấu * cần điền để tính là đã lưu. Dữ liệu giả lập, không nhập thông tin thật của khách hàng.</p>
+      <p className="mt-3 text-sm text-muted">Ô có dấu * cần điền để lưu. Dữ liệu giả lập, không nhập thông tin thật của khách hàng.</p>
       <div className="mt-6">
         <FormSanPham ma={ma} cacO={FORM_SAN_PHAM[ma]} duLieu={r?.du_lieu ?? {}} coAnh={ma === "SP04"} />
       </div>

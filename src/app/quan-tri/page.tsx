@@ -4,7 +4,7 @@ import { dinhDangTien, dsChang, khoaHoc } from "@/lib/noi-dung";
 import { DO_DAI_KHOA_TOI_THIEU, khoaMayChuHopLe, laQuanTri } from "@/lib/quan-tri";
 import { docCaiDat } from "@/lib/cai-dat";
 import { emailDaCauHinh } from "@/lib/email";
-import { NutDoiSoat, NutEmailThu, NutGuiLaiEmail, NutKhopTay, NutKichHoat, NutLinkDangNhap, NutMoKhoaHoc, NutSuaEmail, NutThuHoi } from "./HanhDong";
+import { NutDoiSoat, NutEmailThu, NutGuiLaiEmail, NutKhopTay, NutKichHoat, NutLinkDangNhap, NutMoKhoaHoc, NutSuaEmail, NutSuaTenCc, NutThuHoi } from "./HanhDong";
 
 export const metadata: Metadata = { title: "Quản trị", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
@@ -13,7 +13,7 @@ type Dong = {
   id: string; ho_ten: string; email: string; sdt: string | null; created_at: Date;
   kich_hoat_at: Date | null; nguon_kich_hoat: string | null;
   ma_don: string | null; trang_thai: string | null; da_nhan: number | null; ghi_chu: string | null;
-  buoc_xong: string[]; so_sp: number; ma_cc: string | null; cc_thu_hoi: Date | null;
+  buoc_xong: string[]; so_sp: number; ma_cc: string | null; ten_cc: string | null; cc_thu_hoi: Date | null;
 };
 
 const gio = (d: Date | null) =>
@@ -50,7 +50,7 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
              d.ma as ma_don, d.trang_thai, d.da_nhan, d.ghi_chu,
              (select coalesce(array_agg(t.buoc_id), '{}') from tien_do t where t.hoc_vien_id = h.id) as buoc_xong,
              (select count(*)::int from san_pham s where s.hoc_vien_id = h.id) as so_sp,
-             c.ma as ma_cc, c.thu_hoi_at as cc_thu_hoi
+             c.ma as ma_cc, c.ho_ten as ten_cc, c.thu_hoi_at as cc_thu_hoi
       from hoc_vien h
       left join lateral (select * from don_hang where hoc_vien_id = h.id order by created_at desc limit 1) d on true
       left join chung_chi c on c.hoc_vien_id = h.id
@@ -151,6 +151,7 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
                 <td className="space-y-1 px-3 py-2">
                   {d.kich_hoat_at ? <><NutLinkDangNhap hocVienId={d.id} /><div><NutGuiLaiEmail hocVienId={d.id} /></div></> : <NutKichHoat hocVienId={d.id} />}
                   <div><NutSuaEmail hocVienId={d.id} email={d.email} /></div>
+                  {d.ma_cc && !d.cc_thu_hoi && <div><NutSuaTenCc ma={d.ma_cc} hoTen={d.ten_cc ?? d.ho_ten} /></div>}
                   {d.ma_cc && !d.cc_thu_hoi && <div><NutThuHoi ma={d.ma_cc} /></div>}
                 </td>
               </tr>

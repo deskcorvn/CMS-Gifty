@@ -1,4 +1,6 @@
+import { capChungChi } from "@/lib/chung-chi";
 import { db } from "@/lib/db";
+import { tinhTrangHocVien } from "@/lib/hoan-thanh";
 import { docJson, traJson } from "@/lib/http";
 import { timChang } from "@/lib/noi-dung";
 import { THONG_BAO_CHUA_MO, duocVaoNoiDung } from "@/lib/mo-khoa";
@@ -24,6 +26,11 @@ export async function POST(req: Request) {
     `;
   } else {
     await db()`delete from tien_do where hoc_vien_id = ${hv.id} and buoc_id = any(${ids}::text[])`;
+    return traJson(200, { ok: true });
   }
+  // Vừa xong chặng cuối cùng còn thiếu → tự cấp chứng chỉ bằng họ tên đã đăng ký và gửi email.
+  const tt = await tinhTrangHocVien(hv.id);
+  if (tt.chungChi) return traJson(200, { ok: true, chungChi: tt.chungChi.ma });
+  if (tt.duDieuKien) return traJson(200, { ok: true, chungChi: await capChungChi(hv, hv.ho_ten), moiCap: true });
   return traJson(200, { ok: true });
 }

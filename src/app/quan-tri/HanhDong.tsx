@@ -144,3 +144,14 @@ export function NutSuaEmail({ hocVienId, email }: { hocVienId: string; email: st
     }}>Sửa email</button>
   );
 }
+
+export function NutSuaTenCc({ ma, hoTen }: { ma: string; hoTen: string }) {
+  return (
+    <button className={nutCss} onClick={async () => {
+      const moi = window.prompt(`Họ tên đúng in trên chứng chỉ ${ma}:`, hoTen);
+      if (!moi || moi.trim() === hoTen) return;
+      const { ok, d } = await goi({ loai: "sua-ten-cc", ma, hoTen: moi.trim() });
+      if (ok) window.location.reload(); else window.alert(d?.error || "Lỗi");
+    }}>Sửa tên CC</button>
+  );
+}

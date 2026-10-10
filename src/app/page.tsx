@@ -46,7 +46,7 @@ const cauHoi = [
   },
   {
     hoi: "Khi nào tôi nhận được chứng chỉ?",
-    dap: `Hoàn thành đủ 9 chặng, anh chị nhận chứng chỉ “${khoaHoc.chungChi.danhHieu}” có mã QR kiểm tra trực tuyến. Khóa học không chấm điểm, không xếp loại.`,
+    dap: `Hoàn thành đủ 9 chặng, anh chị nhận chứng chỉ “${khoaHoc.chungChi.danhHieu}” có mã QR kiểm tra trực tuyến.`,
   },
   {
     hoi: "Sau buổi học, tôi còn xem lại được gì?",
@@ -300,7 +300,7 @@ export default async function TrangChu() {
                     đủ 9 chặng
                   </strong>{" "}
                   để nhận chứng chỉ “{khoaHoc.chungChi.danhHieu}” có mã QR xác
-                  thực. Khóa học không chấm điểm, không xếp loại.
+                  thực.
                 </p>
               </div>
             </section>

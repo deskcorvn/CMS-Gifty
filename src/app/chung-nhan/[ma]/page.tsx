@@ -32,7 +32,7 @@ export default async function TrangChungNhan({ params }: Props) {
   return (
     <>
       <div className="khong-in"><DauTrang /></div>
-      <main className="mx-auto max-w-5xl px-4 py-10 print:p-0">
+      <main id="noi-dung-chinh" className="mx-auto max-w-5xl px-4 py-10 print:p-0">
         <div className={`khong-in mb-6 rounded-xl border p-5 ${cc.thu_hoi_at ? "border-red-300 bg-red-50" : "border-emerald-300 bg-emerald-50"}`}>
           <p className={`text-lg font-bold ${cc.thu_hoi_at ? "text-red-800" : "text-emerald-800"}`}>
             {cc.thu_hoi_at ? "Chứng chỉ đã bị thu hồi" : "✓ Chứng chỉ hợp lệ, do Gifty Tech cấp"}

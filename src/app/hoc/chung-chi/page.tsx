@@ -17,7 +17,7 @@ export default async function TrangNhanChungChi() {
   const spDo = khoaHoc.sanPham.filter((s) => !tt.sanPhamXong.includes(s.ma));
 
   return (
-    <main className="mx-auto max-w-2xl px-4 py-10">
+    <main id="noi-dung-chinh" className="mx-auto max-w-2xl px-4 py-10">
       <h1 className="text-2xl font-bold text-navy">Chứng chỉ “{khoaHoc.chungChi.danhHieu}”</h1>
       <p className="mt-2 text-body">
         Không chấm điểm, không xếp loại. Hoàn thành đủ {tongSoBuoc} bước của 9 chặng và lưu đủ 4 sản phẩm là nhận chứng chỉ.

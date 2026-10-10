@@ -9,7 +9,7 @@ export default async function TrangXacThuc({ searchParams }: { searchParams: Pro
   return (
     <>
       <DauTrang />
-      <main className="mx-auto max-w-md px-4 py-16 text-center">
+      <main id="noi-dung-chinh" className="mx-auto max-w-md px-4 py-16 text-center">
         <h1 className="text-2xl font-bold text-navy">Vào trang học</h1>
         <p className="mt-2 text-body">Bấm nút dưới đây để đăng nhập trên thiết bị này.</p>
         <form action="/api/xac-thuc" method="post" className="mt-8">

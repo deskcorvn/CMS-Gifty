@@ -23,7 +23,7 @@ export default async function ThuVien() {
   const tt = await tinhTrangHocVien(hv.id);
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-10">
+    <main id="noi-dung-chinh" className="mx-auto max-w-4xl px-4 py-10">
       <h1 className="text-2xl font-bold text-navy md:text-3xl">Kết quả của tôi</h1>
       <p className="mt-2 text-body">Mọi thứ anh chị làm trong khóa học. Quên cách làm thì quay lại đây chép câu lệnh dùng tiếp.</p>
 

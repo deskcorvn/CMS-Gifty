@@ -27,6 +27,11 @@ for (const k of ["ten", "tieuDePhu", "hocPhi", "lop", "sanPham", "chungChi", "ng
 if (!Number.isInteger(khoaHoc?.hocPhi) || khoaHoc.hocPhi <= 0) {
   loi.push("content/khoa-hoc.yml: hocPhi phải là số nguyên dương (đồng)");
 }
+for (const k of ["ten", "chucDanh", "kinhNghiem", "anh", "nguon"]) {
+  if (!chuoi(khoaHoc?.giangVien?.[k])) {
+    loi.push(`content/khoa-hoc.yml: thiếu giangVien.${k}`);
+  }
+}
 const maNguon = new Set((khoaHoc?.nguon ?? []).map((n) => n.ma));
 const maSanPham = new Set((khoaHoc?.sanPham ?? []).map((s) => s.ma));
 

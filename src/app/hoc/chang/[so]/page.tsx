@@ -28,17 +28,17 @@ export default async function TrangChang({ params }: Props) {
   const sau = timChang(c.so + 1);
 
   return (
-    <main>
-      <header className="bg-navy-dark text-white">
-        <div className="mx-auto max-w-4xl px-4 py-10">
-          <Link href="/hoc" className="text-sm font-semibold text-cream">← Trang học</Link>
-          <p className="mt-4 text-sm font-bold uppercase tracking-[0.14em] text-white/60">Chặng {c.so}/{dsChang.length} · {c.phut} phút</p>
-          <h1 className="mt-2 text-2xl font-bold leading-tight md:text-4xl">{c.tieuDe}</h1>
-          <p className="mt-4 max-w-2xl leading-7 text-white/75">{c.mucTieu}</p>
+    <main id="noi-dung-chinh">
+      <header className="border-b border-line bg-white text-ink">
+        <div className="mx-auto max-w-4xl pb-6">
+          <Link href="/hoc" className="text-sm font-semibold text-amber-ink">← Trang học</Link>
+          <p className="mt-4 text-xs font-semibold text-muted">Chặng {c.so}/{dsChang.length} · {c.phut} phút</p>
+          <h1 className="mt-2 text-2xl font-bold leading-snug md:text-3xl">{c.tieuDe}</h1>
+          <p className="mt-4 max-w-2xl leading-7 text-body">{c.mucTieu}</p>
         </div>
       </header>
 
-      <div className="mx-auto max-w-4xl px-4 pb-14">
+      <div className="mx-auto max-w-4xl pb-8">
         {c.coVideo && (
           <section className="mt-8 rounded-xl border border-line bg-white p-5">
             <h2 className="font-bold text-navy">{khoaHoc.video.tieuDe}</h2>
@@ -57,8 +57,8 @@ export default async function TrangChang({ params }: Props) {
         )}
 
         {c.ghiNho && (
-          <section className="mt-8 rounded-xl bg-navy p-6 text-white">
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-cream">Ghi nhớ</p>
+          <section className="mt-8 rounded-xl border border-line bg-[#f7f7f8] p-6 text-ink">
+            <p className="text-xs font-bold text-amber-ink">Ghi nhớ</p>
             <p className="mt-2 text-lg leading-8">{c.ghiNho}</p>
           </section>
         )}
@@ -69,7 +69,7 @@ export default async function TrangChang({ params }: Props) {
               const sp = timSanPham(ma);
               const xong = tt.sanPhamXong.includes(ma as never);
               return (
-                <Link key={ma} href={`/hoc/san-pham/${ma}`} className="rounded-xl border-2 border-amber bg-amber-soft p-5 hover:bg-[#ffefd6]">
+                <Link key={ma} href={`/hoc/san-pham/${ma}`} className="rounded-xl border-2 border-amber bg-amber-soft p-5 hover:bg-[#f7e8eb]">
                   <p className="text-sm font-bold text-amber-ink">{xong ? "✓ Đã lưu · bấm để sửa" : "Lưu sản phẩm " + ma}</p>
                   <p className="mt-1 font-semibold text-navy">{sp?.ten}</p>
                 </Link>

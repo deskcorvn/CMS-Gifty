@@ -56,6 +56,15 @@ content:
       - { name: tieuDePhu, label: Tiêu đề phụ, type: string }
       - { name: moTa, label: Mô tả, type: text }
       - { name: camKet, label: Cam kết đầu ra, type: text }
+      - name: giangVien
+        label: Giảng viên
+        type: object
+        fields:
+          - { name: ten, label: Họ tên, type: string, required: true }
+          - { name: chucDanh, label: Chức danh, type: string, required: true }
+          - { name: kinhNghiem, label: Kinh nghiệm đã xác nhận, type: string, required: true }
+          - { name: anh, label: Ảnh chân dung, type: image, required: true }
+          - { name: nguon, label: Trang giới thiệu, type: string, required: true }
       - { name: hocPhi, label: Học phí (đồng), type: number, required: true }
       - { name: thoiLuongPhut, label: Thời lượng (phút), type: number }
       - { name: phienBanGiaoTrinh, label: Phiên bản giáo trình, type: string }

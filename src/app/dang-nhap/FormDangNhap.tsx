@@ -9,6 +9,7 @@ export default function FormDangNhap() {
   async function gui(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setDangGui(true);
+    setKq(null);
     const email = new FormData(e.currentTarget).get("email");
     const r = await fetch("/api/dang-nhap", {
       method: "POST",
@@ -17,19 +18,53 @@ export default function FormDangNhap() {
     }).catch(() => null);
     const d = await r?.json().catch(() => null);
     setDangGui(false);
-    setKq(r?.ok ? { ok: true, text: d.thongBao } : { ok: false, text: d?.error || "Không gửi được, vui lòng thử lại." });
+    setKq(
+      r?.ok
+        ? { ok: true, text: d.thongBao }
+        : { ok: false, text: d?.error || "Không gửi được, vui lòng thử lại." },
+    );
   }
 
   return (
-    <form onSubmit={gui} className="space-y-4 rounded-xl border border-line bg-white p-6">
+    <form onSubmit={gui} aria-busy={dangGui} className="form-card space-y-5">
+      <div>
+        <h2>Đăng nhập trang học</h2>
+        <p className="mt-2 text-sm leading-6 text-muted">
+          Nhập email đã đăng ký. Gifty Tech sẽ gửi link đăng nhập vào hộp thư.
+        </p>
+      </div>
       <label className="block">
-        <span className="text-sm font-semibold text-navy">Email đã dùng khi đăng ký</span>
-        <input name="email" type="email" autoComplete="email" required className="mt-1 w-full rounded-lg border border-line px-3 py-2.5 outline-none focus:border-amber" />
+        <span className="text-sm font-semibold text-navy">
+          Email đã dùng khi đăng ký
+        </span>
+        <input
+          name="email"
+          type="email"
+          autoComplete="email"
+          placeholder="anhchi@example.com"
+          required
+          className="mt-1 w-full rounded-lg border border-line px-3 py-2.5 outline-none focus:border-amber"
+        />
       </label>
-      {kq && <p className={`text-sm font-semibold ${kq.ok ? "text-emerald-700" : "text-red-700"}`}>{kq.text}</p>}
-      <button disabled={dangGui} className="w-full rounded-lg bg-amber px-5 py-3 font-bold text-[#1a1205] hover:bg-amber-light disabled:opacity-60">
+      {kq && (
+        <p
+          role={kq.ok ? "status" : "alert"}
+          className={`text-sm font-semibold ${kq.ok ? "text-emerald-700" : "text-red-700"}`}
+        >
+          {kq.text}
+        </p>
+      )}
+      <button
+        type="submit"
+        disabled={dangGui}
+        className="w-full rounded-lg bg-amber px-5 py-3 font-bold text-[#1a1205] hover:bg-amber-light disabled:opacity-60"
+      >
         {dangGui ? "Đang gửi…" : "Gửi link đăng nhập"}
       </button>
+      <p className="text-xs leading-6 text-muted">
+        Chưa thấy email? Kiểm tra cả mục Thư rác / Spam và đảm bảo email trùng
+        với lúc đăng ký.
+      </p>
     </form>
   );
 }

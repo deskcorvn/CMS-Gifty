@@ -22,7 +22,7 @@ const csv = (rows: (string | number | null)[][]) =>
 
 function DangNhapQuanTri({ loi }: { loi?: string }) {
   return (
-    <main className="mx-auto max-w-sm px-4 py-20">
+    <main id="noi-dung-chinh" className="mx-auto max-w-sm px-4 py-20">
       <h1 className="text-xl font-bold text-navy">Quản trị {khoaHoc.ten}</h1>
       <form action="/api/quan-tri/dang-nhap" method="post" className="mt-6 space-y-3">
         <input name="khoa" type="password" placeholder="Khóa quản trị (ADMIN_KEY)" required className="w-full rounded-lg border border-line px-3 py-2.5" />

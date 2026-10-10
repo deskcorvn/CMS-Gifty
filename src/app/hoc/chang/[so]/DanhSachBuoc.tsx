@@ -32,10 +32,10 @@ export default function DanhSachBuoc({ buoc, daXong }: { buoc: Buoc[]; daXong: s
           <span>{xong.size}/{buoc.length} bước</span>
           <span className="text-amber-ink">{Math.round((xong.size / buoc.length) * 100)}%</span>
         </div>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#e8edf3]">
+        <div role="progressbar" aria-label="Tiến độ chặng học" aria-valuemin={0} aria-valuemax={buoc.length} aria-valuenow={xong.size} className="mt-2 h-2 overflow-hidden rounded-full bg-[#e8edf3]">
           <div className="h-full rounded-full bg-amber transition-all duration-300" style={{ width: `${(xong.size / buoc.length) * 100}%` }} />
         </div>
-        {loi && <p className="mt-2 text-sm font-semibold text-red-700">{loi}</p>}
+        {loi && <p role="alert" className="mt-2 text-sm font-semibold text-red-700">{loi}</p>}
       </div>
       <ol className="space-y-6">
         {buoc.map((b, i) => {
@@ -43,7 +43,7 @@ export default function DanhSachBuoc({ buoc, daXong }: { buoc: Buoc[]; daXong: s
           return (
             <li key={b.id} className={`rounded-xl border bg-white p-4 transition-colors md:p-7 ${da ? "border-emerald-300" : "border-line"}`}>
               <div className="flex items-start gap-3 md:gap-4">
-                <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-bold md:h-10 md:w-10 md:text-lg ${da ? "bg-emerald-600 text-white" : "bg-navy text-white"}`}>
+                <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-bold md:h-10 md:w-10 md:text-lg ${da ? "bg-emerald-700 text-white" : "bg-navy text-white"}`}>
                   {da ? "✓" : i + 1}
                 </span>
                 <div className="min-w-0 flex-1">
@@ -67,7 +67,7 @@ export default function DanhSachBuoc({ buoc, daXong }: { buoc: Buoc[]; daXong: s
                     onClick={() => bat(b.id)}
                     aria-pressed={da}
                     className={`mt-5 inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-bold transition ${
-                      da ? "border-emerald-600 bg-emerald-600 text-white" : "border-navy/25 text-navy hover:bg-navy hover:text-white"
+                      da ? "border-emerald-600 bg-emerald-700 text-white" : "border-navy/25 text-navy hover:bg-navy hover:text-white"
                     }`}
                   >
                     ✓ {da ? "Đã xong bước này" : "Đánh dấu đã xong"}

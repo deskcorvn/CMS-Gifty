@@ -22,7 +22,7 @@ export default async function TrangSanPham({ params }: Props) {
   const chang = timChang(sp.chang);
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-10">
+    <main id="noi-dung-chinh" className="mx-auto max-w-3xl px-4 py-10">
       <Link href={chang ? `/hoc/chang/${chang.so}` : "/hoc"} className="text-sm font-semibold text-amber-ink">← {chang ? `Chặng ${chang.so}` : "Trang học"}</Link>
       <p className="mt-4 text-sm font-bold text-amber-ink">{ma}</p>
       <h1 className="text-2xl font-bold text-navy">{sp.ten}</h1>

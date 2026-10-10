@@ -11,24 +11,25 @@ export default async function TrangHoc() {
   const tiepTheo = dsChang.find((c) => c.buoc.some((b) => !tt.buocXong.has(b.id))) ?? dsChang[0];
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-10">
-      <p className="text-sm font-semibold text-amber-ink">Xin chào {hv.ho_ten}</p>
-      <h1 className="mt-1 text-2xl font-bold text-navy md:text-3xl">{khoaHoc.ten}: {khoaHoc.tieuDePhu}</h1>
-      <p className="mt-2 text-body">Lớp học: {nhanLichHoc()} · {khoaHoc.lop.diaDiem || "địa điểm Gifty Tech gửi qua email"}</p>
-
-      <section className="mt-6 rounded-xl border border-line bg-white p-5">
+    <main id="noi-dung-chinh" className="mx-auto max-w-5xl px-4 py-10">
+      <div className="learning-welcome">
+        <p className="text-sm font-semibold text-amber-ink">Xin chào {hv.ho_ten}</p>
+        <h1 className="mt-1 text-2xl font-bold text-navy md:text-3xl">{khoaHoc.ten}: {khoaHoc.tieuDePhu}</h1>
+        <p className="mt-2 text-body">Lớp học: {nhanLichHoc()} · {khoaHoc.lop.diaDiem || "địa điểm Gifty Tech gửi qua email"}</p>
+      </div>
+      <section aria-label="Tiến độ khóa học" className="mt-6 rounded-xl border border-line bg-white p-5">
         <div className="flex items-center justify-between text-sm font-bold text-navy">
           <span>{tt.soBuocXong}/{tongSoBuoc} bước · {tt.sanPhamXong.length}/4 sản phẩm</span>
           <span className="text-amber-ink">{pct}%</span>
         </div>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#e8edf3]">
+        <div role="progressbar" aria-label="Số bước đã hoàn thành" aria-valuemin={0} aria-valuemax={tongSoBuoc} aria-valuenow={tt.soBuocXong} className="mt-2 h-2 overflow-hidden rounded-full bg-[#e8edf3]">
           <div className="h-full rounded-full bg-amber" style={{ width: `${pct}%` }} />
         </div>
         <div className="mt-4 flex flex-wrap gap-3">
           {tt.chungChi ? (
-            <Link href={`/chung-nhan/${tt.chungChi.ma}`} className="rounded-lg bg-emerald-600 px-5 py-2.5 font-bold text-white">Xem chứng chỉ của tôi</Link>
+            <Link href={`/chung-nhan/${tt.chungChi.ma}`} className="rounded-lg bg-emerald-700 px-5 py-2.5 font-bold text-white">Xem chứng chỉ của tôi</Link>
           ) : tt.duDieuKien ? (
-            <Link href="/hoc/chung-chi" className="rounded-lg bg-emerald-600 px-5 py-2.5 font-bold text-white">Nhận chứng chỉ “{khoaHoc.chungChi.danhHieu}”</Link>
+            <Link href="/hoc/chung-chi" className="rounded-lg bg-emerald-700 px-5 py-2.5 font-bold text-white">Nhận chứng chỉ “{khoaHoc.chungChi.danhHieu}”</Link>
           ) : (
             <Link href={`/hoc/chang/${tiepTheo.so}`} className="rounded-lg bg-amber px-5 py-2.5 font-bold text-[#1a1205] hover:bg-amber-light">
               {chuaBatDau ? "Bắt đầu chặng 1" : `Học tiếp chặng ${tiepTheo.so}`}
@@ -56,7 +57,7 @@ export default async function TrangHoc() {
             return (
               <li key={c.so}>
                 <Link href={`/hoc/chang/${c.so}`} className={`flex items-center gap-4 rounded-xl border bg-white p-4 transition hover:border-amber ${hetChang ? "border-emerald-300" : "border-line"}`}>
-                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-bold ${hetChang ? "bg-emerald-600 text-white" : "bg-navy text-white"}`}>
+                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-bold ${hetChang ? "bg-emerald-700 text-white" : "bg-navy text-white"}`}>
                     {hetChang ? "✓" : c.so}
                   </span>
                   <span className="min-w-0 flex-1">

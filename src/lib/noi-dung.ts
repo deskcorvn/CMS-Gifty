@@ -23,7 +23,12 @@ export type Chang = {
   buoc: Buoc[];
 };
 
-export type SanPhamKhoa = { ma: MaSanPham; ten: string; dieuKien: string; chang: number };
+export type SanPhamKhoa = {
+  ma: MaSanPham;
+  ten: string;
+  dieuKien: string;
+  chang: number;
+};
 export type MaSanPham = "SP01" | "SP02" | "SP03" | "SP04";
 
 export type KhoaHoc = {
@@ -31,6 +36,13 @@ export type KhoaHoc = {
   tieuDePhu: string;
   moTa: string;
   camKet: string;
+  giangVien: {
+    ten: string;
+    chucDanh: string;
+    kinhNghiem: string;
+    anh: string;
+    nguon: string;
+  };
   hocPhi: number;
   thoiLuongPhut: number;
   phienBanGiaoTrinh: string;
@@ -39,7 +51,12 @@ export type KhoaHoc = {
   khongThuoc: string;
   sanPham: SanPhamKhoa[];
   chuanBi: string[];
-  chungChi: { danhHieu: string; nguoiKy: string; chucDanh: string; donVi: string };
+  chungChi: {
+    danhHieu: string;
+    nguoiKy: string;
+    chucDanh: string;
+    donVi: string;
+  };
   video: { tieuDe: string; url: string };
   cauChot: string;
   ngayRaSoatNguon: string;
@@ -53,7 +70,8 @@ export const tatCaBuocId = dsChang.flatMap((c) => c.buoc.map((b) => b.id));
 export const tongSoBuoc = tatCaBuocId.length;
 
 export const timChang = (so: number) => dsChang.find((c) => c.so === so);
-export const timSanPham = (ma: string) => khoaHoc.sanPham.find((s) => s.ma === ma);
+export const timSanPham = (ma: string) =>
+  khoaHoc.sanPham.find((s) => s.ma === ma);
 export const timNguon = (ma: string) => khoaHoc.nguon.find((n) => n.ma === ma);
 
 export const dinhDangTien = (n: number) => `${n.toLocaleString("vi-VN")}đ`;
@@ -65,5 +83,7 @@ export function nhanLichHoc() {
 }
 
 export const tatCaPrompt = dsChang.flatMap((c) =>
-  c.buoc.filter((b) => b.prompt).map((b) => ({ chang: c.so, tenChang: c.tieuDe, buoc: b })),
+  c.buoc
+    .filter((b) => b.prompt)
+    .map((b) => ({ chang: c.so, tenChang: c.tieuDe, buoc: b })),
 );

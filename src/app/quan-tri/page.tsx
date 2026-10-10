@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
 import { dinhDangTien, khoaHoc, tongSoBuoc } from "@/lib/noi-dung";
-import { laQuanTri } from "@/lib/quan-tri";
+import { DO_DAI_KHOA_TOI_THIEU, khoaMayChuHopLe, laQuanTri } from "@/lib/quan-tri";
 import { NutDoiSoat, NutKhopTay, NutKichHoat, NutLinkDangNhap, NutThuHoi } from "./HanhDong";
 
 export const metadata: Metadata = { title: "Quản trị", robots: { index: false, follow: false } };
@@ -26,7 +26,13 @@ function DangNhapQuanTri({ loi }: { loi?: string }) {
       <h1 className="text-xl font-bold text-navy">Quản trị {khoaHoc.ten}</h1>
       <form action="/api/quan-tri/dang-nhap" method="post" className="mt-6 space-y-3">
         <input name="khoa" type="password" placeholder="Khóa quản trị (ADMIN_KEY)" required className="w-full rounded-lg border border-line px-3 py-2.5" />
-        {loi && <p className="text-sm text-red-700">Khóa không đúng.</p>}
+        {!khoaMayChuHopLe() ? (
+          <p className="text-sm text-red-700">
+            ADMIN_KEY trên Vercel chưa đặt hoặc ngắn hơn {DO_DAI_KHOA_TOI_THIEU} ký tự nên trang quản trị đang khóa. Đặt lại khóa dài hơn rồi Redeploy.
+          </p>
+        ) : loi ? (
+          <p className="text-sm text-red-700">Khóa không đúng.</p>
+        ) : null}
         <button className="w-full rounded-lg bg-navy px-4 py-2.5 font-bold text-white">Vào</button>
       </form>
     </main>

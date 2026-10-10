@@ -5,9 +5,14 @@ const COOKIE = "qt";
 const TUOI = 60 * 60 * 12;
 
 /** Khóa quản trị: ADMIN_KEY trong env. Thiếu key là khóa cửa luôn (không bao giờ "chưa đặt thì cho qua"). */
+export const DO_DAI_KHOA_TOI_THIEU = 16;
+
+/** Máy chủ đã đặt ADMIN_KEY đủ dài chưa (khóa ngắn bị từ chối hẳn, tránh bị dò). */
+export const khoaMayChuHopLe = () => (process.env.ADMIN_KEY?.length ?? 0) >= DO_DAI_KHOA_TOI_THIEU;
+
 export function khoaDung(khoa: string) {
   const k = process.env.ADMIN_KEY;
-  return Boolean(k && k.length >= 16 && khoa && bangNhau(khoa, k));
+  return Boolean(k && khoaMayChuHopLe() && khoa && bangNhau(khoa, k));
 }
 
 export async function datPhienQuanTri() {

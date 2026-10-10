@@ -164,3 +164,16 @@ export function NutTaiKhoanThu({ hocVienId, laThu }: { hocVienId: string; laThu:
     }}>{laThu ? "Bỏ đánh dấu thử" : "Tài khoản thử"}</button>
   );
 }
+
+export function NutXoaHocVien({ hocVienId, email }: { hocVienId: string; email: string }) {
+  return (
+    <button className={`${nutCss} border-red-300 text-red-700`} onClick={async () => {
+      const xacNhan = window.prompt(
+        `Xóa hẳn tài khoản ${email}: tiến độ, sản phẩm, chứng chỉ và đơn học phí sẽ mất, không khôi phục được. Giao dịch ngân hàng vẫn giữ để đối soát.\n\nGõ lại email để xác nhận:`,
+      );
+      if (!xacNhan) return;
+      const { ok, d } = await goi({ loai: "xoa-hoc-vien", hocVienId, xacNhan: xacNhan.trim() });
+      if (ok) window.location.reload(); else window.alert(d?.error || "Lỗi");
+    }}>Xóa tài khoản</button>
+  );
+}

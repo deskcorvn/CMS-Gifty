@@ -78,6 +78,8 @@ Kiểm tra trước khi push: `npm run lint && npm run typecheck && npm run buil
   - **Link đăng nhập** (hạn 24 giờ) để gửi qua Zalo khi email không tới;
   - **Khớp tay** giao dịch thiếu mã hoặc sai mã;
   - **Thu hồi** chứng chỉ;
+  - **Xóa tài khoản** (dùng cho tài khoản test): phải gõ lại email để xác nhận. Xóa hẳn tiến độ, sản phẩm, chứng chỉ, đơn;
+    giao dịch ngân hàng vẫn giữ, ghi chú "đơn của tài khoản đã xóa";
   - **Đối soát SePay** 7 ngày.
 - **Sửa nội dung**: vào app.pagescms.org, đăng nhập GitHub, chọn repo, sửa "Các chặng học" hoặc "Thông tin khóa"
   rồi bấm Save. Vercel tự build lại.

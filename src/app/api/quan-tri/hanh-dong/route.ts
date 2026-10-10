@@ -28,7 +28,7 @@ export async function POST(req: Request) {
       if (!hv) return traJson(400, { error: "Học viên không tồn tại hoặc đã kích hoạt." });
       // Đơn chuyển khoản còn treo thì hủy, để không ai lỡ chuyển thêm mà hệ thống cộng tiền âm thầm.
       await sql`
-        update don_hang set trang_thai = 'HUY', ghi_chu = concat_ws(' | ', ghi_chu, ${"hủy do kích hoạt tay: " + ghiChu})
+        update don_hang set trang_thai = 'HUY', ghi_chu = concat_ws(' | ', ghi_chu, ${"hủy do kích hoạt tay: " + ghiChu}::text)
         where hoc_vien_id = ${hv.id} and trang_thai = 'CHO'
       `;
       const email = await guiEmailKichHoat(hv.id);
@@ -74,6 +74,23 @@ export async function POST(req: Request) {
       `;
       if (!hv) return traJson(400, { error: "Học viên không tồn tại." });
       return traJson(200, { ok: true, laThu: hv.la_thu });
+    }
+    case "xoa-hoc-vien": {
+      // Xóa hẳn tài khoản (dùng cho tài khoản test). Giao dịch ngân hàng giữ lại để đối soát, chỉ bỏ liên kết tới đơn.
+      const id = chuoiSach(b?.hocVienId, 60);
+      const xacNhan = chuoiSach(b?.xacNhan, 200).toLowerCase();
+      const daXoa = await sql.begin(async (tx) => {
+        const [hv] = await tx<{ id: string; email: string }[]>`select id, email from hoc_vien where id = ${id} for update`;
+        if (!hv || hv.email !== xacNhan) return null;
+        await tx`
+          update giao_dich set don_id = null, ly_do = concat_ws(' | ', ly_do, ${"đơn của tài khoản đã xóa: " + hv.email}::text)
+          where don_id in (select id from don_hang where hoc_vien_id = ${hv.id})
+        `;
+        await tx`delete from hoc_vien where id = ${hv.id}`;
+        return hv.email;
+      });
+      if (!daXoa) return traJson(400, { error: "Email xác nhận không khớp hoặc học viên không tồn tại." });
+      return traJson(200, { ok: true, thongBao: `Đã xóa ${daXoa}.` });
     }
     case "link-dang-nhap": {
       const id = chuoiSach(b?.hocVienId, 60);

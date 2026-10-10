@@ -4,7 +4,7 @@ import { dinhDangTien, dsChang, khoaHoc, nhanLichHoc, soLienHe } from "@/lib/noi
 import { DO_DAI_KHOA_TOI_THIEU, khoaMayChuHopLe, laQuanTri } from "@/lib/quan-tri";
 import { docCaiDat } from "@/lib/cai-dat";
 import { emailDaCauHinh } from "@/lib/email";
-import { NutDoiSoat, NutEmailThu, NutGuiLaiEmail, NutKhopTay, NutKichHoat, NutLinkDangNhap, NutMoKhoaHoc, NutSuaEmail, NutSuaTenCc, NutTaiKhoanThu, NutThuHoi } from "./HanhDong";
+import { NutDoiSoat, NutEmailThu, NutGuiLaiEmail, NutKhopTay, NutKichHoat, NutLinkDangNhap, NutMoKhoaHoc, NutSuaEmail, NutSuaTenCc, NutTaiKhoanThu, NutThuHoi, NutXoaHocVien } from "./HanhDong";
 
 export const metadata: Metadata = { title: "Quản trị", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
@@ -166,6 +166,7 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
                   {d.kich_hoat_at ? <><NutLinkDangNhap hocVienId={d.id} /><div><NutGuiLaiEmail hocVienId={d.id} /></div></> : <NutKichHoat hocVienId={d.id} />}
                   <div><NutSuaEmail hocVienId={d.id} email={d.email} /></div>
                   <div><NutTaiKhoanThu hocVienId={d.id} laThu={d.la_thu} /></div>
+                  <div><NutXoaHocVien hocVienId={d.id} email={d.email} /></div>
                   {d.ma_cc && !d.cc_thu_hoi && <div><NutSuaTenCc ma={d.ma_cc} hoTen={d.ten_cc ?? d.ho_ten} /></div>}
                   {d.ma_cc && !d.cc_thu_hoi && <div><NutThuHoi ma={d.ma_cc} /></div>}
                 </td>

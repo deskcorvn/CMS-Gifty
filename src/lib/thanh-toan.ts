@@ -56,6 +56,8 @@ export function tinhTrangThai(daNhan: number, tongTien: number) {
 export function taiKhoanNhan() {
   return {
     nganHang: process.env.VIETQR_BANK?.trim() || "",
+    // Tên hiển thị cho người chuyển khoản; VIETQR_BANK có thể là mã BIN (vd 970432) nên cần tên riêng.
+    tenNganHang: process.env.VIETQR_BANK_NAME?.trim() || process.env.VIETQR_BANK?.trim() || "",
     soTk: process.env.VIETQR_ACCOUNT?.trim() || "",
     chuTk: process.env.VIETQR_NAME?.trim() || "",
     // Một số ngân hàng liên kết SePay qua VA bắt buộc tiền tố nội dung (vd "SEVQR").

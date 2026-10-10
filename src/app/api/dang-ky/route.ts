@@ -51,6 +51,6 @@ export async function POST(req: Request) {
     conThieu,
     noiDung: noiDungChuyenKhoan(don.ma),
     qr: qrUrl(don.ma, conThieu),
-    taiKhoan: { nganHang: tk.nganHang, soTk: tk.soTk, chuTk: tk.chuTk },
+    taiKhoan: { nganHang: tk.tenNganHang, soTk: tk.soTk, chuTk: tk.chuTk },
   });
 }

@@ -7,7 +7,7 @@
     "content": "node scripts/build-content.mjs",
     "predev": "node scripts/build-content.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/build-content.mjs",
+    "prebuild": "node scripts/build-content.mjs && node scripts/migrate.mjs --neu-co",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",

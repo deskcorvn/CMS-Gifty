@@ -35,7 +35,7 @@ cho giảng viên (tổ chức lớp, kịch bản quay video, phương án dự
 ```bash
 npm install
 cp .env.example .env.local      # điền DATABASE_URL, SESSION_SECRET, VIETQR_*, SEPAY_WEBHOOK_API_KEY, ADMIN_KEY…
-npm run db:migrate              # tạo bảng (chạy lại nhiều lần không sao)
+npm run db:migrate              # tạo bảng (build trên Vercel cũng tự chạy bước này)
 npm run dev
 ```
 

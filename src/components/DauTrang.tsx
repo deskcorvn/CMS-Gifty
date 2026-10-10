@@ -1,5 +1,5 @@
 import Link from "next/link";
-import BieuTuong from "./BieuTuong";
+import Image from "next/image";
 
 export default function DauTrang({ dangHoc = false }: { dangHoc?: boolean }) {
   return (
@@ -10,7 +10,7 @@ export default function DauTrang({ dangHoc = false }: { dangHoc?: boolean }) {
           className="brand"
           aria-label="Gifty Tech — Trang chủ khóa học"
         >
-          <BieuTuong ten="gift" size={30} />
+          <Image src="/brand/gifty-mark.png" alt="" width={32} height={32} />
           <span>
             Gifty<strong>Tech</strong>
           </span>

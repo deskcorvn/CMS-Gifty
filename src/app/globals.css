@@ -323,9 +323,7 @@ section[id] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  transform: scale(1.35);
-  transform-origin: top;
+  object-position: center 28%;
 }
 .course-stats {
   display: flex;
@@ -396,12 +394,12 @@ section[id] {
 }
 .cover-person {
   position: absolute;
-  right: -30px;
-  bottom: -8px;
-  width: 72%;
+  right: 0;
+  bottom: 0;
+  width: 43%;
   height: 100%;
-  object-fit: contain;
-  object-position: bottom;
+  object-fit: cover;
+  object-position: center 28%;
 }
 .enrollment-body {
   padding: 24px;
@@ -741,7 +739,7 @@ summary::-webkit-details-marker {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 28%;
 }
 .instructor-profile h3 {
   margin: 0 0 6px;
@@ -1094,17 +1092,19 @@ summary::-webkit-details-marker {
     aspect-ratio: 1.9;
   }
   .cover-copy {
-    padding: 22px;
+    padding: 16px 12px;
+    width: 57%;
   }
   .cover-copy strong {
-    font-size: 27px;
+    font-size: 22px;
+    margin-top: 12px;
   }
   .cover-copy small {
     margin-top: 12px;
   }
   .cover-person {
-    right: -25px;
-    width: 66%;
+    right: 0;
+    width: 43%;
   }
   .enrollment-body {
     padding: 22px;
@@ -1239,7 +1239,7 @@ summary::-webkit-details-marker {
     font-size: 11px;
   }
   .cover-copy strong {
-    font-size: 23px;
+    font-size: 21px;
     margin-top: 10px;
   }
   .cover-copy small {

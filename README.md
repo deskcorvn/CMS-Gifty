@@ -1,6 +1,6 @@
 # CMS-Gifty: Khóa đào tạo AI
 
-Trang học của Gifty Tech cho **Khóa đào tạo AI: Hiểu AI và làm việc cùng AI**. Khóa học 180 phút, lớp đầu tiên
+Trang học của Gifty Tech cho **AI thực chiến cho chủ doanh nghiệp: Hiểu AI và làm việc cùng AI**. Khóa học 180 phút, lớp đầu tiên
 lúc 14:00 thứ Tư 21/10/2026, học phí 299.000đ, tối đa 20 học viên. Hỏi khóa học: điện thoại/Zalo 0913 332 282.
 
 Học viên đi theo trình tự:

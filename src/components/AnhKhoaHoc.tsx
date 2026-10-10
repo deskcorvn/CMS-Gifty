@@ -10,19 +10,19 @@ export default function AnhKhoaHoc() {
       <div className="cover-copy">
         <span>Gifty Tech</span>
         <strong>
-          Hiểu AI.
+          Giao việc.
           <br />
-          Làm việc
+          Chăm khách.
           <br />
-          cùng AI.
+          Bài bản.
         </strong>
         <small>Khóa học thực hành</small>
       </div>
       <Image
         src={khoaHoc.giangVien.anh}
         alt={khoaHoc.giangVien.ten}
-        width={1280}
-        height={1221}
+        width={2730}
+        height={4095}
         sizes="(max-width: 767px) 50vw, 200px"
         className="cover-person"
         preload

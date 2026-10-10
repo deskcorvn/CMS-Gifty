@@ -1,20 +1,18 @@
 # Thông tin chung của khóa. Sửa được trong Pages CMS (mục "Thông tin khóa").
 # Mọi dữ kiện ở đây lấy từ "Giáo trình Buổi 1 — Hiểu AI và làm việc cùng AI", phiên bản 2.0, 10/10/2026.
-ten: Khóa đào tạo AI
+ten: AI thực chiến cho chủ doanh nghiệp
 tieuDePhu: Hiểu AI và làm việc cùng AI
 moTa: >-
-  Học cách giao việc kinh doanh cho AI: lên kế hoạch chăm sóc khách hàng, tạo trợ lý dùng lại hằng
-  ngày và chuẩn bị hồ sơ thương hiệu cá nhân. Dùng Claude và ChatGPT, không cần mua gói trả phí,
-  không cần biết lập trình.
+  Từ danh sách mối quan hệ đến kế hoạch chăm sóc 7 ngày; từ giao việc rời rạc đến một trợ lý có bối cảnh công việc của anh chị. Buổi thực hành 180 phút giúp tổ chức công việc, chăm khách bài bản và chuẩn bị hồ sơ thương hiệu cá nhân. Không cần biết lập trình.
 camKet: >-
   Học viên hiểu cách AI hoạt động, tự thiết lập Claude, biến danh sách mối quan hệ thành kế hoạch
   chăm sóc, khởi tạo trợ lý công việc có thể dùng lại và chuẩn bị hồ sơ thương hiệu cá nhân.
-# Thông tin giảng viên: đối chiếu poster trên giftytech.com; số giờ do người vận hành cung cấp ngày 10/10/2026.
+# Hồ sơ LinkedIn, số giờ và ảnh gốc Google Photos do người vận hành cung cấp ngày 10/10/2026.
 giangVien:
   ten: Nguyễn Mạnh Hùng
-  chucDanh: Giám đốc Gifty Tech
+  chucDanh: CEO & Founder Gifty Tech
   kinhNghiem: 10.000 giờ sử dụng AI
-  anh: /images/nguyen-manh-hung.png
+  anh: /images/khoa-hoc/nguyen-manh-hung-original.jpg
   nguon: https://www.giftytech.com/khoa-hoc-ai-thuc-chien
 hocPhi: 299000
 thoiLuongPhut: 180

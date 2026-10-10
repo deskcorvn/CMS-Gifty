@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { COURSE_INSTRUCTOR } from "@/lib/course-brand";
 import Link from "next/link";
 import DauTrang from "@/components/DauTrang";
 import ChanTrang from "@/components/ChanTrang";
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     url: "/",
-    title: `${khoaHoc.tieuDePhu} | Gifty Tech`,
+    title: `${khoaHoc.ten} | GiftyTech`,
     description: `Lớp ${nhanLichHoc()}, tối đa ${khoaHoc.soCho} học viên. ${khoaHoc.moTa}`,
     locale: "vi_VN",
     type: "website",
@@ -113,7 +114,7 @@ export default async function TrangChu() {
       startDate: batDauLop,
       courseWorkload: `PT${khoaHoc.thoiLuongPhut}M`,
       maximumAttendeeCapacity: khoaHoc.soCho,
-      instructor: { "@type": "Person", name: khoaHoc.giangVien.ten },
+      instructor: { "@type": "Person", name: COURSE_INSTRUCTOR.name, jobTitle: COURSE_INSTRUCTOR.position, sameAs: COURSE_INSTRUCTOR.linkedin },
     },
     offers: {
       "@type": "Offer",
@@ -142,7 +143,7 @@ export default async function TrangChu() {
             <p className="course-category">
               Khóa học thực hành · Dành cho người mới bắt đầu
             </p>
-            <h1>{khoaHoc.tieuDePhu}</h1>
+            <h1>{khoaHoc.ten}</h1>
             <p className="course-description">{khoaHoc.moTa}</p>
             <p className="hero-schedule">
               <BieuTuong ten="calendar" size={16} />
@@ -160,7 +161,7 @@ export default async function TrangChu() {
                 />
               </span>
               <span>
-                Giảng viên: <strong>{khoaHoc.giangVien.ten}</strong>
+                Giảng viên: <strong>{COURSE_INSTRUCTOR.displayName}</strong>
                 <small>{khoaHoc.giangVien.kinhNghiem}</small>
               </span>
             </a>
@@ -234,7 +235,7 @@ export default async function TrangChu() {
                   </li>
                   <li>
                     <BieuTuong ten="book" size={18} />
-                    <span>Dùng Claude và ChatGPT, không cần gói trả phí</span>
+                    <span>Học bằng công cụ AI, không cần biết lập trình</span>
                   </li>
                   <li>
                     <BieuTuong ten="check" size={18} />
@@ -338,7 +339,7 @@ export default async function TrangChu() {
                           {c.buoc.map((b) => (
                             <li key={b.id}>
                               <BieuTuong ten="book" size={16} />
-                              <span>{b.tieuDe}</span>
+                              <span>{b.tieuDe.replace(/ Free/g, "")}</span>
                             </li>
                           ))}
                         </ol>
@@ -455,22 +456,22 @@ export default async function TrangChu() {
                   />
                 </div>
                 <div>
-                  <h3>{khoaHoc.giangVien.ten}</h3>
-                  <p>{khoaHoc.giangVien.chucDanh}</p>
+                  <h3>{COURSE_INSTRUCTOR.displayName}</h3>
+                  <p>{COURSE_INSTRUCTOR.role}</p>
+                  <p>{COURSE_INSTRUCTOR.position}</p>
                   <p className="instructor-experience">
                     {khoaHoc.giangVien.kinhNghiem}
                   </p>
                   <p>
-                    Trực tiếp đứng lớp, làm mẫu từng bước trên màn hình rồi đi
-                    cùng anh chị qua phần thực hành.
+                    Nền tảng kỹ sư CNTT tại Đại học Bách khoa Hà Nội và thạc sĩ MICE tại Khoa Quốc tế – ĐHQG Hà Nội. Kết nối tư duy kỹ thuật với thực tiễn điều hành GiftyTech; trực tiếp hướng dẫn giao việc, kiểm chứng kết quả và hoàn thiện sản phẩm.
                   </p>
                   <a
                     className="text-link"
-                    href={khoaHoc.giangVien.nguon}
+                    href={COURSE_INSTRUCTOR.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Đào tạo AI tại Gifty Tech ↗
+                    Hồ sơ LinkedIn ↗
                   </a>
                 </div>
               </div>

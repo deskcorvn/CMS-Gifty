@@ -1,0 +1,8 @@
+Tài sản khóa học hiện tại (10/10/2026)
+- og-course-reference.png: OG được thiết kế lại bằng công cụ tạo ảnh, bám bố cục ảnh tham chiếu người vận hành gửi (chữ đỏ nổi, nền đỏ–trắng, chân dung khoanh tay). Dùng ảnh gốc Google Photos làm nguồn nhận dạng; người vận hành yêu cầu tách nền và thay dáng khoanh tay. Chức danh CEO & Founder Gifty Tech. Có 10.000 giờ sử dụng AI, 180 phút và lịch học; không có giá, số học viên, học vị, logo BNI HD hoặc tên công cụ.
+- Logo thật public/brand/gifty-lockup-trang.png được đặt riêng bằng next/og tại src/lib/course-social-image.tsx, không nhờ AI vẽ logo.
+- nguyen-manh-hung-original.jpg: avatar/trang khóa học dùng nguyên file JPEG 2730×4095 tải qua Google Photos =d từ https://photos.app.goo.gl/52MS2K8SD3Ph2EqC8. Không chỉnh màu, tách nền, tái tạo mặt hoặc retouch. Khung hiển thị dùng CSS; file gốc giữ nguyên byte. Không dùng chân dung OG đã đổi dáng làm avatar.
+- Bản OG tĩnh theo lịch 14:00 ngày 21/10/2026. Khi lịch/thời lượng đổi, phải cập nhật nội dung ảnh, route alt và dữ liệu khóa học cùng lúc. Kích thước xuất qua route: 1200×630.
+- Học phí 299.000đ, tối đa 20 học viên chỉ nằm trên trang. Chứng chỉ khi hoàn thành đủ 9 chặng; lưu 4 sản phẩm tùy chọn. Đăng ký chung tại https://daotao.giftytech.com/dang-ky.
+- Học vị và hồ sơ LinkedIn trong nội dung chi tiết do người vận hành cung cấp; CEO & Founder và 10.000 giờ do người vận hành xác nhận trực tiếp, không suy diễn thành số giờ đứng lớp.
+- Các file poster.png, poster-classic-source.webp, nguyen-manh-hung.png, og-course-expert.png, og-course-background.png (nếu có): tư liệu cũ, không dùng trên trang hoặc OG hiện tại.

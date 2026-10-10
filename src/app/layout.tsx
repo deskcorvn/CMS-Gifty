@@ -17,7 +17,7 @@ const beVietnam = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${khoaHoc.ten} — ${khoaHoc.tieuDePhu} | Gifty Tech`,
+    default: `${khoaHoc.ten} | GiftyTech`,
     template: "%s | Gifty Tech",
   },
   description: khoaHoc.moTa,
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "vi_VN",
     siteName: "Gifty Tech",
-    title: `${khoaHoc.tieuDePhu} | Gifty Tech`,
+    title: `${khoaHoc.ten} | GiftyTech`,
     description: khoaHoc.moTa,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${khoaHoc.tieuDePhu} | Gifty Tech`,
+    title: `${khoaHoc.ten} | GiftyTech`,
     description: khoaHoc.moTa,
   },
 };

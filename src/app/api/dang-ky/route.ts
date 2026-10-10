@@ -40,6 +40,14 @@ export async function POST(req: Request) {
     where hoc_vien_id = ${hv.id} and trang_thai in ('CHO', 'THIEU')
     order by created_at desc limit 1
   `;
+  // Đơn cũ chưa nhận đồng nào mà tạo lúc học phí khác (vd giá thử 2.000đ) thì đưa về học phí hiện tại.
+  if (don && don.da_nhan === 0 && don.so_tien !== khoaHoc.hocPhi) {
+    [don] = await sql<{ id: string; ma: string; so_tien: number; da_nhan: number }[]>`
+      update don_hang set so_tien = ${khoaHoc.hocPhi}
+      where id = ${don.id} and da_nhan = 0
+      returning id, ma, so_tien, da_nhan
+    `;
+  }
   for (let lan = 0; !don && lan < 5; lan++) {
     [don] = await sql<{ id: string; ma: string; so_tien: number; da_nhan: number }[]>`
       insert into don_hang (ma, hoc_vien_id, so_tien) values (${sinhMa()}, ${hv.id}, ${khoaHoc.hocPhi})

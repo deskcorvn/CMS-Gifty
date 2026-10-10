@@ -16,7 +16,7 @@ giangVien:
   kinhNghiem: 10.000 giờ sử dụng AI
   anh: /images/nguyen-manh-hung.png
   nguon: https://www.giftytech.com/khoa-hoc-ai-thuc-chien
-hocPhi: 2000 # TẠM ĐỂ THỬ CHUYỂN KHOẢN — đổi lại 300000 sau khi test
+hocPhi: 300000
 thoiLuongPhut: 180
 # Số chỗ tối đa của lớp (người vận hành chốt 10/10/2026). Đủ chỗ thì trang đăng ký tự đóng.
 soCho: 20

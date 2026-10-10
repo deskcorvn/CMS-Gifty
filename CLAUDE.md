@@ -6,7 +6,7 @@ Trang học "Khóa đào tạo AI" của Gifty Tech (Next.js 16, Postgres, Verce
 1. **Nội dung chỉ lấy từ giáo trình.** File `content/` bám *Giáo trình Buổi 1 v2.0 (10/10/2026)*. Không thêm
    con số, tính năng Claude/ChatGPT hay lời hứa không có trong giáo trình hoặc nguồn N01–N17. Giao diện AI thay đổi
    thì sửa theo nguồn chính thức và cập nhật `ngayRaSoatNguon`.
-2. **Không chấm điểm, không phân loại.** Ai bấm hoàn thành đủ 9 chặng và lưu đủ 4 sản phẩm đều nhận "Hoàn thành xuất sắc" như
+2. **Không chấm điểm, không phân loại.** Ai bấm hoàn thành đủ 9 chặng đều nhận (4 sản phẩm SP01–SP04 là tùy chọn, chốt 10/10/2026) "Hoàn thành xuất sắc" như
    nhau (chốt 10/10/2026). Quiz làm sau, khi người vận hành yêu cầu.
 3. **Thanh toán giữ đúng quy tắc PTI** (`src/lib/thanh-toan.ts`):
    - chống cộng trùng;

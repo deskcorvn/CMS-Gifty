@@ -11,9 +11,9 @@ nguon: []
 buoc:
   - tieuDe: Soát lại bốn sản phẩm
     huongDan: >-
-      Mở “Kết quả của tôi”. Kiểm tra SP01 đến SP04 đã lưu đủ. SP04 chưa kịp chỉnh ảnh thì lưu câu
-      lệnh, hoàn thiện sau.
-    ketQua: Bốn ô sản phẩm đều có dấu “Đã lưu”.
+      Mở “Kết quả của tôi” xem lại SP01 đến SP04. Lưu lại ở đây để tra cứu sau lớp là tùy chọn, không
+      bắt buộc để nhận chứng chỉ. SP04 chưa kịp chỉnh ảnh thì lưu câu lệnh, hoàn thiện sau.
+    ketQua: Anh chị biết bốn sản phẩm của mình đang nằm ở đâu để dùng tiếp.
   - tieuDe: Tự kiểm tra bằng bốn câu hỏi
     huongDan: >-
       Trả lời bốn câu hỏi bên dưới trong đầu, rồi bấm xem đáp án gợi ý. Phần này không chấm điểm.
@@ -27,7 +27,7 @@ buoc:
       Anh chị biết việc cần làm tiếp. Không phải nộp dữ liệu cá nhân của khách hàng cho giảng viên.
   - tieuDe: Nhận chứng chỉ
     huongDan: >-
-      Khi đã đánh dấu xong mọi bước và lưu đủ bốn sản phẩm, mở trang “Chứng chỉ” để nhận chứng chỉ
+      Bấm “Hoàn thành chặng” cho đủ 9 chặng, rồi mở trang “Chứng chỉ” để nhận chứng chỉ
       “Hoàn thành xuất sắc” mang tên mình.
     ketQua: Chứng chỉ có mã riêng và mã QR để người khác kiểm tra trực tuyến.
 ---

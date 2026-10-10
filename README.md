@@ -7,9 +7,9 @@ Học viên đi theo trình tự:
 1. Đăng ký, quét VietQR để trả tiền. SePay xác nhận rồi hệ thống tự mở quyền học.
 2. Học theo **9 chặng / 44 bước**. Mỗi bước có hướng dẫn, câu lệnh bấm-để-sao-chép, phần "kết quả trông thế nào"
    và tiến độ được lưu theo tài khoản.
-3. Lưu **4 sản phẩm** SP01–SP04: bảng ưu tiên + kế hoạch 7 ngày, trợ lý Claude, hồ sơ thương hiệu, ảnh/câu lệnh
+3. (Tùy chọn) lưu **4 sản phẩm** SP01–SP04: bảng ưu tiên + kế hoạch 7 ngày, trợ lý Claude, hồ sơ thương hiệu, ảnh/câu lệnh
    chỉnh ảnh.
-4. Xong 44 bước và lưu đủ 4 sản phẩm thì tự nhận **chứng chỉ "Hoàn thành xuất sắc"**. Khóa không chấm điểm,
+4. Bấm hoàn thành đủ 9 chặng thì tự nhận **chứng chỉ "Hoàn thành xuất sắc"**. Khóa không chấm điểm,
    không xếp loại. Chứng chỉ có ảnh A4 với chữ ký, mã QR và trang kiểm tra công khai `/chung-nhan/<mã>`.
 5. Sau buổi học, mục **"Kết quả của tôi"** giữ lại cho học viên tra cứu: 4 sản phẩm (chép được, tải được file `.md`),
    kho câu lệnh, video và các nguồn chính thức.

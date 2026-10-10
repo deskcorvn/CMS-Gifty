@@ -43,7 +43,8 @@ export async function tinhTrangHocVien(hocVienId: string): Promise<TinhTrang> {
     soBuocXong: buocXong.size,
     sanPham,
     sanPhamXong,
-    duDieuKien: buocXong.size === tongSoBuoc && sanPhamXong.length === MA_SAN_PHAM.length,
+    // Chốt 10/10/2026: xong 9 chặng là đủ; 4 sản phẩm là tùy chọn để học viên lưu lại tra cứu.
+    duDieuKien: buocXong.size === tongSoBuoc,
     chungChi: cc[0] ?? null,
   };
 }

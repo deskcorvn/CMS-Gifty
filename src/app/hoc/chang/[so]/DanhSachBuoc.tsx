@@ -96,7 +96,7 @@ export function NutHoanThanhChang({
             <p className="font-bold text-navy">Làm xong {soBuoc} bước của chặng này?</p>
             {thieuSanPham.length > 0 && (
               <p className="mt-1 text-sm text-amber-ink">
-                Nhớ lưu {thieuSanPham.map((s) => s.ma).join(", ")} ở khung phía trên, cần đủ 4 sản phẩm để nhận chứng chỉ.
+                Muốn giữ lại kết quả để tra cứu sau lớp thì lưu {thieuSanPham.map((s) => s.ma).join(", ")} ở khung phía trên (không bắt buộc).
               </p>
             )}
             <button

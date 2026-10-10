@@ -50,8 +50,8 @@ chuanBi:
   - Không dùng hết hạn mức tạo ảnh hoặc trò chuyện sát giờ học nếu muốn thực hành đồng thời.
 chungChi:
   danhHieu: Hoàn thành xuất sắc
-  nguoiKy: Nguyễn Hùng
-  chucDanh: Giảng viên
+  nguoiKy: Nguyễn Mạnh Hùng
+  chucDanh: Giám đốc
   donVi: Gifty Tech
   # Ảnh chữ ký nằm ở public/chu-ky-hung.svg (tạo bằng scripts/ve-chu-ky.mjs).
 video:

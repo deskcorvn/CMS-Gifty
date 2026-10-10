@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { khoaHoc } from "@/lib/noi-dung";
+import { khoaHoc, linkZalo, soLienHe } from "@/lib/noi-dung";
 export default function ChanTrang() {
   return (
     <footer className="site-footer">
@@ -10,6 +10,16 @@ export default function ChanTrang() {
           </Link>
           <p className="mt-2 text-sm text-muted">
             Hiểu công nghệ. Ứng dụng vào công việc.
+          </p>
+          <p className="mt-3 text-sm text-body">
+            Hỏi về khóa học:{" "}
+            <a href={`tel:${khoaHoc.lienHe.dienThoai}`} className="font-semibold text-navy underline underline-offset-4">
+              {soLienHe}
+            </a>{" "}
+            ·{" "}
+            <a href={linkZalo} target="_blank" rel="noopener noreferrer" className="font-semibold text-navy underline underline-offset-4">
+              Zalo
+            </a>
           </p>
         </div>
         <nav

@@ -155,3 +155,12 @@ export function NutSuaTenCc({ ma, hoTen }: { ma: string; hoTen: string }) {
     }}>Sửa tên CC</button>
   );
 }
+
+export function NutTaiKhoanThu({ hocVienId, laThu }: { hocVienId: string; laThu: boolean }) {
+  return (
+    <button className={nutCss} title="Tài khoản thử không tính vào số chỗ của lớp" onClick={async () => {
+      const { ok, d } = await goi({ loai: "tai-khoan-thu", hocVienId, laThu: !laThu });
+      if (ok) window.location.reload(); else window.alert(d?.error || "Lỗi");
+    }}>{laThu ? "Bỏ đánh dấu thử" : "Tài khoản thử"}</button>
+  );
+}

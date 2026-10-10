@@ -14,6 +14,9 @@ create table if not exists hoc_vien (
   created_at      timestamptz not null default now()
 );
 
+-- Tài khoản thử của người vận hành: không tính vào số chỗ của lớp.
+alter table hoc_vien add column if not exists la_thu boolean not null default false;
+
 -- Đơn học phí. Một học viên có thể có nhiều đơn (đăng ký lại khi đơn cũ còn chờ thì dùng lại đơn cũ).
 create table if not exists don_hang (
   id          uuid primary key default gen_random_uuid(),

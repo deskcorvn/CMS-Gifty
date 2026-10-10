@@ -1,6 +1,7 @@
 import { db } from "@/lib/db";
 import { chuoiSach, docJson, emailHopLe, sdtSach, traJson } from "@/lib/http";
-import { khoaHoc } from "@/lib/noi-dung";
+import { tinhChoNgoi } from "@/lib/cho-ngoi";
+import { khoaHoc, soLienHe } from "@/lib/noi-dung";
 import { ghiDonCho } from "@/lib/phien";
 import { noiDungChuyenKhoan, qrUrl, sinhMa, taiKhoanNhan } from "@/lib/thanh-toan";
 
@@ -25,6 +26,12 @@ export async function POST(req: Request) {
   `;
   if (hv.kich_hoat_at) {
     return traJson(200, { daKichHoat: true, thongBao: "Email này đã đăng ký và đóng học phí. Vui lòng đăng nhập." });
+  }
+  // Lớp đủ chỗ thì không phát mã chuyển khoản mới. Đơn đã phát trước đó vẫn được cộng tiền như thường.
+  if ((await tinhChoNgoi()).con === 0) {
+    return traJson(409, {
+      error: `Lớp đã đủ ${khoaHoc.soCho} chỗ. Anh chị nhắn Zalo ${soLienHe} để Gifty Tech báo khi có lớp sau.`,
+    });
   }
 
   // Còn đơn chờ/thiếu thì dùng lại, tránh một người có nhiều mã chuyển khoản.

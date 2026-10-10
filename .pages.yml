@@ -67,6 +67,24 @@ content:
           - { name: nguon, label: Trang giới thiệu, type: string, required: true }
       - { name: hocPhi, label: Học phí (đồng), type: number, required: true }
       - { name: thoiLuongPhut, label: Thời lượng (phút), type: number }
+      - { name: soCho, label: Số chỗ tối đa (đủ chỗ thì đóng đăng ký), type: number, required: true }
+      - name: lienHe
+        label: Liên hệ
+        type: object
+        fields:
+          - { name: dienThoai, label: Số điện thoại / Zalo, type: string, required: true }
+      - name: nhomZalo
+        label: Nhóm Zalo học viên
+        type: object
+        fields:
+          - { name: link, label: "Link mời nhóm (trống = mời qua SĐT đăng ký)", type: string }
+      - name: ketQuaMau
+        label: Ảnh kết quả mẫu (giảng viên làm từ dữ liệu giả lập)
+        type: object
+        list: true
+        fields:
+          - { name: anh, label: Ảnh, type: image, required: true }
+          - { name: chuThich, label: Chú thích, type: string, required: true }
       - { name: phienBanGiaoTrinh, label: Phiên bản giáo trình, type: string }
       - name: lop
         label: Lớp học
@@ -87,6 +105,8 @@ content:
           - { name: ten, label: Tên, type: string }
           - { name: dieuKien, label: Điều kiện đạt, type: text }
           - { name: chang, label: Làm ở chặng, type: number }
+          - { name: loiIch, label: Anh chị mang về gì (hiện ở trang chủ), type: text }
+          - { name: tuyChon, label: Tùy chọn, type: boolean }
       - { name: chuanBi, label: Chuẩn bị trước buổi học, type: string, list: true }
       - name: chungChi
         label: Chứng chỉ

@@ -16,7 +16,15 @@ type Don = {
 
 const tien = (n: number) => `${n.toLocaleString("vi-VN")}đ`;
 
-export default function FormDangKy({ hocPhi }: { hocPhi: number }) {
+export default function FormDangKy({
+  hocPhi,
+  soLienHe,
+  linkZalo,
+}: {
+  hocPhi: number;
+  soLienHe: string;
+  linkZalo: string;
+}) {
   const router = useRouter();
   const [dangGui, setDangGui] = useState(false);
   const [loi, setLoi] = useState("");
@@ -120,12 +128,25 @@ export default function FormDangKy({ hocPhi }: { hocPhi: number }) {
         </p>
         <div className="mt-5 grid gap-6 xl:grid-cols-[180px_1fr]">
           {don.qr ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={don.qr}
-              alt={`Mã VietQR chuyển ${tien(conThieu)} nội dung ${don.noiDung}`}
-              className="w-full rounded-lg border border-line"
-            />
+            <div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={don.qr}
+                alt={`Mã VietQR chuyển ${tien(conThieu)} nội dung ${don.noiDung}`}
+                className="w-full rounded-lg border border-line"
+              />
+              <a
+                href={`/api/don/${don.ma}/qr`}
+                download
+                className="mt-2 block rounded-lg border border-navy/25 px-3 py-2 text-center text-sm font-bold text-navy hover:bg-navy hover:text-white"
+              >
+                Lưu ảnh QR
+              </a>
+              <p className="mt-2 text-xs leading-5 text-muted">
+                Đang mở trang này trên điện thoại? Lưu ảnh QR, mở app ngân hàng,
+                chọn Quét QR rồi chọn ảnh vừa lưu.
+              </p>
+            </div>
           ) : null}
           <dl className="space-y-3 text-sm">
             <div>
@@ -168,10 +189,20 @@ export default function FormDangKy({ hocPhi }: { hocPhi: number }) {
         >
           {trangThai?.trangThai === "THIEU"
             ? `Đã nhận một phần. Vui lòng chuyển thêm ${tien(conThieu)} với cùng nội dung.`
-            : "Đang chờ tiền về… Giữ trang này mở. Nếu đã chuyển mà 10 phút chưa thấy xác nhận, nhắn Gifty Tech kèm mã " +
+            : "Đang chờ tiền về… Giữ trang này mở. Nếu đã chuyển mà 10 phút chưa thấy xác nhận, nhắn Zalo " +
+              soLienHe +
+              " kèm mã " +
               don.ma +
               "."}
         </p>
+        <a
+          href={linkZalo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-block text-sm font-semibold text-amber-ink underline underline-offset-4"
+        >
+          Nhắn Zalo {soLienHe}
+        </a>
       </div>
     );
   }
@@ -243,7 +274,6 @@ export default function FormDangKy({ hocPhi }: { hocPhi: number }) {
           required
           value={email2}
           onChange={(e) => setEmail2(e.target.value)}
-          onPaste={(e) => e.preventDefault()}
           className="mt-1 w-full rounded-lg border border-line px-3 py-2.5 outline-none focus:border-amber"
         />
         {email2 && email2.trim().toLowerCase() !== email.trim().toLowerCase() && (
@@ -266,7 +296,11 @@ export default function FormDangKy({ hocPhi }: { hocPhi: number }) {
       </button>
       <p className="text-xs leading-5 text-muted">
         Thông tin chỉ dùng để quản lý lớp học, gửi link vào học và cấp chứng
-        chỉ.
+        chỉ. Cần hỏi trước khi đăng ký? Nhắn{" "}
+        <a href={linkZalo} target="_blank" rel="noopener noreferrer" className="font-semibold text-amber-ink underline">
+          Zalo {soLienHe}
+        </a>
+        .
       </p>
     </form>
   );

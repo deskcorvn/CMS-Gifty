@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { tinhTrangHocVien } from "@/lib/hoan-thanh";
 import { dsChang, khoaHoc, nhanLichHoc, tongSoBuoc } from "@/lib/noi-dung";
+import NhomZalo from "@/components/NhomZalo";
 import ThongTinCuaToi from "@/components/ThongTinCuaToi";
 import { maDangKyCua } from "@/lib/ma-dang-ky";
 import { duocVaoNoiDung } from "@/lib/mo-khoa";
@@ -9,7 +10,12 @@ import { batBuocHocVien, type HocVien } from "@/lib/phien";
 export default async function TrangHoc() {
   const hv = await batBuocHocVien();
   const maDangKy = await maDangKyCua(hv.id);
-  const thongTin = <ThongTinCuaToi email={hv.email} sdt={hv.sdt ?? ""} maDangKy={maDangKy} />;
+  const thongTin = (
+    <>
+      <ThongTinCuaToi email={hv.email} sdt={hv.sdt ?? ""} maDangKy={maDangKy} />
+      <NhomZalo sdt={hv.sdt ?? ""} />
+    </>
+  );
   if (!(await duocVaoNoiDung())) return <ManHinhCho hv={hv} thongTin={thongTin} />;
   const tt = await tinhTrangHocVien(hv.id);
   const soChangXong = dsChang.filter((c) => c.buoc.every((b) => tt.buocXong.has(b.id))).length;

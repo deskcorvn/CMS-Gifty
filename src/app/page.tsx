@@ -5,11 +5,16 @@ import DauTrang from "@/components/DauTrang";
 import ChanTrang from "@/components/ChanTrang";
 import BieuTuong from "@/components/BieuTuong";
 import AnhKhoaHoc from "@/components/AnhKhoaHoc";
+import { tinhChoNgoi } from "@/lib/cho-ngoi";
 import {
+  batDauLop,
   dinhDangTien,
   dsChang,
   khoaHoc,
+  linkZalo,
   nhanLichHoc,
+  soLienHe,
+  tatCaPrompt,
   tongSoBuoc,
 } from "@/lib/noi-dung";
 import { hocVienHienTai } from "@/lib/phien";
@@ -21,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     url: "/",
     title: `${khoaHoc.tieuDePhu} | Gifty Tech`,
-    description: khoaHoc.moTa,
+    description: `Lớp ${nhanLichHoc()}, tối đa ${khoaHoc.soCho} học viên. ${khoaHoc.moTa}`,
     locale: "vi_VN",
     type: "website",
     siteName: "Gifty Tech",
@@ -33,8 +38,16 @@ const cauHoi = [
     dap: "Có. Khóa học bắt đầu từ cách AI hoạt động, thiết lập tài khoản rồi mới đến giao việc và thực hành. Anh chị không cần biết lập trình.",
   },
   {
+    hoi: "Có bắt buộc mang laptop không?",
+    dap: "Nên mang. Phần thực hành phải dán dữ liệu, sửa câu lệnh và tạo Project trên Claude, làm trên laptop dễ hơn nhiều. Điện thoại chỉ tiện để xem hướng dẫn và chép câu lệnh.",
+  },
+  {
     hoi: "Có cần mua Claude hay ChatGPT trả phí không?",
     dap: "Không. Buổi học sử dụng Claude Free và ChatGPT Free. Nếu hết hạn mức tạo ảnh, anh chị lưu câu lệnh và ảnh gốc để hoàn thiện sau lớp.",
+  },
+  {
+    hoi: "Tài khoản Free hết lượt giữa buổi thì sao?",
+    dap: "Giảng viên làm mẫu một số bước trên màn hình để anh chị để dành lượt cho phần thực hành chính. Nếu vẫn hết lượt, câu lệnh đã nằm sẵn trong trang học, anh chị làm nốt khi tài khoản có lượt trở lại.",
   },
   {
     hoi: "Tôi cần mang dữ liệu khách hàng thật không?",
@@ -42,7 +55,19 @@ const cauHoi = [
   },
   {
     hoi: "Đăng ký xong, tôi vào học như thế nào?",
-    dap: "Sau khi điền thông tin, anh chị chuyển khoản bằng mã VietQR. Khi hệ thống xác nhận đủ học phí, quyền học được mở. Những lần sau, dùng email đã đăng ký để nhận link đăng nhập, không cần mật khẩu.",
+    dap: "Sau khi điền thông tin, anh chị chuyển khoản bằng mã VietQR. Khi hệ thống xác nhận đủ học phí, tài khoản được kích hoạt và anh chị nhận mã đăng ký. Những lần sau, nhập email để nhận link đăng nhập, hoặc đăng nhập bằng mã đăng ký nếu email không tới.",
+  },
+  {
+    hoi: "Lớp có bao nhiêu người?",
+    dap: `Tối đa ${khoaHoc.soCho} học viên, để giảng viên kịp xem màn hình và gỡ vướng cho từng người. Đủ chỗ thì trang đăng ký tự đóng.`,
+  },
+  {
+    hoi: "Lỡ buổi học hoặc đến muộn thì sao?",
+    dap: `Trang học giữ đủ ${dsChang.length} chặng với hướng dẫn và câu lệnh từng bước, anh chị làm lại theo được. Chỗ nào vướng thì hỏi trong nhóm Zalo của lớp.`,
+  },
+  {
+    hoi: "Sau buổi học có ai hỗ trợ không?",
+    dap: "Có. Học viên được vào nhóm Zalo của lớp để hỏi tiếp khi tự làm ở nhà.",
   },
   {
     hoi: "Khi nào tôi nhận được chứng chỉ?",
@@ -50,13 +75,26 @@ const cauHoi = [
   },
   {
     hoi: "Sau buổi học, tôi còn xem lại được gì?",
-    dap: "Mục “Kết quả của tôi” lưu các sản phẩm, kho câu lệnh và nguồn tham khảo chính thức để tra cứu. Sản phẩm có thể sao chép hoặc tải về dạng Markdown. Video xem lại sẽ được bổ sung sau buổi học.",
+    dap: "Mục “Kết quả của tôi” lưu các sản phẩm, kho câu lệnh và nguồn tham khảo chính thức để tra cứu. Sản phẩm có thể sao chép hoặc tải về máy.",
+  },
+  {
+    hoi: "Muốn hỏi thêm trước khi đăng ký?",
+    dap: `Gọi hoặc nhắn Zalo ${soLienHe}, Gifty Tech trả lời trực tiếp.`,
   },
 ];
 
 export default async function TrangChu() {
-  const hv = await hocVienHienTai().catch(() => null);
+  const [hv, cho] = await Promise.all([
+    hocVienHienTai().catch(() => null),
+    tinhChoNgoi().catch(() => null),
+  ]);
+  const hetCho = !hv && cho?.con === 0;
   const href = hv ? "/hoc" : "/dang-ky";
+  const nhanCho = cho
+    ? cho.con === 0
+      ? `Đã đủ ${cho.toiDa} chỗ`
+      : `Còn ${cho.con}/${cho.toiDa} chỗ`
+    : `Tối đa ${khoaHoc.soCho} học viên`;
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -69,6 +107,25 @@ export default async function TrangChu() {
       name: "Gifty Tech",
       url: "https://giftytech.com",
     },
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "Onsite",
+      startDate: batDauLop,
+      courseWorkload: `PT${khoaHoc.thoiLuongPhut}M`,
+      maximumAttendeeCapacity: khoaHoc.soCho,
+      instructor: { "@type": "Person", name: khoaHoc.giangVien.ten },
+    },
+    offers: {
+      "@type": "Offer",
+      category: "Paid",
+      price: khoaHoc.hocPhi,
+      priceCurrency: "VND",
+      url: `${siteUrl}/dang-ky`,
+      availability:
+        cho?.con === 0
+          ? "https://schema.org/SoldOut"
+          : "https://schema.org/InStock",
+    },
   };
   return (
     <>
@@ -80,11 +137,6 @@ export default async function TrangChu() {
             __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
-        <nav aria-label="Đường dẫn" className="breadcrumbs">
-          <Link href="/">Khóa học</Link>
-          <span aria-hidden="true">/</span>
-          <span>Ứng dụng AI trong công việc</span>
-        </nav>
         <div className="course-layout">
           <div className="course-intro">
             <p className="course-category">
@@ -92,6 +144,12 @@ export default async function TrangChu() {
             </p>
             <h1>{khoaHoc.tieuDePhu}</h1>
             <p className="course-description">{khoaHoc.moTa}</p>
+            <p className="hero-schedule">
+              <BieuTuong ten="calendar" size={16} />
+              <span>
+                Lớp <strong>{nhanLichHoc()}</strong> · {nhanCho}
+              </span>
+            </p>
             <a href="#giang-vien" className="instructor-line">
               <span className="instructor-avatar">
                 <Image
@@ -131,9 +189,20 @@ export default async function TrangChu() {
                   {dinhDangTien(khoaHoc.hocPhi)}
                   <span> / học viên</span>
                 </p>
-                <Link href={href} className="button-primary">
-                  {hv ? "Tiếp tục học" : "Đăng ký khóa học"}
-                </Link>
+                {hetCho ? (
+                  <a
+                    href={linkZalo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button-primary"
+                  >
+                    Lớp đã đủ chỗ · Nhắn Zalo
+                  </a>
+                ) : (
+                  <Link href={href} className="button-primary">
+                    {hv ? "Tiếp tục học" : "Đăng ký khóa học"}
+                  </Link>
+                )}
                 <p className="enrollment-login">
                   {hv ? (
                     "Tiến độ được lưu theo tài khoản của anh chị."
@@ -142,6 +211,12 @@ export default async function TrangChu() {
                       Đã đăng ký? <Link href="/dang-nhap">Đăng nhập</Link>
                     </>
                   )}
+                </p>
+                <p className="enrollment-contact">
+                  Cần hỏi trước?{" "}
+                  <a href={linkZalo} target="_blank" rel="noopener noreferrer">
+                    Nhắn Zalo {soLienHe}
+                  </a>
                 </p>
                 <h2>Thông tin lớp học</h2>
                 <ul className="enrollment-details">
@@ -154,12 +229,20 @@ export default async function TrangChu() {
                     <span>{khoaHoc.thoiLuongPhut} phút, có nghỉ giữa giờ</span>
                   </li>
                   <li>
+                    <BieuTuong ten="check" size={18} />
+                    <span>{nhanCho}</span>
+                  </li>
+                  <li>
                     <BieuTuong ten="book" size={18} />
                     <span>Học bằng Claude Free & ChatGPT Free</span>
                   </li>
                   <li>
                     <BieuTuong ten="check" size={18} />
                     <span>Chứng chỉ sau khi hoàn thành</span>
+                  </li>
+                  <li>
+                    <BieuTuong ten="check" size={18} />
+                    <span>Nhóm Zalo hỗ trợ sau buổi học</span>
                   </li>
                 </ul>
                 <p className="enrollment-location">
@@ -211,8 +294,8 @@ export default async function TrangChu() {
                   <li>
                     <BieuTuong ten="check" size={18} />
                     <span>
-                      Tạo trợ lý công việc và chuẩn bị hồ sơ thương hiệu cá
-                      nhân.
+                      Tạo “Trợ lý kinh doanh của tôi” trên Claude và chuẩn bị
+                      hồ sơ thương hiệu cá nhân.
                     </span>
                   </li>
                 </ul>
@@ -277,21 +360,42 @@ export default async function TrangChu() {
               </ol>
             </section>
             <section id="san-pham" className="course-section">
-              <h2>Sản phẩm sau buổi học</h2>
+              <h2>Anh chị mang về gì</h2>
               <p className="section-caption">
-                Lưu ngay trong tài khoản, xem lại và tải về sau buổi học.
+                Làm ngay trong buổi học, lưu vào tài khoản để xem lại và tải về.
               </p>
               <ol className="deliverables">
                 {khoaHoc.sanPham.map((s) => (
                   <li key={s.ma}>
                     <span className="deliverable-code">{s.ma}</span>
                     <div>
-                      <h3>{s.ten}</h3>
-                      <p>{s.dieuKien}</p>
+                      <h3>
+                        {s.ten}
+                        {s.tuyChon && (
+                          <span className="deliverable-optional">Tùy chọn</span>
+                        )}
+                      </h3>
+                      <p>{s.loiIch}</p>
                     </div>
                   </li>
                 ))}
               </ol>
+              {khoaHoc.ketQuaMau.length > 0 && (
+                <div className="sample-results">
+                  {khoaHoc.ketQuaMau.map((k) => (
+                    <figure key={k.anh}>
+                      <Image
+                        src={k.anh}
+                        alt={k.chuThich}
+                        width={640}
+                        height={400}
+                        sizes="(max-width: 767px) 100vw, 320px"
+                      />
+                      <figcaption>{k.chuThich}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              )}
               <div className="certificate-note">
                 <BieuTuong ten="check" size={22} />
                 <p>
@@ -303,6 +407,40 @@ export default async function TrangChu() {
                   thực.
                 </p>
               </div>
+            </section>
+            <section id="sau-buoi-hoc" className="course-section">
+              <h2>Sau buổi học, anh chị vẫn giữ</h2>
+              <ul className="after-class">
+                <li>
+                  <BieuTuong ten="book" size={18} />
+                  <span>
+                    <strong>Trang học riêng</strong> với đủ {dsChang.length} chặng
+                    và {tatCaPrompt.length} câu lệnh mẫu, quên bước nào mở lại
+                    bước đó.
+                  </span>
+                </li>
+                <li>
+                  <BieuTuong ten="check" size={18} />
+                  <span>
+                    <strong>Kết quả của tôi</strong>: các sản phẩm đã lưu, chép
+                    hoặc tải về máy lúc nào cũng được.
+                  </span>
+                </li>
+                <li>
+                  <BieuTuong ten="check" size={18} />
+                  <span>
+                    <strong>Chứng chỉ có mã QR</strong> để người khác kiểm tra
+                    trực tuyến, chia sẻ lên Facebook hoặc Zalo.
+                  </span>
+                </li>
+                <li>
+                  <BieuTuong ten="check" size={18} />
+                  <span>
+                    <strong>Nhóm Zalo của lớp</strong> để hỏi tiếp khi tự làm ở
+                    nhà.
+                  </span>
+                </li>
+              </ul>
             </section>
             <section id="giang-vien" className="course-section">
               <h2>Giảng viên</h2>
@@ -323,8 +461,8 @@ export default async function TrangChu() {
                     {khoaHoc.giangVien.kinhNghiem}
                   </p>
                   <p>
-                    Đồng hành cùng anh chị từ hiểu AI, giao việc đến kiểm tra
-                    kết quả qua từng bài thực hành.
+                    Trực tiếp đứng lớp, làm mẫu từng bước trên màn hình rồi đi
+                    cùng anh chị qua phần thực hành.
                   </p>
                   <a
                     className="text-link"
@@ -367,16 +505,46 @@ export default async function TrangChu() {
               <div>
                 <h2>Sẵn sàng bắt đầu?</h2>
                 <p>
-                  {nhanLichHoc()} · {dinhDangTien(khoaHoc.hocPhi)}
+                  {nhanLichHoc()} · {dinhDangTien(khoaHoc.hocPhi)} · {nhanCho}
                 </p>
               </div>
-              <Link href={href} className="button-primary">
-                {hv ? "Vào trang học" : "Đăng ký khóa học"}
-              </Link>
+              {hetCho ? (
+                <a
+                  href={linkZalo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button-primary"
+                >
+                  Nhắn Zalo {soLienHe}
+                </a>
+              ) : (
+                <Link href={href} className="button-primary">
+                  {hv ? "Vào trang học" : "Đăng ký khóa học"}
+                </Link>
+              )}
             </section>
           </div>
         </div>
       </main>
+      <div className="mobile-cta khong-in" aria-label="Đăng ký nhanh">
+        <div>
+          <strong>{dinhDangTien(khoaHoc.hocPhi)}</strong>
+          <span>{nhanLichHoc()}</span>
+        </div>
+        <a
+          href={linkZalo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mobile-cta-zalo"
+        >
+          Zalo
+        </a>
+        {!hetCho && (
+          <Link href={href} className="button-primary">
+            {hv ? "Vào học" : "Đăng ký"}
+          </Link>
+        )}
+      </div>
       <ChanTrang />
     </>
   );

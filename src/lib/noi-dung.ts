@@ -28,6 +28,8 @@ export type SanPhamKhoa = {
   ten: string;
   dieuKien: string;
   chang: number;
+  loiIch: string;
+  tuyChon: boolean;
 };
 export type MaSanPham = "SP01" | "SP02" | "SP03" | "SP04";
 
@@ -45,6 +47,10 @@ export type KhoaHoc = {
   };
   hocPhi: number;
   thoiLuongPhut: number;
+  soCho: number;
+  lienHe: { dienThoai: string };
+  nhomZalo: { link: string };
+  ketQuaMau: { anh: string; chuThich: string }[];
   phienBanGiaoTrinh: string;
   lop: { ngay: string; gio: string; thu: string; diaDiem: string };
   doiTuong: string;
@@ -75,6 +81,13 @@ export const timSanPham = (ma: string) =>
 export const timNguon = (ma: string) => khoaHoc.nguon.find((n) => n.ma === ma);
 
 export const dinhDangTien = (n: number) => `${n.toLocaleString("vi-VN")}đ`;
+
+/** "0913 332 282" để dễ đọc; link Zalo và tel dùng số liền. */
+export const soLienHe = khoaHoc.lienHe.dienThoai.replace(/^(\d{4})(\d{3})(\d{3})$/, "$1 $2 $3");
+export const linkZalo = `https://zalo.me/${khoaHoc.lienHe.dienThoai}`;
+
+/** Giờ bắt đầu lớp dạng ISO có múi giờ Việt Nam, cho JSON-LD. */
+export const batDauLop = `${khoaHoc.lop.ngay}T${khoaHoc.lop.gio}:00+07:00`;
 
 /** "14:00 Thứ Tư, 21/10/2026" */
 export function nhanLichHoc() {

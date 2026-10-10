@@ -246,16 +246,6 @@ section[id] {
   padding-top: 28px;
   padding-bottom: 64px;
 }
-.breadcrumbs {
-  display: flex;
-  gap: 10px;
-  color: var(--color-muted);
-  font-size: 12px;
-  margin-bottom: 32px;
-}
-.breadcrumbs a {
-  color: var(--color-amber-ink);
-}
 .course-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 336px;
@@ -283,6 +273,26 @@ section[id] {
   font-size: 16px;
   line-height: 1.85;
   margin-top: 20px;
+}
+.hero-schedule {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--color-amber-soft);
+  color: var(--color-body);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.hero-schedule svg {
+  flex-shrink: 0;
+  color: var(--color-amber-ink);
+}
+.hero-schedule strong {
+  color: var(--color-amber-ink);
 }
 .instructor-line {
   display: inline-flex;
@@ -421,6 +431,18 @@ section[id] {
 .enrollment-login a {
   color: var(--color-amber-ink);
   text-decoration: underline;
+}
+.enrollment-contact {
+  margin: -10px 0 22px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-body);
+}
+.enrollment-contact a {
+  font-weight: 700;
+  color: var(--color-amber-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .enrollment-body h2 {
   font-size: 13px;
@@ -630,6 +652,56 @@ summary::-webkit-details-marker {
   font-size: 12px;
   color: var(--color-muted);
   line-height: 1.85;
+}
+.deliverable-optional {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: 11px;
+  font-weight: 600;
+  vertical-align: 2px;
+}
+.sample-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.sample-results img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+}
+.sample-results figcaption {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--color-muted);
+}
+.after-class {
+  display: grid;
+  gap: 14px;
+}
+.after-class li {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--color-body);
+}
+.after-class svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--color-amber-ink);
+}
+.after-class strong {
+  color: var(--color-navy);
+}
+.mobile-cta {
+  display: none;
 }
 .deliverable-code {
   font-size: 11px;
@@ -985,11 +1057,6 @@ summary::-webkit-details-marker {
     padding-top: 20px;
     padding-bottom: 40px;
   }
-  .breadcrumbs {
-    margin-bottom: 26px;
-    font-size: 10px;
-    gap: 8px;
-  }
   .course-layout {
     display: flex;
     flex-direction: column;
@@ -1196,5 +1263,59 @@ summary::-webkit-details-marker {
   }
   .learning-shell {
     display: block;
+  }
+}
+
+/* Thanh đăng ký dính đáy màn hình điện thoại: giá, ngày học, Zalo, nút đăng ký luôn trong tầm tay. */
+@media (max-width: 767px) {
+  body:has(.mobile-cta) {
+    padding-bottom: 76px;
+  }
+  .mobile-cta {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: #fff;
+    border-top: 1px solid var(--color-line);
+    box-shadow: 0 -4px 16px #2222220f;
+  }
+  .mobile-cta > div {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+    line-height: 1.35;
+  }
+  .mobile-cta strong {
+    font-size: 16px;
+  }
+  .mobile-cta span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    color: var(--color-muted);
+  }
+  .mobile-cta .button-primary {
+    min-height: 44px;
+    padding-inline: 18px;
+  }
+  .mobile-cta-zalo {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: 14px;
+    border: 1px solid var(--color-line);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0068ff;
+  }
+  .hero-schedule {
+    font-size: 13px;
   }
 }

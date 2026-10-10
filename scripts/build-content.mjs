@@ -32,6 +32,22 @@ for (const k of ["ten", "chucDanh", "kinhNghiem", "anh", "nguon"]) {
     loi.push(`content/khoa-hoc.yml: thiếu giangVien.${k}`);
   }
 }
+if (!Number.isInteger(khoaHoc?.soCho) || khoaHoc.soCho <= 0) {
+  loi.push("content/khoa-hoc.yml: soCho phải là số nguyên dương");
+}
+if (!/^0\d{9}$/.test(chuoi(khoaHoc?.lienHe?.dienThoai))) {
+  loi.push("content/khoa-hoc.yml: lienHe.dienThoai phải là số di động 10 chữ số, vd 0913332282");
+}
+khoaHoc.nhomZalo = { link: chuoi(khoaHoc?.nhomZalo?.link) };
+khoaHoc.ketQuaMau = (khoaHoc?.ketQuaMau ?? []).filter((k, i) => {
+  if (chuoi(k?.anh) && chuoi(k?.chuThich)) return true;
+  loi.push(`content/khoa-hoc.yml: ketQuaMau dòng ${i + 1} cần đủ "anh" và "chuThich"`);
+  return false;
+});
+for (const sp of khoaHoc?.sanPham ?? []) {
+  if (!chuoi(sp?.loiIch)) loi.push(`content/khoa-hoc.yml: sản phẩm ${sp?.ma} thiếu loiIch`);
+  sp.tuyChon = sp?.tuyChon === true;
+}
 const maNguon = new Set((khoaHoc?.nguon ?? []).map((n) => n.ma));
 const maSanPham = new Set((khoaHoc?.sanPham ?? []).map((s) => s.ma));
 

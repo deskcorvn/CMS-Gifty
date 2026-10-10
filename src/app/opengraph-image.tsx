@@ -1,9 +1,9 @@
 import { readFile } from "node:fs/promises";
 import { extname, join } from "node:path";
 import { ImageResponse } from "next/og";
-import { dsChang, khoaHoc } from "@/lib/noi-dung";
+import { khoaHoc, nhanLichHoc } from "@/lib/noi-dung";
 
-export const alt = `${khoaHoc.tieuDePhu} — ${khoaHoc.giangVien.ten}, ${khoaHoc.giangVien.kinhNghiem}. Gifty Tech.`;
+export const alt = `${khoaHoc.tieuDePhu}, lớp ${nhanLichHoc()} — ${khoaHoc.giangVien.ten}, ${khoaHoc.giangVien.kinhNghiem}. Gifty Tech.`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -147,11 +147,13 @@ export default async function Image() {
             fontSize: 17,
           }}
         >
-          <span>{khoaHoc.thoiLuongPhut} phút thực hành</span>
+          <span style={{ color: "#b51f34", fontWeight: 700 }}>
+            {`Lớp ${nhanLichHoc()}`}
+          </span>
           <span>·</span>
-          <span>{dsChang.length} chặng</span>
+          <span>{`${khoaHoc.thoiLuongPhut} phút`}</span>
           <span>·</span>
-          <span>{khoaHoc.sanPham.length} sản phẩm</span>
+          <span>{`Tối đa ${khoaHoc.soCho} học viên`}</span>
         </div>
       </div>
       {/* Satori renders this local image directly; next/image is for browser pages. */}

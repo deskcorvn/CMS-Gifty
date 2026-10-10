@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
-import { dinhDangTien, dsChang, khoaHoc } from "@/lib/noi-dung";
+import { dinhDangTien, dsChang, khoaHoc, nhanLichHoc, soLienHe } from "@/lib/noi-dung";
 import { DO_DAI_KHOA_TOI_THIEU, khoaMayChuHopLe, laQuanTri } from "@/lib/quan-tri";
 import { docCaiDat } from "@/lib/cai-dat";
 import { emailDaCauHinh } from "@/lib/email";
-import { NutDoiSoat, NutEmailThu, NutGuiLaiEmail, NutKhopTay, NutKichHoat, NutLinkDangNhap, NutMoKhoaHoc, NutSuaEmail, NutSuaTenCc, NutThuHoi } from "./HanhDong";
+import { NutDoiSoat, NutEmailThu, NutGuiLaiEmail, NutKhopTay, NutKichHoat, NutLinkDangNhap, NutMoKhoaHoc, NutSuaEmail, NutSuaTenCc, NutTaiKhoanThu, NutThuHoi } from "./HanhDong";
 
 export const metadata: Metadata = { title: "Quản trị", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 type Dong = {
-  id: string; ho_ten: string; email: string; sdt: string | null; created_at: Date;
+  id: string; ho_ten: string; email: string; sdt: string | null; created_at: Date; la_thu: boolean;
   kich_hoat_at: Date | null; nguon_kich_hoat: string | null;
   ma_don: string | null; trang_thai: string | null; da_nhan: number | null; ghi_chu: string | null;
   buoc_xong: string[]; so_sp: number; ma_cc: string | null; ten_cc: string | null; cc_thu_hoi: Date | null;
@@ -46,7 +46,7 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
   const sql = db();
   const [ds, gdChuaKhop, moKhoa, emailGanNhat] = await Promise.all([
     sql<Dong[]>`
-      select h.id, h.ho_ten, h.email, h.sdt, h.created_at, h.kich_hoat_at, h.nguon_kich_hoat,
+      select h.id, h.ho_ten, h.email, h.sdt, h.created_at, h.la_thu, h.kich_hoat_at, h.nguon_kich_hoat,
              d.ma as ma_don, d.trang_thai, d.da_nhan, d.ghi_chu,
              (select coalesce(array_agg(t.buoc_id), '{}') from tien_do t where t.hoc_vien_id = h.id) as buoc_xong,
              (select count(*)::int from san_pham s where s.hoc_vien_id = h.id) as so_sp,
@@ -65,6 +65,7 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
   const daMo = moKhoa?.mo === true;
   const soChang = (d: Dong) => dsChang.filter((c) => c.buoc.every((b) => d.buoc_xong.includes(b.id))).length;
   const daKichHoat = ds.filter((d) => d.kich_hoat_at).length;
+  const choDaDung = ds.filter((d) => d.kich_hoat_at && !d.la_thu).length;
   const tongThu = ds.reduce((n, d) => n + (d.da_nhan ?? 0), 0);
   const fileCsv = csv([
     ["Họ tên", "Email", "SĐT", "Đăng ký", "Mã đơn", "Trạng thái", "Đã nhận", "Kích hoạt", "Chặng", "Sản phẩm", "Chứng chỉ"],
@@ -82,7 +83,7 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
         </div>
       </div>
       <p className="mt-2 text-sm text-body">
-        {ds.length} người đăng ký · {daKichHoat} đã kích hoạt · đã thu {dinhDangTien(tongThu)} · {ds.filter((d) => d.ma_cc && !d.cc_thu_hoi).length} chứng chỉ
+        {ds.length} người đăng ký · {daKichHoat} đã kích hoạt · <b>chỗ: {choDaDung}/{khoaHoc.soCho}</b>{choDaDung >= khoaHoc.soCho && " (đã đóng đăng ký)"} · đã thu {dinhDangTien(tongThu)} · {ds.filter((d) => d.ma_cc && !d.cc_thu_hoi).length} chứng chỉ
       </p>
 
       <section className="mt-6 grid gap-4 md:grid-cols-2">
@@ -109,6 +110,19 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
           <div className="mt-3"><NutEmailThu /></div>
         </div>
       </section>
+
+      <details className="mt-6 rounded-xl border border-line bg-white p-5">
+        <summary className="cursor-pointer font-bold text-navy">Việc cần làm cho lớp {nhanLichHoc()}</summary>
+        <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-6 text-body">
+          <li><b>Trước 48 giờ:</b> nhắn nhóm Zalo nhắc học viên đăng nhập sẵn Claude Free và ChatGPT Free trên laptop, làm theo phần chuẩn bị trong trang học.</li>
+          <li><b>Trước giờ học:</b> đổi học phí về giá thật (hiện {dinhDangTien(khoaHoc.hocPhi)}) và đánh dấu “Tài khoản thử” cho các tài khoản đã đăng ký để test, để không bị tính vào {khoaHoc.soCho} chỗ.</li>
+          <li><b>Từ 30 phút trước giờ học:</b> mở bàn hỗ trợ đăng nhập. Ai kẹt xác minh tài khoản AI thì gỡ trước, đừng để cả lớp chờ ở chặng 2.</li>
+          <li><b>Đúng giờ học:</b> bấm “Mở khóa học” ở trên. Chiếu lên màn hình địa chỉ {"daotao.giftytech.com/dang-nhap"}: học viên đăng nhập trên laptop bằng <b>mã đăng ký GTAI…</b> (có trong email và trong nội dung chuyển khoản), không phải mở email trên laptop.</li>
+          <li><b>Trong buổi:</b> làm mẫu trên màn hình các bước chỉ cần xem để học viên để dành lượt Claude Free cho chặng 5 và 6. Phần chỉnh ảnh SP04 làm mẫu là chính, học viên lưu câu lệnh làm tiếp ở nhà.</li>
+          <li><b>Cuối buổi:</b> nhắc học viên bấm “Hoàn thành chặng” đủ 9 chặng để nhận chứng chỉ qua email, và lưu kết quả vào “Kết quả của tôi”.</li>
+          <li><b>Sau buổi:</b> trả lời câu hỏi trong nhóm Zalo; học viên cần gấp sẽ nhắn số {soLienHe}.</li>
+        </ol>
+      </details>
 
       {gdChuaKhop.length > 0 && (
         <section className="mt-6 rounded-xl border border-amber/50 bg-amber-soft p-4">
@@ -138,7 +152,7 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
           <tbody>
             {ds.map((d) => (
               <tr key={d.id} className="border-t border-line align-top">
-                <td className="px-3 py-2"><b>{d.ho_ten}</b><br /><span className="text-muted">{d.email}<br />{d.sdt}</span></td>
+                <td className="px-3 py-2"><b>{d.ho_ten}</b>{d.la_thu && <span className="ml-2 rounded bg-[#e8edf3] px-1.5 py-0.5 text-xs text-muted">thử</span>}<br /><span className="text-muted">{d.email}<br />{d.sdt}</span></td>
                 <td className="px-3 py-2">
                   {d.ma_don ? <><b>{d.ma_don}</b><br />{d.trang_thai} · {dinhDangTien(d.da_nhan ?? 0)}{d.ghi_chu && <><br /><span className="text-amber-ink">{d.ghi_chu}</span></>}</> : "—"}
                 </td>
@@ -151,6 +165,7 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
                 <td className="space-y-1 px-3 py-2">
                   {d.kich_hoat_at ? <><NutLinkDangNhap hocVienId={d.id} /><div><NutGuiLaiEmail hocVienId={d.id} /></div></> : <NutKichHoat hocVienId={d.id} />}
                   <div><NutSuaEmail hocVienId={d.id} email={d.email} /></div>
+                  <div><NutTaiKhoanThu hocVienId={d.id} laThu={d.la_thu} /></div>
                   {d.ma_cc && !d.cc_thu_hoi && <div><NutSuaTenCc ma={d.ma_cc} hoTen={d.ten_cc ?? d.ho_ten} /></div>}
                   {d.ma_cc && !d.cc_thu_hoi && <div><NutThuHoi ma={d.ma_cc} /></div>}
                 </td>

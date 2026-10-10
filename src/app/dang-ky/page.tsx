@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import DauTrang from "@/components/DauTrang";
 import ChanTrang from "@/components/ChanTrang";
-import { dinhDangTien, khoaHoc, nhanLichHoc } from "@/lib/noi-dung";
+import { tinhChoNgoi } from "@/lib/cho-ngoi";
+import { dinhDangTien, khoaHoc, linkZalo, nhanLichHoc, soLienHe } from "@/lib/noi-dung";
 import FormDangKy from "./FormDangKy";
 
-const description =
-  "Đăng ký khóa học Hiểu AI và làm việc cùng AI của Gifty Tech. Điền thông tin, thanh toán VietQR và nhận link vào học qua email.";
+export const dynamic = "force-dynamic";
+const description = `Đăng ký lớp ${khoaHoc.tieuDePhu} lúc ${nhanLichHoc()}, tối đa ${khoaHoc.soCho} học viên. Điền thông tin, thanh toán VietQR và nhận link vào học qua email.`;
 export const metadata: Metadata = {
   title: "Đăng ký khóa học",
   description,
@@ -21,7 +22,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function TrangDangKy() {
+export default async function TrangDangKy() {
+  const cho = await tinhChoNgoi().catch(() => null);
+  const hetCho = cho?.con === 0;
   return (
     <>
       <DauTrang />
@@ -33,8 +36,8 @@ export default function TrangDangKy() {
           <p className="eyebrow">Đăng ký khóa học</p>
           <h1>{khoaHoc.tieuDePhu}</h1>
           <p>
-            {khoaHoc.tieuDePhu}. Thực hành từng bước để tạo ra bốn sản phẩm anh
-            chị có thể lưu và dùng lại.
+            Ba giờ thực hành từng bước, ra về với kế hoạch chăm sóc khách hàng,
+            trợ lý Claude của riêng mình và hồ sơ thương hiệu cá nhân.
           </p>
           <dl className="auth-summary">
             <div>
@@ -49,6 +52,16 @@ export default function TrangDangKy() {
               <dt>Học phí</dt>
               <dd className="price">{dinhDangTien(khoaHoc.hocPhi)}</dd>
             </div>
+            <div>
+              <dt>Số chỗ</dt>
+              <dd>
+                {cho
+                  ? hetCho
+                    ? `Đã đủ ${cho.toiDa} chỗ`
+                    : `Còn ${cho.con}/${cho.toiDa} chỗ`
+                  : `Tối đa ${khoaHoc.soCho} học viên`}
+              </dd>
+            </div>
           </dl>
           <p>
             {khoaHoc.lop.diaDiem ||
@@ -60,7 +73,25 @@ export default function TrangDangKy() {
           </div>
         </div>
         <div>
-          <FormDangKy hocPhi={khoaHoc.hocPhi} />
+          {hetCho ? (
+            <div className="form-card" role="status">
+              <h2>Lớp này đã đủ {khoaHoc.soCho} chỗ</h2>
+              <p className="mt-2 text-body">
+                Cảm ơn anh chị đã quan tâm. Nhắn Zalo cho Gifty Tech để được
+                báo khi mở lớp sau.
+              </p>
+              <a
+                href={linkZalo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block rounded-lg bg-amber px-5 py-3 font-bold text-[#1a1205]"
+              >
+                Nhắn Zalo {soLienHe}
+              </a>
+            </div>
+          ) : (
+            <FormDangKy hocPhi={khoaHoc.hocPhi} soLienHe={soLienHe} linkZalo={linkZalo} />
+          )}
           <p className="mt-6 text-center text-sm leading-6 text-muted">
             Đã đăng ký trước đó?{" "}
             <Link

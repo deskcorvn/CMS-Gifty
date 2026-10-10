@@ -3,8 +3,9 @@
 ten: Khóa đào tạo AI
 tieuDePhu: Hiểu AI và làm việc cùng AI
 moTa: >-
-  Ứng dụng thực tế trong kinh doanh, chăm sóc mối quan hệ và xây dựng thương hiệu cá nhân.
-  Học bằng Claude Free và ChatGPT Free, không cần biết lập trình, không cần mua gói trả phí.
+  Học cách giao việc kinh doanh cho AI: lên kế hoạch chăm sóc khách hàng, tạo trợ lý dùng lại hằng
+  ngày và chuẩn bị hồ sơ thương hiệu cá nhân. Chỉ dùng Claude Free và ChatGPT Free, không cần biết
+  lập trình.
 camKet: >-
   Học viên hiểu cách AI hoạt động, tự thiết lập Claude, biến danh sách mối quan hệ thành kế hoạch
   chăm sóc, khởi tạo trợ lý công việc có thể dùng lại và chuẩn bị hồ sơ thương hiệu cá nhân.
@@ -17,6 +18,19 @@ giangVien:
   nguon: https://www.giftytech.com/khoa-hoc-ai-thuc-chien
 hocPhi: 2000 # TẠM ĐỂ THỬ CHUYỂN KHOẢN — đổi lại 300000 sau khi test
 thoiLuongPhut: 180
+# Số chỗ tối đa của lớp (người vận hành chốt 10/10/2026). Đủ chỗ thì trang đăng ký tự đóng.
+soCho: 20
+# Số điện thoại kiêm Zalo để học viên hỏi trước khi đăng ký.
+lienHe:
+  dienThoai: "0913332282"
+# Nhóm Zalo hỗ trợ học viên sau lớp. Dán link mời nhóm vào "link"; để trống thì trang ghi
+# "Gifty Tech mời anh chị vào nhóm qua số điện thoại đã đăng ký".
+nhomZalo:
+  link: ""
+# Ảnh kết quả mẫu do giảng viên làm từ dữ liệu giả lập (hiện ở trang chủ, mục Sản phẩm).
+# Mỗi dòng: - anh: /anh/mau-sp01.png  (tải ảnh lên qua Pages CMS, file nằm ở public/anh)
+#             chuThich: "SP01 làm từ dữ liệu giả lập KH01–KH12"
+ketQuaMau: []
 phienBanGiaoTrinh: "2.0 · cập nhật 10/10/2026"
 lop:
   ngay: "2026-10-21"
@@ -35,20 +49,33 @@ sanPham:
     ten: Bảng khách hàng mẫu + kế hoạch 7 ngày
     dieuKien: Đủ 12 dòng dữ liệu; có tối thiểu 5 ưu tiên, lý do và đầu việc; không bịa thông tin.
     chang: 5
+    loiIch: >-
+      Danh sách 12 khách hàng mẫu được AI xếp thứ tự ưu tiên, có lý do và việc cần làm cho từng
+      ngày trong tuần.
   - ma: SP02
     ten: "Trợ lý Claude: “Trợ lý kinh doanh của tôi”"
     dieuKien: Có Project/hướng dẫn riêng; thử lại ít nhất một yêu cầu với dữ liệu mẫu.
     chang: 6
+    loiIch: >-
+      Một Project trên Claude đã cài sẵn hướng dẫn. Mở ra là giao việc kinh doanh được ngay, không
+      phải giải thích lại từ đầu.
   - ma: SP03
     ten: Hồ sơ thương hiệu cá nhân
     dieuKien: Có một câu định vị, đoạn giới thiệu 70–100 chữ, lời giới thiệu khoảng 30 giây.
     chang: 7
+    loiIch: >-
+      Một câu định vị, đoạn giới thiệu 70–100 chữ và lời tự giới thiệu khoảng 30 giây để dùng cho
+      hồ sơ mạng xã hội hoặc khi gặp đối tác.
   - ma: SP04
     ten: Ảnh đại diện thương hiệu hoặc bộ lệnh chỉnh ảnh sẵn dùng
     dieuKien: >-
       Ảnh giữ nhận dạng, tự nhiên; nếu hết hạn mức Free thì lưu sẵn câu lệnh và ảnh gốc để hoàn thiện
       sau lớp.
     chang: 7
+    tuyChon: true
+    loiIch: >-
+      Ảnh đại diện chỉnh bằng ChatGPT mà vẫn giữ đúng gương mặt mình. Hết lượt tạo ảnh miễn phí thì
+      anh chị mang câu lệnh về làm tiếp ở nhà.
 chuanBi:
   - Laptop và sạc; đăng nhập sẵn Claude Free (claude.ai) và ChatGPT Free (chatgpt.com) trước giờ học.
   - Một ảnh chân dung của chính mình được phép chỉnh; tránh ảnh người khác nếu chưa có sự đồng ý.

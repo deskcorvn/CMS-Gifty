@@ -1,7 +1,7 @@
 # CMS-Gifty: Khóa đào tạo AI
 
 Trang học của Gifty Tech cho **Khóa đào tạo AI: Hiểu AI và làm việc cùng AI**. Khóa học 180 phút, lớp đầu tiên
-lúc 14:00 thứ Tư 21/10/2026, học phí 300.000đ.
+lúc 14:00 thứ Tư 21/10/2026, học phí 300.000đ, tối đa 20 học viên. Hỏi khóa học: điện thoại/Zalo 0913 332 282.
 
 Học viên đi theo trình tự:
 1. Đăng ký, quét VietQR để trả tiền. SePay xác nhận rồi hệ thống tự mở quyền học.
@@ -65,6 +65,9 @@ Kiểm tra trước khi push: `npm run lint && npm run typecheck && npm run buil
 ## Vận hành
 
 - **`/quan-tri`** (khóa `ADMIN_KEY`, tối thiểu 16 ký tự):
+  - **Việc cần làm cho lớp**: danh sách việc từ 48 giờ trước tới sau buổi học (mở khóa lúc vào lớp, đăng nhập bằng mã GTAI…);
+  - **Số chỗ** (`soCho` trong `content/khoa-hoc.yml`): đếm học viên đã kích hoạt. Đủ chỗ thì trang chủ và trang đăng ký tự
+    đóng, API không phát mã chuyển khoản mới. Tài khoản tự đăng ký để test thì bấm **Tài khoản thử** để không bị tính chỗ;
   - **Mở khóa học / Khóa lại nội dung**: mặc định khóa, học viên đã trả tiền chỉ thấy lịch và phần chuẩn bị; bấm mở khi lớp bắt đầu;
   - **Gửi email thử**, xem lỗi gửi email gần nhất; **Gửi lại email** và **Sửa email** cho từng học viên;
 - **Học viên nhập nhầm email / số điện thoại:** mỗi người có **mã đăng ký** = mã chuyển khoản `GTAI…` (hiện sau khi
@@ -81,7 +84,10 @@ Kiểm tra trước khi push: `npm run lint && npm run typecheck && npm run buil
   - Nội dung sai cấu trúc sẽ bị `scripts/build-content.mjs` chặn khi build, site đang chạy không bị ảnh hưởng.
   - Commit từ Pages CMS mang tên tài khoản GitHub của người sửa. Nếu Vercel chỉ deploy commit của thành viên team,
     hãy đăng nhập Pages CMS bằng tài khoản trong team.
-- **Đổi lịch, địa điểm, học phí, link video**: sửa ở "Thông tin khóa" (`content/khoa-hoc.yml`).
+- **Đổi lịch, địa điểm, học phí, số chỗ, số Zalo, link nhóm Zalo, link video, ảnh kết quả mẫu**: sửa ở "Thông tin khóa"
+  (`content/khoa-hoc.yml`).
+  - `nhomZalo.link` để trống thì trang học và email ghi "Gifty Tech mời vào nhóm qua số điện thoại đã đăng ký".
+  - `ketQuaMau`: ảnh kết quả do giảng viên làm từ dữ liệu giả lập KH01–KH12, hiện ở mục "Anh chị mang về gì" trên trang chủ.
   - Địa điểm đang để trống: trang web và email sẽ ghi "Gifty Tech gửi địa điểm qua email".
 - **Thêm hoặc bớt bước**: tiến độ lưu theo mã bước `c05-b03` (chặng 5, bước 3). Chèn bước vào giữa chặng sẽ làm
   dịch mã các bước phía sau. Sau khi đã có học viên, nên thêm bước mới vào **cuối** chặng.

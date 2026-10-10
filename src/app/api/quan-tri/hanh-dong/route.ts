@@ -66,6 +66,15 @@ export async function POST(req: Request) {
       await ghiCaiDat("mo_khoa_hoc", { mo, luc: new Date().toISOString() });
       return traJson(200, { ok: true, mo });
     }
+    case "tai-khoan-thu": {
+      // Tài khoản người vận hành tự đăng ký để thử: không tính vào số chỗ của lớp.
+      const id = chuoiSach(b?.hocVienId, 60);
+      const [hv] = await sql<{ la_thu: boolean }[]>`
+        update hoc_vien set la_thu = ${b?.laThu === true} where id = ${id} returning la_thu
+      `;
+      if (!hv) return traJson(400, { error: "Học viên không tồn tại." });
+      return traJson(200, { ok: true, laThu: hv.la_thu });
+    }
     case "link-dang-nhap": {
       const id = chuoiSach(b?.hocVienId, 60);
       const [hv] = await sql`select id from hoc_vien where id = ${id} and kich_hoat_at is not null`;

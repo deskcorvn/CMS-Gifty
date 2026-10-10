@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { COURSE_INSTRUCTOR } from "@/lib/course-brand";
+import { COURSE_INSTRUCTOR, COURSE_MESSAGE } from "@/lib/course-brand";
 import Link from "next/link";
 import DauTrang from "@/components/DauTrang";
 import ChanTrang from "@/components/ChanTrang";
@@ -22,11 +22,13 @@ import { siteUrl } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
+  title: { absolute: `${COURSE_MESSAGE.title} | Gifty Tech` },
+  description: COURSE_MESSAGE.description,
   alternates: { canonical: "/" },
   openGraph: {
     url: "/",
-    title: `${khoaHoc.ten} | GiftyTech`,
-    description: `Lớp ${nhanLichHoc()}, tối đa ${khoaHoc.soCho} học viên. ${khoaHoc.moTa}`,
+    title: `${COURSE_MESSAGE.title} | Gifty Tech`,
+    description: COURSE_MESSAGE.description,
     locale: "vi_VN",
     type: "website",
     siteName: "Gifty Tech",
@@ -48,8 +50,8 @@ export default async function TrangChu() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Course",
-    name: `${khoaHoc.ten}: ${khoaHoc.tieuDePhu}`,
-    description: khoaHoc.moTa,
+    name: COURSE_MESSAGE.title,
+    description: COURSE_MESSAGE.description,
     url: siteUrl,
     inLanguage: "vi",
     provider: {
@@ -92,7 +94,7 @@ export default async function TrangChu() {
             <p className="course-category">
               Khóa học thực hành · Dành cho người mới bắt đầu
             </p>
-            <h1>{khoaHoc.ten}</h1>
+            <h1>{COURSE_MESSAGE.title}</h1>
             <p className="hero-schedule">
               <BieuTuong ten="calendar" size={16} />
               <span>

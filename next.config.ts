@@ -5,7 +5,9 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/{opengraph-image,dang-ky/opengraph-image}": [
       "./public/brand/gifty-lockup-trang.png",
-      "./public/images/khoa-hoc/og-course-reference.png",
+      "./public/images/khoa-hoc/og-course-core-background.png",
+      "./public/images/khoa-hoc/nguyen-manh-hung-khoanh-tay.png",
+      "./src/assets/fonts/**",
     ],
     "/chung-nhan/[ma]/anh": ["./src/assets/fonts/**", "./public/chu-ky-hung.svg"],
   },

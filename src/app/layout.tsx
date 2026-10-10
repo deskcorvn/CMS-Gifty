@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { khoaHoc } from "@/lib/noi-dung";
+import { COURSE_MESSAGE } from "@/lib/course-brand";
 import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -17,22 +17,22 @@ const beVietnam = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${khoaHoc.ten} | GiftyTech`,
+    default: `${COURSE_MESSAGE.title} | Gifty Tech`,
     template: "%s | Gifty Tech",
   },
-  description: khoaHoc.moTa,
+  description: COURSE_MESSAGE.description,
   applicationName: "Gifty Tech — Khóa học AI",
   openGraph: {
     type: "website",
     locale: "vi_VN",
     siteName: "Gifty Tech",
-    title: `${khoaHoc.ten} | GiftyTech`,
-    description: khoaHoc.moTa,
+    title: `${COURSE_MESSAGE.title} | Gifty Tech`,
+    description: COURSE_MESSAGE.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${khoaHoc.ten} | GiftyTech`,
-    description: khoaHoc.moTa,
+    title: `${COURSE_MESSAGE.title} | Gifty Tech`,
+    description: COURSE_MESSAGE.description,
   },
 };
 

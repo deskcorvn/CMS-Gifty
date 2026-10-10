@@ -9,3 +9,10 @@ export const COURSE_INSTRUCTOR = {
   linkedin: "https://vn.linkedin.com/in/hung-nguyen-561633362",
   portrait: "/images/khoa-hoc/nguyen-manh-hung-khoanh-tay.png",
 } as const;
+
+/** Thông điệp giới thiệu, bám các chặng hiểu AI, giao việc và kiểm chứng kết quả. */
+export const COURSE_MESSAGE = {
+  title: "Hiểu AI, biết cách giao việc",
+  description: "180 phút thực hành: hiểu cách AI hoạt động, đặt yêu cầu rõ ràng, kiểm tra câu trả lời và tạo trợ lý cho công việc của mình.",
+  takeaway: "Từ câu hỏi đầu tiên đến trợ lý cho công việc.",
+} as const;

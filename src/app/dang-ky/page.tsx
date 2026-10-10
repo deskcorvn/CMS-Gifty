@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { COURSE_MESSAGE } from "@/lib/course-brand";
 import Link from "next/link";
 import DauTrang from "@/components/DauTrang";
 import ChanTrang from "@/components/ChanTrang";
@@ -7,13 +8,13 @@ import { dinhDangTien, khoaHoc, linkZalo, nhanLichHoc, soLienHe } from "@/lib/no
 import FormDangKy from "./FormDangKy";
 
 export const dynamic = "force-dynamic";
-const description = `Đăng ký lớp ${khoaHoc.tieuDePhu} lúc ${nhanLichHoc()}, tối đa ${khoaHoc.soCho} học viên. Điền thông tin, thanh toán VietQR và nhận link vào học qua email.`;
+const description = `Đăng ký lớp ${COURSE_MESSAGE.title} lúc ${nhanLichHoc()}, tối đa ${khoaHoc.soCho} học viên. Điền thông tin, thanh toán VietQR và nhận link vào học qua email.`;
 export const metadata: Metadata = {
-  title: "Đăng ký khóa học",
+  title: `Đăng ký · ${COURSE_MESSAGE.title}`,
   description,
   alternates: { canonical: "/dang-ky" },
   openGraph: {
-    title: "Đăng ký khóa học AI | Gifty Tech",
+    title: `Đăng ký · ${COURSE_MESSAGE.title} | Gifty Tech`,
     description,
     url: "/dang-ky",
     locale: "vi_VN",
@@ -34,10 +35,10 @@ export default async function TrangDangKy() {
             ← Về trang khóa học
           </Link>
           <p className="eyebrow">Đăng ký khóa học</p>
-          <h1>{khoaHoc.tieuDePhu}</h1>
+          <h1>{COURSE_MESSAGE.title}</h1>
           <p>
-            Ba giờ thực hành từng bước, ra về với kế hoạch chăm sóc khách hàng,
-            trợ lý Claude của riêng mình và hồ sơ thương hiệu cá nhân.
+            Hiểu cách AI trả lời, tập giao việc bằng dữ liệu mẫu và kiểm tra
+            kết quả trước khi dùng vào công việc.
           </p>
           <dl className="auth-summary">
             <div>

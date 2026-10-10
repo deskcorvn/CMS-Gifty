@@ -8,3 +8,5 @@ Tài sản khóa học hiện tại (10/10/2026)
 - Các file poster.png, poster-classic-source.webp, nguyen-manh-hung.png, og-course-expert.png, og-course-background.png (nếu có): tư liệu cũ, không dùng trên trang hoặc OG hiện tại.
 
 nguyen-manh-hung-khoanh-tay.png: Reused existing AI-assisted arms-crossed portrait at operator request for the training website. No additional face edits in this update. Original Google Photos portrait remains archived unchanged.
+
+og-course-core-background.png: Red/white background edited from the prior reference poster with image generation. It contains no text, logo or person. course-social-image.tsx composes the original arms-crossed portrait and authentic logo files with Be Vietnam Pro typography. No portrait retouching in this update.

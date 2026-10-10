@@ -11,11 +11,11 @@ export default function AnhKhoaHoc() {
       <div className="cover-copy">
         <span>Gifty Tech</span>
         <strong>
-          Giao việc.
+          Hiểu AI,
           <br />
-          Chăm khách.
+          biết cách
           <br />
-          Bài bản.
+          giao việc.
         </strong>
         <small>Khóa học thực hành</small>
       </div>

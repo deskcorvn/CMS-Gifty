@@ -10,10 +10,7 @@ export default function DauTrang({ dangHoc = false }: { dangHoc?: boolean }) {
           className="brand"
           aria-label="Gifty Tech — Trang chủ khóa học"
         >
-          <Image src="/brand/gifty-mark.png" alt="" width={32} height={32} />
-          <span>
-            Gifty<strong>Tech</strong>
-          </span>
+          <span className="brand-lockup"><Image src="/brand/gifty-lockup-trang.png" alt="Gifty Tech" width={124} height={44} /></span>
           <small>Học tập</small>
         </Link>
         <nav aria-label="Điều hướng chính" className="header-nav">
@@ -32,7 +29,7 @@ export default function DauTrang({ dangHoc = false }: { dangHoc?: boolean }) {
               <Link href="/#lo-trinh" className="nav-secondary">
                 Nội dung khóa học
               </Link>
-              <Link href="/#giang-vien" className="nav-secondary">
+              <Link href="/giang-vien" className="nav-secondary">
                 Giảng viên
               </Link>
               <Link href="/dang-nhap" className="nav-login">

@@ -1319,3 +1319,55 @@ summary::-webkit-details-marker {
     font-size: 13px;
   }
 }
+
+/* Public course information: a compact home with dedicated detail pages. */
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 5px;
+  background: #b51f34;
+}
+.brand-lockup img { width: 124px; height: 44px; object-fit: contain; }
+.cover-person { width: 48%; object-fit: contain; object-position: center bottom; }
+.instructor-avatar { background: #f7f1f2; }
+.instructor-avatar img { object-position: center 12%; }
+.course-more {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 26px 0;
+  margin-top: 30px;
+  border-block: 1px solid var(--color-line);
+}
+.course-more a { display: grid; gap: 7px; }
+.course-more strong { font-size: 15px; }
+.course-more span { color: var(--color-amber-ink); font-size: 12px; }
+.course-more a:hover strong { text-decoration: underline; text-underline-offset: 4px; }
+.info-page { max-width: 840px; padding-top: 32px; padding-bottom: 64px; }
+.info-heading { margin-top: 32px; }
+.info-heading h1 { font-size: clamp(30px, 4vw, 42px); font-weight: 700; line-height: 1.2; letter-spacing: -1px; }
+.info-heading > p:not(.course-category) { margin-top: 14px; font-size: 15px; line-height: 1.7; color: var(--color-body); }
+.info-nav { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--color-line); font-size: 13px; font-weight: 600; }
+.info-page .course-section { scroll-margin-top: 24px; }
+.instructor-page { max-width: 1080px; }
+.expert-layout { display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 56px; margin-top: 32px; align-items: start; }
+.expert-portrait { background: #f7f1f2; border-radius: 6px; overflow: hidden; }
+.expert-portrait img { width: 100%; height: auto; display: block; }
+.expert-content .info-heading { margin-top: 0; }
+.expert-content .expert-position { color: var(--color-amber-ink); font-weight: 600; }
+.expert-experience { display: flex; align-items: baseline; gap: 12px; padding: 20px 0; margin-top: 24px; border-block: 1px solid var(--color-line); }
+.expert-experience strong { font-size: 28px; color: var(--color-amber-ink); letter-spacing: -.6px; }
+.expert-experience span { font-size: 14px; color: var(--color-body); }
+.expert-content .course-section { padding-top: 28px; }
+.expert-content .course-section h2 { font-size: 19px; margin-bottom: 12px; }
+.expert-course-link { margin-top: 28px; }
+@media (max-width: 767px) {
+  .brand-lockup { padding: 3px 8px; }
+  .brand-lockup img { width: 105px; height: 38px; }
+  .course-more { grid-template-columns: 1fr; gap: 22px; }
+  .info-page { padding-top: 24px; padding-bottom: 40px; }
+  .expert-layout { grid-template-columns: 1fr; gap: 28px; margin-top: 24px; }
+  .expert-portrait { width: min(100%, 300px); margin-inline: auto; }
+  .expert-experience { flex-wrap: wrap; gap: 8px; }
+}

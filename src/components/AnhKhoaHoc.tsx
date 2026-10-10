@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { COURSE_INSTRUCTOR } from "@/lib/course-brand";
 import { khoaHoc } from "@/lib/noi-dung";
 
 export default function AnhKhoaHoc() {
@@ -19,10 +20,10 @@ export default function AnhKhoaHoc() {
         <small>Khóa học thực hành</small>
       </div>
       <Image
-        src={khoaHoc.giangVien.anh}
+        src={COURSE_INSTRUCTOR.portrait}
         alt={khoaHoc.giangVien.ten}
-        width={2730}
-        height={4095}
+        width={1024}
+        height={1536}
         sizes="(max-width: 767px) 50vw, 200px"
         className="cover-person"
         preload

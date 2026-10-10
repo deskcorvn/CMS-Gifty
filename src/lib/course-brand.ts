@@ -1,4 +1,4 @@
-/** Hồ sơ LinkedIn và số giờ do người vận hành cung cấp; ảnh gốc Google Photos, không chỉnh khuôn mặt. */
+/** Hồ sơ LinkedIn và số giờ do người vận hành cung cấp; chân dung khoanh tay được người vận hành chọn lại cho trang đào tạo. */
 export const COURSE_INSTRUCTOR = {
   name: "Nguyễn Mạnh Hùng",
   displayName: "Nguyễn Mạnh Hùng",
@@ -7,5 +7,5 @@ export const COURSE_INSTRUCTOR = {
   affiliation: "GiftyTech",
   experience: "10.000 giờ sử dụng AI",
   linkedin: "https://vn.linkedin.com/in/hung-nguyen-561633362",
-  portrait: "/images/khoa-hoc/nguyen-manh-hung-original.jpg",
+  portrait: "/images/khoa-hoc/nguyen-manh-hung-khoanh-tay.png",
 } as const;

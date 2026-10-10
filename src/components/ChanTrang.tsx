@@ -24,10 +24,11 @@ export default function ChanTrang() {
         </div>
         <nav
           aria-label="Liên kết cuối trang"
-          className="flex gap-6 text-sm font-semibold text-body"
+          className="flex flex-wrap gap-6 text-sm font-semibold text-body"
         >
           <Link href="/#lo-trinh">Lộ trình</Link>
-          <Link href="/#cau-hoi">Câu hỏi thường gặp</Link>
+          <Link href="/giang-vien">Giảng viên</Link>
+          <Link href="/hoi-dap">Hỏi đáp</Link>
         </nav>
         <p className="w-full border-t border-line pt-5 text-xs leading-6 text-muted">
           © Gifty Tech · Giáo trình phiên bản {khoaHoc.phienBanGiaoTrinh}

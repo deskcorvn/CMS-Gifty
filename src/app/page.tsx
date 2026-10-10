@@ -15,7 +15,6 @@ import {
   linkZalo,
   nhanLichHoc,
   soLienHe,
-  tatCaPrompt,
   tongSoBuoc,
 } from "@/lib/noi-dung";
 import { hocVienHienTai } from "@/lib/phien";
@@ -33,56 +32,6 @@ export const metadata: Metadata = {
     siteName: "Gifty Tech",
   },
 };
-const cauHoi = [
-  {
-    hoi: "Chưa biết gì về AI, tôi có học được không?",
-    dap: "Có. Khóa học bắt đầu từ cách AI hoạt động, thiết lập tài khoản rồi mới đến giao việc và thực hành. Anh chị không cần biết lập trình.",
-  },
-  {
-    hoi: "Có bắt buộc mang laptop không?",
-    dap: "Nên mang. Phần thực hành phải dán dữ liệu, sửa câu lệnh và tạo Project trên Claude, làm trên laptop dễ hơn nhiều. Điện thoại chỉ tiện để xem hướng dẫn và chép câu lệnh.",
-  },
-  {
-    hoi: "Có cần mua Claude hay ChatGPT trả phí không?",
-    dap: "Không. Bản miễn phí của Claude và ChatGPT là đủ cho cả buổi học. Nếu hết hạn mức tạo ảnh, anh chị lưu câu lệnh và ảnh gốc để hoàn thiện sau lớp.",
-  },
-  {
-    hoi: "Tài khoản miễn phí hết lượt giữa buổi thì sao?",
-    dap: "Giảng viên làm mẫu một số bước trên màn hình để anh chị để dành lượt cho phần thực hành chính. Nếu vẫn hết lượt, câu lệnh đã nằm sẵn trong trang học, anh chị làm nốt khi tài khoản có lượt trở lại.",
-  },
-  {
-    hoi: "Tôi cần mang dữ liệu khách hàng thật không?",
-    dap: "Không cần. Lớp cung cấp dữ liệu giả lập KH01–KH12 để thực hành. Anh chị chuẩn bị laptop, sạc, tài khoản AI, một ảnh chân dung được phép chỉnh và mô tả ngắn về công việc của mình.",
-  },
-  {
-    hoi: "Đăng ký xong, tôi vào học như thế nào?",
-    dap: "Sau khi điền thông tin, anh chị chuyển khoản bằng mã VietQR. Khi hệ thống xác nhận đủ học phí, tài khoản được kích hoạt và anh chị nhận mã đăng ký. Những lần sau, nhập email để nhận link đăng nhập, hoặc đăng nhập bằng mã đăng ký nếu email không tới.",
-  },
-  {
-    hoi: "Lớp có bao nhiêu người?",
-    dap: `Tối đa ${khoaHoc.soCho} học viên, để giảng viên kịp xem màn hình và gỡ vướng cho từng người. Đủ chỗ thì trang đăng ký tự đóng.`,
-  },
-  {
-    hoi: "Lỡ buổi học hoặc đến muộn thì sao?",
-    dap: `Trang học giữ đủ ${dsChang.length} chặng với hướng dẫn và câu lệnh từng bước, anh chị làm lại theo được. Chỗ nào vướng thì hỏi trong nhóm Zalo của lớp.`,
-  },
-  {
-    hoi: "Sau buổi học có ai hỗ trợ không?",
-    dap: "Có. Học viên được vào nhóm Zalo của lớp để hỏi tiếp khi tự làm ở nhà.",
-  },
-  {
-    hoi: "Khi nào tôi nhận được chứng chỉ?",
-    dap: `Hoàn thành đủ 9 chặng, anh chị nhận chứng chỉ “${khoaHoc.chungChi.danhHieu}” có mã QR kiểm tra trực tuyến.`,
-  },
-  {
-    hoi: "Sau buổi học, tôi còn xem lại được gì?",
-    dap: "Mục “Kết quả của tôi” lưu các sản phẩm, kho câu lệnh và nguồn tham khảo chính thức để tra cứu. Sản phẩm có thể sao chép hoặc tải về máy.",
-  },
-  {
-    hoi: "Muốn hỏi thêm trước khi đăng ký?",
-    dap: `Gọi hoặc nhắn Zalo ${soLienHe}, Gifty Tech trả lời trực tiếp.`,
-  },
-];
 
 export default async function TrangChu() {
   const [hv, cho] = await Promise.all([
@@ -144,17 +93,16 @@ export default async function TrangChu() {
               Khóa học thực hành · Dành cho người mới bắt đầu
             </p>
             <h1>{khoaHoc.ten}</h1>
-            <p className="course-description">{khoaHoc.moTa}</p>
             <p className="hero-schedule">
               <BieuTuong ten="calendar" size={16} />
               <span>
-                Lớp <strong>{nhanLichHoc()}</strong> · {nhanCho}
+                Lớp <strong>{nhanLichHoc()}</strong>
               </span>
             </p>
-            <a href="#giang-vien" className="instructor-line">
+            <Link href="/giang-vien" className="instructor-line">
               <span className="instructor-avatar">
                 <Image
-                  src={khoaHoc.giangVien.anh}
+                  src={COURSE_INSTRUCTOR.portrait}
                   alt=""
                   width={52}
                   height={52}
@@ -162,9 +110,9 @@ export default async function TrangChu() {
               </span>
               <span>
                 Giảng viên: <strong>{COURSE_INSTRUCTOR.displayName}</strong>
-                <small>{khoaHoc.giangVien.kinhNghiem}</small>
+                <small>{COURSE_INSTRUCTOR.position} · Xem hồ sơ →</small>
               </span>
-            </a>
+            </Link>
             <dl className="course-stats">
               <div>
                 <dt>Thời lượng</dt>
@@ -233,18 +181,6 @@ export default async function TrangChu() {
                     <BieuTuong ten="check" size={18} />
                     <span>{nhanCho}</span>
                   </li>
-                  <li>
-                    <BieuTuong ten="book" size={18} />
-                    <span>Học bằng công cụ AI, không cần biết lập trình</span>
-                  </li>
-                  <li>
-                    <BieuTuong ten="check" size={18} />
-                    <span>Chứng chỉ sau khi hoàn thành</span>
-                  </li>
-                  <li>
-                    <BieuTuong ten="check" size={18} />
-                    <span>Nhóm Zalo hỗ trợ sau buổi học</span>
-                  </li>
                 </ul>
                 <p className="enrollment-location">
                   {khoaHoc.lop.diaDiem ||
@@ -252,20 +188,13 @@ export default async function TrangChu() {
                 </p>
               </div>
             </div>
-            <p className="sidebar-help">
-              Cần xem trước nội dung?
-              <br />
-              <a href="#lo-trinh">
-                Khám phá {dsChang.length} chặng học bên dưới
-              </a>
-            </p>
           </aside>
           <div className="course-main">
             <nav aria-label="Các mục khóa học" className="course-tabs">
               <a href="#tong-quan">Tổng quan</a>
               <a href="#lo-trinh">Nội dung</a>
-              <a href="#giang-vien">Giảng viên</a>
-              <a href="#cau-hoi">Hỏi đáp</a>
+              <Link href="/giang-vien">Giảng viên</Link>
+              <Link href="/hoi-dap">Hỏi đáp</Link>
             </nav>
             <section id="tong-quan" className="course-section">
               <h2>Anh chị sẽ học được gì?</h2>
@@ -274,39 +203,31 @@ export default async function TrangChu() {
                   <li>
                     <BieuTuong ten="check" size={18} />
                     <span>
-                      Hiểu cách AI hoạt động, nhận biết khi AI có thể trả lời
-                      sai.
+                      Hiểu AI và kiểm chứng câu trả lời.
                     </span>
                   </li>
                   <li>
                     <BieuTuong ten="check" size={18} />
                     <span>
-                      Thiết lập Claude, ChatGPT và giao việc bằng yêu cầu rõ
-                      ràng.
+                      Thiết lập công cụ và giao việc rõ ràng.
                     </span>
                   </li>
                   <li>
                     <BieuTuong ten="check" size={18} />
                     <span>
-                      Biến dữ liệu mẫu thành kế hoạch chăm sóc mối quan hệ trong
-                      7 ngày.
+                      Lập kế hoạch chăm sóc mối quan hệ trong 7 ngày.
                     </span>
                   </li>
                   <li>
                     <BieuTuong ten="check" size={18} />
                     <span>
-                      Tạo “Trợ lý kinh doanh của tôi” trên Claude và chuẩn bị
-                      hồ sơ thương hiệu cá nhân.
+                      Tạo trợ lý kinh doanh và hồ sơ thương hiệu cá nhân.
                     </span>
                   </li>
                 </ul>
               </div>
               <h3>Khóa học này dành cho ai?</h3>
               <p>{khoaHoc.doiTuong}</p>
-              <p>
-                Không yêu cầu biết lập trình. Các bài tập sử dụng dữ liệu giả
-                lập, có hướng dẫn và kết quả mẫu để anh chị tự đối chiếu.
-              </p>
             </section>
             <section id="lo-trinh" className="course-section">
               <div className="section-title-row">
@@ -409,99 +330,10 @@ export default async function TrangChu() {
                 </p>
               </div>
             </section>
-            <section id="sau-buoi-hoc" className="course-section">
-              <h2>Sau buổi học, anh chị vẫn giữ</h2>
-              <ul className="after-class">
-                <li>
-                  <BieuTuong ten="book" size={18} />
-                  <span>
-                    <strong>Trang học riêng</strong> với đủ {dsChang.length} chặng
-                    và {tatCaPrompt.length} câu lệnh mẫu, quên bước nào mở lại
-                    bước đó.
-                  </span>
-                </li>
-                <li>
-                  <BieuTuong ten="check" size={18} />
-                  <span>
-                    <strong>Kết quả của tôi</strong>: các sản phẩm đã lưu, chép
-                    hoặc tải về máy lúc nào cũng được.
-                  </span>
-                </li>
-                <li>
-                  <BieuTuong ten="check" size={18} />
-                  <span>
-                    <strong>Chứng chỉ có mã QR</strong> để người khác kiểm tra
-                    trực tuyến, chia sẻ lên Facebook hoặc Zalo.
-                  </span>
-                </li>
-                <li>
-                  <BieuTuong ten="check" size={18} />
-                  <span>
-                    <strong>Nhóm Zalo của lớp</strong> để hỏi tiếp khi tự làm ở
-                    nhà.
-                  </span>
-                </li>
-              </ul>
-            </section>
-            <section id="giang-vien" className="course-section">
-              <h2>Giảng viên</h2>
-              <div className="instructor-profile">
-                <div className="instructor-photo">
-                  <Image
-                    src={khoaHoc.giangVien.anh}
-                    alt={khoaHoc.giangVien.ten}
-                    width={160}
-                    height={190}
-                    sizes="160px"
-                  />
-                </div>
-                <div>
-                  <h3>{COURSE_INSTRUCTOR.displayName}</h3>
-                  <p>{COURSE_INSTRUCTOR.role}</p>
-                  <p>{COURSE_INSTRUCTOR.position}</p>
-                  <p className="instructor-experience">
-                    {khoaHoc.giangVien.kinhNghiem}
-                  </p>
-                  <p>
-                    Nền tảng kỹ sư CNTT tại Đại học Bách khoa Hà Nội và thạc sĩ MICE tại Khoa Quốc tế – ĐHQG Hà Nội. Kết nối tư duy kỹ thuật với thực tiễn điều hành GiftyTech; trực tiếp hướng dẫn giao việc, kiểm chứng kết quả và hoàn thiện sản phẩm.
-                  </p>
-                  <a
-                    className="text-link"
-                    href={COURSE_INSTRUCTOR.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Hồ sơ LinkedIn ↗
-                  </a>
-                </div>
-              </div>
-            </section>
-            <section id="chuan-bi" className="course-section">
-              <h2>Chuẩn bị trước buổi học</h2>
-              <ul className="preparation-list">
-                {khoaHoc.chuanBi.map((c) => (
-                  <li key={c}>{c}</li>
-                ))}
-              </ul>
-              <details className="scope-note">
-                <summary>Những nội dung nằm ngoài phạm vi buổi học</summary>
-                <p>{khoaHoc.khongThuoc}</p>
-              </details>
-            </section>
-            <section id="cau-hoi" className="course-section">
-              <h2>Câu hỏi thường gặp</h2>
-              <div className="faq-list">
-                {cauHoi.map((q) => (
-                  <details key={q.hoi}>
-                    <summary>
-                      {q.hoi}
-                      <span aria-hidden="true">+</span>
-                    </summary>
-                    <p>{q.dap}</p>
-                  </details>
-                ))}
-              </div>
-            </section>
+            <nav className="course-more" aria-label="Tìm hiểu thêm">
+              <Link href="/giang-vien"><strong>Gặp giảng viên</strong><span>Hồ sơ và kinh nghiệm →</span></Link>
+              <Link href="/hoi-dap"><strong>Trước khi đăng ký</strong><span>Chuẩn bị, hỗ trợ và hỏi đáp →</span></Link>
+            </nav>
             <section className="course-bottom-cta">
               <div>
                 <h2>Sẵn sàng bắt đầu?</h2>

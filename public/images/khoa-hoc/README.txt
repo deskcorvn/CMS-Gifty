@@ -6,3 +6,5 @@ Tài sản khóa học hiện tại (10/10/2026)
 - Học phí 299.000đ, tối đa 20 học viên chỉ nằm trên trang. Chứng chỉ khi hoàn thành đủ 9 chặng; lưu 4 sản phẩm tùy chọn. Đăng ký chung tại https://daotao.giftytech.com/dang-ky.
 - Học vị và hồ sơ LinkedIn trong nội dung chi tiết do người vận hành cung cấp; CEO & Founder và 10.000 giờ do người vận hành xác nhận trực tiếp, không suy diễn thành số giờ đứng lớp.
 - Các file poster.png, poster-classic-source.webp, nguyen-manh-hung.png, og-course-expert.png, og-course-background.png (nếu có): tư liệu cũ, không dùng trên trang hoặc OG hiện tại.
+
+nguyen-manh-hung-khoanh-tay.png: Reused existing AI-assisted arms-crossed portrait at operator request for the training website. No additional face edits in this update. Original Google Photos portrait remains archived unchanged.

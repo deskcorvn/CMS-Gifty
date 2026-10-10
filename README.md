@@ -52,10 +52,10 @@ Kiểm tra trước khi push: `npm run lint && npm run typecheck && npm run buil
    - Gói Hobby (miễn phí) **không cho dùng thương mại hay nhận thanh toán**. Thu học phí thì dùng gói Pro.
    - Gói Hobby chỉ chạy cron mỗi ngày một lần. Lên Pro thì đổi `vercel.json` sang `"0 * * * *"` để đối soát mỗi giờ
      như PTI.
-3. **Tên miền**: thêm `cms.giftytech.com` trong Vercel → Domains, rồi đặt `SITE_URL=https://cms.giftytech.com`.
-   Trên Cloudflare (DNS của giftytech.com) thêm bản ghi `CNAME  cms  →  cname.vercel-dns.com`, để
+3. **Tên miền**: thêm `daotao.giftytech.com` trong Vercel → Domains, rồi đặt `SITE_URL=https://daotao.giftytech.com`.
+   Trên Cloudflare (DNS của giftytech.com) thêm bản ghi `CNAME  daotao  →  cname.vercel-dns.com`, để
    **DNS only (mây xám)** cho Vercel tự cấp chứng chỉ SSL.
-4. **SePay**: tạo webhook mới, URL `https://cms.giftytech.com/api/sepay/webhook`, *Bảo mật = API Key*, key trùng
+4. **SePay**: tạo webhook mới, URL `https://daotao.giftytech.com/api/sepay/webhook`, *Bảo mật = API Key*, key trùng
    `SEPAY_WEBHOOK_API_KEY`. Webhook này chỉ khớp nội dung có mã `GTAI…`; giao dịch khác hiện ở mục "Giao dịch cần
    đối chiếu" trong trang quản trị.
 5. **Email**: điền SMTP, hoặc Gmail App Password (`EMAIL_USER`/`EMAIL_PASS`).

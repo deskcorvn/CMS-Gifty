@@ -4,8 +4,8 @@ ten: Khóa đào tạo AI
 tieuDePhu: Hiểu AI và làm việc cùng AI
 moTa: >-
   Học cách giao việc kinh doanh cho AI: lên kế hoạch chăm sóc khách hàng, tạo trợ lý dùng lại hằng
-  ngày và chuẩn bị hồ sơ thương hiệu cá nhân. Chỉ dùng Claude Free và ChatGPT Free, không cần biết
-  lập trình.
+  ngày và chuẩn bị hồ sơ thương hiệu cá nhân. Dùng Claude và ChatGPT, không cần mua gói trả phí,
+  không cần biết lập trình.
 camKet: >-
   Học viên hiểu cách AI hoạt động, tự thiết lập Claude, biến danh sách mối quan hệ thành kế hoạch
   chăm sóc, khởi tạo trợ lý công việc có thể dùng lại và chuẩn bị hồ sơ thương hiệu cá nhân.
@@ -69,7 +69,7 @@ sanPham:
   - ma: SP04
     ten: Ảnh đại diện thương hiệu hoặc bộ lệnh chỉnh ảnh sẵn dùng
     dieuKien: >-
-      Ảnh giữ nhận dạng, tự nhiên; nếu hết hạn mức Free thì lưu sẵn câu lệnh và ảnh gốc để hoàn thiện
+      Ảnh giữ nhận dạng, tự nhiên; nếu hết lượt tạo ảnh miễn phí thì lưu sẵn câu lệnh và ảnh gốc để hoàn thiện
       sau lớp.
     chang: 7
     tuyChon: true
@@ -77,7 +77,7 @@ sanPham:
       Ảnh đại diện chỉnh bằng ChatGPT mà vẫn giữ đúng gương mặt mình. Hết lượt tạo ảnh miễn phí thì
       anh chị mang câu lệnh về làm tiếp ở nhà.
 chuanBi:
-  - Laptop và sạc; đăng nhập sẵn Claude Free (claude.ai) và ChatGPT Free (chatgpt.com) trước giờ học.
+  - Laptop và sạc; đăng nhập sẵn tài khoản Claude (claude.ai) và ChatGPT (chatgpt.com) trước giờ học, bản miễn phí là đủ.
   - Một ảnh chân dung của chính mình được phép chỉnh; tránh ảnh người khác nếu chưa có sự đồng ý.
   - "Một mô tả ngắn: mình làm nghề gì, ai là khách hàng, dịch vụ chính, điểm mạnh, cách liên hệ."
   - Không cần mang danh sách khách hàng thật; lớp cung cấp dữ liệu giả lập.
@@ -125,7 +125,7 @@ nguon:
     ten: Images in ChatGPT — OpenAI Help Center
     url: https://help.openai.com/en/articles/11084440-images-in-chatgpt
   - ma: N10
-    ten: ChatGPT Free Tier FAQ — OpenAI Help Center
+    ten: Câu hỏi về gói miễn phí của ChatGPT — OpenAI Help Center
     url: https://help.openai.com/en/articles/9275245-using-chatgpt-with-images
   - ma: N11
     ten: Claude dùng máy tính qua Cowork — Claude Help Center

@@ -60,7 +60,7 @@ Nếu một ứng dụng không cho phép thao tác, hãy dừng và báo rõ, k
 
 ## Những giới hạn cần biết
 
-- Tính năng điều khiển máy tính (Cowork/computer use) **không có trên Claude Free**. Theo hướng dẫn
+- Tính năng điều khiển máy tính (Cowork/computer use) **không có trên bản miễn phí của Claude**. Theo hướng dẫn
   của Anthropic, tính năng này đang ở giai đoạn thử nghiệm và phụ thuộc quyền Pro/Max, ứng dụng
   Desktop, hệ điều hành và trạng thái mở tính năng.
 - Claude ưu tiên sử dụng kết nối/công cụ có sẵn; chỉ khi cần mới thao tác qua trình duyệt hoặc trực

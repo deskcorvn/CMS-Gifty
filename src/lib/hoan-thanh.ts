@@ -6,7 +6,7 @@ export const O_BAT_BUOC: Record<MaSanPham, string[][]> = {
   SP01: [["uuTien"], ["keHoach"], ["tinNhan"]],
   SP02: [["huongDan"], ["cauThu"]],
   SP03: [["dinhVi"], ["gioiThieu"], ["loi30s"]],
-  // SP04: có ảnh đã chỉnh HOẶC có câu lệnh (hết hạn mức Free thì lưu câu lệnh, hoàn thiện sau).
+  // SP04: có ảnh đã chỉnh HOẶC có câu lệnh (hết lượt tạo ảnh miễn phí thì lưu câu lệnh, hoàn thiện sau).
   SP04: [["anhUrl", "cauLenh"]],
 };
 

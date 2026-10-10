@@ -48,7 +48,7 @@ buoc:
       KH12 | Khách cũ | Yêu cầu không liên hệ lại trong tháng này
     ketQua: Claude trả về ba bảng và một danh sách thông tin cần xác minh.
     neuKhongDuoc: >-
-      Hết hạn mức Free thì chờ một lúc hoặc dùng bản kết quả mẫu giảng viên chiếu trên màn hình, rồi
+      Hết lượt dùng miễn phí thì chờ một lúc hoặc dùng bản kết quả mẫu giảng viên chiếu trên màn hình, rồi
       làm tiếp các bước tự soát.
   - tieuDe: Đọc kết quả
     huongDan: >-

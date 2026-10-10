@@ -7,7 +7,7 @@ mucTieu: >-
   dùng lại bài toán mối quan hệ ngay trong Project để thấy sự khác biệt.
 sanPham: [SP02]
 ghiNho: >-
-  Projects có trên Claude Free (tối đa 5). Hướng dẫn riêng của Project chỉ áp dụng bên trong dự án.
+  Bản miễn phí của Claude có Projects (tối đa 5). Hướng dẫn riêng của Project chỉ áp dụng bên trong dự án.
   Memory là cơ chế khác; không phải mọi chi tiết trong các cuộc chat khác đều tự trở thành kiến thức
   chung của Project.
 nguon: [N03, N07, N15]

@@ -43,10 +43,10 @@ const cauHoi = [
   },
   {
     hoi: "Có cần mua Claude hay ChatGPT trả phí không?",
-    dap: "Không. Buổi học sử dụng Claude Free và ChatGPT Free. Nếu hết hạn mức tạo ảnh, anh chị lưu câu lệnh và ảnh gốc để hoàn thiện sau lớp.",
+    dap: "Không. Bản miễn phí của Claude và ChatGPT là đủ cho cả buổi học. Nếu hết hạn mức tạo ảnh, anh chị lưu câu lệnh và ảnh gốc để hoàn thiện sau lớp.",
   },
   {
-    hoi: "Tài khoản Free hết lượt giữa buổi thì sao?",
+    hoi: "Tài khoản miễn phí hết lượt giữa buổi thì sao?",
     dap: "Giảng viên làm mẫu một số bước trên màn hình để anh chị để dành lượt cho phần thực hành chính. Nếu vẫn hết lượt, câu lệnh đã nằm sẵn trong trang học, anh chị làm nốt khi tài khoản có lượt trở lại.",
   },
   {
@@ -234,7 +234,7 @@ export default async function TrangChu() {
                   </li>
                   <li>
                     <BieuTuong ten="book" size={18} />
-                    <span>Học bằng Claude Free & ChatGPT Free</span>
+                    <span>Dùng Claude và ChatGPT, không cần gói trả phí</span>
                   </li>
                   <li>
                     <BieuTuong ten="check" size={18} />

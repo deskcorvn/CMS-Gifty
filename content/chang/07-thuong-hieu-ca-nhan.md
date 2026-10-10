@@ -25,14 +25,14 @@ buoc:
 
       Giọng văn chân thành, chuyên nghiệp, tự nhiên. Không tự bịa số năm kinh nghiệm, thành tích, đối tác, dự án hay con số kinh doanh. Nếu thiếu dữ liệu, hãy hỏi tôi.
     ketQua: Ba phần giới thiệu đúng độ dài, không có con số hay thành tích anh chị chưa nói.
-  - tieuDe: Chỉnh ảnh chân dung bằng ChatGPT Free
+  - tieuDe: Chỉnh ảnh chân dung bằng ChatGPT
     huongDan: >-
       Tải ảnh chân dung CỦA CHÍNH MÌNH lên chatgpt.com, rồi gửi kèm câu lệnh dưới đây (sửa ngành).
     prompt: |-
       Hãy chỉnh chính bức ảnh chân dung tôi vừa tải lên để phù hợp làm ảnh đại diện doanh nhân. Giữ đúng khuôn mặt, độ tuổi, nét đặc trưng và vẻ tự nhiên của tôi. Tăng chất lượng ánh sáng và độ nét vừa phải; bố cục từ ngực trở lên, nền trung tính sạch, trang phục lịch sự phù hợp lĩnh vực [ngành]. Không thay đổi danh tính, không làm da hoặc mắt giả, không thêm chữ hay logo. Tỷ lệ ảnh vuông 1:1. Nếu ảnh gốc không đủ rõ, hãy nói cho tôi biết hạn chế trước khi chỉnh.
     ketQua: Một ảnh vuông, nền sạch, vẫn đúng là anh chị.
     neuKhongDuoc: >-
-      ChatGPT hỗ trợ tạo và chỉnh sửa ảnh trên gói Free nhưng có hạn mức riêng, có thể hết ngay giữa
+      ChatGPT hỗ trợ tạo và chỉnh sửa ảnh trên bản miễn phí nhưng có hạn mức riêng, có thể hết ngay giữa
       lớp. Khi đó giữ lại câu lệnh và ảnh gốc, hoàn thiện sau lớp.
   - tieuDe: Kiểm tra ảnh trước khi dùng
     huongDan: >-

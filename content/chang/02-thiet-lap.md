@@ -45,7 +45,7 @@ buoc:
     ketQua: >-
       Anh chị biết Claude có thể nhớ thông tin giữa các cuộc trò chuyện, và biết chỗ để xem lại.
     neuKhongDuoc: >-
-      Memory hiện có trên gói Free nhưng giao diện và lựa chọn có thể khác giữa các tài khoản
+      Memory hiện có trên bản miễn phí nhưng giao diện và lựa chọn có thể khác giữa các tài khoản
       (nguồn N07). Không thấy mục này thì bỏ qua bước.
   - tieuDe: Nhìn chỗ chọn mô hình
     huongDan: >-
@@ -56,7 +56,7 @@ buoc:
     huongDan: >-
       Mở chatgpt.com, đăng nhập, bấm nút đính kèm để chắc chắn tải được ảnh lên. Chưa cần gửi.
     ketQua: >-
-      Ảnh hiện trong ô soạn tin. Lưu ý: tạo và chỉnh ảnh trên gói Free có hạn mức riêng, dành lượt
+      Ảnh hiện trong ô soạn tin. Lưu ý: tạo và chỉnh ảnh trên bản miễn phí có hạn mức riêng, dành lượt
       cho chặng 7.
   - tieuDe: Đọc quy tắc dữ liệu
     huongDan: >-
@@ -68,5 +68,5 @@ buoc:
 
 - **Tắt cải thiện mô hình ≠ xóa dữ liệu.** Đó là hai việc khác nhau. Mỗi tài khoản cần tự tìm hiểu
   chính sách của mình.
-- **Claude Free có Projects (tối đa năm dự án) và có Memory.** Giao diện và lựa chọn có thể khác
+- **Bản miễn phí của Claude có Projects (tối đa năm dự án) và có Memory.** Giao diện và lựa chọn có thể khác
   giữa các tài khoản và thay đổi theo thời gian.

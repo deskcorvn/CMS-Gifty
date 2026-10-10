@@ -69,7 +69,7 @@ export default async function TrangDangKy() {
           </p>
           <div className="auth-note">
             Không cần biết lập trình hay mua gói AI trả phí. Anh chị chuẩn bị
-            laptop, sạc và đăng nhập sẵn Claude Free, ChatGPT Free.
+            laptop, sạc và đăng nhập sẵn tài khoản Claude, ChatGPT.
           </div>
         </div>
         <div>

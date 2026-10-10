@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #14263b;
+  --color-navy-dark: #0f1f33;
+  --color-ink: #1a2233;
+  --color-body: #24364d;
+  --color-muted: #5b6b80;
+  --color-line: #dce6ef;
+  --color-paper: #fbfcfe;
+  --color-amber: #e08a2b;
+  --color-amber-light: #f0a045;
+  --color-amber-ink: #8d581a;
+  --color-amber-soft: #fff7ec;
+  --color-cream: #ffd9a8;
+  --font-sans: var(--font-be-vietnam), system-ui, sans-serif;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--color-paper); color: var(--color-ink); }
+
+/* Nội dung Markdown của chặng (bảng, danh sách, details) */
+.noi-dung { color: var(--color-body); font-size: 15px; line-height: 1.75; }
+.noi-dung h2 { margin: 2rem 0 0.75rem; font-size: 1.2rem; font-weight: 800; color: var(--color-navy); }
+.noi-dung h3 { margin: 1.5rem 0 0.5rem; font-weight: 700; color: var(--color-navy); }
+.noi-dung p { margin: 0.75rem 0; }
+.noi-dung ul, .noi-dung ol { margin: 0.75rem 0; padding-left: 1.4rem; }
+.noi-dung ul { list-style: disc; }
+.noi-dung ol { list-style: decimal; }
+.noi-dung li { margin: 0.3rem 0; }
+.noi-dung strong { color: var(--color-ink); }
+.noi-dung table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 14px; display: block; overflow-x: auto; }
+.noi-dung th, .noi-dung td { border: 1px solid var(--color-line); padding: 0.5rem 0.65rem; text-align: left; vertical-align: top; }
+.noi-dung th { background: var(--color-navy); color: #fff; font-weight: 700; }
+.noi-dung tr:nth-child(even) td { background: #f4f7fa; }
+.noi-dung pre { background: var(--color-navy-dark); color: rgb(255 255 255 / 0.9); padding: 1rem; border-radius: 0.5rem; white-space: pre-wrap; font-size: 13px; line-height: 1.6; overflow: auto; }
+.noi-dung details { border: 1px solid var(--color-line); border-radius: 0.5rem; padding: 0.6rem 0.9rem; margin: 0.6rem 0; background: #fff; }
+.noi-dung summary { cursor: pointer; font-weight: 700; color: var(--color-navy); }
+
+@media print {
+  .khong-in { display: none !important; }
+  body { background: #fff; }
+}
+
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+}

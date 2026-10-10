@@ -1,0 +1,116 @@
+# Thông tin chung của khóa. Sửa được trong Pages CMS (mục "Thông tin khóa").
+# Mọi dữ kiện ở đây lấy từ "Giáo trình Buổi 1 — Hiểu AI và làm việc cùng AI", phiên bản 2.0, 10/10/2026.
+ten: Khóa đào tạo AI
+tieuDePhu: Hiểu AI và làm việc cùng AI
+moTa: >-
+  Ứng dụng thực tế trong kinh doanh, chăm sóc mối quan hệ và xây dựng thương hiệu cá nhân.
+  Học bằng Claude Free và ChatGPT Free, không cần biết lập trình, không cần mua gói trả phí.
+camKet: >-
+  Học viên hiểu cách AI hoạt động, tự thiết lập Claude, biến danh sách mối quan hệ thành kế hoạch
+  chăm sóc, khởi tạo trợ lý công việc có thể dùng lại và chuẩn bị hồ sơ thương hiệu cá nhân.
+hocPhi: 300000
+thoiLuongPhut: 180
+phienBanGiaoTrinh: "2.0 · cập nhật 10/10/2026"
+lop:
+  ngay: "2026-10-21"
+  gio: "14:00"
+  thu: Thứ Tư
+  # Để trống thì trang hiện "Gifty Tech gửi địa điểm qua email".
+  diaDiem: ""
+doiTuong: >-
+  Doanh nhân, chủ cửa hàng, chuyên viên bán hàng, người làm dịch vụ, quản lý nhóm, thành viên các
+  cộng đồng kinh doanh.
+khongThuoc: >-
+  Buổi học không gồm: triển khai website thật, đăng bài tự động, cấp quyền Facebook/TikTok/YouTube,
+  cấu hình MCP, lập trình Claude Code, vận hành CRM cho doanh nghiệp, xử lý dữ liệu khách hàng thật.
+sanPham:
+  - ma: SP01
+    ten: Bảng khách hàng mẫu + kế hoạch 7 ngày
+    dieuKien: Đủ 12 dòng dữ liệu; có tối thiểu 5 ưu tiên, lý do và đầu việc; không bịa thông tin.
+    chang: 5
+  - ma: SP02
+    ten: "Trợ lý Claude: “Trợ lý kinh doanh của tôi”"
+    dieuKien: Có Project/hướng dẫn riêng; thử lại ít nhất một yêu cầu với dữ liệu mẫu.
+    chang: 6
+  - ma: SP03
+    ten: Hồ sơ thương hiệu cá nhân
+    dieuKien: Có một câu định vị, đoạn giới thiệu 70–100 chữ, lời giới thiệu khoảng 30 giây.
+    chang: 7
+  - ma: SP04
+    ten: Ảnh đại diện thương hiệu hoặc bộ lệnh chỉnh ảnh sẵn dùng
+    dieuKien: >-
+      Ảnh giữ nhận dạng, tự nhiên; nếu hết hạn mức Free thì lưu sẵn câu lệnh và ảnh gốc để hoàn thiện
+      sau lớp.
+    chang: 7
+chuanBi:
+  - Laptop và sạc; đăng nhập sẵn Claude Free (claude.ai) và ChatGPT Free (chatgpt.com) trước giờ học.
+  - Một ảnh chân dung của chính mình được phép chỉnh; tránh ảnh người khác nếu chưa có sự đồng ý.
+  - "Một mô tả ngắn: mình làm nghề gì, ai là khách hàng, dịch vụ chính, điểm mạnh, cách liên hệ."
+  - Không cần mang danh sách khách hàng thật; lớp cung cấp dữ liệu giả lập.
+  - Không dùng hết hạn mức tạo ảnh hoặc trò chuyện sát giờ học nếu muốn thực hành đồng thời.
+chungChi:
+  danhHieu: Hoàn thành xuất sắc
+  nguoiKy: Nguyễn Hùng
+  chucDanh: Giảng viên
+  donVi: Gifty Tech
+  # Ảnh chữ ký nằm ở public/chu-ky-hung.svg (tạo bằng scripts/ve-chu-ky.mjs).
+video:
+  tieuDe: "Tôi giao mục tiêu. AI tự mở phần mềm, thực hiện và báo cáo kết quả."
+  # Link video quay sẵn (YouTube không công khai hoặc file MP4). Trống thì trang báo "có sau buổi học".
+  url: ""
+cauChot: >-
+  Không cần giỏi công nghệ mới bắt đầu dùng AI. Chỉ cần hiểu mình đang làm gì, biết cung cấp đúng
+  thông tin và giữ quyền kiểm tra, anh chị đã có thể giao được việc thực tế cho AI.
+ngayRaSoatNguon: "10/10/2026"
+nguon:
+  - ma: N01
+    ten: Model, Effort và Thinking — Claude Help Center
+    url: https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings
+  - ma: N02
+    ten: Thay đổi cài đặt dùng dữ liệu để cải thiện mô hình — Anthropic Privacy
+    url: https://privacy.claude.com/en/articles/12109829-how-do-i-change-my-model-improvement-privacy-settings
+  - ma: N03
+    ten: What are projects? — Claude Help Center
+    url: https://support.claude.com/en/articles/9517075-what-are-projects
+  - ma: N04
+    ten: Usage limits và length limits — Claude Help Center
+    url: https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work
+  - ma: N05
+    ten: Tạo/chỉnh file với Claude — Claude Help Center
+    url: https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude
+  - ma: N06
+    ten: Understanding personalization features — Claude Help Center
+    url: https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features
+  - ma: N07
+    ten: Chat search & Memory — Claude Help Center
+    url: https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context
+  - ma: N08
+    ten: Can Claude produce images? — Claude Help Center
+    url: https://support.claude.com/en/articles/9002504-can-claude-produce-images
+  - ma: N09
+    ten: Images in ChatGPT — OpenAI Help Center
+    url: https://help.openai.com/en/articles/11084440-images-in-chatgpt
+  - ma: N10
+    ten: ChatGPT Free Tier FAQ — OpenAI Help Center
+    url: https://help.openai.com/en/articles/9275245-using-chatgpt-with-images
+  - ma: N11
+    ten: Claude dùng máy tính qua Cowork — Claude Help Center
+    url: https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork
+  - ma: N12
+    ten: Bắt đầu với Claude Cowork — Claude Help Center
+    url: https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork
+  - ma: N13
+    ten: Giao việc từ xa qua Dispatch — Claude Help Center
+    url: https://support.claude.com/en/articles/13947068-assign-tasks-from-anywhere-in-claude-cowork
+  - ma: N14
+    ten: Sử dụng Claude Cowork an toàn — Claude Help Center
+    url: https://support.claude.com/en/articles/13364135-use-claude-cowork-safely
+  - ma: N15
+    ten: How to create and manage projects — Claude Help Center
+    url: https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects
+  - ma: N16
+    ten: Prompting best practices — Claude Platform Docs
+    url: https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompt-templates-and-variables
+  - ma: N17
+    ten: Tìm hiểu hoạt động của mô hình ngôn ngữ — Anthropic Research
+    url: https://www.anthropic.com/research/tracing-thoughts-language-model

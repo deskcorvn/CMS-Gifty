@@ -1,0 +1,105 @@
+# Pages CMS (https://pagescms.org, mã nguồn mở MIT) — sửa nội dung khóa học không cần biết code.
+# Đăng nhập app.pagescms.org bằng GitHub, chọn repo này. Mỗi lần bấm Save là một commit vào nhánh
+# đang chọn; Vercel tự build lại. Nội dung sai cấu trúc sẽ bị scripts/build-content.mjs chặn khi build.
+media:
+  input: public/anh
+  output: /anh
+
+content:
+  - name: chang
+    label: Các chặng học
+    type: collection
+    path: content/chang
+    format: yaml-frontmatter
+    view:
+      fields: [so, tieuDe, phut]
+      primary: tieuDe
+      sort: [so]
+      default:
+        sort: so
+        order: asc
+    fields:
+      - { name: so, label: Số chặng, type: number, required: true }
+      - { name: tieuDe, label: Tiêu đề, type: string, required: true }
+      - { name: phut, label: Thời lượng (phút), type: number }
+      - { name: mucTieu, label: Mục tiêu, type: text }
+      - { name: ghiNho, label: Câu ghi nhớ, type: text }
+      - name: sanPham
+        label: Sản phẩm làm ở chặng này
+        type: select
+        list: true
+        options: { values: [SP01, SP02, SP03, SP04] }
+      - { name: nguon, label: "Nguồn tham khảo (mã N01…N17)", type: string, list: true }
+      - { name: coVideo, label: Chặng có video, type: boolean }
+      - name: buoc
+        label: Các bước
+        type: object
+        list: true
+        required: true
+        fields:
+          - { name: tieuDe, label: Tên bước, type: string, required: true }
+          - { name: huongDan, label: Làm gì, type: text, required: true }
+          - { name: prompt, label: "Câu lệnh mẫu (học viên bấm Sao chép)", type: text }
+          - { name: ketQua, label: Kết quả trông thế nào, type: text }
+          - { name: neuKhongDuoc, label: Nếu không được thì…, type: text }
+      - name: body
+        label: "Kiến thức nền (Markdown: ## tiêu đề, bảng | a | b |, danh sách -)"
+        type: text
+
+  - name: khoa-hoc
+    label: Thông tin khóa
+    type: file
+    path: content/khoa-hoc.yml
+    format: yaml
+    fields:
+      - { name: ten, label: Tên khóa, type: string, required: true }
+      - { name: tieuDePhu, label: Tiêu đề phụ, type: string }
+      - { name: moTa, label: Mô tả, type: text }
+      - { name: camKet, label: Cam kết đầu ra, type: text }
+      - { name: hocPhi, label: Học phí (đồng), type: number, required: true }
+      - { name: thoiLuongPhut, label: Thời lượng (phút), type: number }
+      - { name: phienBanGiaoTrinh, label: Phiên bản giáo trình, type: string }
+      - name: lop
+        label: Lớp học
+        type: object
+        fields:
+          - { name: ngay, label: "Ngày (YYYY-MM-DD)", type: string }
+          - { name: gio, label: "Giờ (HH:MM)", type: string }
+          - { name: thu, label: Thứ, type: string }
+          - { name: diaDiem, label: Địa điểm (trống = báo qua email), type: text }
+      - { name: doiTuong, label: Đối tượng, type: text }
+      - { name: khongThuoc, label: Không thuộc buổi học, type: text }
+      - name: sanPham
+        label: Bốn sản phẩm
+        type: object
+        list: true
+        fields:
+          - { name: ma, label: Mã, type: string }
+          - { name: ten, label: Tên, type: string }
+          - { name: dieuKien, label: Điều kiện đạt, type: text }
+          - { name: chang, label: Làm ở chặng, type: number }
+      - { name: chuanBi, label: Chuẩn bị trước buổi học, type: string, list: true }
+      - name: chungChi
+        label: Chứng chỉ
+        type: object
+        fields:
+          - { name: danhHieu, label: Danh hiệu, type: string }
+          - { name: nguoiKy, label: Người ký, type: string }
+          - { name: chucDanh, label: Chức danh, type: string }
+          - { name: donVi, label: Đơn vị, type: string }
+      - name: video
+        label: Video chặng 8
+        type: object
+        fields:
+          - { name: tieuDe, label: Tên video, type: string }
+          - { name: url, label: "Link video (YouTube/MP4)", type: string }
+      - { name: cauChot, label: Câu chốt khóa, type: text }
+      - { name: ngayRaSoatNguon, label: Ngày rà soát nguồn, type: string }
+      - name: nguon
+        label: Nguồn tham khảo
+        type: object
+        list: true
+        fields:
+          - { name: ma, label: Mã, type: string }
+          - { name: ten, label: Tên, type: string }
+          - { name: url, label: Link, type: string }

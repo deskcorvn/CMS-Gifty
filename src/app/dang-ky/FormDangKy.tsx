@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import NutSaoChep from "@/components/NutSaoChep";
+import { goiYEmail } from "@/lib/goi-y-email";
 
 type Don = {
   ma: string;
@@ -21,6 +22,9 @@ export default function FormDangKy({ hocPhi }: { hocPhi: number }) {
   const [loi, setLoi] = useState("");
   const [thongBao, setThongBao] = useState("");
   const [don, setDon] = useState<Don | null>(null);
+  const [email, setEmail] = useState("");
+  const [email2, setEmail2] = useState("");
+  const goiY = goiYEmail(email);
   const [trangThai, setTrangThai] = useState<{
     trangThai: string;
     conThieu: number;
@@ -37,7 +41,7 @@ export default function FormDangKy({ hocPhi }: { hocPhi: number }) {
       const d = await r.json();
       setTrangThai(d);
       if (d.trangThai === "DA_DU")
-        window.setTimeout(() => router.push("/hoc"), 2500);
+        window.setTimeout(() => router.push("/hoc"), 8000);
     }, 4000);
     return () => window.clearInterval(t);
   }, [don, trangThai?.trangThai, router]);
@@ -47,12 +51,16 @@ export default function FormDangKy({ hocPhi }: { hocPhi: number }) {
     setLoi("");
     setDangGui(true);
     const f = new FormData(e.currentTarget);
+    if (email.trim().toLowerCase() !== email2.trim().toLowerCase()) {
+      setDangGui(false);
+      return setLoi("Hai ô email chưa giống nhau. Kiểm tra lại giúp Gifty Tech nhé.");
+    }
     const r = await fetch("/api/dang-ky", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         hoTen: f.get("hoTen"),
-        email: f.get("email"),
+        email: email.trim(),
         sdt: f.get("sdt"),
       }),
     }).catch(() => null);
@@ -88,16 +96,24 @@ export default function FormDangKy({ hocPhi }: { hocPhi: number }) {
           <p className="text-lg font-bold text-emerald-800">
             Đã nhận đủ học phí. Cảm ơn anh chị!
           </p>
-          <p className="mt-2 text-body">
-            Đang chuyển vào trang học… Anh chị có thể xem lại danh sách chuẩn bị
-            ngay trong trang học.
+          <p className="mt-3 rounded-lg border border-amber/40 bg-white px-4 py-3 text-body">
+            <b>Mã đăng ký của anh chị: {don.ma}</b>
+            <br />
+            <span className="text-sm">
+              Chụp màn hình hoặc lưu lại mã này. Mã dùng để đăng nhập khi không nhận được email, và luôn tra lại được
+              trong nội dung chuyển khoản ở app ngân hàng.
+            </span>
           </p>
+          <p className="mt-3 text-sm text-body">Đang chuyển vào trang học…</p>
         </div>
       );
     }
     return (
       <div className="form-card" role="status">
         <h2 className="text-lg font-bold text-navy">Quét mã để chuyển khoản</h2>
+        <p className="mt-2 rounded-lg bg-paper px-3 py-2 text-sm text-body ring-1 ring-line">
+          Email nhận link vào học: <b>{email}</b> · Mã đăng ký: <b>{don.ma}</b>
+        </p>
         <p className="mt-1 text-sm text-muted">
           Mã QR đã điền sẵn số tiền và nội dung. Trang sẽ tự cập nhật khi
           hệ thống nhận được xác nhận thanh toán.
@@ -177,13 +193,6 @@ export default function FormDangKy({ hocPhi }: { hocPhi: number }) {
           placeholder: "Họ và tên đầy đủ",
         },
         {
-          name: "email",
-          label: "Email (nhận link vào học và chứng chỉ)",
-          type: "email",
-          auto: "email",
-          placeholder: "anhchi@example.com",
-        },
-        {
           name: "sdt",
           label: "Số điện thoại / Zalo",
           type: "tel",
@@ -203,6 +212,44 @@ export default function FormDangKy({ hocPhi }: { hocPhi: number }) {
           />
         </label>
       ))}
+      <label className="block">
+        <span className="text-sm font-semibold text-navy">Email (nhận link vào học và chứng chỉ)</span>
+        <input
+          name="email"
+          type="email"
+          autoComplete="email"
+          placeholder="anhchi@example.com"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="mt-1 w-full rounded-lg border border-line px-3 py-2.5 outline-none focus:border-amber"
+        />
+        {goiY && (
+          <span className="mt-1 block text-sm text-amber-ink">
+            Có phải ý anh chị là <b>{goiY}</b>?{" "}
+            <button type="button" className="font-semibold underline" onClick={() => { setEmail(goiY); setEmail2(""); }}>
+              Dùng email này
+            </button>
+          </span>
+        )}
+      </label>
+      <label className="block">
+        <span className="text-sm font-semibold text-navy">Nhập lại email</span>
+        <input
+          name="email2"
+          type="email"
+          autoComplete="off"
+          placeholder="Gõ lại email ở trên"
+          required
+          value={email2}
+          onChange={(e) => setEmail2(e.target.value)}
+          onPaste={(e) => e.preventDefault()}
+          className="mt-1 w-full rounded-lg border border-line px-3 py-2.5 outline-none focus:border-amber"
+        />
+        {email2 && email2.trim().toLowerCase() !== email.trim().toLowerCase() && (
+          <span className="mt-1 block text-sm text-red-700">Chưa giống email ở trên.</span>
+        )}
+      </label>
       {loi && (
         <p role="alert" className="text-sm font-semibold text-red-700">
           {loi}

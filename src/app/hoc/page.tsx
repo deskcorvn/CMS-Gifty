@@ -1,12 +1,16 @@
 import Link from "next/link";
 import { tinhTrangHocVien } from "@/lib/hoan-thanh";
 import { dsChang, khoaHoc, nhanLichHoc, tongSoBuoc } from "@/lib/noi-dung";
+import ThongTinCuaToi from "@/components/ThongTinCuaToi";
+import { maDangKyCua } from "@/lib/ma-dang-ky";
 import { duocVaoNoiDung } from "@/lib/mo-khoa";
 import { batBuocHocVien, type HocVien } from "@/lib/phien";
 
 export default async function TrangHoc() {
   const hv = await batBuocHocVien();
-  if (!(await duocVaoNoiDung())) return <ManHinhCho hv={hv} />;
+  const maDangKy = await maDangKyCua(hv.id);
+  const thongTin = <ThongTinCuaToi email={hv.email} sdt={hv.sdt ?? ""} maDangKy={maDangKy} />;
+  if (!(await duocVaoNoiDung())) return <ManHinhCho hv={hv} thongTin={thongTin} />;
   const tt = await tinhTrangHocVien(hv.id);
   const soChangXong = dsChang.filter((c) => c.buoc.every((b) => tt.buocXong.has(b.id))).length;
   const pct = Math.round((tt.soBuocXong / tongSoBuoc) * 100);
@@ -41,6 +45,8 @@ export default async function TrangHoc() {
           <Link href="/hoc/thu-vien" className="rounded-lg border border-navy/25 px-5 py-2.5 font-bold text-navy hover:bg-navy hover:text-white">Kết quả của tôi</Link>
         </div>
       </section>
+
+      {thongTin}
 
       {chuaBatDau && (
         <section className="mt-6 rounded-xl border border-amber/40 bg-amber-soft p-5">
@@ -92,7 +98,7 @@ export default async function TrangHoc() {
 }
 
 /** Đã đóng học phí nhưng quản trị chưa mở khóa học: chỉ hiện lịch, chuẩn bị và mục lục (không vào được bài). */
-function ManHinhCho({ hv }: { hv: HocVien }) {
+function ManHinhCho({ hv, thongTin }: { hv: HocVien; thongTin: React.ReactNode }) {
   return (
     <main id="noi-dung-chinh" className="mx-auto max-w-5xl px-4 py-10">
       <div className="learning-welcome">
@@ -106,9 +112,10 @@ function ManHinhCho({ hv }: { hv: HocVien }) {
           <b>Địa điểm:</b> {khoaHoc.lop.diaDiem || "Gifty Tech gửi địa điểm qua email"}
         </p>
         <p className="mt-3 text-sm text-body">
-          Nội dung 9 chặng sẽ mở khi lớp bắt đầu. Lúc đó anh chị quay lại trang này (đăng nhập bằng email đã đăng ký) để học theo từng chặng.
+          Nội dung 9 chặng sẽ mở khi lớp bắt đầu. Lúc đó anh chị quay lại trang này (đăng nhập bằng email hoặc mã đăng ký) để học theo từng chặng.
         </p>
       </section>
+      {thongTin}
       <section className="mt-6 rounded-xl border border-amber/40 bg-amber-soft p-5">
         <h2 className="font-bold text-amber-ink">Chuẩn bị trước buổi học</h2>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-body">

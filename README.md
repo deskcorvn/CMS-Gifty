@@ -67,6 +67,9 @@ Kiểm tra trước khi push: `npm run lint && npm run typecheck && npm run buil
 - **`/quan-tri`** (khóa `ADMIN_KEY`, tối thiểu 16 ký tự):
   - **Mở khóa học / Khóa lại nội dung**: mặc định khóa, học viên đã trả tiền chỉ thấy lịch và phần chuẩn bị; bấm mở khi lớp bắt đầu;
   - **Gửi email thử**, xem lỗi gửi email gần nhất; **Gửi lại email** và **Sửa email** cho từng học viên;
+- **Học viên nhập nhầm email / số điện thoại:** mỗi người có **mã đăng ký** = mã chuyển khoản `GTAI…` (hiện sau khi
+  trả tiền, trong email, trong trang học, và luôn nằm trong lịch sử giao dịch ngân hàng). Trang đăng nhập có ô
+  **Đăng nhập bằng mã đăng ký** (chặn dò: 10 lần sai/15 phút/IP). Vào được rồi học viên tự sửa email, số điện thoại.
   - xem danh sách học viên, tiền đã nhận, tiến độ, chứng chỉ; xuất CSV;
   - **Kích hoạt tay** cho người đóng tiền mặt (đơn chuyển khoản đang treo sẽ bị hủy);
   - **Link đăng nhập** (hạn 24 giờ) để gửi qua Zalo khi email không tới;

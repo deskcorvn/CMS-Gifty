@@ -87,3 +87,11 @@ create table if not exists cai_dat (
   gia_tri     jsonb not null,
   cap_nhat_at timestamptz not null default now()
 );
+
+-- Lần đăng nhập bằng mã đăng ký thất bại, để chặn dò mã (theo IP, xét 15 phút gần nhất).
+create table if not exists thu_dang_nhap (
+  id  bigserial primary key,
+  ip  text not null,
+  luc timestamptz not null default now()
+);
+create index if not exists thu_dang_nhap_ip_luc on thu_dang_nhap (ip, luc);

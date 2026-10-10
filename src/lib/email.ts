@@ -72,7 +72,7 @@ function khung(noiDung: string) {
 const nut = (href: string, nhan: string) =>
   `<p style="margin:24px 0"><a href="${esc(href)}" style="background:#e08a2b;color:#1a1205;padding:12px 22px;border-radius:8px;font-weight:bold;text-decoration:none">${esc(nhan)}</a></p>`;
 
-export function emailKichHoat(hoTen: string, link: string) {
+export function emailKichHoat(hoTen: string, link: string, maDangKy: string | null = null) {
   const diaDiem = khoaHoc.lop.diaDiem || "Gifty Tech sẽ gửi địa điểm trong email nhắc lịch.";
   const chuanBi = khoaHoc.chuanBi.map((c) => `<li>${esc(c)}</li>`).join("");
   return {
@@ -80,11 +80,12 @@ export function emailKichHoat(hoTen: string, link: string) {
     html: khung(`<p>Chào ${esc(hoTen)},</p>
 <p>Anh chị đã <b>đăng ký thành công</b> lớp <b>${esc(khoaHoc.ten)}: ${esc(khoaHoc.tieuDePhu)}</b>. Gifty Tech đã nhận đủ học phí.</p>
 <p><b>Lịch học:</b> ${esc(nhanLichHoc())} · ${khoaHoc.thoiLuongPhut} phút<br><b>Địa điểm:</b> ${esc(diaDiem)}</p>
+${maDangKy ? `<p style="background:#fff7ec;border:1px solid #f0d8b9;border-radius:8px;padding:12px 16px"><b>Mã đăng ký: ${esc(maDangKy)}</b><br><span style="font-size:13px">Lưu lại mã này. Khi không nhận được email đăng nhập, anh chị đăng nhập bằng mã đăng ký. Mã cũng nằm trong nội dung chuyển khoản ở app ngân hàng.</span></p>` : ""}
 <p>Nội dung 9 chặng sẽ mở khi lớp bắt đầu. Trước đó, anh chị vào trang học để xem lịch và danh sách chuẩn bị.</p>
 ${nut(link, "Vào trang học của tôi")}
 <p style="font-size:13px;color:#5b6b80">Link dùng được một lần trong 14 ngày. Hết hạn thì vào trang đăng nhập, nhập email này để nhận link mới.</p>
 <p><b>Chuẩn bị trước buổi học:</b></p><ul>${chuanBi}</ul>`),
-    vanBan: `Chào ${hoTen},\nAnh chị đã đăng ký thành công ${khoaHoc.ten}: ${khoaHoc.tieuDePhu}. Gifty Tech đã nhận đủ học phí.\nLịch học: ${nhanLichHoc()}\nĐịa điểm: ${diaDiem}\nNội dung 9 chặng mở khi lớp bắt đầu.\nVào trang học: ${link}\n\nChuẩn bị:\n- ${khoaHoc.chuanBi.join("\n- ")}`,
+    vanBan: `Chào ${hoTen},\nAnh chị đã đăng ký thành công ${khoaHoc.ten}: ${khoaHoc.tieuDePhu}. Gifty Tech đã nhận đủ học phí.\nLịch học: ${nhanLichHoc()}\nĐịa điểm: ${diaDiem}\n${maDangKy ? `Mã đăng ký: ${maDangKy} (lưu lại để đăng nhập khi cần)\n` : ""}Nội dung 9 chặng mở khi lớp bắt đầu.\nVào trang học: ${link}\n\nChuẩn bị:\n- ${khoaHoc.chuanBi.join("\n- ")}`,
   };
 }
 

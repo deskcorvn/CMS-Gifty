@@ -36,6 +36,14 @@ export const metadata: Metadata = {
   },
 };
 
+// Trình duyệt trong app (Zalo, Facebook) đôi khi không tải được file CSS: mạng chập chờn, hoặc trang mở từ trước
+// một lần deploy nên trỏ tới file CSS cũ đã bị thay. Trang khi đó hiện chữ trơn không định dạng.
+// Sau khi trang tải xong mà chưa thấy mốc --css-da-tai thì tải lại trang một lần (không lặp trong 60 giây).
+const CSS_TU_SUA = `addEventListener("load",function(){try{
+if(getComputedStyle(document.documentElement).getPropertyValue("--css-da-tai").trim())return;
+var k="css-tai-lai",t=+sessionStorage.getItem(k)||0;if(Date.now()-t<6e4)return;
+sessionStorage.setItem(k,String(Date.now()));location.reload();}catch(e){}});`;
+
 export default function RootLayout({
   children,
 }: {
@@ -43,6 +51,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="vi" className={beVietnam.variable}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: CSS_TU_SUA }} />
+      </head>
       <body className="min-h-screen font-sans antialiased">
         <a href="#noi-dung-chinh" className="skip-link khong-in">
           Đến nội dung chính

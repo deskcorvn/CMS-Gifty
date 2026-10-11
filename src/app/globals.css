@@ -1362,3 +1362,8 @@ summary::-webkit-details-marker {
   .expert-portrait { width: min(100%, 300px); margin-inline: auto; }
   .expert-experience { flex-wrap: wrap; gap: 8px; }
 }
+
+/* Mốc để script trong layout biết CSS đã tải (xem CSS_TU_SUA trong src/app/layout.tsx). */
+html {
+  --css-da-tai: 1;
+}

@@ -10,3 +10,5 @@ Tài sản khóa học hiện tại (10/10/2026)
 nguyen-manh-hung-khoanh-tay.png: Reused existing AI-assisted arms-crossed portrait at operator request for the training website. No additional face edits in this update. Original Google Photos portrait remains archived unchanged.
 
 og-course-core-background.png: Red/white background edited from the prior reference poster with image generation. It contains no text, logo or person. course-social-image.tsx composes the original arms-crossed portrait and authentic logo files with Be Vietnam Pro typography. No portrait retouching in this update.
+
+OG update: prominent 180-minute duration and instructor 10,000-hour AI experience callouts; class time/date included. Background refined with image generation; existing portrait and authentic logo unchanged.

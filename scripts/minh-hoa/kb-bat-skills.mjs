@@ -26,7 +26,7 @@ const skills = (batCreator) =>
   ${SKILLS.map(([t, m], i) => `<div class="dong ${i === 0 ? "noi-bat" : ""}"><div><div class="t">${t}</div><div class="m">${m}</div></div><span class="cong ${i === 0 ? (batCreator ? "bat" : "") : "bat"}" ${i === 0 ? 'data-id="cong-creator"' : ""}></span></div>`).join("")}
   </div>`, "Claude · Customize");
 
-export default {
+const kb = {
   bia: 2,
   buoc: [
     { ve: () => chatTrong(), tro: "ben-user", chu: "Bấm vào tên tài khoản ở góc dưới bên trái.", giu: 0.8 },
@@ -37,3 +37,5 @@ export default {
     { ve: () => skills(true), chu: "Xong. Từ giờ chỉ cần nói “dùng skill-creator đóng gói việc vừa làm”.", giu: 3.5 },
   ],
 };
+
+export default kb;

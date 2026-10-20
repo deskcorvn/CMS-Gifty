@@ -31,7 +31,7 @@ const baoCao = `<div class="bong-ai" style="width:88%"><div class="chip"><span c
 <div style="font-weight:700">Báo cáo</div>
 <div>✓ Đã chuyển 249 tệp vào đúng thư mục.<br>✓ 63 tệp nằm trong <b>can-xoa</b>, <b>chưa xóa tệp nào</b>: bạn xem lại rồi tự xóa.<br>• 2 tệp không rõ nhóm, để nguyên chỗ cũ, cần bạn quyết.</div></div>`;
 
-export default {
+const kb = {
   bia: 4,
   buoc: [
     { ve: () => khung(chao), tro: "tab-cowork", chu: "Ở ô nhập, chọn <b>Cowork</b> (gói trả phí; làm việc với tệp trên máy cần ứng dụng Claude Desktop).", giu: 0.8 },
@@ -45,3 +45,5 @@ export default {
     { ve: () => khung(baoCao, { cowork: true, thuMuc: "Downloads" }), chu: "AI <b>báo cáo</b>: đã làm gì, còn gì chờ bạn quyết. Việc xóa vẫn do người làm.", giu: 3.4 },
   ],
 };
+
+export default kb;

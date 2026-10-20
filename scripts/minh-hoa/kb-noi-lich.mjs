@@ -46,7 +46,7 @@ const lich = () => {
   return cuaSo(`<div class="trang" style="padding:52px 40px 20px"><h1 style="font-size:22px">Lịch của Hùng</h1><div class="phu">Ứng dụng lịch (minh họa)</div><div class="lich">${o}</div></div>`, "Google Calendar");
 };
 
-export default {
+const kb = {
   bia: 6,
   buoc: [
     { ve: () => chat(), tro: "nut-cong", chu: "Trong ô chat, bấm nút <b>+</b>.", giu: 0.6 },
@@ -61,3 +61,5 @@ export default {
     { ve: () => lich(), tro: "su-kien", bam: false, chu: "Sự kiện đã nằm trong lịch. Tạo, đổi giờ, xóa đều nói bằng lời được.", giu: 3.2 },
   ],
 };
+
+export default kb;

@@ -37,7 +37,7 @@ const dungLai = `<div class="bong-nguoi">${CAU2}</div><div class="bong-ai"><div 
 <div style="color:#76726a;font-size:13px;margin-top:4px">Đúng khuôn như lần làm tay, chỉ cần một câu.</div></div>`;
 const capNhat = `${dungLai}<div class="bong-nguoi">${CAU3}</div><div class="bong-ai"><div class="chip"><span class="dot"></span>skill-creator · cập nhật</div><div>Đã cập nhật skill <b>ke-hoach-cham-soc-7-ngay</b>: bảng ưu tiên có thêm cột “Thời hạn”. Lần sau sẽ dùng bản mới.</div></div>`;
 
-export default {
+const kb = {
   bia: 3,
   buoc: [
     { ve: () => duAn(ketQuaCu), chu: "Làm tay trước: kết quả ở chặng 3 đã <b>ưng ý</b> sau vài lần sửa.", giu: 2.2 },
@@ -51,3 +51,5 @@ export default {
     { ve: () => chatMoi(capNhat), chu: "Skill được sửa ngay. Sửa skill nhanh hơn nhiều so với đổi thói quen của người.", giu: 3.2 },
   ],
 };
+
+export default kb;

@@ -1,7 +1,8 @@
 // Kịch bản giảng chi tiết cho PDF (chỉ giảng viên dùng, không đăng). Bám sát cách trình bày của buổi
 // "Từ ô chat đến một đội AI cùng làm việc" (Trương Phương x Hưng Kescy, youtu.be/Kml4bT44fS4), theo từng màn.
-// moc: đoạn video gốc tương ứng để xem lại · loi: lời giảng · ke: chuyện riêng của diễn giả gốc (kể lại dưới dạng
-// "một anh làm đào tạo AI kể…", không nhận là của mình) · luuY: ghi chú khi đứng lớp.
+// moc: đoạn video gốc tương ứng để xem lại · loi: lời giảng, kể cả chuyện riêng của diễn giả, giữ nguyên ngôi thứ nhất
+// như trong video (giảng viên tự sửa khi kể) · luuY: ghi chú khi đứng lớp. Các màn do lớp thêm (bài tập, quy tắc lớp)
+// chỉ ghi ngắn, không thêm lời dẫn.
 const kichBan = {
   "00": [
     {
@@ -26,27 +27,20 @@ const kichBan = {
       ],
     },
     {
-      loi: [
-        "Xong bốn chặng thì lớp mình có thêm hai phần ngắn. Phần đầu là làm lời giới thiệu bản thân và ảnh đại diện, phần ảnh mình dùng ChatGPT. Phần cuối là chốt lại cả buổi, và mỗi người chọn ra mấy việc để bắt tay làm ngay trong tuần này.",
-      ],
-      luuY: "Hai phần này là của Gifty Tech thêm vào, video gốc không có.",
+      loi: ["Sau bốn chặng có thêm hai phần ngắn: lời giới thiệu bản thân và ảnh đại diện (ảnh làm bằng ChatGPT), rồi chốt lại và chọn việc làm trong tuần."],
+      luuY: "Màn của lớp, video gốc không có.",
     },
     {
-      loi: [
-        "Mình không muốn anh chị chỉ ngồi nghe. Cuối buổi, mỗi người cầm về bốn thứ dùng được ngay: một kế hoạch chăm sóc khách bảy ngày, một trợ lý Claude đã biết việc của mình, một bộ lời giới thiệu bản thân, và một ảnh đại diện hoặc câu lệnh để về nhà làm tiếp.",
-        "Cả bốn thứ đều lưu được trên trang học, ở mục Kết quả của tôi. Sau này cần thì mở ra xem lại.",
-      ],
+      loi: ["Cuối buổi mỗi người có bốn thứ: kế hoạch chăm sóc bảy ngày, trợ lý Claude, lời giới thiệu bản thân, ảnh đại diện hoặc câu lệnh làm tiếp ở nhà. Lưu ở mục Kết quả của tôi trên trang học."],
+      luuY: "Màn của lớp, video gốc không có.",
     },
     {
-      loi: [
-        "Mỗi chặng mình đi ba nhịp. Mình chiếu và giải thích trước. Rồi anh chị tự làm ngay trên máy theo các bước trên trang học. Làm xong thì bấm Hoàn thành chặng, cả lớp chốt lại với nhau rồi mới sang chặng sau.",
-        "Cứ làm tay ngay trên lớp thì về nhà mới nhớ. Chỗ nào vướng, anh chị giơ tay, trợ giảng sẽ xuống hỗ trợ.",
-      ],
+      loi: ["Mỗi chặng: xem giải thích, tự làm theo các bước trên trang học, bấm Hoàn thành chặng rồi mới sang chặng sau. Vướng thì giơ tay, trợ giảng hỗ trợ."],
+      luuY: "Màn của lớp, video gốc không có.",
     },
     {
-      loi: [
-        "Một quy tắc cho cả buổi: hôm nay chỉ dùng dữ liệu giả lập mà lớp đã chuẩn bị sẵn. Anh chị đừng đưa tên thật, số điện thoại hay thông tin riêng của khách vào AI khi chưa được phép. Rồi, mình đi vào luôn cho nhanh.",
-      ],
+      loi: ["Quy tắc cả buổi: chỉ dùng dữ liệu giả lập lớp cung cấp, không đưa tên thật, số điện thoại, thông tin riêng của khách vào AI."],
+      luuY: "Màn của lớp, video gốc không có.",
     },
   ],
   "01": [
@@ -70,11 +64,8 @@ const kichBan = {
     },
     {
       moc: "00:06:32–00:08:31 (đoạn làm mẫu trên Claude)",
-      loi: [
-        "Giờ anh chị thử luôn nhé. Làm bước ba trên trang học: dán câu lệnh vào Claude, rồi quay sang nhìn bài người bên cạnh.",
-        "Câu con vịt thì cả lớp gần như giống hệt nhau. Câu lúc rảnh thì mỗi máy một kiểu. Chỗ khác nhau đó chính là chỗ AI đang đoán.",
-      ],
-      luuY: "Cho lớp 2–3 phút. Hỏi vài người đọc to kết quả câu 2 để cả lớp thấy khác nhau.",
+      loi: ["Cho lớp gõ thử hai câu vào Claude (bước ba trên trang học) rồi nhìn bài nhau, như trong workshop của video."],
+      luuY: "Màn của lớp. 2–3 phút; hỏi vài người đọc to kết quả câu 2.",
     },
     {
       moc: "00:10:34–00:13:43",
@@ -163,27 +154,18 @@ const kichBan = {
         "Mẹo là ngồi lên kế hoạch với một cuộc trò chuyện trước. Kế hoạch ra ba phần thì mỗi phần mở một cuộc trò chuyện khác để làm, làm từng bước. Ví dụ nghiên cứu thị trường ở một cuộc, bước một bước hai bước ba. Rồi một cuộc khác lên kế hoạch nội dung, thảo luận tỉ lệ bài, các trụ nội dung. Rồi một cuộc nữa viết bài. Chia ra thì chất lượng đầu ra cao hơn rất nhiều.",
         "Thói quen thứ ba là một đặc quyền khi dùng AI: làm nhiều lần và kiểm tra chéo. Với người, bảo bạn thiết kế sửa năm lần, bảy lần thì mặt vẫn sưng, không có cửa. Với AI thì không giới hạn số lần yêu cầu làm lại.",
         "Còn kiểm tra chéo là gì? Trong công ty luôn có người đóng vai kiểm tra, giám sát; sản xuất thì có bộ phận kiểm soát chất lượng. Với AI mình làm được y như vậy. Làm xong việc, mình mang sang một cuộc trò chuyện khác. Không nhất thiết phải mang từ Claude sang ChatGPT, chỉ cần mở một cuộc trò chuyện khác thôi. Trình bày lại: đây là vấn đề, đây là mục tiêu, đây là bài giải của nhân sự của tao, mày phản hồi đi. Nó chui vào kiểm tra ngay: lỗ hổng chỗ này, logic chỗ kia chưa được soát. Nó hỏi lại và phản biện cho mình.",
+        "Nâng cao của đoạn này, kể một chuyện thực tế cho đỡ lý thuyết. Khi mình cho AI dựng phần mềm, cứ mỗi tính năng xong mình gọi năm con AI ra. Một con kiểm tra hệ thống phía sau, một con kiểm tra giao diện, một con kiểm tra trải nghiệm người dùng bấm cái này cái kia ra sao, một con kiểm tra bảo mật, một con kiểm tra cơ sở dữ liệu đã tối ưu chưa. Lôi năm con này ra soi con vừa xây. Còn lỗi là bắt sửa.",
+        "Sửa xong thì sao? Đây mới là cái hay: mình lại gọi năm con mới tinh, không biết gì, soát lại từ đầu. Cứ lặp như thế đến khi tính năng sạch sẽ mới cho qua. Có dự án vòng lặp đó chạy mười bốn lần. Mười bốn nhân năm là bảy mươi lượt soát, bảy mươi ông có khả năng đi kiểm tra việc của người khác, mỗi ông một phần, hết khoảng bốn đến năm tiếng. Làm sao khép được vòng lặp đó lại thì phần sau mình nói.",
         "Chỉ cần những kiến thức này thôi là anh chị đã vượt xa những người ở cấp một, những người vẫn chỉ hỏi đáp.",
       ],
-      ke: [
-        "Anh Hưng kể khi cho AI viết phần mềm, mỗi tính năng xong anh gọi năm con AI ra soát: một con soát hệ thống, một con soát giao diện, một con soát trải nghiệm người dùng, một con soát bảo mật, một con soát cơ sở dữ liệu. Có lỗi thì sửa. Sửa xong lại gọi năm con mới tinh, chưa biết gì, soát lại từ đầu. Lặp đến khi sạch mới cho qua. Có dự án vòng lặp này chạy mười bốn lần, tức là bảy mươi lượt soát, mất bốn đến năm tiếng.",
-      ],
     },
     {
-      loi: [
-        "Giờ mình dùng ngay vào bài tập chính. Lớp có sẵn một bảng giả lập mười hai mối quan hệ. Hôm nay gọi là Ngày không.",
-        "Anh chị nhìn kỹ nhé. Khách số một đã được hứa gửi báo giá từ hôm qua mà chưa gửi. Khách số chín muốn nhận hồ sơ năng lực ngay trong hôm nay. Khách số mười hai dặn tháng này đừng liên hệ lại. Khách số bốn nói rõ là chưa có nhu cầu. Những thứ này nằm rải rác, rất dễ quên.",
-        "Câu lệnh trên trang học đã viết sẵn đủ năm yếu tố, kèm dữ liệu mười hai mã, và đã chia nhỏ thành năm việc a đến e, đúng thói quen thứ hai. Anh chị chỉ cần sao chép, dán vào Claude rồi gửi.",
-      ],
-      luuY: "Bài tập của Gifty Tech, không có trong video. Hết lượt miễn phí thì chiếu bản kết quả mẫu.",
+      loi: ["Bài tập của lớp: bảng giả lập mười hai mối quan hệ, Ngày không. Chỉ cho lớp thấy các lời hứa đang treo (KH01 báo giá quá hạn, KH09 hồ sơ hôm nay, KH12 không liên hệ, KH04 chưa có nhu cầu). Câu lệnh trên trang học đã viết sẵn, chỉ việc dán vào Claude."],
+      luuY: "Màn của lớp, video gốc không có. Hết lượt miễn phí thì chiếu bản kết quả mẫu.",
     },
     {
-      loi: [
-        "Claude trả kết quả rồi thì đừng tin ngay. Đọc từng lý do ưu tiên, xem có đúng với ghi chú trong bảng không.",
-        "Sau đó thử thói quen một: chọn một tin nhắn, góp ý thật cụ thể. Ví dụ rút còn ba câu, đưa hai khung giờ demo để khách chọn.",
-        "Rồi thói quen ba: dán kết quả cùng các tiêu chí này vào một cuộc trò chuyện mới, nhờ nó soát lại.",
-        "Cuối cùng chép bảng sang Google Sheets, chọn một việc làm được ngay hôm nay, và lưu SP01. Giờ anh chị làm bảy bước của chặng hai nhé.",
-      ],
+      loi: ["Đọc kết quả, đối chiếu từng lý do với bảng. Thử góp ý cụ thể cho một tin nhắn (thói quen một), rồi mở cuộc trò chuyện mới soát lại theo tiêu chí trên màn (thói quen ba). Chép ra Google Sheets, lưu SP01. Làm bảy bước của chặng hai."],
+      luuY: "Màn của lớp, video gốc không có.",
     },
   ],
   "03": [
@@ -237,10 +219,8 @@ const kichBan = {
       ],
     },
     {
-      loi: [
-        "Giờ anh chị làm. Tạo một Project, đặt tên là Trợ lý kinh doanh của tôi. Kể tự do vài câu về công việc để Claude viết lại thành instruction, rồi dán vào dự án. Thêm một đoạn mô tả dịch vụ ngắn do mình tự viết.",
-        "Rồi mở cuộc trò chuyện trong dự án, dán mười hai mối quan hệ, và chỉ hỏi một câu ngắn: hôm nay tôi nên ưu tiên việc gì. Anh chị sẽ thấy câu hỏi ngắn mà câu trả lời vẫn đúng khuôn, đúng ngôn ngữ nghề của mình. Đó là nhờ instruction của dự án.",
-      ],
+      loi: ["Thực hành của lớp: tạo Project “Trợ lý kinh doanh của tôi”, kể tự do để Claude viết instruction, thêm mô tả dịch vụ, rồi hỏi một câu ngắn với mười hai mối quan hệ."],
+      luuY: "Màn của lớp, video gốc không có.",
     },
     {
       moc: "01:02:37–01:11:26",
@@ -250,10 +230,9 @@ const kichBan = {
         "Ví dụ: “tạo lịch cho tôi trưa nay mười hai giờ đi ăn với khách”. Ngay khi kết nối xong là nó tạo được luôn. Mở lịch ra kiểm tra, có rồi. Bảo “đổi xuống ăn tối bảy đến chín giờ”, lịch tự đổi. Tương tự, mình quản lý được toàn bộ lịch làm việc, lịch hẹn với AI. Claude hay ChatGPT đều làm được, chỗ người ta gọi là connector, chỗ gọi là plugin, chỉ cần kết nối Google.",
         "Kết nối xong là dùng được luôn ứng dụng trên điện thoại, điều khiển lịch của mình. Dùng để sắp xếp cuộc sống cá nhân: giờ nào làm việc sâu, giờ nào tập thể thao, theo dõi thói quen. Hay nữa là AI nhận diện được hình ảnh: mùa cưới nhận thiệp, ném thiệp vào, nó bóc nội dung ra và lưu lịch luôn cho mình. Việc rất nhàn mà kiểm soát được cuộc sống tốt hơn nhiều.",
         "Muốn biết một công cụ làm được những gì, chỉ cần bấm vào nó, nó liệt kê ra: tạo sự kiện, xóa sự kiện, lấy sự kiện, cập nhật. Với Notion thì tạo trang, tạo cơ sở dữ liệu. Trên thư mục connector giờ có cả nghìn công cụ, và học kỹ hơn thì kết nối được tới bất kỳ công cụ nào có chuẩn MCP: Google Drive, Docs, Sheets, hay đăng bài tự động đa kênh, hay Canva để nó tìm mẫu thiết kế và tạo mẫu cho mình.",
-        "Phần này mình làm mẫu. Ai muốn thì thử với lịch của chính mình ở bước chín. Nhớ đăng nhập bằng tài khoản Google của mình, đọc quyền rồi mới cho phép.",
-      ],
-      ke: [
-        "Trong video, anh Hưng còn làm mẫu với Fireflies, một AI ghi âm và chép lại cuộc họp. Anh bảo Claude: “tìm hộ tôi trên Fireflies hai bản ghi trong cùng một buổi chiều nói về thương hiệu cá nhân, lấy nội dung và viết tóm tắt”. Anh không nhớ ngày, không đưa đường dẫn, chỉ mô tả, mà Claude tự tìm ra hai bản ghi, viết tóm tắt chi tiết, rồi lưu thành một trang Notion kèm cả bản chép lời. Đó là một luồng nhiều bước: lấy bản ghi, tóm tắt, lưu Notion.",
+        "Giờ nâng cao hơn. Mình sang một công cụ nữa là Fireflies, một con AI chuyên tham gia cuộc họp cùng mình, ai nói gì nó cũng chép lại hết. Mình giao một việc khá phức tạp: “tìm hộ tôi trên Fireflies hai bản ghi trong cùng một buổi chiều nói về thương hiệu cá nhân, lấy bản chép lời và viết tóm tắt cho tôi”. Mình còn không nhớ hôm đó là ngày nào, không đưa đường dẫn, chỉ mô tả thôi. AI tự lên kho bản ghi tìm, một lúc sau báo tìm được hai bản, rồi viết tóm tắt chi tiết mọi người đã nói gì.",
+        "Có tóm tắt rồi thì mình bảo lưu vào một trang Notion cho tôi. Notion cũng là một connector, muốn nó dùng gì thì phải kết nối công cụ đó. Và nó lưu luôn, cả bản chép lời. Vậy là AI vừa làm xong một luồng nhiều bước: lên Fireflies lấy bản chép lời, viết tóm tắt, rồi lưu vào Notion.",
+        "Lớp mình làm mẫu phần lịch. Ai muốn thì thử với lịch của chính mình ở bước chín. Nhớ đăng nhập bằng tài khoản Google của mình, đọc quyền rồi mới cho phép.",
       ],
     },
     {
@@ -271,15 +250,15 @@ const kichBan = {
       loi: [
         "Muốn đóng gói skill thì trước tiên phải bật Skills lên, bản miễn phí cũng có. Vào Settings, mục Capabilities, bật Code execution and file creation, Skills cần mục này. Rồi vào Customize, mục Skills, bật skill-creator. Đây là skill dùng để tạo ra skill mới.",
       ],
-      luuY: "Màn này chiếu video minh họa (không lời). Theo trang hướng dẫn chính thức của Claude.",
+      luuY: "Màn của lớp, video gốc không có bước này. Chiếu video minh họa không lời; các bước theo trang hướng dẫn chính thức của Claude.",
     },
     {
       moc: "01:14:28–01:15:28 và 01:20:26–01:23:21",
       loi: [
-        "Giờ xem đóng gói. Kế hoạch bảy ngày lúc nãy coi như mình đã ưng. Ngay trong cuộc trò chuyện đó, mình nhờ skill-creator đóng gói, nói rõ đầu vào là bảng mối quan hệ, đầu ra là năm ưu tiên, kế hoạch, tin nhắn, thông tin cần xác minh.",
-        "Claude soạn ra bản nháp skill: tên, mô tả, các bước. Lưu lại. Vào Customize, mục Skills là thấy skill mới nằm đó.",
-        "Rồi mở một cuộc trò chuyện mới, dán bảng mới, chỉ nói một câu. Nó đọc đúng quy trình mình vừa đưa: bước một đọc bảng, bước hai chọn ưu tiên, bước ba kế hoạch, bước bốn tin nhắn. Các bước này là nó tự nghĩ ra dựa trên những gì mình vừa làm với nó. Lần này mình không cần nói gì thêm, nó vẫn tự biết hỏi có muốn lưu không, vì quy trình đã ghi sẵn.",
-        "Thấy chỗ nào không hợp lý thì bảo nó cập nhật quy trình: thay thế này, bỏ bước kia, thêm màu sắc thiết kế. Lần sau nó làm theo bản mới.",
+        "Giờ xem đóng gói. Coi như bản tóm tắt cuộc họp lúc nãy mình ưng rồi. Việc của mình chỉ đơn giản là gọi skill-creator: “đóng gói việc viết tóm tắt và lưu Notion thành skill cho tôi”. Đầu vào là bản chép lời từ Fireflies, đầu ra là lưu Notion theo mẫu ở trên. Đáng lẽ nên viết câu lệnh đầy đủ hơn, nhưng câu của mình đang bỏ qua hai khâu đó vì cuộc trò chuyện đã có sẵn bối cảnh, nó không cần đẻ ra bối cảnh mới.",
+        "Nó tạo ra một skill tóm tắt cuộc họp. Mình lưu skill về, rồi mở một cuộc trò chuyện mới. Vào Customize, mục Skills, là thấy skill vừa tạo. Giờ mình chỉ bảo: “tóm tắt cuộc họp gần nhất cho tôi, trên ba mươi phút”. Mình bảo trên ba mươi phút để nó có nội dung, chứ mình cũng không nhớ gần nhất họp gì.",
+        "Lúc này nó đọc theo đúng quy trình mình vừa đưa: bước một tìm bản ghi trên Fireflies, bước hai lấy nội dung và kiểm tra độ đầy đủ, bước ba viết tóm tắt trong chat, bước bốn mới lưu vào Notion, lưu xong trả lời thế nào. Đoạn quy trình này là nó tự nghĩ ra dựa trên những gì mình vừa làm với nó. Chỗ nào không hợp lý thì mình vẫn góp ý để nó sửa: cập nhật quy trình, không cần khâu kiểm tra đầy đủ nữa, hay bổ sung màu sắc trình bày thế này.",
+        "Và ngay lập tức, mình không cần nói gì thêm. Lần này mình chỉ bảo tóm tắt cuộc họp thôi, nó vẫn tự biết hỏi có muốn lưu về trang Notion không, vì trong quy trình đã ghi sẵn. Mình chỉ cần bảo ok.",
       ],
     },
     {
@@ -318,11 +297,10 @@ const kichBan = {
       loi: [
         "Mình xem minh họa. Mặc định nó không đọc nội dung bên trong từng tệp, vì như thế tốn rất nhiều. Nó đọc thông tin chung của tệp: tên, kích thước, tạo lúc nào, ảnh thì có cả tên thiết bị chụp. Dựa vào đó, kèm thêm một bảng lịch sự kiện của mình, nó biết luôn ảnh này của sự kiện nào theo ngày tháng, rồi sắp xếp cho mình. Giống Cô Tấm nhặt thóc ra thóc, gạo ra gạo.",
         "Mở rộng ra: ai dùng Google Drive thì Drive có tính năng đồng bộ về máy tính, tốn dung lượng một chút, nhưng đồng bộ xong là cho Claude dọn luôn thư mục Drive, sắp xếp xong nó đồng bộ ngược lên. Thư mục Tải về chắc chỉ thua mỗi Google Drive về độ bừa.",
+        "Mình có một bạn học viên từng dùng đúng việc đơn giản là dọn tệp này để quy hoạch lại toàn bộ tệp của kế toán, tài chính: sắp xếp lại hết theo từng tháng, hợp đồng, hóa đơn, xong rồi tự tạo ra tệp báo cáo cho từng tháng luôn. Quy hoạch lại hết dữ liệu, chỉ bằng việc giao sang cho Cowork, vì giờ nó chọc được hết dữ liệu của mình trên máy.",
+        "Có người hỏi: cả ảnh và video hả anh? Ảnh và video thì khó hơn. Mặc định nó không đọc nội dung bên trong, nó đọc thông tin chung của tệp. Chỗ mình thì quy hoạch một thư mục dữ liệu thô lưu từng lần quay, còn tệp thiết kế hay ảnh đã xử lý là thư mục riêng, không lưu chung theo ngày.",
+        "Một chuyện thực tế nữa của mình: lần trước mình tạo cho khách mười bốn nghìn tệp thiết kế thẻ. Tạo xong, mình phân loại theo nhóm khách. Nhưng khách lại đưa danh sách mới: cứ một trăm cái thẻ thì gom thành một thư mục. Nhặt tay chắc chết, phải ốm. Cuối cùng chỉ đơn giản là đưa cho AI đọc tệp danh sách của khách, so khớp với tên tệp mình đã xuất ra. Khoảng mười phút là chạy xong. Đưa mình làm tay chắc mười ngày chưa chắc xong.",
         "Mình đồng ý thì nó mới làm thật, và chia cho mấy trợ lý phụ, mỗi bạn một loại tệp. Cuối cùng nó báo lại đã làm gì, còn gì chờ mình quyết. Xóa hay không vẫn là mình quyết.",
-      ],
-      ke: [
-        "Anh Hưng kể có học viên dùng đúng việc dọn tệp này để quy hoạch lại toàn bộ tệp kế toán, tài chính: sắp xếp theo từng tháng, hợp đồng, hóa đơn, rồi tự tạo báo cáo cho từng tháng.",
-        "Anh cũng kể lần làm cho khách mười bốn nghìn tệp thiết kế thẻ. Anh đã chia theo nhóm khách, nhưng khách lại đưa danh sách mới, cứ một trăm người gom một thư mục. Nhặt tay chắc chết. Anh đưa AI đọc danh sách của khách, so khớp với tên tệp, khoảng mười phút là xong, trong khi làm tay có khi mười ngày chưa chắc xong.",
       ],
     },
     {
@@ -347,28 +325,26 @@ const kichBan = {
       ],
     },
     {
-      loi: [
-        "Lưu ý là Cowork chỉ có ở gói trả phí. Muốn nó làm việc với tệp trên máy thì cần cài ứng dụng Claude trên máy tính. Hôm nay anh chị chưa cần cài. Mình xem minh họa và video làm mẫu, để ý trình tự: đề xuất, duyệt, làm, báo cáo. Rồi anh chị làm bốn bước của chặng bốn.",
-      ],
+      loi: ["Cowork chỉ có ở gói trả phí; làm việc với tệp trên máy cần ứng dụng Claude Desktop. Lớp xem minh họa và video làm mẫu, rồi làm bốn bước của chặng bốn."],
+      luuY: "Màn của lớp, video gốc không có.",
     },
   ],
   "05": [
-    { loi: ["Giờ sang phần thực hành thêm. Mình làm lời giới thiệu bản thân và ảnh đại diện. Phần chữ để Claude lo, phần ảnh để ChatGPT lo, vì như lúc nãy nói, về ảnh thì ChatGPT đang rất mạnh."], luuY: "Phần của Gifty Tech, video gốc chỉ nhắc ChatGPT làm ảnh tốt (01:10:20)." },
-    { loi: ["Trước hết, anh chị viết ra bốn ý thật về mình: làm nghề gì, khách là ai, mình giỏi ở điểm nào mà người khác kiểm chứng được, và mời người ta liên hệ thế nào. Đây đúng là năm yếu tố giao việc thu nhỏ: nguyên liệu phải thật thì AI mới viết đúng."] },
+    { loi: ["Phần thực hành thêm: lời giới thiệu bản thân (Claude) và ảnh đại diện (ChatGPT)."], luuY: "Cả phần này là của lớp, video gốc không có; chỉ nhắc ChatGPT làm ảnh tốt (01:10:20)." },
+    { loi: ["Viết ra bốn ý thật về mình: nghề, khách hàng, thế mạnh kiểm chứng được, lời mời liên hệ."] },
     {
       loi: [
-        "Rồi gửi cho Claude theo mẫu trên trang học. Claude viết ba thứ: một câu giới thiệu dễ nhớ, một đoạn bảy mươi đến một trăm chữ cho trang cá nhân hay danh thiếp điện tử, và lời giới thiệu nói trong khoảng ba mươi giây khi gặp đối tác.",
-        "Câu lệnh đã dặn không được tự bịa số năm kinh nghiệm hay thành tích. Nhưng nhớ bài đầu: AI đoán theo xác suất, thiếu thông tin là nó bịa. Nên anh chị vẫn đọc lại, chỗ nào chưa đúng sự thật thì xóa.",
+        "Gửi cho Claude theo mẫu trên trang học. Claude viết ba thứ: một câu giới thiệu dễ nhớ, một đoạn bảy mươi đến một trăm chữ, lời giới thiệu khoảng ba mươi giây. Câu lệnh đã dặn không bịa số năm kinh nghiệm hay thành tích; vẫn đọc lại, sai thì xóa.",
       ],
     },
     {
       loi: [
-        "ChatGPT làm được bốn việc với ảnh. Một là tạo ảnh mới, chỉ cần tả bằng lời. Hai là chỉnh ảnh mình tải lên: đổi nền, ánh sáng, trang phục; muốn giữ đúng gương mặt thì phải dặn rõ. Ba là chưa ưng chỗ nào thì nói đúng chỗ đó để nó sửa tiếp, đúng thói quen góp ý làm theo được. Bốn là bản miễn phí có giới hạn số ảnh, có thể hết ngay giữa lớp; hết thì giữ câu lệnh và ảnh gốc, về nhà làm tiếp.",
+        "ChatGPT làm được bốn việc với ảnh: tạo ảnh mới từ mô tả; chỉnh ảnh tải lên (đổi nền, ánh sáng, trang phục, dặn rõ thì giữ đúng gương mặt); sửa tiếp đúng chỗ chưa ưng; bản miễn phí có giới hạn số ảnh, hết thì giữ câu lệnh và ảnh gốc làm tiếp ở nhà.",
       ],
     },
     {
       loi: [
-        "Chỉ dùng ảnh chân dung của chính mình. Trước khi dùng thì soát lại: mặt còn giống mình không, thu nhỏ có dễ nhìn không, trang phục có hợp nghề không. Khác thực tế thì chỉnh lại hoặc quay về ảnh gốc. Giờ anh chị làm năm bước, rồi lưu SP03 và SP04.",
+        "Chỉ dùng ảnh chân dung của chính mình. Soát lại: mặt còn giống không, thu nhỏ dễ nhìn không, trang phục hợp nghề không. Làm năm bước, lưu SP03 và SP04.",
       ],
     },
   ],
@@ -392,12 +368,12 @@ const kichBan = {
     {
       moc: "01:51:43–01:55:22",
       loi: [
-        "Trước khi kết thúc, mình nhắn nhủ hai điều. Điều thứ nhất: AI đã có sẵn phần muốn làm rồi, giờ chỉ còn là mình có chủ động dùng nó để tự động hóa việc lặp lại hay không thôi. Nhiều người sợ dùng AI phức tạp lắm, nghe đến code là nhức đầu. Nhưng dùng rồi mới thấy ước gì mình dùng sớm hơn, nó không khó như mình tưởng. Và nếu có chỗ nào khó hiểu, cứ hỏi chính AI, nó hướng dẫn mình dùng chính nó.",
-        "Điều thứ hai, một câu mình luôn ghim vào đầu cho mọi người: cái gì máy làm tốt thì người đừng làm. Máy làm rất tốt những khâu lặp đi lặp lại, những việc đã có quy trình. Những việc đó người không làm tốt bằng máy đâu, nói thật.",
+        "Cuối buổi đó, bạn dẫn chương trình chia sẻ thế này: AI đã có sẵn phần muốn làm rồi, giờ chỉ còn là mình có chủ động dùng nó để tự động hóa việc lặp lại hay không. Trước bạn ấy luôn sợ dùng AI phức tạp lắm, nghe đến code là nhức đầu. Dùng rồi mới thấy ước gì dùng sớm hơn, không khó như mình tưởng. Và nếu có chỗ khó hiểu thì cứ hỏi chính AI, nó hướng dẫn mình dùng chính nó. Cứ phải làm.",
+        "Còn mình có một câu luôn ghim vào đầu cho mọi người, lớp nào mình cũng nhắc: cái gì máy làm tốt thì người đừng làm. Máy làm rất tốt những khâu lặp đi lặp lại, những việc đã có quy trình sẵn. Những việc đó người không làm tốt bằng máy đâu, nói thật.",
         "Thế mình mạnh hơn máy ở đâu? Ở tư duy, ở việc biết mình muốn gì. Dùng AI dễ lắm, chẳng công cụ nào dễ bằng. Học Photoshop còn phải biết nút nào ở đâu, còn AI chỉ cần nói cho nó, chịu mở miệng ra. Cái gì không biết thì hỏi luôn AI: vướng ở đâu, chụp màn hình gửi cho nó, hỏi làm thế nào tiếp, không cần tìm chuyên gia nào hết.",
         "Để máy làm việc của máy, mình rảnh tay làm việc AI không làm được: định hướng, nắm bắt được khách hàng thực sự muốn gì, đằng sau đó họ đang lo gì. Tâm tư tình cảm thì AI không có, nhưng qua tiếp xúc mình biết được.",
-        "Giờ anh chị bấm hoàn thành đủ các chặng để nhận chứng chỉ. Cảm ơn cả nhà đã học cùng Gifty Tech.",
       ],
+      luuY: "Sau đó nhắc lớp bấm hoàn thành các chặng để nhận chứng chỉ.",
     },
   ],
 };

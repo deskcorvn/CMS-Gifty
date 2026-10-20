@@ -6,7 +6,7 @@ man:
     phu: Chặng 3 · 50 phút · làm ra SP02
     loi:
       - Chỉ cần năm yếu tố và ba thói quen đó thôi là anh chị đã vượt xa những người ở cấp một rồi.
-      - Thế làm sao để lên những cấp cao hơn? Mình cần hiểu một nhân sự AI có những thành phần gì. Đó là chặng ba.
+      - Thế làm sao để lên những cấp cao hơn? Anh chị cần hiểu một nhân sự AI có những thành phần gì. Đó là chặng ba.
 
   - kieu: the
     tieuDe: 6 thành phần của **1 nhân sự AI**
@@ -33,10 +33,10 @@ man:
         nhan: Mọi câu hỏi
     duoi: [ Câu anh chị gõ, Model suy nghĩ, Câu trả lời ]
     loi:
-      - "Phần này hơi kỹ thuật một chút nên mình đi nhanh, anh chị nắm tổng quan thôi nhé. Thứ nhất là instruction: nơi mình đưa vào vai trò, cách xưng hô, thông tin về mình, về doanh nghiệp."
+      - "Phần này hơi kỹ thuật một chút nên em đi nhanh, anh chị nắm tổng quan thôi nhé. Thứ nhất là instruction: nơi mình đưa vào vai trò, cách xưng hô, thông tin về mình, về doanh nghiệp."
       - Hiểu instruction là một câu lệnh mặc định. Bất kỳ cuộc trò chuyện nào AI cũng đọc đoạn này trước.
-      - Memory là những gì AI nhớ về mình, khi nào liên quan nó mới lôi ra. Knowledge là kho tài liệu mình đưa vào, cần tra mới tra.
-      - "Skill là công thức, quy trình để làm một việc. Tools là công cụ dành cho AI. Còn model là bộ não: câu mình gõ đi vào model, model nghĩ ra câu trả lời."
+      - Memory là những gì AI nhớ về anh chị, khi nào liên quan nó mới lôi ra. Knowledge là kho tài liệu mình đưa vào, cần tra mới tra.
+      - "Skill là công thức, quy trình để làm một việc. Tools là công cụ dành cho AI. Còn model là bộ não: câu anh chị gõ đi vào model, model nghĩ ra câu trả lời."
 
   - kieu: bang
     tieuDe: Dễ nhớ như **một gian bếp**
@@ -48,7 +48,7 @@ man:
       - [ Quy tắc vệ sinh an toàn thực phẩm, Instruction ]
       - [ Khẩu vị riêng của chủ nhà, Memory ]
     loi:
-      - Hình dung vào trong bếp cho dễ nhé. Tools là nồi niêu xoong chảo, dao thớt, để mình nấu được ăn. Skill chính là công thức nấu ăn.
+      - Hình dung vào trong bếp cho dễ ạ. Tools là nồi niêu xoong chảo, dao thớt, để mình nấu được ăn. Skill chính là công thức nấu ăn.
       - Câu lệnh mình đưa vào là nguyên liệu. AI dựa vào công thức và công cụ đang có để nấu ra món, tức là câu trả lời.
       - "Instruction là vệ sinh an toàn thực phẩm, món nào cũng phải theo. Memory là khẩu vị: biết nhà mình thích ăn cay thì cho thêm chút ớt. Đúng nghĩa là mình đang dựng một bạn nhân sự."
 
@@ -64,9 +64,9 @@ man:
       ghiChu: Nói thoải mái về công việc, rồi nhờ Claude viết lại thành hướng dẫn. Bản miễn phí có tối đa 5 Project.
     loi:
       - Instruction có hai chỗ. Chỗ thứ nhất nằm ngay trong cài đặt tài khoản. Đoạn này tác động lên tất cả cuộc trò chuyện, nên mình chỉ đưa vào tư duy làm việc thôi.
-      - Ví dụ, ưu tiên giải pháp bền vững, hiệu quả hơn là tiết kiệm chi phí. Vì sao phải dặn?
+      - "Ví dụ, em đi tư vấn thì dặn: ưu tiên giải pháp bền vững, hiệu quả hơn là tiết kiệm chi phí."
       - Vì không dặn thì phần đông người hỏi muốn rẻ, muốn miễn phí, nên AI cũng đưa giải pháp miễn phí trước.
-      - Mà doanh nghiệp đang vận hành thì giải pháp tạm bợ, không lường hết rủi ro, là thứ không nên chấp nhận. Còn bạn nào đang đi làm, muốn tối ưu chi phí thì cứ thoải mái.
+      - Mà doanh nghiệp đang vận hành thì giải pháp tạm bợ, không lường hết rủi ro, là thứ không nên chấp nhận. Còn anh chị nào đang đi làm, muốn tối ưu chi phí thì cứ thoải mái.
       - Chỗ thứ hai là mỗi Project có một instruction riêng. Chữ Project ở đây đừng hiểu là dự án nhé, nó chỉ là tập hợp những cuộc trò chuyện có chung bối cảnh.
       - Bối cảnh có thể là một bạn nhân sự, ví dụ bạn chuyên viết bài. Hoặc mỗi khách hàng một Project cũng được. Không có đúng sai, linh hoạt thoải mái.
       - "Viết instruction cũng không cần câu chữ hay ho gì. Vẫn tư duy lúc nãy: ngồi nói hết ra với AI, rồi bảo nó sắp xếp lại, viết thành instruction cho dự án. Nó tự biết viết."
@@ -96,7 +96,7 @@ man:
       - ten: Knowledge · tài liệu anh chị đưa
         moTa: Quy chế, sản phẩm, khách hàng. Chỉ đưa thứ cần tra, ngắn gọn; nhiều tệp quá thì kết quả lúc thừa lúc thiếu.
     loi:
-      - "Memory là thông tin về mình mà AI nhớ. Nó tự lưu từ lịch sử nói chuyện, hoặc mình chủ động bảo nó lưu. Hay ở chỗ mình sửa được: bảo nó quên cái này đi, nhớ thêm cái kia."
+      - "Memory là thông tin về anh chị mà AI nhớ. Nó tự lưu từ lịch sử nói chuyện, hoặc anh chị chủ động bảo nó lưu. Hay ở chỗ sửa được: bảo nó quên cái này đi, nhớ thêm cái kia."
       - Memory khác instruction ở chỗ khi nào liên quan nó mới lôi ra, chứ không phải lúc nào cũng nhớ.
       - "Knowledge là kho tài liệu: quy chế, quy trình, thông tin sản phẩm, khách hàng."
       - Nhưng tải thẳng tệp lên thì hiện giờ không hiệu quả lắm, trả lời vừa thừa vừa thiếu. Nên chỉ đưa đúng thứ cần tra.
@@ -116,7 +116,7 @@ man:
     chot: So với chặng 2, lần này anh chị không phải gõ lại 5 yếu tố. Lưu SP02 nếu muốn giữ.
     loi:
       - Giờ anh chị làm. Tạo một Project, đặt tên là Trợ lý kinh doanh của tôi.
-      - Kể tự do vài câu về công việc của mình để Claude viết lại thành instruction, rồi dán vào dự án. Thêm một đoạn mô tả dịch vụ ngắn do mình tự viết.
+      - Kể tự do vài câu về công việc của mình để Claude viết lại thành instruction, rồi dán vào dự án. Thêm một đoạn mô tả dịch vụ ngắn.
       - "Rồi mở cuộc trò chuyện trong dự án, dán mười hai mối quan hệ, và chỉ hỏi một câu ngắn thôi: hôm nay tôi nên ưu tiên việc gì."
       - Anh chị sẽ thấy câu hỏi ngắn mà câu trả lời vẫn đúng khuôn, đúng ngôn ngữ nghề của mình. Đó là nhờ instruction của dự án.
 
@@ -125,7 +125,7 @@ man:
     video: /minh-hoa/noi-lich.mp4
     chot: "Nút + trong ô chat → Connectors → Manage connectors (hoặc Customize → Connectors). Claude chỉ làm trong phạm vi quyền anh chị cấp."
     loi:
-      - Rồi đến tools, phần này nên làm mẫu cho dễ hiểu. Connector chính là công cụ của AI. Kết nối công cụ nào thì AI dùng được công cụ đó giúp mình. Đơn giản nhất là Google Calendar.
+      - Rồi đến tools, phần này em làm mẫu cho dễ hiểu. Connector chính là công cụ của AI. Kết nối công cụ nào thì AI dùng được công cụ đó giúp mình. Đơn giản nhất là Google Calendar.
       - "Trong ô chat bấm dấu cộng, chọn Connectors rồi Manage connectors. Bấm vào Google Calendar, nó liệt kê ra AI làm được gì: tạo sự kiện, xóa, cập nhật. Rồi bấm Connect."
       - "Đăng nhập bằng tài khoản Google của chính mình, đọc quyền rồi mới cho phép. Kết nối xong, chỉ cần nói: tạo lịch chín giờ sáng mai gửi hồ sơ cho khách. Mở lịch ra là thấy luôn."
       - "Muốn đổi sang giờ khác cũng chỉ cần nói. Kết nối xong là dùng được cả trên điện thoại, quản lý luôn lịch cá nhân: giờ nào làm việc sâu, giờ nào tập thể thao."
@@ -148,7 +148,7 @@ man:
     noiBat: 3
     chot: Skill là quy trình. Phải làm tay ra kết quả ưng ý rồi mới gói được.
     loi:
-      - "Giờ để ý nhé: việc nhiều bước mà lần nào cũng phải viết đủ năm yếu tố thì dài lắm, chính mình cũng không viết hết được."
+      - "Giờ anh chị để ý nhé: việc nhiều bước mà lần nào cũng phải viết đủ năm yếu tố thì dài lắm, chính em cũng không viết hết được."
       - Làm sao nói ít mà vẫn đủ chất lượng? Là nhờ các mảnh ghép này, nhất là skill.
       - Skill giống cuốn sách công thức nấu ăn. Bảo nấu cơm tấm thì chỉ mở công thức cơm tấm, không cần mở công thức phở hay thịt kho.
       - Còn nhồi hết vào instruction thì lúc nào cũng phải nhớ, loãng hết.
@@ -163,7 +163,7 @@ man:
     video: /minh-hoa/bat-skills.mp4
     chot: Settings → Capabilities → bật Code execution and file creation. Rồi Customize → Skills → bật skill-creator.
     loi:
-      - Muốn đóng gói skill thì trước tiên phải bật Skills lên. Bản miễn phí cũng có nhé.
+      - Muốn đóng gói skill thì trước tiên phải bật Skills lên. Bản miễn phí cũng có nhé ạ.
       - Vào Settings, mục Capabilities, bật Code execution and file creation. Skills cần mục này mới chạy được.
       - Rồi vào Customize, mục Skills, bật skill-creator lên. Đây là skill dùng để tạo ra skill mới.
 
@@ -172,8 +172,8 @@ man:
     video: /minh-hoa/dong-goi-skill.mp4
     chot: Lần sau chỉ cần dán dữ liệu mới và nói một câu. Chưa hợp lý thì bảo “cập nhật skill này”.
     loi:
-      - "Giả sử kế hoạch bảy ngày lúc nãy mình đã ưng. Việc của mình chỉ đơn giản là gọi skill-creator: đóng gói việc này thành skill cho tôi, đầu vào là gì, đầu ra là gì."
-      - Câu lệnh ngắn được là vì phía trên cuộc trò chuyện đã có đủ bối cảnh rồi. Claude soạn ra skill gồm tên, mô tả, các bước. Mình đọc lại rồi lưu.
+      - "Giả sử kế hoạch bảy ngày lúc nãy anh chị đã ưng. Việc của mình chỉ đơn giản là gọi skill-creator: đóng gói việc này thành skill cho tôi, đầu vào là gì, đầu ra là gì."
+      - Câu lệnh ngắn được là vì phía trên cuộc trò chuyện đã có đủ bối cảnh rồi. Claude soạn ra skill gồm tên, mô tả, các bước. Anh chị đọc lại rồi lưu.
       - Rồi mở cuộc trò chuyện mới, dán bảng mới, chỉ nói một câu. Nó tự làm theo đúng các bước trong quy trình vừa gói, không cần nhắc lại gì.
       - "Thấy chỗ nào không hợp lý thì bảo nó: cập nhật quy trình này, thay thế này, bỏ bước kia. Lần sau nó làm theo cách mới."
 
@@ -185,6 +185,6 @@ man:
       - Lưu ý là anh chị có thể lên mạng lấy skill người khác đã đóng gói. Nhưng skill đó đi từ mục tiêu và bối cảnh của người ta.
       - Viết bài cho ngành thực phẩm chức năng sẽ khác ngành mỹ phẩm, chưa chắc khớp.
       - "Cùng bối cảnh thì mang về tham khảo, còn không thì tự làm trước. Đây cũng chính là thứ tạo khác biệt: kinh nghiệm của mình đóng gói lại, người ngoài không có."
-      - Vậy bắt đầu từ đâu? Mọi người hay bảo giải quyết từ gốc, mình hay đùa là mình hướng dẫn giải quyết từ ngọn.
+      - Vậy bắt đầu từ đâu ạ? Mọi người hay bảo giải quyết từ gốc, em hay đùa là em hướng dẫn giải quyết từ ngọn.
       - "Đó là những việc đang làm thủ công, lặp đi lặp lại, dễ sai: hợp đồng, báo giá, phiếu lương."
       - Giải quyết được những việc đó thì đầu mình rất nhẹ, có không gian để sáng tạo. Giờ anh chị làm mười bước của chặng ba. Hai bước cuối là tùy chọn.

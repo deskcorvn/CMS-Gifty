@@ -42,6 +42,9 @@ buoc:
    đạt”.
 3. **Hoàn thiện lời giới thiệu và ảnh đại diện**, dùng cho Zalo, Facebook, danh thiếp điện tử.
 
+Việc lặp đi lặp lại, có quy trình rõ thì để AI làm. Định hướng, hiểu khách hàng và quyết định cuối
+cùng vẫn là việc của mình.
+
 ## Bốn câu tự kiểm tra (không chấm điểm)
 
 <details>

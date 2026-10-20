@@ -40,6 +40,13 @@ buoc:
 Nhận mục tiêu → dùng công cụ → đọc/ghi dữ liệu → xin quyền → báo cáo để người duyệt. “Kỹ năng tái
 sử dụng” và “kết nối ứng dụng” là bước phát triển tiếp theo sau buổi học này.
 
+Dễ hình dung: chat trên trang web giống một nhân viên làm từ xa, mình gửi tài liệu qua rồi nhận lại câu
+chữ. AI làm việc trên máy giống người ngồi tại văn phòng, đọc và sửa tệp trong đúng thư mục được cho
+phép. Nguyên tắc: AI đề xuất kế hoạch trước, người duyệt rồi mới làm.
+
+Lời khuyên khi đi tiếp: làm tay cùng AI cho ra kết quả ưng ý trước, rồi mới đóng gói thành quy trình.
+Chưa ưng mà đã tự động hóa thì chỉ lặp lại lỗi.
+
 ## Câu giao việc đã dùng để quay video
 
 Câu này chạy trong môi trường **thử nghiệm**, dữ liệu giả lập. Tham khảo để hiểu cách giao mục tiêu

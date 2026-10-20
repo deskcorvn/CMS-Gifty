@@ -77,6 +77,13 @@ học thuộc các tên kỹ thuật như Skills, Agents, MCP.
 2. **Soát lại bằng một cuộc trò chuyện thứ hai.** Dán kết quả và tiêu chí “thế nào là đạt” vào một
    cuộc trò chuyện mới, nhờ nó chỉ ra chỗ không đạt.
 
+Hai mẹo đi kèm:
+
+- **Không cần câu chữ đẹp.** Gõ hết ý ra, kể cả hơi lộn xộn, rồi nhờ AI sắp xếp lại theo khung 6 ý.
+  Quan trọng là đủ ý.
+- **Chia nhỏ việc lớn.** Việc càng to càng nhiều chỗ để AI tự đoán. Chia ra, giao từng phần, kiểm tra
+  từng phần.
+
 ## Công thức giao việc 6 ý
 
 | Câu hỏi | Diễn giải |

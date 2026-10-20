@@ -90,8 +90,8 @@ loTrinh:
   dich: >-
     Cuối buổi, anh chị về với một trợ lý Claude dùng được mỗi ngày và bốn sản phẩm của riêng mình.
   video:
-    tieuDe: "Video mở đầu: bản đồ buổi học (1 phút)"
-    url: /video/v0-mo-dau.mp4
+    tieuDe: "Video mở đầu: bản đồ buổi học (hỏi đáp, 2 phút)"
+    url: /video/h0-mo-dau.mp4
   phan:
     - ten: Hiểu AI
       chang: [1, 2, 3]

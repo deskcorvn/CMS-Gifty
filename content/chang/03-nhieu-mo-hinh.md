@@ -3,8 +3,8 @@ so: 3
 tieuDe: Nhiều mô hình AI để làm gì?
 phut: 10
 video:
-  tieuDe: "Nhiều mô hình AI để làm gì? (1 phút)"
-  url: /video/v3-chang-3.mp4
+  tieuDe: "Nhiều mô hình AI để làm gì? (hỏi đáp, 2 phút)"
+  url: /video/h3-chang-3.mp4
 mucTieu: >-
   Biết cách lựa chọn mô hình và mức suy luận cho từng loại việc. Chọn mô hình không phải “bấm nút
   thông minh hơn”, mà là chọn hệ thống phù hợp với công việc.

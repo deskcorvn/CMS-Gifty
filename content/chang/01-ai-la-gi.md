@@ -3,8 +3,8 @@ so: 1
 tieuDe: AI là gì, vì sao có thể sai?
 phut: 15
 video:
-  tieuDe: "AI là gì, vì sao có thể sai? (1 phút)"
-  url: /video/v1-chang-1.mp4
+  tieuDe: "AI là gì, vì sao có thể sai? (hỏi đáp, 2 phút)"
+  url: /video/h1-chang-1.mp4
 mucTieu: >-
   Hiểu AI đưa ra câu trả lời dựa trên mô hình đã học và ngữ cảnh đang có. Câu văn tự tin không có
   nghĩa là đúng.

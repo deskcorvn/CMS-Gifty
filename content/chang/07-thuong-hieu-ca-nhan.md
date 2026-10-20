@@ -3,8 +3,8 @@ so: 7
 tieuDe: Xây dựng thương hiệu cá nhân bằng Claude + ChatGPT
 phut: 20
 video:
-  tieuDe: "ChatGPT làm được gì với ảnh (1 phút)"
-  url: /video/v7-chatgpt-anh.mp4
+  tieuDe: "Claude viết lời giới thiệu, ChatGPT làm ảnh (hỏi đáp, 2 phút)"
+  url: /video/h7-chang-7.mp4
 mucTieu: >-
   Rời lớp với cách giới thiệu chuyên môn rõ ràng và ảnh đại diện chuyên nghiệp, hoặc mẫu yêu cầu
   chỉnh ảnh dùng lại sau lớp. Không cố làm website trong buổi này.

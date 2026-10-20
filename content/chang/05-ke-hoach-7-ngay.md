@@ -2,6 +2,9 @@
 so: 5
 tieuDe: Bài tập trọng tâm — biến danh sách mối quan hệ thành kế hoạch 7 ngày
 phut: 25
+video:
+  tieuDe: "Từ 12 mối quan hệ đến kế hoạch 7 ngày (hỏi đáp, 2 phút)"
+  url: /video/h5-chang-5.mp4
 mucTieu: >-
   Thấy một bảng ghi chép rời rạc biến thành danh sách ưu tiên, lịch làm việc và tin nhắn đã soạn.
   Ai cũng dùng được, dù kinh doanh sản phẩm, dịch vụ hay làm chuyên môn.

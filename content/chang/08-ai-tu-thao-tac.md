@@ -2,6 +2,9 @@
 so: 8
 tieuDe: Video kết thúc — AI tự điều khiển máy tính
 phut: 15
+video:
+  tieuDe: "AI làm việc trên máy tính khác gì trên web (hỏi đáp, 2 phút)"
+  url: /video/h8-chang-8.mp4
 mucTieu: >-
   Chứng kiến sự khác nhau giữa AI “đưa ra câu trả lời” và AI “nhận nhiệm vụ rồi tự thao tác với tệp,
   trình duyệt và ứng dụng”. Đây là video thật quay trước, không yêu cầu học viên cài đặt.

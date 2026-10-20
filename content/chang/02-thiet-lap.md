@@ -2,6 +2,9 @@
 so: 2
 tieuDe: Thiết lập Claude và ChatGPT đúng từ đầu
 phut: 15
+video:
+  tieuDe: "Thiết lập tài khoản trước khi học (hỏi đáp, 2 phút)"
+  url: /video/h2-chang-2.mp4
 mucTieu: >-
   Trước khi giao việc cho AI, biết mình đang dùng tài khoản nào, hệ thống được phép dùng dữ liệu ra
   sao và điều gì cần giữ riêng.

@@ -2,6 +2,9 @@
 so: 6
 tieuDe: Tạo trợ lý Claude và sử dụng ngay
 phut: 25
+video:
+  tieuDe: "Trợ lý kinh doanh trong Project (hỏi đáp, 2 phút)"
+  url: /video/h6-chang-6.mp4
 mucTieu: >-
   Không chỉ tạo một Project cho có. Tạo “Trợ lý kinh doanh của tôi”, đưa bối cảnh nghề nghiệp vào và
   dùng lại bài toán mối quan hệ ngay trong Project để thấy sự khác biệt.

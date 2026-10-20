@@ -3,8 +3,8 @@ so: 4
 tieuDe: Từ hỏi đáp đến giao việc hiệu quả
 phut: 25
 video:
-  tieuDe: "Bốn nấc, khung 6 ý và hai thói quen (1 phút)"
-  url: /video/v4-chang-4.mp4
+  tieuDe: "Bốn nấc, khung 6 ý và hai thói quen (hỏi đáp, 3 phút)"
+  url: /video/h4-chang-4.mp4
 mucTieu: >-
   Biết bốn nấc dùng AI, công thức giao việc 6 ý và hai thói quen giúp AI làm ngày càng đúng: góp ý
   làm theo được và soát lại bằng một cuộc trò chuyện thứ hai.

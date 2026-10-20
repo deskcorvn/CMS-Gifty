@@ -3,8 +3,8 @@ so: 9
 tieuDe: Tổng kết và bài tập sau lớp
 phut: 10
 video:
-  tieuDe: "Tổng kết và ba việc cho tuần tới (1 phút)"
-  url: /video/v9-tong-ket.mp4
+  tieuDe: "Tổng kết và ba việc cho tuần tới (hỏi đáp, 1 phút)"
+  url: /video/h9-chang-9.mp4
 mucTieu: >-
   Thấy được bốn sản phẩm mình mang về và hiểu trách nhiệm kiểm chứng khi làm việc cùng AI.
 ghiNho: >-

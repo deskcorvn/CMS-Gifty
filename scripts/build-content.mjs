@@ -48,6 +48,28 @@ for (const sp of khoaHoc?.sanPham ?? []) {
   if (!chuoi(sp?.loiIch)) loi.push(`content/khoa-hoc.yml: sản phẩm ${sp?.ma} thiếu loiIch`);
   sp.tuyChon = sp?.tuyChon === true;
 }
+const videoHopLe = (v, noi) => {
+  if (v == null) return null;
+  const tieuDe = chuoi(v?.tieuDe);
+  const url = chuoi(v?.url);
+  if (!url) return null;
+  if (!tieuDe) loi.push(`${noi}: video cần "tieuDe"`);
+  if (!/^(https:\/\/|\/)/.test(url)) loi.push(`${noi}: video.url phải bắt đầu bằng https:// hoặc /`);
+  return { tieuDe, url };
+};
+const loTrinh = khoaHoc?.loTrinh;
+khoaHoc.loTrinh = loTrinh
+  ? {
+      dich: chuoi(loTrinh.dich),
+      video: videoHopLe(loTrinh.video, "content/khoa-hoc.yml: loTrinh"),
+      phan: (loTrinh.phan ?? []).map((p, i) => {
+        if (!chuoi(p?.ten)) loi.push(`content/khoa-hoc.yml: loTrinh.phan dòng ${i + 1} thiếu "ten"`);
+        const ds = Array.isArray(p?.chang) ? p.chang.map(Number) : [];
+        if (!ds.length) loi.push(`content/khoa-hoc.yml: loTrinh.phan dòng ${i + 1} thiếu danh sách "chang"`);
+        return { ten: chuoi(p?.ten), moTa: chuoi(p?.moTa), chang: ds };
+      }),
+    }
+  : null;
 const maNguon = new Set((khoaHoc?.nguon ?? []).map((n) => n.ma));
 const maSanPham = new Set((khoaHoc?.sanPham ?? []).map((s) => s.ma));
 
@@ -76,6 +98,7 @@ const chang = readdirSync(dir)
       sanPham: data.sanPham ?? [],
       nguon: data.nguon ?? [],
       coVideo: Boolean(data.coVideo),
+      video: videoHopLe(data.video, file),
       noiDungHtml: marked.parse(body, { async: false }),
       buoc: buoc.map((b, i) => {
         if (!chuoi(b?.tieuDe)) loi.push(`${file}: bước ${i + 1} thiếu tieuDe`);
@@ -96,6 +119,14 @@ const chang = readdirSync(dir)
 chang.forEach((c, i) => {
   if (c.so !== i + 1) loi.push(`Số chặng phải liên tục từ 1: đang thấy chặng ${c.so} ở vị trí ${i + 1}`);
 });
+if (khoaHoc.loTrinh) {
+  const daXep = khoaHoc.loTrinh.phan.flatMap((p) => p.chang);
+  const thieu = chang.map((c) => c.so).filter((so) => !daXep.includes(so));
+  const trung = daXep.filter((so, i) => daXep.indexOf(so) !== i);
+  if (thieu.length) loi.push(`content/khoa-hoc.yml: loTrinh chưa xếp chặng ${thieu.join(", ")} vào phần nào`);
+  if (trung.length) loi.push(`content/khoa-hoc.yml: loTrinh xếp chặng ${trung.join(", ")} vào nhiều phần`);
+  for (const so of daXep) if (!chang.some((c) => c.so === so)) loi.push(`content/khoa-hoc.yml: loTrinh có chặng ${so} không tồn tại`);
+}
 
 if (loi.length) {
   console.error("Nội dung khóa học có lỗi:\n- " + loi.join("\n- "));

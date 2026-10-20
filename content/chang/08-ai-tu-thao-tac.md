@@ -1,7 +1,7 @@
 ---
 so: 8
 tieuDe: Video kết thúc — AI tự điều khiển máy tính
-phut: 20
+phut: 15
 mucTieu: >-
   Chứng kiến sự khác nhau giữa AI “đưa ra câu trả lời” và AI “nhận nhiệm vụ rồi tự thao tác với tệp,
   trình duyệt và ứng dụng”. Đây là video thật quay trước, không yêu cầu học viên cài đặt.

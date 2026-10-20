@@ -19,8 +19,18 @@ export type Chang = {
   sanPham: string[];
   nguon: string[];
   coVideo: boolean;
+  /** Video bài học của chặng (giáo trình v2.1): chiếu tại lớp, học viên xem lại trên trang học. */
+  video: VideoBai | null;
   noiDungHtml: string;
   buoc: Buoc[];
+};
+
+export type VideoBai = { tieuDe: string; url: string };
+
+export type LoTrinh = {
+  dich: string;
+  video: VideoBai | null;
+  phan: { ten: string; moTa: string; chang: number[] }[];
 };
 
 export type SanPhamKhoa = {
@@ -64,6 +74,7 @@ export type KhoaHoc = {
     donVi: string;
   };
   video: { tieuDe: string; url: string };
+  loTrinh: LoTrinh | null;
   cauChot: string;
   ngayRaSoatNguon: string;
   nguon: { ma: string; ten: string; url: string }[];
@@ -79,6 +90,9 @@ export const timChang = (so: number) => dsChang.find((c) => c.so === so);
 export const timSanPham = (ma: string) =>
   khoaHoc.sanPham.find((s) => s.ma === ma);
 export const timNguon = (ma: string) => khoaHoc.nguon.find((n) => n.ma === ma);
+
+/** Video tự host trong public/video có ảnh bìa cùng tên (.jpg) để chưa bấm phát vẫn thấy tiêu đề. */
+export const anhBia = (url: string) => (/^\/video\/[\w-]+\.mp4$/.test(url) ? url.replace(/\.mp4$/, ".jpg") : undefined);
 
 export const dinhDangTien = (n: number) => `${n.toLocaleString("vi-VN")}đ`;
 

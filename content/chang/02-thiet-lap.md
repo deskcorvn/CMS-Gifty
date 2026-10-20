@@ -1,7 +1,7 @@
 ---
 so: 2
 tieuDe: Thiết lập Claude và ChatGPT đúng từ đầu
-phut: 20
+phut: 15
 mucTieu: >-
   Trước khi giao việc cho AI, biết mình đang dùng tài khoản nào, hệ thống được phép dùng dữ liệu ra
   sao và điều gì cần giữ riêng.

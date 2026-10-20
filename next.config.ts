@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
     "/chung-nhan/[ma]/anh": ["./src/assets/fonts/**", "./public/chu-ky-hung.svg"],
   },
   images: { remotePatterns: [{ protocol: "https", hostname: "*.public.blob.vercel-storage.com" }] },
+  // Video bài học (public/video) chỉ dành cho học viên xem lại: không cho công cụ tìm kiếm lập chỉ mục.
+  async headers() {
+    return [{ source: "/video/:file*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }];
+  },
 };
 
 export default nextConfig;

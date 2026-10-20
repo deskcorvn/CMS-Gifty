@@ -2,6 +2,9 @@
 so: 7
 tieuDe: Xây dựng thương hiệu cá nhân bằng Claude + ChatGPT
 phut: 20
+video:
+  tieuDe: "ChatGPT làm được gì với ảnh (1 phút)"
+  url: /video/v7-chatgpt-anh.mp4
 mucTieu: >-
   Rời lớp với cách giới thiệu chuyên môn rõ ràng và ảnh đại diện chuyên nghiệp, hoặc mẫu yêu cầu
   chỉnh ảnh dùng lại sau lớp. Không cố làm website trong buổi này.
@@ -45,6 +48,16 @@ buoc:
       SP04” để lưu ảnh đã chỉnh, hoặc câu lệnh chỉnh ảnh nếu chưa kịp chỉnh.
     ketQua: Hồ sơ thương hiệu cá nhân nằm trong “Kết quả của tôi”, dùng lại cho danh thiếp, Zalo, Facebook.
 ---
+
+## ChatGPT làm được gì với ảnh
+
+- **Tạo ảnh từ mô tả bằng lời:** tả cảnh, phong cách, màu sắc, ChatGPT vẽ ra ảnh mới.
+- **Chỉnh ảnh anh chị tải lên:** đổi nền, ánh sáng, trang phục, khung hình, giữ đúng gương mặt khi
+  câu lệnh yêu cầu rõ.
+- **Sửa tiếp bằng câu lệnh nối tiếp:** chưa ưng chỗ nào thì nói đúng chỗ đó, không cần làm lại từ
+  đầu.
+- **Bản miễn phí có hạn mức tạo ảnh riêng,** có thể hết giữa lớp. Khi đó giữ câu lệnh và ảnh gốc để
+  làm tiếp ở nhà.
 
 ## Cách kiểm tra ảnh
 

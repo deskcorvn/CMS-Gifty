@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tinhTrangHocVien } from "@/lib/hoan-thanh";
-import { dsChang, khoaHoc, timChang, timNguon, timSanPham } from "@/lib/noi-dung";
+import { anhBia, dsChang, khoaHoc, timChang, timNguon, timSanPham } from "@/lib/noi-dung";
 import { batBuocDaMo } from "@/lib/mo-khoa";
 import { batBuocHocVien } from "@/lib/phien";
 import DanhSachBuoc, { NutHoanThanhChang } from "./DanhSachBuoc";
@@ -14,10 +14,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: c ? `Chặng ${c.so}: ${c.tieuDe}` : "Chặng học" };
 }
 
-function nhungVideo(url: string) {
+function nhungVideo(url: string, tieuDe: string) {
   const yt = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);
-  if (yt) return <iframe className="aspect-video w-full rounded-lg" src={`https://www.youtube-nocookie.com/embed/${yt[1]}`} title={khoaHoc.video.tieuDe} allowFullScreen />;
-  return <video className="w-full rounded-lg" src={url} controls preload="metadata" />;
+  if (yt) return <iframe className="aspect-video w-full rounded-lg" src={`https://www.youtube-nocookie.com/embed/${yt[1]}`} title={tieuDe} allowFullScreen />;
+  return <video className="aspect-video w-full rounded-lg bg-[#eef4ff]" src={url} poster={anhBia(url)} controls preload="metadata" playsInline aria-label={tieuDe} />;
 }
 
 export default async function TrangChang({ params }: Props) {
@@ -45,11 +45,19 @@ export default async function TrangChang({ params }: Props) {
       </header>
 
       <div className="mx-auto max-w-4xl pb-8">
+        {c.video && (
+          <section className="mt-8 rounded-xl border border-line bg-white p-5" aria-label="Video bài học">
+            <p className="text-xs font-bold text-amber-ink">Xem trước, rồi làm các bước bên dưới</p>
+            <h2 className="mt-1 font-bold text-navy">{c.video.tieuDe}</h2>
+            <div className="mt-3">{nhungVideo(c.video.url, c.video.tieuDe)}</div>
+          </section>
+        )}
+
         {c.coVideo && (
           <section className="mt-8 rounded-xl border border-line bg-white p-5">
             <h2 className="font-bold text-navy">{khoaHoc.video.tieuDe}</h2>
             <div className="mt-3">
-              {khoaHoc.video.url ? nhungVideo(khoaHoc.video.url) : (
+              {khoaHoc.video.url ? nhungVideo(khoaHoc.video.url, khoaHoc.video.tieuDe) : (
                 <p className="rounded-lg bg-amber-soft px-4 py-3 text-sm text-amber-ink">Video được chiếu tại lớp. Bản xem lại sẽ có ở đây sau buổi học.</p>
               )}
             </div>

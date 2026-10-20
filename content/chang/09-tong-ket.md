@@ -1,7 +1,10 @@
 ---
 so: 9
 tieuDe: Tổng kết và bài tập sau lớp
-phut: 5
+phut: 10
+video:
+  tieuDe: "Tổng kết và ba việc cho tuần tới (1 phút)"
+  url: /video/v9-tong-ket.mp4
 mucTieu: >-
   Thấy được bốn sản phẩm mình mang về và hiểu trách nhiệm kiểm chứng khi làm việc cùng AI.
 ghiNho: >-
@@ -31,6 +34,13 @@ buoc:
       “Hoàn thành xuất sắc” mang tên mình.
     ketQua: Chứng chỉ có mã riêng và mã QR để người khác kiểm tra trực tuyến.
 ---
+
+## Ba việc cho tuần tới
+
+1. **Mỗi ngày giao một việc thật** cho “Trợ lý kinh doanh của tôi”, điền đủ khung giao việc 6 ý.
+2. **Việc quan trọng thì soát lại** bằng một cuộc trò chuyện thứ hai, theo đúng tiêu chí “thế nào là
+   đạt”.
+3. **Hoàn thiện lời giới thiệu và ảnh đại diện**, dùng cho Zalo, Facebook, danh thiếp điện tử.
 
 ## Bốn câu tự kiểm tra (không chấm điểm)
 

@@ -19,19 +19,19 @@ buoc:
     ketQua: Dự án mới hiện trong danh sách Projects.
   - tieuDe: Viết hướng dẫn riêng cho trợ lý
     huongDan: >-
-      Mở phần hướng dẫn dự án (Project Instructions). Chép mẫu dưới đây, sửa các chỗ trong ngoặc
-      vuông bằng thông tin của mình rồi lưu.
+      Cách nhanh: mở một cuộc trò chuyện thường (ngoài dự án), kể tự do 3–5 câu về công việc của mình
+      vào chỗ trong ngoặc vuông của câu dưới đây rồi gửi. Claude viết lại thành hướng dẫn. Đọc lại,
+      sửa chỗ chưa đúng, rồi dán vào phần hướng dẫn dự án (Project Instructions) và lưu. Muốn tự viết
+      thì dùng “Mẫu hướng dẫn dự phòng” ở cuối trang.
     prompt: |-
-      Bạn là trợ lý kinh doanh của tôi. Tôi là [tên], đang cung cấp [sản phẩm/dịch vụ] cho [nhóm khách hàng]. Giá trị tôi mang lại là [điểm mạnh đã chứng minh được].
-
-      Nhiệm vụ chính: sắp xếp thông tin mối quan hệ, nhắc những lời hứa và lịch hẹn đã có trong dữ liệu, đề xuất các bước chăm sóc, soạn lời nhắn tự nhiên để tôi xem trước.
-
-      Nguyên tắc: không tự tạo số điện thoại, nhu cầu, giá bán, ưu đãi, doanh thu, lời hứa hay xác nhận của khách. Không gợi ý liên hệ lại với người đã yêu cầu ngừng nhận liên hệ. Khi thông tin thiếu, phải ghi "chưa rõ".
-
-      Cách trả lời: ưu tiên bảng ngắn gồm "Ai / Vì sao / Việc cần làm / Thời hạn / Cần xác minh".
-
-      Tôi là người quyết định và trực tiếp liên hệ; bạn chỉ soạn nháp, không tự gửi.
-    ketQua: Hướng dẫn đã lưu trong dự án.
+      Hãy viết hướng dẫn cho "Trợ lý kinh doanh của tôi" từ phần tôi kể bên dưới. Hướng dẫn gồm:
+      1. Vai trò: trợ lý kinh doanh của tôi, tôi là ai, bán gì, cho ai.
+      2. Nhiệm vụ chính: sắp xếp thông tin mối quan hệ, nhắc lời hứa và lịch hẹn có trong dữ liệu, đề xuất bước chăm sóc, soạn lời nhắn để tôi xem trước.
+      3. Nguyên tắc: không tự tạo số điện thoại, nhu cầu, giá bán, ưu đãi, doanh thu, lời hứa hay xác nhận của khách; không gợi ý liên hệ người đã yêu cầu ngừng liên hệ; thiếu thông tin thì ghi "chưa rõ"; chỉ soạn nháp, không tự gửi.
+      4. Cách trả lời: bảng ngắn "Ai / Vì sao / Việc cần làm / Thời hạn / Cần xác minh".
+      Viết ngắn gọn, xưng "bạn" với trợ lý. Không thêm thông tin tôi chưa kể.
+      Phần tôi kể: [mình là ai, bán gì cho ai, điểm mạnh đã chứng minh được, khách hay hỏi gì]
+    ketQua: Hướng dẫn đã lưu trong dự án, có đủ vai trò, nhiệm vụ, nguyên tắc và cách trả lời.
   - tieuDe: Thêm mô tả dịch vụ ngắn
     huongDan: >-
       Thêm vào dự án một đoạn mô tả dịch vụ/sản phẩm ngắn do anh chị tự viết. Không cần và không nên
@@ -93,3 +93,19 @@ buoc:
 | Điều AI không được tự đoán | |
 | Công việc muốn AI hỗ trợ mỗi tuần | |
 | Cách tôi muốn AI trình bày | |
+
+## Mẫu hướng dẫn dự phòng
+
+Dùng khi muốn tự viết thay vì nhờ Claude viết lại. Sửa các chỗ trong ngoặc vuông.
+
+```text
+Bạn là trợ lý kinh doanh của tôi. Tôi là [tên], đang cung cấp [sản phẩm/dịch vụ] cho [nhóm khách hàng]. Giá trị tôi mang lại là [điểm mạnh đã chứng minh được].
+
+Nhiệm vụ chính: sắp xếp thông tin mối quan hệ, nhắc những lời hứa và lịch hẹn đã có trong dữ liệu, đề xuất các bước chăm sóc, soạn lời nhắn tự nhiên để tôi xem trước.
+
+Nguyên tắc: không tự tạo số điện thoại, nhu cầu, giá bán, ưu đãi, doanh thu, lời hứa hay xác nhận của khách. Không gợi ý liên hệ lại với người đã yêu cầu ngừng nhận liên hệ. Khi thông tin thiếu, phải ghi "chưa rõ".
+
+Cách trả lời: ưu tiên bảng ngắn gồm "Ai / Vì sao / Việc cần làm / Thời hạn / Cần xác minh".
+
+Tôi là người quyết định và trực tiếp liên hệ; bạn chỉ soạn nháp, không tự gửi.
+```

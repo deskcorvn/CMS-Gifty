@@ -2,6 +2,9 @@
 so: 1
 tieuDe: AI là gì, vì sao có thể sai?
 phut: 15
+video:
+  tieuDe: "AI là gì, vì sao có thể sai? (1 phút)"
+  url: /video/v1-chang-1.mp4
 mucTieu: >-
   Hiểu AI đưa ra câu trả lời dựa trên mô hình đã học và ngữ cảnh đang có. Câu văn tự tin không có
   nghĩa là đúng.
@@ -13,8 +16,9 @@ buoc:
       Tự hoàn thành trong đầu hai câu sau: “Một con vịt xòe…” và “Khi rảnh, tôi thường…”. Câu đầu,
       gần như ai cũng đoán giống nhau. Câu thứ hai thì mỗi người một kiểu.
     ketQua: >-
-      Anh chị thấy: khi có mẫu quen thuộc, việc đoán rất dễ. Khi thiếu thông tin về riêng mình, AI
-      cũng chỉ có thể đoán, hoặc dựa vào ngữ cảnh anh chị đưa cho nó. Đây là cách giải thích giản
+      Anh chị thấy: khi có mẫu quen thuộc, việc đoán rất dễ. Sau “Một con vịt xòe hai cái…” gần như
+      chỉ có một lựa chọn là “cánh”. Sau “Khi rảnh, tôi thường…” có rất nhiều lựa chọn ngang nhau. Khi
+      thiếu thông tin về riêng mình, AI cũng chỉ có thể đoán, hoặc dựa vào ngữ cảnh anh chị đưa cho nó. Đây là cách giải thích giản
       lược để nhập môn, không phải mô tả đầy đủ cách một hệ thống AI hiện đại hoạt động.
   - tieuDe: Hỏi AI khi chưa cho nó biết gì về mình
     huongDan: Mở claude.ai, tạo cuộc trò chuyện mới và gửi nguyên văn câu dưới đây.
@@ -41,6 +45,13 @@ buoc:
       Anh chị chỉ ra được ít nhất một chỗ AI tự suy diễn: một con số, một nhu cầu, một thói quen của
       khách mà anh chị chưa nói.
 ---
+
+## Vì sao AI có thể sai
+
+Hình dung AI chọn từ tiếp theo trong nhiều lựa chọn. Câu quen thuộc thì một lựa chọn trội hẳn, nên AI
+trả lời gần như chắc chắn. Câu mơ hồ thì nhiều lựa chọn ngang nhau; thiếu bối cảnh, AI vẫn phải chọn
+một cái và viết ra bằng giọng rất tự tin. Chỗ đó dễ sai nhất. Việc của anh chị là đưa thêm bối cảnh
+và kiểm tra lại.
 
 ## Ba điều cần nhớ
 

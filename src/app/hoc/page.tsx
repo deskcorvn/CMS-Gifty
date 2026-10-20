@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { tinhTrangHocVien } from "@/lib/hoan-thanh";
-import { dsChang, khoaHoc, nhanLichHoc, tongSoBuoc } from "@/lib/noi-dung";
+import { anhBia, dsChang, khoaHoc, nhanLichHoc, tongSoBuoc } from "@/lib/noi-dung";
 import NhomZalo from "@/components/NhomZalo";
 import ThongTinCuaToi from "@/components/ThongTinCuaToi";
 import { maDangKyCua } from "@/lib/ma-dang-ky";
@@ -64,28 +64,53 @@ export default async function TrangHoc() {
       )}
 
       <section className="mt-8">
-        <h2 className="text-xl font-bold text-navy">9 chặng</h2>
-        <ol className="mt-4 space-y-3">
-          {dsChang.map((c) => {
-            const xong = c.buoc.filter((b) => tt.buocXong.has(b.id)).length;
-            const hetChang = xong === c.buoc.length;
-            return (
-              <li key={c.so}>
-                <Link href={`/hoc/chang/${c.so}`} className={`flex items-center gap-4 rounded-xl border bg-white p-4 transition hover:border-amber ${hetChang ? "border-emerald-300" : "border-line"}`}>
-                  <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-bold ${hetChang ? "bg-emerald-700 text-white" : "bg-navy text-white"}`}>
-                    {hetChang ? "✓" : c.so}
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-semibold text-navy">{c.tieuDe}</span>
-                    <span className="text-sm text-muted">
-                      {c.phut} phút · {hetChang ? "đã hoàn thành" : xong > 0 ? "đang học" : "chưa học"}{c.sanPham.length ? ` · làm ${c.sanPham.join(", ")}` : ""}
-                    </span>
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ol>
+        <h2 className="text-xl font-bold text-navy">Bản đồ buổi học</h2>
+        {khoaHoc.loTrinh?.dich && <p className="mt-1 text-body">{khoaHoc.loTrinh.dich}</p>}
+        {khoaHoc.loTrinh?.video && (
+          <div className="mt-4 rounded-xl border border-line bg-white p-4">
+            <p className="text-sm font-bold text-navy">{khoaHoc.loTrinh.video.tieuDe}</p>
+            <video className="mt-3 aspect-video w-full rounded-lg bg-[#eef4ff]" src={khoaHoc.loTrinh.video.url} poster={anhBia(khoaHoc.loTrinh.video.url)} controls preload="metadata" playsInline aria-label={khoaHoc.loTrinh.video.tieuDe} />
+          </div>
+        )}
+        {(khoaHoc.loTrinh?.phan ?? [{ ten: `${dsChang.length} chặng`, moTa: "", chang: dsChang.map((c) => c.so) }]).map((phan, iPhan) => {
+          const dsPhan = dsChang.filter((c) => phan.chang.includes(c.so));
+          const soXong = dsPhan.filter((c) => c.buoc.every((b) => tt.buocXong.has(b.id))).length;
+          return (
+            <div key={phan.ten} className="mt-6">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 className="text-lg font-bold text-navy">
+                  {khoaHoc.loTrinh ? <span className="text-amber-ink">Phần {iPhan + 1} · </span> : null}
+                  {phan.ten}
+                </h3>
+                <span className={`rounded-full px-3 py-0.5 text-xs font-semibold ${soXong === dsPhan.length ? "bg-emerald-50 text-emerald-800" : "bg-amber-soft text-amber-ink"}`}>
+                  {soXong}/{dsPhan.length} chặng
+                </span>
+              </div>
+              {phan.moTa && <p className="mt-1 text-sm text-muted">{phan.moTa}</p>}
+              <ol className="mt-3 space-y-3">
+                {dsPhan.map((c) => {
+                  const xong = c.buoc.filter((b) => tt.buocXong.has(b.id)).length;
+                  const hetChang = xong === c.buoc.length;
+                  return (
+                    <li key={c.so}>
+                      <Link href={`/hoc/chang/${c.so}`} className={`flex items-center gap-4 rounded-xl border bg-white p-4 transition hover:border-amber ${hetChang ? "border-emerald-300" : "border-line"}`}>
+                        <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-bold ${hetChang ? "bg-emerald-700 text-white" : "bg-navy text-white"}`}>
+                          {hetChang ? "✓" : c.so}
+                        </span>
+                        <span className="min-w-0 flex-1">
+                          <span className="block font-semibold text-navy">{c.tieuDe}</span>
+                          <span className="text-sm text-muted">
+                            {c.phut} phút{c.video ? " · có video" : ""} · {hetChang ? "đã hoàn thành" : xong > 0 ? "đang học" : "chưa học"}{c.sanPham.length ? ` · làm ${c.sanPham.join(", ")}` : ""}
+                          </span>
+                        </span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
+          );
+        })}
       </section>
 
       <section className="mt-8 grid gap-3 md:grid-cols-4">

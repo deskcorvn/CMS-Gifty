@@ -29,7 +29,7 @@ nhomZalo:
 # Mỗi dòng: - anh: /anh/mau-sp01.png  (tải ảnh lên qua Pages CMS, file nằm ở public/anh)
 #             chuThich: "SP01 làm từ dữ liệu giả lập KH01–KH12"
 ketQuaMau: []
-phienBanGiaoTrinh: "2.0 · cập nhật 10/10/2026"
+phienBanGiaoTrinh: "2.1 · cập nhật 20/10/2026"
 lop:
   ngay: "2026-10-21"
   gio: "14:00"
@@ -86,6 +86,22 @@ chungChi:
   chucDanh: Giám đốc
   donVi: Gifty Tech
   # Ảnh chữ ký nằm ở public/chu-ky-hung.svg (tạo bằng scripts/ve-chu-ky.mjs).
+loTrinh:
+  dich: >-
+    Cuối buổi, anh chị về với một trợ lý Claude dùng được mỗi ngày và bốn sản phẩm của riêng mình.
+  video:
+    tieuDe: "Video mở đầu: bản đồ buổi học (1 phút)"
+    url: /video/v0-mo-dau.mp4
+  phan:
+    - ten: Hiểu AI
+      chang: [1, 2, 3]
+      moTa: AI đoán câu trả lời thế nào, vì sao có thể sai; thiết lập tài khoản; chọn mô hình hợp việc.
+    - ten: Giao việc
+      chang: [4, 5]
+      moTa: Khung giao việc 6 ý và hai thói quen; biến 12 mối quan hệ thành kế hoạch 7 ngày.
+    - ten: Có trợ lý riêng
+      chang: [6, 7, 8, 9]
+      moTa: Trợ lý kinh doanh trong Project, hồ sơ thương hiệu cá nhân, xem AI làm việc trên máy tính.
 video:
   tieuDe: "Tôi giao mục tiêu. AI tự mở phần mềm, thực hiện và báo cáo kết quả."
   # Link video quay sẵn (YouTube không công khai hoặc file MP4). Trống thì trang báo "có sau buổi học".

@@ -31,6 +31,12 @@ content:
         options: { values: [SP01, SP02, SP03, SP04] }
       - { name: nguon, label: "Nguồn tham khảo (mã N01…N17)", type: string, list: true }
       - { name: coVideo, label: Chặng có video, type: boolean }
+      - name: video
+        label: Video bài học của chặng (chiếu tại lớp, xem lại trên trang học)
+        type: object
+        fields:
+          - { name: tieuDe, label: Tên video, type: string }
+          - { name: url, label: "Link video (YouTube hoặc /video/ten-file.mp4)", type: string }
       - name: buoc
         label: Các bước
         type: object
@@ -116,6 +122,25 @@ content:
           - { name: nguoiKy, label: Người ký, type: string }
           - { name: chucDanh, label: Chức danh, type: string }
           - { name: donVi, label: Đơn vị, type: string }
+      - name: loTrinh
+        label: Bản đồ buổi học (trang học)
+        type: object
+        fields:
+          - { name: dich, label: Đích của buổi học, type: text }
+          - name: video
+            label: Video mở đầu
+            type: object
+            fields:
+              - { name: tieuDe, label: Tên video, type: string }
+              - { name: url, label: "Link video (YouTube hoặc /video/ten-file.mp4)", type: string }
+          - name: phan
+            label: Các phần
+            type: object
+            list: true
+            fields:
+              - { name: ten, label: Tên phần, type: string }
+              - { name: moTa, label: Mô tả ngắn, type: string }
+              - { name: chang, label: "Các chặng (số)", type: number, list: true }
       - name: video
         label: Video chặng 8
         type: object

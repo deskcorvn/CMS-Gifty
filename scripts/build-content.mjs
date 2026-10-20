@@ -61,8 +61,23 @@ const KIEU_MAN = {
   vs: ["tieuDe", "trai", "phai"],
   luong: ["tieuDe", "buoc"],
   hop: ["noi"],
+  minhHoa: ["tieuDe", "video"],
   songSong: ["tieuDe", "dieuPhoi", "songSong", "tuanTu"],
 };
+// Video minh họa (giao diện mô phỏng, không lời) nằm ở public/minh-hoa/<ten>.mp4, ảnh bìa cùng tên .jpg.
+function kiemMinhHoa(url, noi) {
+  if (!/^\/minh-hoa\/[\w-]+\.mp4$/.test(chuoi(url))) {
+    loi.push(`${noi}: video minh họa phải có dạng /minh-hoa/ten-file.mp4`);
+    return;
+  }
+  for (const duoi of [".mp4", ".jpg"]) {
+    try {
+      readFileSync(join(ROOT, "public", url.replace(/\.mp4$/, duoi)));
+    } catch {
+      loi.push(`${noi}: thiếu tệp public${url.replace(/\.mp4$/, duoi)}`);
+    }
+  }
+}
 function docMan(file) {
   let raw;
   try {
@@ -80,6 +95,7 @@ function docMan(file) {
     const can = KIEU_MAN[m?.kieu];
     if (!can) loi.push(`${noi}: kieu "${m?.kieu}" không hợp lệ (${Object.keys(KIEU_MAN).join(", ")})`);
     for (const k of can ?? []) if (m?.[k] == null || m[k] === "") loi.push(`${noi}: thiếu "${k}"`);
+    if (m?.kieu === "minhHoa") kiemMinhHoa(m.video, noi);
     const loiNoi = (Array.isArray(m?.loi) ? m.loi : [m?.loi]).map(chuoi).filter(Boolean);
     if (!loiNoi.length) loi.push(`${noi}: thiếu phụ đề "loi"`);
     return { ...m, loi: loiNoi };
@@ -141,6 +157,11 @@ const chang = readdirSync(dir)
           prompt: typeof b?.prompt === "string" ? b.prompt.replace(/\s+$/, "") : "",
           ketQua: chuoi(b?.ketQua),
           neuKhongDuoc: chuoi(b?.neuKhongDuoc),
+          minhHoa: (Array.isArray(b?.minhHoa) ? b.minhHoa : b?.minhHoa ? [b.minhHoa] : []).map((v, k) => {
+            kiemMinhHoa(v?.video, `${file}: bước ${i + 1}, minh họa ${k + 1}`);
+            if (!chuoi(v?.tieuDe)) loi.push(`${file}: bước ${i + 1}, minh họa ${k + 1} thiếu tieuDe`);
+            return { tieuDe: chuoi(v?.tieuDe), video: chuoi(v?.video) };
+          }),
         };
       }),
     };

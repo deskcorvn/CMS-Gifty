@@ -112,15 +112,16 @@ man:
       - Rồi mở cuộc trò chuyện trong dự án, dán mười hai mối quan hệ, và chỉ hỏi một câu ngắn. Hôm nay tôi nên ưu tiên việc gì.
       - Anh chị sẽ thấy câu trả lời vẫn đúng khuôn, đúng ngôn ngữ ngành, dù câu hỏi rất ngắn. Đó là sức của hướng dẫn dự án.
 
-  - kieu: chat
-    tieuDe: "Tools: nối công cụ, **một câu** là xong"
-    hoi: Tạo lịch “Gửi hồ sơ năng lực cho khách số 9” lúc 9 giờ sáng mai, dài 15 phút, trong Google Calendar của tôi.
-    dap: Đã tạo sự kiện trong Google Calendar · 9:00–9:15 sáng mai. Bạn muốn thêm lời nhắc trước 10 phút không?
-    chot: Customize → Connectors. Claude chỉ làm được trong phạm vi quyền anh chị cấp. (Câu trả lời trên màn là minh họa.)
+  - kieu: minhHoa
+    tieuDe: "Tools: nối Google Calendar, **một câu** là có lịch"
+    video: /minh-hoa/noi-lich.mp4
+    chot: "Nút + trong ô chat → Connectors → Manage connectors (hoặc Customize → Connectors). Claude chỉ làm trong phạm vi quyền anh chị cấp."
     loi:
-      - Thành phần thứ năm là tools. Nối Claude với ứng dụng như Google Calendar, Notion, Drive, là nó tự dùng được.
-      - Ví dụ, chỉ một câu là có lịch trong Google Calendar. Hay tìm bản ghi cuộc họp, viết tóm tắt, rồi lưu vào Notion.
-      - Claude làm được tới đâu tùy quyền anh chị cấp. Mỗi connector có trang riêng ghi rõ nó đọc, ghi được những gì. Phần này mình làm mẫu, ai muốn thì thử với lịch của chính mình.
+      - Thành phần thứ năm là tools. Nối Claude với ứng dụng như Google Calendar, Notion, Drive, là nó tự dùng được. Mình xem minh họa.
+      - Trong ô chat bấm dấu cộng, chọn Connectors, rồi Manage connectors. Chọn Google Calendar, đọc xem nó làm được gì với lịch, rồi bấm Connect.
+      - Đăng nhập bằng tài khoản Google của chính mình, đọc quyền, rồi mới cho phép. Gỡ kết nối được bất cứ lúc nào.
+      - Xong thì quay lại ô chat, giao việc bằng một câu. Claude tự dùng connector để tạo sự kiện, và sự kiện hiện ngay trong lịch.
+      - Phần này mình làm mẫu. Ai muốn thử thì làm với lịch cá nhân của mình, ở bước chín trên trang học.
 
   - kieu: luong
     tieuDe: "Làm trước, **gói sau**"
@@ -143,6 +144,26 @@ man:
       - Nhưng phải làm tay trước. Làm cùng AI, duyệt từng bước, sửa tới khi ưng ý. Rồi mới nhờ skill-creator đóng gói.
       - Lần sau đưa dữ liệu mới, nói một câu là chạy. Thấy bước nào chưa hợp lý thì bảo nó cập nhật skill.
       - Quy trình sinh ra từ công việc, công việc sinh ra từ mục tiêu. Nhảy thẳng sang tự động hóa khi chưa rõ việc, thì bối cảnh đổi là hỏng.
+
+  - kieu: minhHoa
+    tieuDe: "Trước tiên: **bật Skills** (bản miễn phí cũng có)"
+    video: /minh-hoa/bat-skills.mp4
+    chot: Settings → Capabilities → bật Code execution and file creation. Rồi Customize → Skills → bật skill-creator.
+    loi:
+      - Muốn đóng gói skill, trước tiên phải bật Skills. Bản miễn phí cũng có.
+      - Vào Settings, mục Capabilities, bật Code execution and file creation. Skills cần mục này.
+      - Rồi vào Customize, mục Skills, bật skill-creator. Đây là skill dùng để tạo ra skill mới.
+
+  - kieu: minhHoa
+    tieuDe: "Làm trước, gói sau: **đóng gói bằng skill-creator**"
+    video: /minh-hoa/dong-goi-skill.mp4
+    chot: Lần sau chỉ cần dán dữ liệu mới và nói một câu. Chưa hợp lý thì bảo “cập nhật skill này”.
+    loi:
+      - Giờ xem cách đóng gói. Kết quả kế hoạch bảy ngày đã ưng ý sau vài lần sửa.
+      - Ngay trong cuộc trò chuyện đó, mình nhờ skill-creator đóng gói, nói rõ đầu vào và đầu ra.
+      - Claude soạn bản nháp skill gồm tên, mô tả, các bước và nguyên tắc. Mình đọc lại rồi lưu. Skill mới nằm trong mục Skills.
+      - Lần sau mở cuộc trò chuyện mới, dán bảng mới, nói một câu. Claude tự nhận ra yêu cầu khớp skill và làm đúng các bước.
+      - Thấy bước nào chưa hợp lý thì bảo cập nhật skill này. Sửa skill nhanh hơn nhiều so với đổi thói quen của người.
 
   - kieu: hop
     tieuDe: Bắt đầu **từ ngọn**

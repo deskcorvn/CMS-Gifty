@@ -212,6 +212,14 @@ function NoiDungMan({ m }: { m: Man }) {
         </div>
       );
       break;
+    case "minhHoa":
+      // Video minh họa không lời: bấm vào video không chuyển màn.
+      than = (
+        <div className="tc-minh-hoa" onClick={(e) => e.stopPropagation()}>
+          <video src={String(m.video)} poster={String(m.video).replace(/\.mp4$/, ".jpg")} controls autoPlay muted playsInline preload="metadata" aria-label={String(m.tieuDe)} />
+        </div>
+      );
+      break;
     case "hop":
       return (
         <div className="tc-hop">

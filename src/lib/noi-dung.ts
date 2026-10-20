@@ -7,7 +7,13 @@ export type Buoc = {
   prompt: string;
   ketQua: string;
   neuKhongDuoc: string;
+  /** Video minh họa không lời (giao diện mô phỏng) cho bước cần gói trả phí, skill hoặc connector. */
+  minhHoa: MinhHoa[];
 };
+
+export type MinhHoa = { tieuDe: string; video: string };
+/** Ảnh bìa của video minh họa: cùng tên, đuôi .jpg. */
+export const anhMinhHoa = (video: string) => video.replace(/\.mp4$/, ".jpg");
 
 export type Chang = {
   so: number;

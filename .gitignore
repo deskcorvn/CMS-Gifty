@@ -8,3 +8,7 @@ next-env.d.ts
 .vercel
 /tmp
 src/generated
+
+# Khung hình tạm khi dựng video minh họa
+scripts/minh-hoa/work/
+scripts/minh-hoa/out/

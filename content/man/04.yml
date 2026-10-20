@@ -11,13 +11,13 @@ man:
     tieuDe: Nhân sự **làm từ xa** hay nhân sự **đến tận nơi**?
     cotTieuDe: ["", Chat trên trang web, Cowork · Claude Desktop]
     dong:
-      - [Máy, Máy chủ của hãng AI, "**Máy của anh chị**"]
-      - [Tệp, "Tải lên bản sao, nhận lại chữ", "**Đọc và sửa tệp gốc** trong thư mục được cho phép"]
+      - [Cách làm, Hỏi một câu trả lời một câu, "**Nhận nhiệm vụ**, tự lập kế hoạch và làm nhiều bước"]
+      - [Tệp, "Tải lên bản sao, nhận lại chữ", "**Đọc và sửa tệp gốc** trên máy, trong thư mục được cho phép (qua Claude Desktop)"]
       - [Đội ngũ, Một luồng trò chuyện, "**Nhiều trợ lý phụ** chạy song song"]
       - [Lịch, Hỏi mới trả lời, "**Tự chạy theo lịch**, ví dụ 7 giờ sáng gửi bản tin"]
     loi:
       - Chat trên trang web giống một nhân viên làm từ xa. Mình phải gửi tài liệu qua, nhận về, rồi tự cập nhật lại.
-      - Còn Cowork chạy trong ứng dụng Claude trên máy tính. Nó giống người ngồi ngay tại văn phòng, sửa trực tiếp tệp trong đúng thư mục được giao.
+      - Còn Cowork nhận nhiệm vụ rồi tự làm nhiều bước. Có ứng dụng Claude trên máy tính, nó giống người ngồi ngay tại văn phòng, sửa trực tiếp tệp trong đúng thư mục được giao.
       - Nó còn có thể chia việc cho nhiều trợ lý phụ chạy cùng lúc, và tự chạy theo lịch, ví dụ bảy giờ sáng gửi bản tin.
 
   - kieu: luong
@@ -37,6 +37,16 @@ man:
       - Ví dụ dễ thấy nhất là dọn thư mục Tải về, nơi lộn xộn nhất trên máy.
       - Nguyên tắc vàng. Giao việc kèm câu “đề xuất trước, chờ tôi duyệt”. AI xem danh sách tệp, rồi đề xuất cách xếp, kèm một thư mục những thứ nên xóa.
       - Anh chị đồng ý thì AI mới làm thật. Chưa ưng thì góp ý cụ thể, đúng thói quen một ở chặng hai, để nó đề xuất lại.
+
+  - kieu: minhHoa
+    tieuDe: "Minh họa: **dọn thư mục Tải về** bằng Cowork"
+    video: /minh-hoa/cowork.mp4
+    chot: Chọn Cowork ở ô nhập → cho phép đúng một thư mục → giao việc kèm “chờ tôi duyệt” → duyệt → trợ lý phụ làm song song → báo cáo.
+    loi:
+      - Xem minh họa. Ở ô nhập chọn Cowork, rồi thêm đúng thư mục cần dọn, ở đây là Downloads.
+      - Giao việc kèm câu đề xuất trước, chờ tôi duyệt. AI xem thông tin tệp rồi đề xuất cách xếp, chưa đụng vào tệp nào.
+      - Ưng thì bấm đồng ý. Lúc này AI mới làm thật, và chia việc cho ba trợ lý phụ chạy song song.
+      - Cuối cùng AI báo cáo đã làm gì, còn gì chờ mình quyết. Tệp nên bỏ được gom vào một chỗ, việc xóa vẫn do người làm.
 
   - kieu: ds
     tieuDe: An toàn khi để AI **chạm vào máy**
@@ -78,8 +88,8 @@ man:
 
   - kieu: hop
     tieuDe: Những giới hạn cần biết
-    noi: Cowork **không có trên bản miễn phí**. Cần gói trả phí, ứng dụng Claude Desktop, và tùy hệ điều hành. Hôm nay anh chị **xem video làm mẫu**, chưa cần cài.
+    noi: Cowork **chỉ có ở gói trả phí**. Làm việc với tệp trên máy cần ứng dụng Claude Desktop. Hôm nay anh chị **xem minh họa và video làm mẫu**, chưa cần cài.
     phu: Giờ xem video mẫu, rồi làm 4 bước của chặng 4.
     loi:
-      - Lưu ý, Cowork không có trên bản miễn phí. Cần gói trả phí và ứng dụng Claude trên máy tính.
+      - Lưu ý, Cowork chỉ có ở gói trả phí. Muốn nó làm việc với tệp trên máy thì cần ứng dụng Claude Desktop.
       - Nên hôm nay anh chị xem video mình quay sẵn trong môi trường thử nghiệm, để ý trình tự đề xuất, duyệt, làm, báo cáo. Rồi làm bốn bước của chặng bốn.

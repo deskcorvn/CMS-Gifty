@@ -94,6 +94,9 @@ buoc:
       Vào Customize → Connectors (hoặc nút “+” trong ô chat → Connectors), chọn Google Calendar, bấm kết
       nối và cấp quyền bằng tài khoản Google của chính mình. Rồi gửi câu dưới đây. Lớp chủ yếu xem giảng
       viên làm mẫu; ai muốn thử thì làm với lịch cá nhân của mình.
+    minhHoa:
+      tieuDe: nối Google Calendar rồi tạo lịch bằng một câu
+      video: /minh-hoa/noi-lich.mp4
     prompt: Tạo lịch "Gửi hồ sơ năng lực cho khách số 9" lúc 9 giờ sáng mai, dài 15 phút, trong Google Calendar của tôi.
     ketQua: >-
       Lịch mới hiện trong Google Calendar. Claude chỉ làm được trong phạm vi quyền anh chị cấp; mỗi
@@ -106,6 +109,11 @@ buoc:
       Skill là “công thức” cho một việc lặp lại. Khi kết quả bước hỏi trợ lý đã ưng ý, gửi tiếp câu dưới đây
       trong cùng cuộc trò chuyện. Nếu Claude báo chưa bật, vào Settings → Capabilities bật code execution,
       rồi bật skill-creator trong Customize → Skills (nguồn N19).
+    minhHoa:
+      - tieuDe: bật Skills (Settings → Capabilities → Customize → Skills)
+        video: /minh-hoa/bat-skills.mp4
+      - tieuDe: đóng gói việc vừa làm bằng skill-creator, rồi dùng lại
+        video: /minh-hoa/dong-goi-skill.mp4
     prompt: |-
       Dùng skill-creator đóng gói việc vừa làm thành một skill tên "ke-hoach-cham-soc-7-ngay".
       Đầu vào: bảng mối quan hệ dạng "Mã | Nhóm | Ghi chú".

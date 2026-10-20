@@ -18,17 +18,20 @@ buoc:
       Nếu không phải tự ngồi bấm từng tệp, anh chị muốn giao AI việc gì trên máy? Ghi lại một việc cụ
       thể, ví dụ: dọn thư mục Tải về (Downloads), đổi tên hàng loạt ảnh sản phẩm, gom báo giá theo khách.
     ketQua: Anh chị có một việc thật muốn “giao mục tiêu” thay vì tự bấm từng bước.
-  - tieuDe: Xem video làm mẫu
+  - tieuDe: Xem minh họa và video làm mẫu
     huongDan: >-
-      Xem video giảng viên quay sẵn trong môi trường thử nghiệm. Các đoạn chờ đã được tua. Để ý trình tự:
-      nhận việc → đề xuất kế hoạch → người duyệt → làm thật → báo cáo.
+      Xem video minh họa dọn thư mục Tải về ngay dưới đây, rồi video giảng viên quay sẵn trong môi trường thử
+      nghiệm (chiếu tại lớp). Để ý trình tự: nhận việc → đề xuất kế hoạch → người duyệt → làm thật → báo cáo.
+    minhHoa:
+      tieuDe: Cowork dọn thư mục Tải về — đề xuất, duyệt, trợ lý phụ chạy song song, báo cáo
+      video: /minh-hoa/cowork.mp4
     ketQua: >-
       Anh chị thấy AI đọc tệp khách hàng giả lập, đối chiếu ghi chú, cập nhật bảng, tạo kế hoạch và báo
       cáo việc đã xong, chưa làm, đang chờ duyệt.
   - tieuDe: Viết câu giao việc theo kiểu “đề xuất, chờ duyệt”
     huongDan: >-
       Dựa trên việc đã ghi ở bước 1, sửa mẫu dưới đây thành câu giao việc của mình. Chưa cần chạy: Cowork
-      cần gói trả phí và ứng dụng Claude Desktop.
+      chỉ có ở gói trả phí, và làm việc với tệp trên máy cần ứng dụng Claude Desktop.
     prompt: |-
       Hãy xem thư mục [tên thư mục] tôi đã cho phép. Chỉ đọc tên, loại, dung lượng và ngày sửa của tệp.
       ĐỪNG di chuyển hay xóa gì. Trước tiên, đề xuất cách sắp xếp: chia nhóm, tên thư mục mới, và một thư mục "can-xoa" cho tệp nên bỏ.
@@ -45,15 +48,16 @@ buoc:
 
 ## Nhân sự làm từ xa hay nhân sự đến tận nơi?
 
-| | Chat trên trang web | Cowork (Claude Desktop) |
+| | Chat trên trang web | Cowork |
 |---|---|---|
-| Máy | Máy chủ của hãng AI | Máy của anh chị |
-| Tệp | Tải lên bản sao, nhận lại chữ | Đọc và sửa tệp gốc trong thư mục được cho phép |
+| Cách làm | Hỏi một câu, trả lời một câu | Nhận nhiệm vụ, tự lập kế hoạch và làm nhiều bước |
+| Tệp | Tải lên bản sao, nhận lại chữ | Đọc và sửa tệp gốc trên máy, trong thư mục được cho phép (qua Claude Desktop) |
 | Đội ngũ | Một luồng trò chuyện | Nhiều trợ lý phụ (sub-agent) chạy song song |
 | Lịch | Hỏi mới trả lời | Có thể tự chạy theo lịch, ví dụ 7 giờ sáng gửi bản tin |
 
-Chat trên web giống một nhân viên làm từ xa: phải gửi tài liệu qua, nhận về, rồi tự cập nhật. Cowork giống
-người ngồi ngay tại văn phòng, sửa trực tiếp tệp trong đúng thư mục được giao. Ví dụ dễ thấy nhất: nhờ AI
+Chat trên web giống một nhân viên làm từ xa: phải gửi tài liệu qua, nhận về, rồi tự cập nhật. Cowork nhận
+nhiệm vụ rồi tự làm nhiều bước; có ứng dụng Claude Desktop thì nó giống người ngồi ngay tại văn phòng, sửa trực
+tiếp tệp trong đúng thư mục được giao. Ví dụ dễ thấy nhất: nhờ AI
 dọn thư mục Tải về, nơi lộn xộn nhất trên máy.
 
 ## Nguyên tắc: AI đề xuất trước, anh chị duyệt rồi mới chạy
@@ -106,9 +110,9 @@ Nếu một ứng dụng không cho phép thao tác, hãy dừng và báo rõ, k
 
 ## Những giới hạn cần biết
 
-- Cowork và tính năng điều khiển máy tính **không có trên bản miễn phí của Claude**. Theo hướng dẫn của
-  Anthropic, tính năng này phụ thuộc gói Pro/Max, ứng dụng Desktop, hệ điều hành và trạng thái mở tính năng
-  (nguồn N11, N12).
+- Cowork **chỉ có ở gói trả phí** (Pro, Max, Team, Enterprise). Theo hướng dẫn của Anthropic, đọc/ghi tệp trên
+  máy, dùng trình duyệt và điều khiển máy tính cần ứng dụng Claude Desktop (macOS hoặc Windows) đang mở và có
+  mạng (nguồn N11, N12).
 - Claude ưu tiên dùng kết nối và công cụ có sẵn; chỉ khi cần mới thao tác qua trình duyệt hoặc bằng
   chuột, bàn phím.
 - Giao việc từ điện thoại tới máy tính (Dispatch) chưa mở cho mọi người dùng theo tài liệu hiện tại

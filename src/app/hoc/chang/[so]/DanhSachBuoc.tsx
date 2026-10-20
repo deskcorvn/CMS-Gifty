@@ -21,6 +21,12 @@ export default function DanhSachBuoc({ buoc, xong }: { buoc: Buoc[]; xong: boole
             <div className="min-w-0 flex-1">
               <h3 className="text-lg font-bold leading-snug text-navy">{b.tieuDe}</h3>
               <p className="mt-2 text-[15px] leading-7 text-body">{b.huongDan}</p>
+              {b.minhHoa.map((v) => (
+                <figure key={v.video} className="mt-4">
+                  <video className="aspect-video w-full rounded-lg border border-line bg-[#f4f2ec]" src={v.video} poster={v.video.replace(/\.mp4$/, ".jpg")} controls preload="none" playsInline aria-label={v.tieuDe} />
+                  <figcaption className="mt-1 text-xs text-muted">Video minh họa: {v.tieuDe}. Giao diện mô phỏng, giao diện thật có thể khác.</figcaption>
+                </figure>
+              ))}
               {b.prompt && <KhoiPromptClient prompt={b.prompt} />}
               {b.ketQua && (
                 <div className="mt-4 rounded-lg border border-[#dbe9d9] bg-[#f3f9f2] px-4 py-3">

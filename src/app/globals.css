@@ -1881,6 +1881,29 @@ html {
   .tc-tien-do { height: 0.45cqw; }
 }
 
+.tc-minh-hoa video {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--color-line);
+  background: #f4f2ec;
+  cursor: auto;
+}
+@container (min-width: 640px) {
+  .tc-man-trong:has(.tc-minh-hoa) .tc-than {
+    margin-top: 1cqw;
+  }
+  .tc-man-trong:has(.tc-minh-hoa) .tc-chot {
+    display: none;
+  }
+  .tc-minh-hoa video {
+    height: 34cqw;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
 /* Chiếu toàn màn hình: khung 16:9 vừa khít màn hình, nền trắng hai bên. */
 .tc-khung.tc-toan {
   display: grid;

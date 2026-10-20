@@ -5,7 +5,7 @@ man:
     tieuDe: Thương hiệu cá nhân bằng **Claude + ChatGPT**
     phu: Thực hành thêm · 20 phút · Claude lo phần chữ, ChatGPT lo phần ảnh · làm ra SP03, SP04
     loi:
-      - Phần thực hành thêm. Mình làm lời giới thiệu bản thân và ảnh đại diện. Claude lo phần chữ, ChatGPT lo phần ảnh.
+      - Giờ sang phần thực hành thêm. Mình làm lời giới thiệu bản thân và ảnh đại diện. Phần chữ để Claude lo, phần ảnh để ChatGPT lo.
 
   - kieu: ds
     tieuDe: Bốn ý **thật** về mình
@@ -15,7 +15,7 @@ man:
       - ten: Thế mạnh có thể kiểm chứng
       - ten: Lời mời liên hệ
     loi:
-      - Đầu tiên anh chị viết ra bốn ý thật về mình. Nghề, khách hàng, thế mạnh có thể kiểm chứng, và lời mời liên hệ.
+      - "Trước hết, anh chị viết ra bốn ý thật về mình: làm nghề gì, khách là ai, mình giỏi ở điểm nào mà người khác kiểm chứng được, và mời người ta liên hệ thế nào."
 
   - kieu: ds
     tieuDe: Claude viết **ba thứ**
@@ -27,8 +27,8 @@ man:
         moTa: Để nói khi gặp đối tác
     chot: Câu lệnh đã dặn không tự bịa số năm kinh nghiệm, thành tích hay đối tác. Anh chị vẫn đọc lại và xóa chỗ chưa đúng.
     loi:
-      - Rồi gửi cho Claude theo mẫu trên trang học. Claude viết ba thứ. Một câu giới thiệu dễ nhớ, một đoạn bảy mươi đến một trăm chữ, và lời giới thiệu nói trong khoảng ba mươi giây.
-      - Câu lệnh đã dặn không tự bịa số năm kinh nghiệm hay thành tích. Nhưng anh chị vẫn phải đọc lại và xóa chỗ nào chưa đúng sự thật.
+      - "Rồi gửi cho Claude theo mẫu trên trang học. Claude sẽ viết ba thứ: một câu giới thiệu dễ nhớ, một đoạn bảy mươi đến một trăm chữ, và lời giới thiệu nói trong khoảng ba mươi giây."
+      - Câu lệnh đã dặn không được tự bịa số năm kinh nghiệm hay thành tích. Nhưng anh chị vẫn đọc lại, chỗ nào chưa đúng sự thật thì xóa đi.
 
   - kieu: the
     tieuDe: ChatGPT làm được gì **với ảnh**
@@ -44,10 +44,10 @@ man:
         moTa: Có thể hết giữa lớp. Giữ câu lệnh và ảnh gốc để làm tiếp ở nhà.
     noiBat: 2
     loi:
-      - ChatGPT làm được bốn việc với ảnh. Một, tạo ảnh mới từ mô tả bằng lời.
-      - Hai, chỉnh ảnh anh chị tải lên. Đổi nền, ánh sáng, trang phục, và giữ đúng gương mặt khi câu lệnh yêu cầu rõ.
-      - Ba, chưa ưng chỗ nào thì nói đúng chỗ đó để sửa tiếp, không cần làm lại từ đầu.
-      - Bốn, bản miễn phí có hạn mức tạo ảnh riêng, có thể hết giữa lớp. Khi đó giữ câu lệnh và ảnh gốc để làm tiếp ở nhà.
+      - ChatGPT làm được bốn việc với ảnh. Một là tạo ảnh mới, chỉ cần tả bằng lời.
+      - "Hai là chỉnh ảnh mình tải lên: đổi nền, ánh sáng, trang phục. Muốn giữ đúng gương mặt thì phải dặn rõ trong câu lệnh."
+      - Ba là chưa ưng chỗ nào thì nói đúng chỗ đó để nó sửa tiếp, không cần làm lại từ đầu.
+      - Bốn là bản miễn phí có giới hạn số ảnh, có thể hết ngay giữa lớp. Hết thì anh chị giữ lại câu lệnh và ảnh gốc, về nhà làm tiếp.
 
   - kieu: ds
     tieuDe: Soát ảnh **trước khi dùng**
@@ -59,5 +59,5 @@ man:
       - ten: Khác thực tế thì chỉnh tiếp, hoặc quay về ảnh gốc
     chot: Chỉ dùng ảnh chân dung của chính mình. Không dùng hình ảnh gây hiểu nhầm về con người thật.
     loi:
-      - Chỉ dùng ảnh chân dung của chính mình. Trước khi dùng, soát lại. Gương mặt còn giống thật không, thu nhỏ có dễ nhìn không, trang phục có hợp nghề không.
-      - Chỗ nào khác thực tế thì chỉnh lại, hoặc quay về ảnh gốc. Giờ anh chị làm năm bước, rồi lưu SP03 và SP04 nhé.
+      - "Chỉ dùng ảnh chân dung của chính mình thôi nhé. Trước khi dùng thì soát lại: mặt còn giống mình không, thu nhỏ có dễ nhìn không, trang phục có hợp nghề không."
+      - Chỗ nào khác thực tế thì chỉnh lại, hoặc quay về ảnh gốc. Giờ anh chị làm năm bước, rồi lưu SP03 và SP04.

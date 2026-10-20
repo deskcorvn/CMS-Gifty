@@ -342,7 +342,7 @@ export default function TrinhChieu({ man, nhan, tieuDe }: { man: Man[]; nhan: st
             </div>
           </div>
           {phuDe && (
-            <p className="tc-phu-de" aria-live="polite">
+            <p className={`tc-phu-de ${m.loi[j].length > 140 ? "tc-phu-de-dai" : ""}`} aria-live="polite">
               <Chu s={m.loi[j]} />
             </p>
           )}

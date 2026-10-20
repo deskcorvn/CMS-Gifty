@@ -1878,6 +1878,7 @@ html {
   .tc-ss-cot { gap: 0.8cqw; }
   .tc-hop-noi { margin-top: 1.8cqw; border-left-width: 0.6cqw; padding-left: 2cqw; font-size: 3.4cqw; max-width: 90%; }
   .tc-phu-de { padding: 1.4cqw 6cqw; font-size: 2.2cqw; }
+  .tc-phu-de.tc-phu-de-dai { font-size: 1.95cqw; }
   .tc-tien-do { height: 0.45cqw; }
 }
 

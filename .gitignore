@@ -12,3 +12,7 @@ src/generated
 # Khung hình tạm khi dựng video minh họa
 scripts/minh-hoa/work/
 scripts/minh-hoa/out/
+scripts/kich-ban/anh/
+scripts/kich-ban/*.pdf
+scripts/kich-ban/*.html
+scripts/kich-ban/ds.json

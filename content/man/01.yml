@@ -5,7 +5,7 @@ man:
     tieuDe: Hiểu AI — nó **“nghĩ”** thế nào, vì sao hay bịa
     phu: Chặng 1 · 30 phút
     loi:
-      - Vào chặng một. Trước khi giao việc cho AI, mình cần hiểu bên trong nó đang thực sự làm gì.
+      - "Chặng một: hiểu AI. Trước khi giao việc cho AI, mình cần hiểu bên trong nó đang thực sự làm gì."
 
   - kieu: xacSuat
     tieuDe: AI không “hiểu”. Nó **đoán chữ tiếp theo**.
@@ -18,12 +18,15 @@ man:
         luaChon: [ [ đi chơi, 20 ], [ đọc sách, 17 ], [ xem phim, 15 ], [ ngủ, 12 ] ]
     chot: Chỗ nào nhiều lựa chọn ngang nhau, chỗ đó AI dễ bịa. Việc càng mơ hồ, càng nhiều chỗ để bịa. (Số trên màn chỉ để minh họa.)
     loi:
-      - "Điều đầu tiên anh chị nên nhớ: AI không hiểu ý nghĩa hay tâm tư của mình đâu. Nói cho dễ hiểu, nó chỉ đang đoán chữ tiếp theo, dựa trên xác suất."
-      - Xác suất là sao? Là cái gì nó được đọc nhiều, gặp nhiều trong tài liệu, thì khi mình hỏi câu tương tự, nó sẽ đưa đúng cái đó ra.
-      - Ví dụ câu “Một con vịt xòe ra hai cái…”. Gần như ai gõ vào cũng ra chữ “cánh”. Câu này quen quá rồi, mà con vịt cũng chẳng xòe được gì khác.
-      - Còn câu “Lúc rảnh, tôi thường…” thì sao? Đi chơi, đọc sách, xem phim, đi ngủ. Mỗi người một sở thích, chẳng có đáp án chuẩn nào cả.
-      - AI không biết gì về mình thì vẫn phải chọn một đáp án, và nói rất tự tin. Thế là thành bịa. Bản chất là nó thiếu thông tin, chứ nó không cố tình nói sai.
-      - Mà người cũng vậy thôi. Sếp giao một câu cụt lủn, mình cũng phải tự đoán “chắc ý sếp là thế này”. Nên đừng chê AI dốt. Cứ đưa thêm thông tin, rồi tự kiểm tra lại.
+      - Mọi người nên hiểu một điều là AI nó không vạn năng, và tại sao nó lại bịa. Thực ra AI không hiểu ngữ nghĩa hay tâm tư tình cảm gì của mình đâu.
+      - Thuật toán của nó, cái mô hình ngôn ngữ lớn ấy, nói một cách dễ hiểu thì nó chỉ đang đoán chữ tiếp theo thôi. Mà đoán dựa trên xác suất thống kê nhé.
+      - Xác suất thống kê tức là gì? Tức là cái gì mình dạy nó nhiều, cái gì xuất hiện nhiều trong tài liệu nó đọc, thì khi mình hỏi câu tương tự, đó là thứ nó đưa ra.
+      - "Ví dụ câu này nhé: “Một con vịt xòe ra hai cái…”. Gần như ai gõ vào cũng ra “cái cánh”. Vì câu này có trong bài hát ai cũng học, mà con vịt cũng chẳng xòe ra được gì khác."
+      - Còn câu “Lúc rảnh, tôi thường…” thì sao? Cho cả lớp nhìn bài nhau là thấy ngay chẳng ai giống ai. Người thì đi ăn, đi chơi, đi ngủ, người thì nghe nhạc, xem phim.
+      - Tại sao lại thế? Câu con vịt thì gần như chắc chắn rồi. Còn lúc rảnh thì chẳng có tiêu chuẩn nào cả, mỗi người một sở thích. AI không có thông tin để đoán.
+      - Và dẫn đến tình trạng gì? Đó là AI có thể bịa. Bản chất là nó không có thông tin, nên nó cố đưa ra câu sát nhất theo xác suất cao nhất. Chứ nó đâu biết câu đó đúng hay sai.
+      - Cho nên đừng chửi nó ngu nhé. Mà nói thật, người mình cũng thế thôi. Sếp giao một câu cụt lủn, mình có phải tự nghĩ “chắc là thế này” không? Bị bảo sai thì lại “em tưởng…”.
+      - Thế nên AI cũng giống người thôi. Mình hiểu là nó đang làm theo xác suất, để đừng kỳ vọng sai vào nó. Làm gì thì mình cũng nên kiểm tra lại.
 
   - kieu: chat
     tieuDe: Thử ngay trên máy của anh chị
@@ -31,8 +34,8 @@ man:
     dap: "1. cánh  2. … (mỗi máy một kiểu)"
     chot: So kết quả với người ngồi cạnh. Câu 1 giống nhau, câu 2 khác nhau.
     loi:
-      - "Giờ anh chị thử luôn nhé. Làm bước ba trên trang học: dán câu lệnh vào Claude, rồi quay sang so kết quả với người ngồi cạnh."
-      - Câu con vịt thì cả lớp gần như giống nhau. Câu lúc rảnh thì mỗi máy một kiểu. Chỗ khác nhau đó chính là chỗ AI đang đoán.
+      - "Giờ anh chị thử luôn: làm bước ba trên trang học. Dán câu lệnh vào Claude, rồi quay sang nhìn bài người bên cạnh nhé."
+      - Câu con vịt thì cả lớp gần như giống hệt nhau. Câu lúc rảnh thì mỗi máy một kiểu. Chỗ khác nhau chính là chỗ AI đang đoán đấy.
 
   - kieu: bang
     tieuDe: Mỗi AI học từ **một kho khác nhau**
@@ -45,12 +48,12 @@ man:
     noiBat: 4
     chot: Cảm nhận khi dùng thực tế, không phải xếp hạng chính thức. Hôm nay dùng Claude làm ví dụ; cách giao việc dùng được cho mọi AI.
     loi:
-      - Điều thứ hai. Mỗi AI được học từ một kho dữ liệu khác nhau, nên mỗi con mạnh một kiểu.
-      - Gemini là của Google, mà Google mạnh nhất là tìm kiếm. Cần tra kiến thức phổ biến, so giá hay so tính năng sản phẩm, thì dùng Gemini rất nhanh.
-      - "ChatGPT thì cân bằng, việc gì cũng làm được: viết bài, làm ảnh, làm slide. Lát nữa mình dùng nó để làm ảnh đại diện."
-      - Grok được học nhiều từ mạng xã hội X, nên giọng văn tự nhiên, đời thường, và bắt tin tức trên mạng xã hội nhanh.
-      - Còn Claude mạnh về lập luận, cấu trúc, sắp xếp thông tin. Đây là con mình dùng nhiều nhất, và cũng là con mình dùng xuyên suốt hôm nay.
-      - Đây là cảm nhận khi dùng thôi, không phải bảng xếp hạng. Cách nghĩ và cách giao việc hôm nay thì dùng cho con nào cũng được.
+      - "Điều thứ hai: mỗi con AI lại mạnh ở một góc khác nhau, bởi vì dữ liệu mà chúng nó được đọc hoàn toàn khác nhau."
+      - Gemini đến từ nhà Google. Mà Google mạnh nhất là gì? Là tìm kiếm. Nên cần kiến thức phổ biến trên mạng, hay muốn so giá, so tính năng trước khi mua gì đấy, thì dùng Gemini.
+      - "ChatGPT thì lại là một con rất cân bằng. Việc gì nó cũng làm được: viết bài tốt, làm ảnh tốt, làm slide được. Thường thì nó đứng thứ hai ở mọi thứ, thi thoảng lên số một."
+      - Grok thì hay ở chỗ được học từ mạng xã hội. Trên mạng xã hội mình nói thoải mái, ngôn ngữ nói nhiều hơn ngôn ngữ viết, nên giọng văn của nó tự nhiên, tin tức cũng mới và đời thường hơn.
+      - Còn Claude là con mạnh nhất về logic, tư duy, cấu trúc. Tài liệu nó được học phần nhiều là tài liệu hàn lâm, kỹ thuật, nên cần đi sâu nghiên cứu thì nó làm tốt hơn.
+      - Claude cũng là con mình dùng nhiều nhất, và là con mình dùng xuyên suốt hôm nay. Đến đây có ai hỏi gì không ạ?
 
   - kieu: bac
     tieuDe: Anh chị đang dùng AI ở **cấp nào**?
@@ -69,19 +72,25 @@ man:
     nhanNoiBat: Đích hướng tới
     chot: Cấp 3 là biết lái xe. Cấp 4, 5 là biết chế tạo xe. Phần lớn chúng ta chỉ cần lái giỏi.
     loi:
-      - Giờ mình nói về các cấp độ dùng AI, để anh chị biết mình đang đứng ở đâu. Có năm cấp.
-      - "Cấp một là hỏi đáp. Ngày xưa mở Google ra tìm, giờ mở AI ra hỏi. Phần lớn mọi người đang ở đây: hỏi xong, AI hướng dẫn, nhưng mình vẫn phải tự đi làm."
-      - Cấp hai là có một nhân sự AI. Mình đưa cho nó bối cảnh, thông tin về mình, công cụ và quy trình, để nó làm cùng mình. Nhanh thì ngay buổi này anh chị lên được cấp hai.
-      - "Cấp ba mình gọi là trưởng phòng. Mình có nhiều nhân sự AI, mỗi bạn lo một mảng: bạn viết bài, bạn lên kế hoạch, bạn đi xem đối thủ. Mình là người chia việc."
-      - "Cấp bốn giống làm giám đốc: mình chỉ giao cho bạn trưởng phòng AI, bạn ấy tự chia việc tiếp. Cấp năm là cả công ty dùng chung, mỗi người chỉ xem được phần của mình."
-      - Hình dung như đi xe. Cấp ba là biết lái xe, còn cấp bốn, cấp năm là chế tạo xe. Mình là người dùng thì lái giỏi là đủ. Hôm nay mình nhắm tới cấp ba.
+      - "Rồi, giờ mình cho anh chị một kỳ vọng đúng: nên dùng AI, học AI như thế nào. Mình chia ra năm cấp độ."
+      - Cấp một là hỏi đáp, hầu hết mọi người đang ở đây. Ngày xưa mở Google lên để tìm, giờ mở AI lên để hỏi. Nhưng nó dừng ở chỗ mình hỏi, nó trả lời, rồi mình vẫn phải tự đi làm.
+      - "Cấp hai là bắt đầu có một nhân sự AI. Mình cá nhân hóa nó: đưa bối cảnh, thông tin về mình, công cụ và quy trình để nó làm việc. Bạn nào nhanh thì ngay buổi này là qua cấp hai."
+      - Cấp ba mình gọi là trưởng phòng, mô tả thế cho dễ.
+      - "Lúc này mình có nhiều nhân sự, mỗi bạn chuyên một việc: một bạn viết bài, một bạn lên kế hoạch nội dung, một bạn đi nghiên cứu đối thủ."
+      - Các bạn ấy chịu sự điều phối của mình. Nghĩ ra việc gì thì mình lên kế hoạch xem bạn nào làm phần nào, rồi giao cho đúng bạn đó. Đến đây là đã giải phóng sức lao động rất nhiều rồi.
+      - Cấp bốn là công ty một người, mình gọi là giám đốc. Mình không ngồi ghế trưởng phòng nữa mà giao cho một bạn AI làm trưởng phòng.
+      - Bạn ấy tự biết việc này phải chia cho ai, theo quy trình mình đã xây.
+      - Cấp năm là khi nhiều người cùng dùng chung, và chuyện lớn nhất là phân quyền. Giám đốc xem được hết dữ liệu, còn bạn bán hàng chỉ xem được khách và đơn hàng của chính bạn ấy.
+      - "Nhưng thực tế mọi người không cần lên cấp bốn, cấp năm đâu. Hình dung dùng AI như đi xe: cấp ba là biết lái xe rồi. Cấp bốn, cấp năm là đi chế tạo xe."
+      - Mình là người dùng thì ở cấp ba là dùng được hết.
+      - Chủ doanh nghiệp thì thuê người dựng cấp bốn, cấp năm, mình chỉ cần biết mình muốn gì để định hướng. Hôm nay mình tập trung làm chủ cấp ba.
 
   - kieu: hop
     tieuDe: AI là một **thực tập sinh tài năng** mới vào công ty
     noi: Rất giỏi, nhưng chưa biết gì về anh chị và việc của anh chị. → **Cách anh chị giao việc quyết định chất lượng việc AI làm ra.**
     phu: Giờ anh chị làm 7 bước của chặng 1 trên trang học.
     loi:
-      - "Có một tư duy mình muốn anh chị nhớ mãi: hãy coi AI là một bạn thực tập sinh rất tài năng vừa vào công ty."
-      - Bạn ấy biết rất nhiều, nhưng chưa biết gì về công ty mình, khách của mình, sản phẩm của mình. Những thông tin đó không có sẵn trong đầu bạn ấy.
-      - Nên anh chị phải đổi vai, làm sếp của bạn ấy. Mà sếp giao việc thế nào thì nhận lại thế ấy. Đó là chuyện của chặng hai.
-      - Giờ anh chị làm bảy bước của chặng một trên trang học nhé.
+      - "Rồi, giờ làm sao để bắt đầu dùng AI hiệu quả? Có một tư duy mình muốn mọi người luôn nhớ: hãy coi AI là một bạn thực tập sinh tài năng mới vào công ty."
+      - Bạn ấy biết rất nhiều, kiến thức chuyên môn nhiều lắm, năng lực tốt. Nhưng vẫn chỉ là thực tập sinh mới vào thôi. Vì sao? Vì bạn ấy làm gì biết gì về công ty mình, về mình đâu.
+      - Quy mô bao nhiêu, ngành nghề gì, khách là ai, sản phẩm có những gì, những thông tin đó nó không hề có. Nên bạn ấy rất giỏi, nhưng chưa biết gì về mình cả.
+      - "Thế nên hôm nay mình muốn anh chị đổi vai: anh chị là sếp của bạn ấy. Thế thì giao việc như thế nào? Đó là chặng hai. Giờ anh chị làm bảy bước của chặng một trên trang học nhé."

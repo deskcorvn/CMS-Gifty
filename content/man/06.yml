@@ -20,10 +20,10 @@ man:
         moTa: Trợ lý phụ chạy song song · chặng 4
     chot: Xây dần từ dưới lên. Mỗi Project là một nhân sự; bên trong có thể có trợ lý phụ.
     loi:
-      - Mình chốt lại cả buổi. Để có một nhân sự AI ở cấp ba, mình xây dần năm mảnh ghép, từ dưới lên.
-      - "Đầu tiên là tư duy: giao việc cho đúng, instruction, memory. Tiếp theo là công cụ, tức là kết nối ứng dụng. Rồi đến công thức, tức là skill."
-      - Sau đó là môi trường làm việc, Cowork vào làm ngay trên máy. Cuối cùng là đội ngũ, các trợ lý phụ chạy song song.
-      - Đủ năm mảnh này, anh chị không còn là người dùng AI bình thường nữa, mà là trưởng phòng điều phối nhiều nhân sự AI. Mỗi Project là một nhân sự, bên trong lại có trợ lý phụ.
+      - "Rồi, tổng quan lại cả buổi hôm nay. Mọi người đã nắm được sơ sơ một nhân sự AI được tạo ra thế nào: năm mảnh ghép để có một bạn ở cấp ba."
+      - "Mảnh đầu là tư duy: giao việc, instruction, memory. Rồi đến công cụ, tức là connector. Rồi công thức, là skill."
+      - Tiếp theo là môi trường làm việc, là Cowork trên máy mình. Và cuối cùng là đội ngũ, là các trợ lý phụ chạy song song.
+      - "Bạn nào học nhanh thì từ đây tự học tiếp là làm chủ được cấp ba, vào vai trưởng phòng. AI không còn chỉ là công cụ chat nữa: mỗi Project là một nhân sự, bên trong lại có trợ lý phụ."
 
   - kieu: ds
     tieuDe: Bắt đầu **từ tuần này**
@@ -35,16 +35,17 @@ man:
       - ten: Chọn một việc lặp lại mỗi tuần
         moTa: Làm cùng AI tới khi ưng, rồi gói thành skill.
     loi:
-      - "Về nhà nên làm gì? Làm luôn ba việc. Một: tạo một Project trợ lý cá nhân, nói tự do về việc của mình để AI viết instruction."
-      - "Hai: nối Google Calendar, Gmail hay Notion, rồi giao cho nó một việc thật, như lên lịch hay tạo việc cần làm."
-      - "Ba: cuối tuần ngồi xem lại tuần qua còn làm tay việc gì lặp đi lặp lại. Ghi vào danh sách, làm cùng AI tới khi ưng, rồi gói thành skill. Mỗi tuần mình nhẹ đi một chút."
+      - Nếu hỏi về nhà nên làm gì, thì làm luôn đi. Tạo một Project trợ lý cá nhân để quản lý lịch, quản lý việc cho mình. Bắt đầu bằng việc cho nó instruction.
+      - Kết nối Google Calendar, kết nối Gmail để nó xử lý được những việc đó, rồi giao cho nó một việc thật.
+      - Tiếp theo, mỗi tuần chọn một việc lặp lại. Cuối tuần ngồi soi xem mình còn làm gì thủ công, lặp đi lặp lại, đưa vào danh sách cần đóng gói skill. Cứ mỗi tuần lại nhẹ bớt việc đi một tí.
 
   - kieu: hop
     tieuDe: Điều nhớ nhất
     noi: Cái gì **máy làm tốt** thì người đừng làm. Định hướng, hiểu khách hàng và quyết định cuối cùng **vẫn là việc của mình**.
     phu: Không cần giỏi công nghệ mới bắt đầu. Vướng chỗ nào, hỏi chính AI cách dùng nó.
     loi:
-      - "Có một câu mình muốn anh chị mang về: cái gì máy làm tốt thì người đừng làm. Việc lặp lại, đã có quy trình, máy làm tốt hơn mình nhiều."
-      - Còn việc của mình là định hướng, biết mình muốn gì, và hiểu khách hàng thực sự cần gì. Những thứ đó AI không làm thay được.
-      - Dùng AI là dễ nhất rồi, chỉ cần mở miệng ra nói. Vướng chỗ nào, cứ chụp màn hình gửi cho nó và hỏi tiếp làm sao. Không cần đi tìm chuyên gia nào cả.
+      - "Mình có một câu luôn muốn mọi người ghim vào đầu: cái gì máy làm tốt thì người đừng làm. Những việc lặp lại, có quy trình sẵn, người không làm tốt bằng máy đâu, nói thật."
+      - Thế mình mạnh hơn máy ở đâu? Là biết mình muốn gì, là định hướng, là nắm được khách hàng thực sự cần gì, đằng sau đó họ đang lo gì. Những cái đó AI không có.
+      - Mà dùng AI thì dễ lắm, chẳng công cụ nào dễ bằng. Học phần mềm còn phải biết nút nào ở đâu, còn AI chỉ cần chịu mở miệng ra nói.
+      - Vướng ở đâu, chụp màn hình gửi cho nó, hỏi làm thế nào tiếp.
       - Giờ anh chị bấm hoàn thành đủ các chặng để nhận chứng chỉ. Cảm ơn cả nhà đã học cùng Gifty Tech.

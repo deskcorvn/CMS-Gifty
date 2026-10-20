@@ -7,9 +7,11 @@ man:
     tieuDe: Từ ô chat đến **một đội AI** cùng làm việc
     phu: Hiểu bản chất · biết giao việc · giải phóng bản thân khỏi việc lặp lại
     loi:
-      - Chào cả nhà. Hôm nay mình không học lập trình, cũng không học lý thuyết máy học gì cả. Mình học cách dùng AI cho chính công việc hằng ngày của mình.
-      - Sau buổi này, mình mong anh chị thay đổi được ba điều. Một là hiểu AI thực sự hoạt động thế nào.
-      - Hai là hiểu rồi thì biết giao việc cho nó, sao cho ra đúng cái mình muốn. Ba là đóng gói những việc lặp đi lặp lại để AI làm thay, mình nhẹ người hẳn.
+      - Chào cả nhà. Hôm nay là buổi thực hành, nên có câu hỏi gì thì anh chị cứ thoải mái dừng mình lại, hỏi luôn nhé.
+      - Mình kỳ vọng sau buổi này anh chị có ba thay đổi. Thứ nhất là hiểu được thực sự AI vận hành như thế nào. Không phải lý thuyết máy học gì đâu, mình nói rất đơn giản thôi.
+      - Đó là một nhân sự AI gồm những thành phần gì, và dùng bạn ấy như thế nào. Hiểu bản chất nhé.
+      - Thứ hai, hiểu bản chất rồi thì mình giao việc được cho bạn ấy. Mình là người ra đề bài, mình muốn đạt mục tiêu đó, thì làm sao để cùng AI đạt được.
+      - Và thứ ba, qua đó anh chị bắt đầu đóng gói công việc của mình lại, giao sang cho AI, và giải phóng được bản thân. Đó là ba điều mình muốn giúp mọi người hôm nay.
 
   - kieu: the
     tieuDe: Hôm nay đi **4 chặng**
@@ -25,11 +27,11 @@ man:
         moTa: Cowork làm việc với tệp của anh chị, nhiều trợ lý chạy song song.
     chot: "Đích: có tư duy đúng khi dùng AI và biết tự động hóa việc lặp lại."
     loi:
-      - "Hôm nay mình đi bốn chặng. Chặng một là hiểu AI: nó nghĩ thế nào, và vì sao có lúc nó bịa mà giọng vẫn rất tự tin."
-      - Chặng hai là giao việc. Làm sao để giao một lần là AI làm đúng ý, đỡ phải sửa đi sửa lại.
-      - Chặng ba là xem một nhân sự AI được ghép từ những thành phần nào. Nắm được cái này rồi thì anh chị dùng nó cho việc gì cũng được.
-      - Chặng bốn hơi nâng cao một chút, nhưng giờ ai cũng nên biết. Đó là cho AI vào làm việc ngay trên máy tính, trên chính các tệp của mình.
-      - Mục tiêu cả buổi là có tư duy đúng khi dùng AI, và bắt đầu tự động hóa được những việc mình đang làm đi làm lại.
+      - "Hôm nay mình đi bốn chặng. Thứ nhất là hiểu AI: nó hoạt động thế nào, nó nghĩ ra làm sao."
+      - "Thứ hai là giao việc: làm sao để mình giao việc cho thật hiệu quả."
+      - Thứ ba là hiểu cấu trúc của một nhân sự AI, các thành phần của bạn ấy. Nắm được cái này rồi thì mình biết cách dùng bạn ấy cho bất kỳ công việc gì luôn.
+      - "Và cuối cùng là một kiến thức hơi nâng cao, nhưng mình nghĩ bây giờ ai cũng nên biết. Đó là Cowork: AI tham gia làm việc ngay trên máy tính, trên chính các tệp của mình."
+      - Qua bốn chặng này, mình cố gắng giúp anh chị có tư duy đúng về AI, và tự động hóa được những việc lặp đi lặp lại.
 
   - kieu: the
     tieuDe: Thêm hai phần **thực hành**
@@ -82,4 +84,4 @@ man:
     noi: Chỉ dùng **dữ liệu giả lập** do lớp cung cấp. Không nhập tên thật, số điện thoại hay thông tin riêng của khách hàng.
     loi:
       - Có một quy tắc cho cả buổi. Hôm nay mình chỉ dùng dữ liệu giả lập mà lớp đã chuẩn bị sẵn.
-      - Anh chị đừng đưa tên thật, số điện thoại hay thông tin riêng của khách vào AI khi chưa được phép. Rồi, mình bắt đầu nhé.
+      - Anh chị đừng đưa tên thật, số điện thoại hay thông tin riêng của khách vào AI khi chưa được phép. Rồi, mình đi vào luôn cho nhanh nhé.

@@ -5,7 +5,7 @@ man:
     tieuDe: AI làm việc **trên máy tính** của anh chị
     phu: Chặng 4 · 25 phút · Cowork và đội trợ lý chạy song song
     loi:
-      - "Sang chặng bốn. Phần này hơi nâng cao, nhưng mình nghĩ giờ ai cũng nên biết: cho AI vào làm việc ngay trên máy tính của mình."
+      - Nốt một phần cuối cùng. Đây là kiến thức hơi nâng cao, nhưng mình nói sơ qua để mọi người biết.
 
   - kieu: bang
     tieuDe: Nhân sự **làm từ xa** hay nhân sự **đến tận nơi**?
@@ -16,9 +16,10 @@ man:
       - [ Đội ngũ, Một luồng trò chuyện, "**Nhiều trợ lý phụ** chạy song song" ]
       - [ Lịch, Hỏi mới trả lời, "**Tự chạy theo lịch**, ví dụ 7 giờ sáng gửi bản tin" ]
     loi:
-      - Từ đầu buổi đến giờ, AI vẫn là nhân sự làm từ xa. Muốn cùng nó sửa một tệp, mình phải bảo nó tạo tệp, tải về, sửa, rồi lại tải lên. Lên lên xuống xuống, mệt lắm.
-      - Cowork thì khác. Nó nhận nhiệm vụ rồi tự lên kế hoạch, tự làm nhiều bước. Có ứng dụng Claude trên máy tính, nó đọc và sửa thẳng tệp trong thư mục mình cho phép.
-      - Nó còn chia việc cho nhiều trợ lý phụ chạy cùng lúc, và tự chạy theo lịch, ví dụ sáng nào bảy giờ cũng gửi bản tin.
+      - Từ nãy giờ, AI vẫn chỉ là một bạn nhân sự làm từ xa, nằm trên trang Claude hay ChatGPT.
+      - Muốn cùng bạn ấy sửa một tệp, mình phải bảo tạo tệp, tải về, sửa, rồi tải ngược lên. Lên lên xuống xuống, mệt lắm.
+      - Nhưng có một lựa chọn nữa là chuyển sang Cowork. Có ứng dụng Claude trên máy tính, nó dùng được các tệp trên máy mình, sửa trực tiếp luôn trên đó.
+      - Nó còn chia được việc cho nhiều trợ lý phụ chạy cùng lúc, và chạy theo lịch, ví dụ bảy giờ sáng nào cũng gửi bản tin.
 
   - kieu: luong
     tieuDe: "AI **đề xuất trước**, anh chị **duyệt rồi mới chạy**"
@@ -34,20 +35,20 @@ man:
       co: AI làm thật, trên tệp của anh chị.
       chua: Góp ý cụ thể, làm theo được → AI đề xuất lại.
     loi:
-      - Ví dụ mình hay đưa là dọn thư mục Tải về. Trên máy chẳng có thư mục nào bừa bộn hơn thư mục này.
-      - "Nguyên tắc vàng là giao kèm một câu: đề xuất trước, chờ tôi duyệt. AI xem danh sách tệp, rồi đề xuất cách xếp, kèm một chỗ gom những tệp nên bỏ."
-      - Mình đồng ý thì nó mới làm thật. Chưa ưng thì góp ý cụ thể, đúng thói quen thứ nhất ở chặng hai, để nó đề xuất lại.
+      - Ví dụ mình hay đưa là bảo nó dọn thư mục Tải về. Thư mục rác nhất trên máy luôn, chẳng có thư mục nào rác hơn.
+      - "Mình bảo nó phân tích thư mục này và đề xuất cách dọn. Nó tự vào xem có những tệp gì, rồi trả về: tệp này nên gom vào một thư mục, tệp này bị trùng, mấy bộ cài này có thể xóa."
+      - Nguyên tắc là để nó đề xuất trước, mình duyệt rồi nó mới làm. Chưa ưng thì góp ý cụ thể, làm theo được, để nó đề xuất lại.
 
   - kieu: minhHoa
     tieuDe: "Minh họa: **dọn thư mục Tải về** bằng Cowork"
     video: /minh-hoa/cowork.mp4
     chot: Chọn Cowork ở ô nhập → cho phép đúng một thư mục → giao việc kèm “chờ tôi duyệt” → duyệt → trợ lý phụ làm song song → báo cáo.
     loi:
-      - Mình xem minh họa. Ở ô nhập, chọn Cowork, rồi thêm đúng thư mục cần dọn, ở đây là Downloads.
-      - Giao việc kèm câu đề xuất trước, chờ tôi duyệt. AI đọc thông tin tệp rồi đưa ra đề xuất. Lúc này nó chưa đụng vào tệp nào.
-      - Để xếp tệp, AI thường chỉ đọc thông tin chung như tên, loại, dung lượng, ngày tạo. Ghép thêm lịch sự kiện thì nó còn biết ảnh nào chụp ở sự kiện nào.
-      - Mình bấm đồng ý thì AI mới làm thật, và chia việc cho mấy trợ lý phụ làm song song.
-      - Cuối cùng nó báo lại đã làm gì, còn gì chờ mình quyết. Tệp nên bỏ được gom vào một chỗ, còn xóa hay không vẫn là việc của mình.
+      - Mình xem minh họa. Chuyển sang Cowork, thêm thư mục, chọn Downloads. Rồi bảo nó phân tích và đề xuất cách dọn.
+      - "Mặc định nó không đọc nội dung bên trong từng tệp, vì như thế tốn rất nhiều. Nó đọc thông tin chung của tệp: tên, kích thước, ngày tạo, ảnh thì có cả tên thiết bị chụp."
+      - Đưa thêm lịch sự kiện thì nó biết luôn ảnh nào của sự kiện nào, dựa vào ngày tháng, rồi sắp xếp giúp mình. Giống Cô Tấm nhặt thóc ra thóc, gạo ra gạo vậy.
+      - Mình đồng ý thì nó mới làm thật, chia việc cho mấy trợ lý phụ, mỗi trợ lý phụ trách một loại tệp.
+      - Cuối cùng nó báo lại đã làm gì, còn gì chờ mình quyết. Xóa hay không vẫn là mình quyết.
 
   - kieu: ds
     tieuDe: An toàn khi để AI **chạm vào máy**
@@ -60,9 +61,9 @@ man:
         moTa: AI có thể gặp lỗi, hoặc bị nội dung độc hại dẫn sai thao tác.
       - ten: Luôn đề xuất trước, duyệt rồi mới làm
     loi:
-      - Nhiều người hỏi cho nó vào máy thì có rủi ro không. Với Cowork, mình cho thư mục nào thì nó chỉ làm trong thư mục đó.
-      - Đừng bao giờ bảo nó dọn cả ổ C. Lỡ tay xóa nhầm một tệp hệ thống là phải cài lại Windows đấy.
-      - Cứ thử trước ở thư mục thử nghiệm với dữ liệu giả. Mật khẩu, ngân hàng, email cá nhân thì để ở chỗ AI không vào được. Và luôn để nó đề xuất trước, mình duyệt rồi mới làm.
+      - "Nhiều người sẽ hỏi: thế có rủi ro bảo mật không, nó chọc vào máy mình mà? Với Cowork, mình cho thư mục nào thì nó chỉ dùng được thư mục đó thôi."
+      - Có điều, mọi người đừng bảo nó dọn cả ổ C nhé. Dọn thư mục Tải về thì được, chứ dọn ổ C mà lỡ tay xóa nhầm tệp hệ thống là cài lại Windows luôn, vui lắm.
+      - Mật khẩu hay tài liệu nhạy cảm thì cất ở chỗ không cho AI vào. Đụng đến quyền nguy hiểm thì bảo nó đề xuất trước, mình là người duyệt. Luôn kiểm soát xem AI đang làm gì.
 
   - kieu: songSong
     tieuDe: Một cuộc trò chuyện chính **điều phối cả đội**
@@ -83,11 +84,15 @@ man:
         moTa: trợ lý 6
     chot: Việc độc lập → chạy song song. Việc cần kết quả bước trước → chạy tuần tự.
     loi:
-      - Còn một mảnh nữa là trợ lý phụ, hay sub-agent. Đây là các trợ lý mà cuộc trò chuyện chính gọi ra khi cần. Làm được đến đây là anh chị đã đặt một chân lên cấp bốn.
-      - Ví dụ làm báo cáo tuần. Một trợ lý lấy số bán hàng trong Excel, một trợ lý lấy lịch họp, một trợ lý lấy việc còn tồn trong Notion. Ba việc này độc lập nên chạy cùng lúc.
-      - "Xong rồi mới chạy lần lượt: một trợ lý tổng hợp số liệu, một trợ lý viết nhận xét, một trợ lý kiểm tra chéo xem số lấy đã đúng chưa."
-      - Cái hay là mỗi trợ lý phụ có đầu óc sạch. Nó chỉ nhận đúng phần việc, không đọc những gì mình bàn trước đó, làm xong thì trả kết quả. Như trưởng nhóm giao việc rồi nghiệm thu.
-      - "Mặc định AI hơi lười, ít khi tự gọi trợ lý phụ. Mình chỉ cần dặn một câu: chia việc cho trợ lý phụ nhé. Nó sẽ tự chia."
+      - "Nhưng chưa dừng ở đó. Có không gian làm việc rồi, giờ mình muốn gọi hội ra làm cùng: không chỉ một mà nhiều nhân sự AI."
+      - Đây là lúc đặt một chân lên cấp bốn, với sub-agent, tức là trợ lý phụ.
+      - "Trợ lý phụ là những bạn hỗ trợ cho trợ lý chính. Cần gì thì trợ lý chính gọi các bạn ấy ra làm, theo đúng cách chia việc: việc gì làm song song, việc gì làm tuần tự."
+      - "Ví dụ báo cáo tuần: một bạn lấy số bán hàng trong Excel, một bạn lấy lịch họp trên Google Calendar, một bạn lấy việc còn tồn trên Notion."
+      - Rồi một bạn tổng hợp, một bạn nhận xét, một bạn kiểm tra chéo.
+      - Tại sao nên dùng trợ lý phụ? Vì mỗi bạn có đầu óc trắng tinh. Nó không đọc lịch sử trò chuyện của mình với trợ lý chính, nên không bị thiên kiến, nhìn việc như người thứ ba.
+      - Giống như mình là trưởng nhóm. Mình ngồi lên kế hoạch rồi giao xuống ba bạn.
+      - Ba bạn không cần biết mình đã bàn gì, mình cũng không cần biết các bạn làm chi tiết ra sao, chỉ nghiệm thu đầu ra thôi.
+      - "Mặc định AI cũng lười, ít khi tự gọi trợ lý phụ. Mình chỉ cần dặn: chia việc cho trợ lý phụ nhé. Mình hay dùng cho ba việc: làm song song, soát lại kế hoạch, và nghiệm thu kết quả."
 
   - kieu: hop
     tieuDe: Những giới hạn cần biết

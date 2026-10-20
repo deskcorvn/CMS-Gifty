@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NutSaoChep from "@/components/NutSaoChep";
 import { tinhTrangHocVien } from "@/lib/hoan-thanh";
-import { khoaHoc, tatCaPrompt, type MaSanPham } from "@/lib/noi-dung";
+import { dsChang, khoaHoc, tatCaPrompt, type MaSanPham } from "@/lib/noi-dung";
 import { batBuocDaMo } from "@/lib/mo-khoa";
 import { batBuocHocVien } from "@/lib/phien";
 import { FORM_SAN_PHAM } from "@/lib/san-pham";
@@ -74,12 +74,12 @@ export default async function ThuVien() {
 
       <section className="mt-10">
         <h2 className="text-xl font-bold text-navy">Kho câu lệnh</h2>
-        <p className="mt-1 text-sm text-muted">Toàn bộ câu lệnh mẫu của 9 chặng.</p>
+        <p className="mt-1 text-sm text-muted">Toàn bộ câu lệnh mẫu của các chặng.</p>
         <div className="mt-4 space-y-3">
-          {tatCaPrompt.map(({ chang, tenChang, buoc }) => (
+          {tatCaPrompt.map(({ nhanChang, tenChang, buoc }) => (
             <details key={buoc.id} className="rounded-xl border border-line bg-white p-4">
               <summary className="cursor-pointer">
-                <span className="text-xs font-bold text-amber-ink">Chặng {chang} · {tenChang}</span>
+                <span className="text-xs font-bold text-amber-ink">{nhanChang} · {tenChang}</span>
                 <span className="block font-semibold text-navy">{buoc.tieuDe}</span>
               </summary>
               <pre className="mt-3 max-h-80 overflow-auto whitespace-pre-wrap rounded-lg bg-navy-dark p-4 font-mono text-[13px] leading-6 text-white/90">{buoc.prompt}</pre>
@@ -92,7 +92,7 @@ export default async function ThuVien() {
       {khoaHoc.video.url && (
         <section className="mt-10">
           <h2 className="text-xl font-bold text-navy">Video xem lại</h2>
-          <Link href="/hoc/chang/8" className="mt-2 inline-block text-amber-ink underline">{khoaHoc.video.tieuDe}</Link>
+          <Link href={`/hoc/chang/${dsChang.find((c) => c.coVideo)?.so ?? 1}`} className="mt-2 inline-block text-amber-ink underline">{khoaHoc.video.tieuDe}</Link>
         </section>
       )}
 

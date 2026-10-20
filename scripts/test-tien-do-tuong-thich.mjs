@@ -1,22 +1,21 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { boSungBuocDaTach } from "../src/lib/tien-do-tuong-thich.ts";
+import { BUOC_V2, boSungBuocDaTach } from "../src/lib/tien-do-tuong-thich.ts";
 
 const { chang } = JSON.parse(readFileSync(new URL("../src/generated/khoa-hoc.json", import.meta.url), "utf8"));
 const ids = chang.flatMap(c => c.buoc.map(b => b.id));
-assert.equal(ids.length, 47);
-const oldIds = ids.filter(id => !["c06-b08", "c04-b04", "c04-b05"].includes(id));
-assert.equal(oldIds.length, 44);
-assert.deepEqual(boSungBuocDaTach(oldIds), new Set(ids), "44 bước cũ vẫn đủ điều kiện hoàn thành");
-const ids45 = ids.filter(id => !["c04-b04", "c04-b05"].includes(id));
-assert.deepEqual(boSungBuocDaTach(ids45), new Set(ids), "Người xong 45 bước bản v2.0 vẫn đủ 47 bước");
-assert.deepEqual(boSungBuocDaTach(["c04-b01", "c04-b02"]), new Set(["c04-b01", "c04-b02"]), "Chưa xong c04-b03 thì không cộng bước mới");
-assert.deepEqual(boSungBuocDaTach([]), new Set(), "Người mới không được tự đánh dấu");
-assert.deepEqual(boSungBuocDaTach(["c06-b01", "c06-b06"]), new Set(["c06-b01", "c06-b06"]), "Không cộng bước khi chưa xong b07");
-assert.deepEqual(boSungBuocDaTach(ids), new Set(ids), "Tiến độ 47 bước không cộng trùng");
-const withoutChapter6 = ids.filter(id => !id.startsWith("c06-"));
-assert.deepEqual(boSungBuocDaTach(withoutChapter6), new Set(withoutChapter6), "Bỏ hoàn thành chặng 6 không còn bước suy ra");
-const withoutChapter4 = ids.filter(id => !id.startsWith("c04-"));
-assert.deepEqual(boSungBuocDaTach(withoutChapter4), new Set(withoutChapter4), "Bỏ hoàn thành chặng 4 không còn bước suy ra");
-assert.equal(boSungBuocDaTach(oldIds.filter(id => id !== "c01-b01")).size, 46, "Thiếu bước khác vẫn chưa đủ điều kiện");
-console.log("Đạt: 47 bước, giữ tiến độ cũ, không cộng nhầm và bỏ hoàn thành đúng.");
+assert.equal(chang.length, 6, "Giáo trình v3.0 có 4 chặng chính + thực hành thêm + chốt lại");
+assert.ok(ids.every(id => id.startsWith("v3-")), "Mã bước v3.0 mang tiền tố v3-, không trùng mã bản 2.x");
+assert.equal(new Set(ids).size, ids.length, "Mã bước không trùng nhau");
+assert.equal(BUOC_V2.length, 47, "Bản 2.1 có 47 bước");
+
+// Người đã hoàn thành trọn bản 2.1 (hoặc 44 bước bản cũ hơn, suy ra đủ 47) vẫn đủ điều kiện ở bản mới.
+assert.deepEqual(new Set([...boSungBuocDaTach(BUOC_V2, ids)].filter(id => ids.includes(id))), new Set(ids), "Xong 47 bước v2.1 → xong v3.0");
+const cu44 = BUOC_V2.filter(id => !["c06-b08", "c04-b04", "c04-b05"].includes(id));
+assert.deepEqual(new Set([...boSungBuocDaTach(cu44, ids)].filter(id => ids.includes(id))), new Set(ids), "Xong 44 bước v2.0 → xong v3.0");
+// Làm dở bản cũ thì không được cộng bước mới.
+const doDang = BUOC_V2.filter(id => id !== "c01-b01");
+assert.equal([...boSungBuocDaTach(doDang, ids)].filter(id => ids.includes(id)).length, 0, "Làm dở bản cũ không cộng bước v3.0");
+// Bước v3.0 tự đánh dấu thì giữ nguyên.
+assert.deepEqual(boSungBuocDaTach([ids[0], ids[1]], ids), new Set([ids[0], ids[1]]), "Bước mới giữ nguyên");
+console.log(`Đạt: ${ids.length} bước v3.0, giữ hoàn thành cho người đã xong trọn bản cũ, mã mới không trùng mã cũ.`);

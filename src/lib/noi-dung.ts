@@ -13,23 +13,26 @@ export type Chang = {
   so: number;
   slug: string;
   tieuDe: string;
+  /** Nhãn hiển thị: "Chặng 1"… hoặc "Thực hành thêm", "Chốt lại". */
+  nhan: string;
   phut: number;
   mucTieu: string;
   ghiNho: string;
   sanPham: string[];
   nguon: string[];
   coVideo: boolean;
-  /** Video bài học của chặng (giáo trình v2.1): chiếu tại lớp, học viên xem lại trên trang học. */
-  video: VideoBai | null;
+  /** Màn trình chiếu của chặng (giáo trình v3.0): giảng viên chiếu và đọc theo phụ đề. */
+  man: Man[];
   noiDungHtml: string;
   buoc: Buoc[];
 };
 
-export type VideoBai = { tieuDe: string; url: string };
+/** Một màn trình chiếu. "loi" là phụ đề: mỗi phần tử là một nhịp đọc, bấm tiếp để sang nhịp sau. */
+export type Man = { kieu: string; loi: string[]; [k: string]: unknown };
 
 export type LoTrinh = {
   dich: string;
-  video: VideoBai | null;
+  man: Man[];
   phan: { ten: string; moTa: string; chang: number[] }[];
 };
 
@@ -91,9 +94,6 @@ export const timSanPham = (ma: string) =>
   khoaHoc.sanPham.find((s) => s.ma === ma);
 export const timNguon = (ma: string) => khoaHoc.nguon.find((n) => n.ma === ma);
 
-/** Video tự host trong public/video có ảnh bìa cùng tên (.jpg) để chưa bấm phát vẫn thấy tiêu đề. */
-export const anhBia = (url: string) => (/^\/video\/[\w-]+\.mp4$/.test(url) ? url.replace(/\.mp4$/, ".jpg") : undefined);
-
 export const dinhDangTien = (n: number) => `${n.toLocaleString("vi-VN")}đ`;
 
 /** "0913 332 282" để dễ đọc; link Zalo và tel dùng số liền. */
@@ -112,5 +112,5 @@ export function nhanLichHoc() {
 export const tatCaPrompt = dsChang.flatMap((c) =>
   c.buoc
     .filter((b) => b.prompt)
-    .map((b) => ({ chang: c.so, tenChang: c.tieuDe, buoc: b })),
+    .map((b) => ({ chang: c.so, nhanChang: c.nhan, tenChang: c.tieuDe, buoc: b })),
 );

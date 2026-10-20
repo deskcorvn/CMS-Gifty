@@ -1,0 +1,85 @@
+# Màn chặng 4 · AI làm việc trên máy tính.
+man:
+  - kieu: bia
+    so: "04"
+    tieuDe: AI làm việc **trên máy tính** của anh chị
+    phu: Chặng 4 · 25 phút · Cowork và đội trợ lý chạy song song
+    loi:
+      - Chặng bốn. Phần này hơi nâng cao, nhưng ai cũng nên biết. AI không chỉ trả lời trên trang web nữa, mà làm việc ngay trên máy tính, với chính các tệp của mình.
+
+  - kieu: bang
+    tieuDe: Nhân sự **làm từ xa** hay nhân sự **đến tận nơi**?
+    cotTieuDe: ["", Chat trên trang web, Cowork · Claude Desktop]
+    dong:
+      - [Máy, Máy chủ của hãng AI, "**Máy của anh chị**"]
+      - [Tệp, "Tải lên bản sao, nhận lại chữ", "**Đọc và sửa tệp gốc** trong thư mục được cho phép"]
+      - [Đội ngũ, Một luồng trò chuyện, "**Nhiều trợ lý phụ** chạy song song"]
+      - [Lịch, Hỏi mới trả lời, "**Tự chạy theo lịch**, ví dụ 7 giờ sáng gửi bản tin"]
+    loi:
+      - Chat trên trang web giống một nhân viên làm từ xa. Mình phải gửi tài liệu qua, nhận về, rồi tự cập nhật lại.
+      - Còn Cowork chạy trong ứng dụng Claude trên máy tính. Nó giống người ngồi ngay tại văn phòng, sửa trực tiếp tệp trong đúng thư mục được giao.
+      - Nó còn có thể chia việc cho nhiều trợ lý phụ chạy cùng lúc, và tự chạy theo lịch, ví dụ bảy giờ sáng gửi bản tin.
+
+  - kieu: luong
+    tieuDe: "AI **đề xuất trước**, anh chị **duyệt rồi mới chạy**"
+    buoc:
+      - ten: Anh chị giao việc
+        moTa: “Đề xuất, chờ duyệt”
+      - ten: AI xem danh sách
+        moTa: Tên · loại · dung lượng · ngày
+      - ten: AI đề xuất cách xếp
+        moTa: Kèm thư mục “cần xóa”
+    nhanh:
+      hoi: Anh chị duyệt?
+      co: AI làm thật, trên tệp của anh chị.
+      chua: Góp ý cụ thể, làm theo được → AI đề xuất lại.
+    loi:
+      - Ví dụ dễ thấy nhất là dọn thư mục Tải về, nơi lộn xộn nhất trên máy.
+      - Nguyên tắc vàng. Giao việc kèm câu “đề xuất trước, chờ tôi duyệt”. AI xem danh sách tệp, rồi đề xuất cách xếp, kèm một thư mục những thứ nên xóa.
+      - Anh chị đồng ý thì AI mới làm thật. Chưa ưng thì góp ý cụ thể, đúng thói quen một ở chặng hai, để nó đề xuất lại.
+
+  - kieu: ds
+    tieuDe: An toàn khi để AI **chạm vào máy**
+    dau: tich
+    ds:
+      - ten: Chỉ cho phép đúng thư mục cần làm
+        moTa: Đừng giao kiểu “dọn cả ổ C”.
+      - ten: Thử trước ở thư mục thử nghiệm, dữ liệu giả lập
+      - ten: Không mở ngân hàng, email cá nhân, dữ liệu khách thật
+        moTa: AI có thể gặp lỗi, hoặc bị nội dung độc hại dẫn sai thao tác.
+      - ten: Luôn đề xuất trước, duyệt rồi mới làm
+    loi:
+      - An toàn trước. Cowork chỉ vào được thư mục anh chị cho phép. Đừng bao giờ giao kiểu dọn cả ổ C.
+      - Thử trước ở thư mục thử nghiệm với dữ liệu giả lập. Không mở ngân hàng, email cá nhân hay dữ liệu khách thật.
+
+  - kieu: songSong
+    tieuDe: Một cuộc trò chuyện chính **điều phối cả đội**
+    dieuPhoi: Cuộc trò chuyện chính
+    songSong:
+      - ten: Lấy số bán hàng
+        moTa: trợ lý 1 · Excel
+      - ten: Lấy lịch họp tuần
+        moTa: trợ lý 2 · Calendar
+      - ten: Lấy việc còn tồn
+        moTa: trợ lý 3 · Notion
+    tuanTu:
+      - ten: Tổng hợp số liệu
+        moTa: trợ lý 4
+      - ten: Viết nhận xét
+        moTa: trợ lý 5
+      - ten: Kiểm tra chéo
+        moTa: trợ lý 6
+    chot: Việc độc lập → chạy song song. Việc cần kết quả bước trước → chạy tuần tự.
+    loi:
+      - Trợ lý phụ, hay sub-agent, là các trợ lý được cuộc trò chuyện chính gọi ra khi cần. Đây là bước đặt một chân lên cấp bốn.
+      - Ví dụ báo cáo tuần. Ba trợ lý chạy cùng lúc, lấy số bán hàng, lấy lịch họp, lấy việc còn tồn.
+      - Xong rồi mới chạy lần lượt. Một trợ lý tổng hợp, một trợ lý viết nhận xét, một trợ lý kiểm tra chéo.
+      - Mỗi trợ lý phụ có đầu óc sạch. Chỉ nhận đúng phần việc của mình, làm xong trả kết quả. Giống trưởng nhóm giao việc rồi chỉ nghiệm thu đầu ra.
+
+  - kieu: hop
+    tieuDe: Những giới hạn cần biết
+    noi: Cowork **không có trên bản miễn phí**. Cần gói trả phí, ứng dụng Claude Desktop, và tùy hệ điều hành. Hôm nay anh chị **xem video làm mẫu**, chưa cần cài.
+    phu: Giờ xem video mẫu, rồi làm 4 bước của chặng 4.
+    loi:
+      - Lưu ý, Cowork không có trên bản miễn phí. Cần gói trả phí và ứng dụng Claude trên máy tính.
+      - Nên hôm nay anh chị xem video mình quay sẵn trong môi trường thử nghiệm, để ý trình tự đề xuất, duyệt, làm, báo cáo. Rồi làm bốn bước của chặng bốn.

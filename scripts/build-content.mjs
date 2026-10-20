@@ -48,20 +48,49 @@ for (const sp of khoaHoc?.sanPham ?? []) {
   if (!chuoi(sp?.loiIch)) loi.push(`content/khoa-hoc.yml: sản phẩm ${sp?.ma} thiếu loiIch`);
   sp.tuyChon = sp?.tuyChon === true;
 }
-const videoHopLe = (v, noi) => {
-  if (v == null) return null;
-  const tieuDe = chuoi(v?.tieuDe);
-  const url = chuoi(v?.url);
-  if (!url) return null;
-  if (!tieuDe) loi.push(`${noi}: video cần "tieuDe"`);
-  if (!/^(https:\/\/|\/)/.test(url)) loi.push(`${noi}: video.url phải bắt đầu bằng https:// hoặc /`);
-  return { tieuDe, url };
+// Màn trình chiếu (giáo trình v3.0): mỗi chặng một file content/man/NN.yml, 00.yml là màn mở đầu.
+// Giảng viên chiếu tại lớp và đọc theo phụ đề; học viên bấm xem lại trên trang chặng.
+const KIEU_MAN = {
+  bia: ["tieuDe"],
+  xacSuat: ["tieuDe", "cot"],
+  chat: ["tieuDe", "hoi", "dap"],
+  bang: ["tieuDe", "cotTieuDe", "dong"],
+  bac: ["tieuDe", "bac"],
+  the: ["tieuDe", "the"],
+  ds: ["tieuDe", "ds"],
+  vs: ["tieuDe", "trai", "phai"],
+  luong: ["tieuDe", "buoc"],
+  hop: ["noi"],
+  songSong: ["tieuDe", "dieuPhoi", "songSong", "tuanTu"],
 };
+function docMan(file) {
+  let raw;
+  try {
+    raw = readFileSync(join(ROOT, file), "utf8");
+  } catch {
+    return [];
+  }
+  const ds = parseYaml(raw)?.man;
+  if (!Array.isArray(ds) || !ds.length) {
+    loi.push(`${file}: cần danh sách "man"`);
+    return [];
+  }
+  return ds.map((m, i) => {
+    const noi = `${file}: màn ${i + 1}`;
+    const can = KIEU_MAN[m?.kieu];
+    if (!can) loi.push(`${noi}: kieu "${m?.kieu}" không hợp lệ (${Object.keys(KIEU_MAN).join(", ")})`);
+    for (const k of can ?? []) if (m?.[k] == null || m[k] === "") loi.push(`${noi}: thiếu "${k}"`);
+    const loiNoi = (Array.isArray(m?.loi) ? m.loi : [m?.loi]).map(chuoi).filter(Boolean);
+    if (!loiNoi.length) loi.push(`${noi}: thiếu phụ đề "loi"`);
+    return { ...m, loi: loiNoi };
+  });
+}
+const pad = (n) => String(n).padStart(2, "0");
 const loTrinh = khoaHoc?.loTrinh;
 khoaHoc.loTrinh = loTrinh
   ? {
       dich: chuoi(loTrinh.dich),
-      video: videoHopLe(loTrinh.video, "content/khoa-hoc.yml: loTrinh"),
+      man: docMan("content/man/00.yml"),
       phan: (loTrinh.phan ?? []).map((p, i) => {
         if (!chuoi(p?.ten)) loi.push(`content/khoa-hoc.yml: loTrinh.phan dòng ${i + 1} thiếu "ten"`);
         const ds = Array.isArray(p?.chang) ? p.chang.map(Number) : [];
@@ -70,6 +99,8 @@ khoaHoc.loTrinh = loTrinh
       }),
     }
   : null;
+// Tiền tố mã bước: v3.0 đổi cấu trúc chặng nên mã bước mới không được trùng mã bước cũ (luật 4).
+const tienTo = chuoi(khoaHoc?.maBuocTienTo);
 const maNguon = new Set((khoaHoc?.nguon ?? []).map((n) => n.ma));
 const maSanPham = new Set((khoaHoc?.sanPham ?? []).map((s) => s.ma));
 
@@ -87,24 +118,24 @@ const chang = readdirSync(dir)
     if (!buoc.length) loi.push(`${file}: chặng phải có ít nhất một bước (buoc)`);
     for (const n of data.nguon ?? []) if (!maNguon.has(n)) loi.push(`${file}: nguồn ${n} không có trong khoa-hoc.yml`);
     for (const s of data.sanPham ?? []) if (!maSanPham.has(s)) loi.push(`${file}: sản phẩm ${s} không có trong khoa-hoc.yml`);
-    const pad = (n) => String(n).padStart(2, "0");
     return {
       so,
       slug: f.replace(/\.md$/, ""),
       tieuDe: chuoi(data.tieuDe),
+      nhan: chuoi(data.nhan) || `Chặng ${so}`,
       phut: Number(data.phut) || 0,
       mucTieu: chuoi(data.mucTieu),
       ghiNho: chuoi(data.ghiNho),
       sanPham: data.sanPham ?? [],
       nguon: data.nguon ?? [],
       coVideo: Boolean(data.coVideo),
-      video: videoHopLe(data.video, file),
+      man: docMan(`content/man/${pad(so)}.yml`),
       noiDungHtml: marked.parse(body, { async: false }),
       buoc: buoc.map((b, i) => {
         if (!chuoi(b?.tieuDe)) loi.push(`${file}: bước ${i + 1} thiếu tieuDe`);
         if (!chuoi(b?.huongDan)) loi.push(`${file}: bước ${i + 1} thiếu huongDan`);
         return {
-          id: `c${pad(so)}-b${pad(i + 1)}`,
+          id: `${tienTo}c${pad(so)}-b${pad(i + 1)}`,
           tieuDe: chuoi(b?.tieuDe),
           huongDan: chuoi(b?.huongDan),
           prompt: typeof b?.prompt === "string" ? b.prompt.replace(/\s+$/, "") : "",

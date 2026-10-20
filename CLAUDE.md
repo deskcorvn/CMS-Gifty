@@ -3,10 +3,10 @@
 Trang học "Khóa đào tạo AI" của Gifty Tech (Next.js 16, Postgres, Vercel). Đọc README.md trước.
 
 ## Luật
-1. **Nội dung chỉ lấy từ giáo trình.** File `content/` bám *Giáo trình Buổi 1 v2.0 (10/10/2026)*. Không thêm
-   con số, tính năng Claude/ChatGPT hay lời hứa không có trong giáo trình hoặc nguồn N01–N17. Giao diện AI thay đổi
+1. **Nội dung chỉ lấy từ giáo trình.** File `content/` bám *Giáo trình Buổi 1 v3.0 (20/10/2026)*: 4 chặng chính + thực hành thêm + chốt lại, màn trình chiếu ở `content/man/`. Không thêm
+   con số, tính năng Claude/ChatGPT hay lời hứa không có trong giáo trình hoặc nguồn N01–N20. Giao diện AI thay đổi
    thì sửa theo nguồn chính thức và cập nhật `ngayRaSoatNguon`.
-2. **Không chấm điểm, không phân loại.** Ai bấm hoàn thành đủ 9 chặng đều nhận (4 sản phẩm SP01–SP04 là tùy chọn, chốt 10/10/2026) "Hoàn thành xuất sắc" như
+2. **Không chấm điểm, không phân loại.** Ai bấm hoàn thành đủ các chặng đều nhận (4 sản phẩm SP01–SP04 là tùy chọn, chốt 10/10/2026) "Hoàn thành xuất sắc" như
    nhau (chốt 10/10/2026). Quiz làm sau, khi người vận hành yêu cầu.
 3. **Thanh toán giữ đúng quy tắc PTI** (`src/lib/thanh-toan.ts`):
    - chống cộng trùng;
@@ -15,7 +15,7 @@ Trang học "Khóa đào tạo AI" của Gifty Tech (Next.js 16, Postgres, Verce
    - webhook thiếu key là từ chối.
    Sửa phần này phải chạy lại bộ thử webhook (trả thiếu, gửi trùng, cùng mã tham chiếu khác id, sai tài khoản,
    không mã, trả thừa).
-4. **Không đổi mã bước đã phát hành.** Học viên bấm "Hoàn thành chặng" (một nút cho cả chặng), nhưng tiến độ vẫn lưu theo từng `cNN-bNN`; thêm bước mới vào cuối chặng.
+4. **Không đổi mã bước đã phát hành.** Học viên bấm "Hoàn thành chặng" (một nút cho cả chặng), nhưng tiến độ vẫn lưu theo từng mã bước (`v3-cNN-bNN` từ v3.0); thêm bước mới vào cuối chặng. Đổi cấu trúc chặng thì đổi tiền tố `maBuocTienTo` và ghi cách giữ tiến độ cũ ở `src/lib/tien-do-tuong-thich.ts`.
 5. **Credential không vào repo.** Mọi khóa đọc từ env (xem `.env.example`). Không echo secret ra log.
 6. **Dữ liệu học viên:** chỉ dữ liệu giả lập KH01–KH12 trong bài tập; không thêm ô nhập dữ liệu khách hàng thật.
    Ảnh SP04 phải có ô đồng ý.

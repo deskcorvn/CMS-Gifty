@@ -1,0 +1,50 @@
+# Màn chốt lại.
+man:
+  - kieu: bac
+    tieuDe: Đủ **5 mảnh ghép** = cấp 3 · Trưởng phòng
+    bac:
+      - nhan: "01"
+        ten: Tư duy
+        moTa: Giao việc, Instruction, Memory · chặng 1–3
+      - nhan: "02"
+        ten: Công cụ
+        moTa: Connector nối ứng dụng · chặng 3
+      - nhan: "03"
+        ten: Công thức
+        moTa: Skill · chặng 3
+      - nhan: "04"
+        ten: Môi trường
+        moTa: Cowork trên máy của anh chị · chặng 4
+      - nhan: "05"
+        ten: Đội ngũ
+        moTa: Trợ lý phụ chạy song song · chặng 4
+    chot: Xây dần từ dưới lên. Mỗi Project là một nhân sự; bên trong có thể có trợ lý phụ.
+    loi:
+      - Chốt lại cả buổi. Một nhân sự AI ở cấp ba được xây từ năm mảnh ghép, từ dưới lên.
+      - Đầu tiên là tư duy, gồm giao việc, instruction và memory. Rồi công cụ, tức là connector. Rồi công thức, tức là skill.
+      - Tiếp theo là môi trường, Cowork làm việc ngay trên máy. Và cuối cùng là đội ngũ, các trợ lý phụ chạy song song.
+      - Có đủ năm mảnh này, anh chị điều phối được nhiều nhân sự AI, đúng vai trưởng phòng.
+
+  - kieu: ds
+    tieuDe: Bắt đầu **từ tuần này**
+    ds:
+      - ten: Tạo một Project “Trợ lý cá nhân”
+        moTa: Nói tự do về việc của mình, để AI viết Instruction.
+      - ten: Nối Google Calendar và Notion
+        moTa: "Giao một việc thật: lên lịch, tạo việc cần làm."
+      - ten: Chọn một việc lặp lại mỗi tuần
+        moTa: Làm cùng AI tới khi ưng, rồi gói thành skill.
+    loi:
+      - Ba việc cho tuần này. Một, tạo một Project trợ lý cá nhân, nói tự do để AI viết hướng dẫn.
+      - Hai, nối lịch và Notion, giao cho nó một việc thật.
+      - Ba, chọn một việc anh chị làm đi làm lại mỗi tuần. Làm cùng AI tới khi ưng, rồi gói thành skill.
+
+  - kieu: hop
+    tieuDe: Điều nhớ nhất
+    noi: Cái gì **máy làm tốt** thì người đừng làm. Định hướng, hiểu khách hàng và quyết định cuối cùng **vẫn là việc của mình**.
+    phu: Không cần giỏi công nghệ mới bắt đầu. Vướng chỗ nào, hỏi chính AI cách dùng nó.
+    loi:
+      - Nếu chỉ nhớ một điều, thì là cái gì máy làm tốt thì người đừng làm. Việc lặp lại, có quy trình rõ, để AI làm.
+      - Định hướng, hiểu khách hàng và quyết định cuối cùng vẫn là việc của mình.
+      - Không cần giỏi công nghệ mới bắt đầu. Vướng chỗ nào, cứ hỏi chính AI cách dùng nó.
+      - Giờ anh chị bấm hoàn thành đủ các chặng để nhận chứng chỉ. Cảm ơn anh chị đã học cùng Gifty Tech.

@@ -1,5 +1,6 @@
 # Thông tin chung của khóa. Sửa được trong Pages CMS (mục "Thông tin khóa").
-# Mọi dữ kiện ở đây lấy từ "Giáo trình Buổi 1 — Hiểu AI và làm việc cùng AI", phiên bản 2.0, 10/10/2026.
+# Mọi dữ kiện ở đây lấy từ "Giáo trình Buổi 1 — Hiểu AI và làm việc cùng AI", phiên bản 3.0, 20/10/2026
+# (4 chặng chính + thực hành thêm + chốt lại; người vận hành chốt cấu trúc mới ngày 20/10/2026).
 ten: AI thực chiến cho chủ doanh nghiệp
 tieuDePhu: Hiểu AI và làm việc cùng AI
 moTa: >-
@@ -29,7 +30,9 @@ nhomZalo:
 # Mỗi dòng: - anh: /anh/mau-sp01.png  (tải ảnh lên qua Pages CMS, file nằm ở public/anh)
 #             chuThich: "SP01 làm từ dữ liệu giả lập KH01–KH12"
 ketQuaMau: []
-phienBanGiaoTrinh: "2.1 · cập nhật 20/10/2026"
+phienBanGiaoTrinh: "3.0 · cập nhật 20/10/2026"
+# v3.0 đổi cấu trúc chặng nên mã bước mang tiền tố mới, không trùng mã bước của bản 2.x (CLAUDE.md luật 4).
+maBuocTienTo: "v3-"
 lop:
   ngay: "2026-10-21"
   gio: "14:00"
@@ -46,21 +49,21 @@ sanPham:
   - ma: SP01
     ten: Bảng khách hàng mẫu + kế hoạch 7 ngày
     dieuKien: Đủ 12 dòng dữ liệu; có tối thiểu 5 ưu tiên, lý do và đầu việc; không bịa thông tin.
-    chang: 5
+    chang: 2
     loiIch: >-
       Danh sách 12 khách hàng mẫu được AI xếp thứ tự ưu tiên, có lý do và việc cần làm cho từng
       ngày trong tuần.
   - ma: SP02
     ten: "Trợ lý Claude: “Trợ lý kinh doanh của tôi”"
     dieuKien: Có Project/hướng dẫn riêng; thử lại ít nhất một yêu cầu với dữ liệu mẫu.
-    chang: 6
+    chang: 3
     loiIch: >-
       Một Project trên Claude đã cài sẵn hướng dẫn. Mở ra là giao việc kinh doanh được ngay, không
       phải giải thích lại từ đầu.
   - ma: SP03
     ten: Hồ sơ thương hiệu cá nhân
     dieuKien: Có một câu định vị, đoạn giới thiệu 70–100 chữ, lời giới thiệu khoảng 30 giây.
-    chang: 7
+    chang: 5
     loiIch: >-
       Một câu định vị, đoạn giới thiệu 70–100 chữ và lời tự giới thiệu khoảng 30 giây để dùng cho
       hồ sơ mạng xã hội hoặc khi gặp đối tác.
@@ -69,7 +72,7 @@ sanPham:
     dieuKien: >-
       Ảnh giữ nhận dạng, tự nhiên; nếu hết lượt tạo ảnh miễn phí thì lưu sẵn câu lệnh và ảnh gốc để hoàn thiện
       sau lớp.
-    chang: 7
+    chang: 5
     tuyChon: true
     loiIch: >-
       Ảnh đại diện chỉnh bằng ChatGPT mà vẫn giữ đúng gương mặt mình. Hết lượt tạo ảnh miễn phí thì
@@ -86,22 +89,17 @@ chungChi:
   chucDanh: Giám đốc
   donVi: Gifty Tech
   # Ảnh chữ ký nằm ở public/chu-ky-hung.svg (tạo bằng scripts/ve-chu-ky.mjs).
+# Màn mở đầu (bản đồ buổi học) nằm ở content/man/00.yml.
 loTrinh:
   dich: >-
-    Cuối buổi, anh chị về với một trợ lý Claude dùng được mỗi ngày và bốn sản phẩm của riêng mình.
-  video:
-    tieuDe: "Video mở đầu: bản đồ buổi học (hỏi đáp, 2 phút)"
-    url: /video/h0-mo-dau.mp4
+    Hiểu bản chất AI, biết giao việc, rồi có những "nhân sự AI" làm việc lặp lại thay mình.
   phan:
-    - ten: Hiểu AI
-      chang: [1, 2, 3]
-      moTa: AI đoán câu trả lời thế nào, vì sao có thể sai; thiết lập tài khoản; chọn mô hình hợp việc.
-    - ten: Giao việc
-      chang: [4, 5]
-      moTa: Khung giao việc 6 ý và hai thói quen; biến 12 mối quan hệ thành kế hoạch 7 ngày.
-    - ten: Có trợ lý riêng
-      chang: [6, 7, 8, 9]
-      moTa: Trợ lý kinh doanh trong Project, hồ sơ thương hiệu cá nhân, xem AI làm việc trên máy tính.
+    - ten: Bốn chặng chính
+      chang: [1, 2, 3, 4]
+      moTa: Hiểu AI → Giao việc → Nhân sự AI → AI làm việc trên máy tính.
+    - ten: Thực hành thêm và chốt lại
+      chang: [5, 6]
+      moTa: Lời giới thiệu và ảnh đại diện bằng Claude + ChatGPT; năm mảnh ghép và việc cho tuần này.
 video:
   tieuDe: "Tôi giao mục tiêu. AI tự mở phần mềm, thực hiện và báo cáo kết quả."
   # Link video quay sẵn (YouTube không công khai hoặc file MP4). Trống thì trang báo "có sau buổi học".
@@ -109,7 +107,7 @@ video:
 cauChot: >-
   Không cần giỏi công nghệ mới bắt đầu dùng AI. Chỉ cần hiểu mình đang làm gì, biết cung cấp đúng
   thông tin và giữ quyền kiểm tra, anh chị đã có thể giao được việc thực tế cho AI.
-ngayRaSoatNguon: "10/10/2026"
+ngayRaSoatNguon: "20/10/2026"
 nguon:
   - ma: N01
     ten: Model, Effort và Thinking — Claude Help Center
@@ -162,3 +160,12 @@ nguon:
   - ma: N17
     ten: Tìm hiểu hoạt động của mô hình ngôn ngữ — Anthropic Research
     url: https://www.anthropic.com/research/tracing-thoughts-language-model
+  - ma: N18
+    ten: What are skills? — Claude Help Center
+    url: https://support.claude.com/en/articles/12512176-what-are-skills
+  - ma: N19
+    ten: Use skills in Claude — Claude Help Center
+    url: https://support.claude.com/en/articles/12512180-using-skills-in-claude
+  - ma: N20
+    ten: Use connectors to extend Claude's capabilities — Claude Help Center
+    url: https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities

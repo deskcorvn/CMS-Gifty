@@ -29,7 +29,7 @@ export default async function TrangNhanChungChi() {
           <ul className="mt-3 text-sm">
             {changDo.map((c) => (
               <li key={c.so} className="flex flex-wrap items-center justify-between gap-3 border-b border-line py-2 last:border-0">
-                <Link href={`/hoc/chang/${c.so}`} className="text-amber-ink underline">Chặng {c.so}: {c.tieuDe}</Link>
+                <Link href={`/hoc/chang/${c.so}`} className="text-amber-ink underline">{c.nhan}: {c.tieuDe}</Link>
                 <NutXongChang changSo={c.so} />
               </li>
             ))}

@@ -1,0 +1,110 @@
+# Màn chặng 2 · Giao việc.
+man:
+  - kieu: bia
+    so: "02"
+    tieuDe: Giao việc — **5 yếu tố** để AI làm đúng ý
+    phu: Chặng 2 · 45 phút · làm ra SP01
+    loi:
+      - Chặng hai. Nếu AI là thực tập sinh giỏi, thì giờ mình học cách làm sếp giao việc cho nó.
+
+  - kieu: the
+    tieuDe: Muốn ai làm việc cho mình, cần đủ **2 yếu tố**
+    cot: 2
+    danhSo: false
+    the:
+      - ten: Muốn làm (Will)
+        moTa: Có động lực làm việc. AI thì lúc nào cũng sẵn sàng, sửa đến lần thứ mười cũng không phàn nàn.
+        nhan: AI đã có sẵn
+      - ten: Làm được (Able)
+        moTa: Bối cảnh, công cụ, cách làm.
+        nhan: Việc của anh chị
+    noiBat: 2
+    chot: AI luôn sẵn sàng làm. Việc của anh chị là giúp nó **làm được**.
+    loi:
+      - Muốn một người làm việc cho mình, cần hai thứ. Họ muốn làm, và họ làm được.
+      - Nhờ người thiết kế sửa đến lần thứ ba là họ bắt đầu khó chịu. AI thì sửa lần thứ mười vẫn vui vẻ. Phần muốn làm, AI có sẵn rồi.
+      - Phần làm được, tức là bối cảnh, công cụ, cách làm, là việc của anh chị.
+
+  - kieu: the
+    tieuDe: Giao việc đủ **5 yếu tố**
+    cot: 5
+    the:
+      - ten: Vai trò
+        moTa: AI vào vai ai, làm cho ai đọc.
+      - ten: Mục đích
+        moTa: Việc này để đạt điều gì.
+      - ten: Nhiệm vụ
+        moTa: Chính xác làm gì, tới đâu.
+      - ten: Cách làm
+        moTa: Các bước, mẫu, ràng buộc.
+      - ten: Yêu cầu đầu ra
+        moTa: Thế nào thì gọi là xong.
+    chot: Thiếu yếu tố nào, AI tự đoán ở chỗ đó. Giống hệt nhân viên mới.
+    loi:
+      - Có năm yếu tố. Một, vai trò. AI vào vai ai, và làm cho ai đọc.
+      - Hai, mục đích. Cùng một bản hợp đồng, viết để giữ chân khách quan trọng sẽ khác viết cho khách vãng lai.
+      - Ba, nhiệm vụ. Chính xác làm gì, làm tới đâu. Bốn, cách làm. Các bước, mẫu có sẵn, những điều không được làm.
+      - Năm, yêu cầu đầu ra. Thế nào thì gọi là xong. Nên viết như một danh sách kiểm tra, giống “dọn xong phòng là gồm những việc này”.
+      - Thiếu yếu tố nào, AI tự đoán ở chỗ đó. Và không cần câu chữ đẹp. Cứ gõ hoặc nói hết ý ra, AI tự sắp xếp lại được.
+
+  - kieu: vs
+    tieuDe: Cùng một việc, **hai cách giao**
+    trai:
+      nhan: Trước
+      noi: “Viết báo cáo doanh thu tháng này cho anh.”
+      ghiChu: Về mảng nào? Ai đọc? Để làm gì? Dài bao nhiêu? AI tự đoán hết.
+    phai:
+      nhan: Sau
+      noi: Trợ lý kế toán, viết cho chủ cửa hàng · để quyết định nhập hàng · tóm tắt theo nhóm hàng · so với tháng trước, chỉ dùng số trong bảng · bảng 3 cột + 3 nhận xét, dưới 150 chữ.
+      ghiChu: Đủ 5 yếu tố. AI làm đúng ngay lần đầu.
+    loi:
+      - "Câu bên trái: “viết báo cáo doanh thu tháng này cho anh”. Mảng nào? Ai đọc? Để làm gì? Dài bao nhiêu? AI đoán hết."
+      - Câu bên phải trả lời đủ năm yếu tố. Vai trò, mục đích, nhiệm vụ, cách làm, và thế nào là xong.
+
+  - kieu: the
+    tieuDe: 3 thói quen giúp AI làm **ngày càng đúng**
+    cot: 3
+    the:
+      - ten: Góp ý phải làm theo được
+        moTa: "“Chưa đủ hay” thì AI lại đoán tiếp. “Đổi tiêu đề thành câu hỏi, cắt còn 10 chữ” thì sửa được ngay."
+      - ten: Chia nhỏ việc
+        moTa: Việc càng to, càng nhiều chỗ để bịa. Lập kế hoạch ở một cuộc trò chuyện, giao từng phần ở cuộc khác.
+      - ten: Làm nhiều lần, kiểm tra chéo
+        moTa: Đừng tin bản đầu tiên. Mở cuộc trò chuyện khác soi lại theo đúng tiêu chí “thế nào là xong”.
+    loi:
+      - Thói quen một. Góp ý phải làm theo được. Nói “chưa hay” thì AI lại phải đoán anh chị muốn gì.
+      - Thói quen hai. Chia nhỏ việc. Việc càng to càng nhiều chỗ để bịa. Lập kế hoạch ở một cuộc trò chuyện, rồi làm từng phần ở cuộc khác.
+      - Thói quen ba. Đừng tin bản đầu tiên. Mở một cuộc trò chuyện mới để soát lại theo đúng tiêu chí thế nào là xong. Cuộc mới không bị các lượt trước dẫn dắt nên dễ thấy lỗi hơn.
+
+  - kieu: bang
+    tieuDe: "Bài tập trọng tâm: **12 mối quan hệ** · Ngày 0"
+    cotTieuDe: [Mã, Nhóm, Ghi chú]
+    dong:
+      - [KH01, Đang tìm hiểu, "**Đã hứa gửi báo giá hôm qua nhưng chưa gửi**"]
+      - [KH04, Người quen, Nói rõ hiện chưa có nhu cầu; không đề nghị liên hệ lại]
+      - [KH05, Khách quan tâm, "**Khách đề nghị đặt lịch demo trong 2 ngày**"]
+      - [KH09, Khách quan tâm, "**Đề nghị gửi hồ sơ năng lực ngay hôm nay**"]
+      - [KH10, Khách mới, Có nhu cầu nhưng chưa nêu ngân sách hay thời gian]
+      - [KH12, Khách cũ, Yêu cầu không liên hệ lại trong tháng này]
+    chot: Dữ liệu giả lập, trích 6/12 dòng. Bảng đầy đủ có trên trang học.
+    loi:
+      - Giờ dùng ngay vào bài tập trọng tâm. Lớp có sẵn một bảng giả lập mười hai mối quan hệ. Hôm nay gọi là Ngày không.
+      - Nhìn kỹ nhé. Khách số một đã được hứa gửi báo giá từ hôm qua mà chưa gửi. Khách số chín muốn nhận hồ sơ năng lực ngay hôm nay.
+      - Còn khách số mười hai yêu cầu không liên hệ lại trong tháng này. Khách số bốn nói rõ là chưa có nhu cầu.
+      - Câu lệnh trên trang học đã viết sẵn theo đủ năm yếu tố, kèm dữ liệu mười hai mã. Anh chị chỉ việc sao chép, dán vào Claude và gửi.
+
+  - kieu: ds
+    tieuDe: Đọc kết quả, rồi **kiểm tra chéo**
+    dau: tich
+    ds:
+      - ten: Đủ 12 mã, không thêm khách
+      - ten: Mỗi lý do ưu tiên có bằng chứng từ ghi chú
+      - ten: Không liên hệ KH12, không thúc ép KH04
+      - ten: Không có “đã chốt đơn”, “dự kiến doanh thu” khi thiếu dữ liệu
+      - ten: Tin nhắn nhắc đúng mốc đã hứa
+    chot: "Gửi tiêu chí này vào một cuộc trò chuyện mới để soát (thói quen 3), rồi lưu SP01."
+    loi:
+      - Khi Claude trả kết quả, đừng tin ngay. Đọc từng lý do ưu tiên xem có dựa đúng vào ghi chú không.
+      - Rồi thử thói quen một. Chọn một tin nhắn, góp ý thật cụ thể, ví dụ rút còn ba câu, đưa hai khung giờ demo cho khách chọn.
+      - Cuối cùng là thói quen ba. Dán kết quả cùng các tiêu chí này vào một cuộc trò chuyện mới để soát lại.
+      - Xong thì chép bảng ra Google Sheets, chọn một việc làm được ngay hôm nay, và lưu SP01. Giờ anh chị làm bảy bước của chặng hai nhé.

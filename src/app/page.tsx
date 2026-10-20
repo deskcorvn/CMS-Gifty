@@ -251,7 +251,7 @@ export default async function TrangChu() {
                           ⌄
                         </span>
                         <span className="chapter-title">
-                          <span>Chặng {c.so}</span>
+                          <span>{c.nhan}</span>
                           <strong>{c.tieuDe}</strong>
                         </span>
                         <span className="chapter-duration">{c.phut} phút</span>
@@ -325,7 +325,7 @@ export default async function TrangChu() {
                 <p>
                   Hoàn thành{" "}
                   <strong>
-                    đủ 9 chặng
+                    đủ {dsChang.length} chặng
                   </strong>{" "}
                   để nhận chứng chỉ “{khoaHoc.chungChi.danhHieu}” có mã QR xác
                   thực.

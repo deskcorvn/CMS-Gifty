@@ -1,0 +1,82 @@
+# Màn chặng 1 · Hiểu AI. Xác suất trong màn "xacSuat" là số minh họa cho dễ hình dung, không phải số đo.
+man:
+  - kieu: bia
+    so: "01"
+    tieuDe: Hiểu AI — nó **“nghĩ”** thế nào, vì sao hay bịa
+    phu: Chặng 1 · 30 phút
+    loi:
+      - Chặng một. Trước khi giao việc cho AI, mình cần hiểu nó thực sự làm gì.
+
+  - kieu: xacSuat
+    tieuDe: AI không “hiểu”. Nó **đoán chữ tiếp theo**.
+    cot:
+      - nhan: Câu quen thuộc
+        cau: Một con vịt xòe ra hai cái
+        luaChon: [[cánh, 97], [chân, 2], [mắt, 1]]
+      - nhan: Câu mơ hồ
+        cau: Lúc rảnh, tôi thường
+        luaChon: [[đi chơi, 20], [đọc sách, 17], [xem phim, 15], [ngủ, 12]]
+    chot: Chỗ nào nhiều lựa chọn ngang nhau, chỗ đó AI dễ bịa. Việc càng mơ hồ, càng nhiều chỗ để bịa. (Số trên màn chỉ để minh họa.)
+    loi:
+      - Một mô hình ngôn ngữ, nói đơn giản, là đoán chữ tiếp theo dựa trên những gì nó đã học.
+      - "Câu “một con vịt xòe ra hai cái…”, gần như chắc chắn là “cánh”. Ai gõ vào cũng ra cùng một kết quả."
+      - "Còn câu “lúc rảnh, tôi thường…” thì sao? Đi chơi, đọc sách, xem phim, ngủ. Lựa chọn nào cũng có lý."
+      - Thiếu thông tin về riêng anh chị, AI vẫn phải chọn một cái, và viết ra bằng giọng rất tự tin. Chỗ đó dễ sai nhất.
+      - Vậy nên đừng vội chê AI dốt. Đưa thêm bối cảnh, và tự kiểm tra lại kết quả.
+
+  - kieu: chat
+    tieuDe: Thử ngay trên máy của anh chị
+    hoi: "Điền đúng MỘT từ vào chỗ trống: 1. Một con vịt xòe ra hai cái ___  2. Lúc rảnh, tôi thường ___"
+    dap: "1. cánh  2. … (mỗi máy một kiểu)"
+    chot: So kết quả với người ngồi cạnh. Câu 1 giống nhau, câu 2 khác nhau.
+    loi:
+      - Anh chị làm ngay bước ba trên trang học. Dán câu lệnh vào Claude, rồi quay sang so với người bên cạnh.
+      - Câu một cả lớp gần như giống nhau. Câu hai thì mỗi người một kiểu. Đó chính là chỗ AI đang đoán.
+
+  - kieu: bang
+    tieuDe: Mỗi AI học từ **một kho khác nhau**
+    cotTieuDe: [AI, Gắn với, Hợp cho việc]
+    dong:
+      - [Gemini, Google Tìm kiếm, Tra cứu kiến thức phổ biến]
+      - [ChatGPT, "Dùng đa năng, cân bằng", Việc chung; **tạo và chỉnh ảnh**]
+      - [Grok, Mạng xã hội X, "Tin trên mạng xã hội, giọng văn đời thường"]
+      - [Claude, "Lập luận, cấu trúc", "Sắp xếp thông tin, viết dài, dựng quy trình"]
+    noiBat: 4
+    chot: Cảm nhận khi dùng thực tế, không phải xếp hạng chính thức. Hôm nay dùng Claude làm ví dụ; cách giao việc dùng được cho mọi AI.
+    loi:
+      - Dữ liệu học khác nhau nên mỗi AI mạnh ở một kiểu việc.
+      - Gemini gắn với Google, hợp tra cứu. ChatGPT cân bằng, việc gì cũng làm khá, và hôm nay mình dùng nó để làm ảnh.
+      - Grok gắn với mạng xã hội X. Còn Claude mạnh về lập luận và cấu trúc, hợp sắp xếp thông tin và dựng quy trình.
+      - Đây là cảm nhận khi dùng, không phải xếp hạng. Cách nghĩ và cách giao việc hôm nay dùng được cho mọi AI.
+
+  - kieu: bac
+    tieuDe: Anh chị đang dùng AI ở **cấp nào**?
+    bac:
+      - ten: Hỏi đáp
+        moTa: Dùng thay Google, viết, dịch lặt vặt.
+      - ten: Có một nhân sự AI
+        moTa: Biết công việc, công cụ và quy trình của anh chị.
+      - ten: Trưởng phòng
+        moTa: Nhiều nhân sự AI, anh chị là người điều phối.
+      - ten: Kinh doanh một người
+        moTa: Các AI tự phối hợp theo quy trình.
+      - ten: Cả tổ chức
+        moTa: Nhiều người dùng chung, mỗi người đúng quyền.
+    noiBat: 3
+    nhanNoiBat: Đích hướng tới
+    chot: Cấp 3 là biết lái xe. Cấp 4, 5 là biết chế tạo xe. Phần lớn chúng ta chỉ cần lái giỏi.
+    loi:
+      - Có năm cấp dùng AI. Cấp một là hỏi đáp, dùng thay Google. Phần lớn mọi người đang ở đây.
+      - Cấp hai là có một nhân sự AI. Nó biết anh chị là ai, bán gì, làm theo quy trình nào.
+      - Cấp ba là trưởng phòng. Anh chị có nhiều nhân sự AI, mỗi người một mảng, và anh chị điều phối.
+      - Cấp bốn là các AI tự phối hợp theo quy trình. Cấp năm là cả tổ chức dùng chung, mỗi người đúng quyền.
+      - Cấp ba giống biết lái xe, cấp bốn và năm giống chế tạo xe. Phần lớn chúng ta chỉ cần lái giỏi. Hôm nay mình hướng tới cấp ba.
+
+  - kieu: hop
+    tieuDe: AI là một **thực tập sinh tài năng** mới vào công ty
+    noi: Rất giỏi, nhưng chưa biết gì về anh chị và việc của anh chị. → **Cách anh chị giao việc quyết định chất lượng việc AI làm ra.**
+    phu: Giờ anh chị làm 7 bước của chặng 1 trên trang học.
+    loi:
+      - Hãy hình dung AI là một thực tập sinh rất giỏi vừa vào công ty. Biết rất nhiều, nhưng chưa biết gì về khách hàng hay sản phẩm của mình.
+      - Nên anh chị phải đổi vai, làm người giao việc. Giao thế nào thì nhận về thế ấy. Đó là chặng hai.
+      - Giờ anh chị làm bảy bước của chặng một trên trang học nhé.

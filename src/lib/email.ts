@@ -81,12 +81,12 @@ export function emailKichHoat(hoTen: string, link: string, maDangKy: string | nu
 <p>Anh chị đã <b>đăng ký thành công</b> lớp <b>${esc(khoaHoc.ten)}: ${esc(khoaHoc.tieuDePhu)}</b>. Gifty Tech đã nhận đủ học phí.</p>
 <p><b>Lịch học:</b> ${esc(nhanLichHoc())} · ${khoaHoc.thoiLuongPhut} phút<br><b>Địa điểm:</b> ${esc(diaDiem)}</p>
 ${maDangKy ? `<p style="background:#fff7ec;border:1px solid #f0d8b9;border-radius:8px;padding:12px 16px"><b>Mã đăng ký: ${esc(maDangKy)}</b><br><span style="font-size:13px">Lưu lại mã này. Khi không nhận được email đăng nhập, anh chị đăng nhập bằng mã đăng ký. Mã cũng nằm trong nội dung chuyển khoản ở app ngân hàng.</span></p>` : ""}
-<p>Nội dung 9 chặng sẽ mở khi lớp bắt đầu. Trước đó, anh chị vào trang học để xem lịch và danh sách chuẩn bị.</p>
+<p>Nội dung khóa học sẽ mở khi lớp bắt đầu. Trước đó, anh chị vào trang học để xem lịch và danh sách chuẩn bị.</p>
 <p>${khoaHoc.nhomZalo.link ? `Nhóm Zalo của lớp: <a href="${esc(khoaHoc.nhomZalo.link)}">bấm để vào nhóm</a>.` : "Gifty Tech sẽ mời anh chị vào nhóm Zalo của lớp qua số điện thoại đã đăng ký."} Cần hỏi gì, nhắn Zalo <b>${esc(soLienHe)}</b>.</p>
 ${nut(link, "Vào trang học của tôi")}
 <p style="font-size:13px;color:#5b6b80">Link dùng được một lần trong 14 ngày. Hết hạn thì vào trang đăng nhập, nhập email này để nhận link mới.</p>
 <p><b>Chuẩn bị trước buổi học:</b></p><ul>${chuanBi}</ul>`),
-    vanBan: `Chào ${hoTen},\nAnh chị đã đăng ký thành công ${khoaHoc.ten}: ${khoaHoc.tieuDePhu}. Gifty Tech đã nhận đủ học phí.\nLịch học: ${nhanLichHoc()}\nĐịa điểm: ${diaDiem}\n${maDangKy ? `Mã đăng ký: ${maDangKy} (lưu lại để đăng nhập khi cần)\n` : ""}Nội dung 9 chặng mở khi lớp bắt đầu.\n${khoaHoc.nhomZalo.link ? `Nhóm Zalo của lớp: ${khoaHoc.nhomZalo.link}` : "Gifty Tech sẽ mời anh chị vào nhóm Zalo của lớp qua số điện thoại đã đăng ký."}\nCần hỏi gì, nhắn Zalo ${soLienHe}.\nVào trang học: ${link}\n\nChuẩn bị:\n- ${khoaHoc.chuanBi.join("\n- ")}`,
+    vanBan: `Chào ${hoTen},\nAnh chị đã đăng ký thành công ${khoaHoc.ten}: ${khoaHoc.tieuDePhu}. Gifty Tech đã nhận đủ học phí.\nLịch học: ${nhanLichHoc()}\nĐịa điểm: ${diaDiem}\n${maDangKy ? `Mã đăng ký: ${maDangKy} (lưu lại để đăng nhập khi cần)\n` : ""}Nội dung khóa học mở khi lớp bắt đầu.\n${khoaHoc.nhomZalo.link ? `Nhóm Zalo của lớp: ${khoaHoc.nhomZalo.link}` : "Gifty Tech sẽ mời anh chị vào nhóm Zalo của lớp qua số điện thoại đã đăng ký."}\nCần hỏi gì, nhắn Zalo ${soLienHe}.\nVào trang học: ${link}\n\nChuẩn bị:\n- ${khoaHoc.chuanBi.join("\n- ")}`,
   };
 }
 

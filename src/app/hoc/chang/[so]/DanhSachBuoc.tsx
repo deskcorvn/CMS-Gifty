@@ -86,7 +86,7 @@ export function NutHoanThanhChang({
       <section id="hoan-thanh" aria-live="polite" className={`mt-8 rounded-xl border-2 p-5 md:p-6 ${xong ? "border-emerald-400 bg-emerald-50" : "border-navy/20 bg-white"}`}>
         {xong ? (
           <>
-            <p className="text-lg font-bold text-emerald-800">✓ Đã hoàn thành chặng {changSo}</p>
+            <p className="text-lg font-bold text-emerald-800">✓ Đã hoàn thành chặng này</p>
             {chungChi && (
               <p className="mt-2 rounded-lg bg-white px-4 py-3 text-body ring-1 ring-emerald-300">
                 🎉 Chúc mừng anh chị đã hoàn thành cả khóa học! Chứng chỉ đã được cấp và gửi về email.{" "}
@@ -114,7 +114,7 @@ export function NutHoanThanhChang({
               onClick={() => danhDau(true)}
               className="mt-3 rounded-lg bg-emerald-700 px-6 py-3 font-bold text-white hover:bg-emerald-800 disabled:opacity-60"
             >
-              {dang ? "Đang lưu…" : `✓ Hoàn thành chặng ${changSo}`}
+              {dang ? "Đang lưu…" : "✓ Hoàn thành chặng"}
             </button>
           </>
         )}

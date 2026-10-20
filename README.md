@@ -5,16 +5,20 @@ lúc 14:00 thứ Tư 21/10/2026, học phí 299.000đ, tối đa 20 học viên.
 
 Học viên đi theo trình tự:
 1. Đăng ký, quét VietQR để trả tiền. SePay xác nhận rồi hệ thống tự mở quyền học.
-2. Học theo **9 chặng / 45 bước**. Mỗi bước có hướng dẫn, câu lệnh bấm-để-sao-chép, phần "kết quả trông thế nào"
-   và tiến độ được lưu theo tài khoản.
+2. Học theo **4 chặng chính + thực hành thêm + chốt lại (6 phần / 37 bước)**: Hiểu AI → Giao việc → Nhân sự AI →
+   AI làm việc trên máy tính → thương hiệu cá nhân bằng Claude + ChatGPT → chốt lại. Mỗi chặng có **màn trình chiếu có
+   phụ đề** (giảng viên chiếu toàn màn hình, đọc theo phụ đề; học viên xem lại trên trang chặng), rồi các bước có hướng
+   dẫn, câu lệnh bấm-để-sao-chép, phần "kết quả trông thế nào" và tiến độ lưu theo tài khoản.
 3. (Tùy chọn) lưu **4 sản phẩm** SP01–SP04: bảng ưu tiên + kế hoạch 7 ngày, trợ lý Claude, hồ sơ thương hiệu, ảnh/câu lệnh
    chỉnh ảnh.
-4. Bấm hoàn thành đủ 9 chặng thì tự nhận **chứng chỉ "Hoàn thành xuất sắc"**. Khóa không chấm điểm,
+4. Bấm hoàn thành đủ các chặng thì tự nhận **chứng chỉ "Hoàn thành xuất sắc"**. Khóa không chấm điểm,
    không xếp loại. Chứng chỉ có ảnh A4 với chữ ký, mã QR và trang kiểm tra công khai `/chung-nhan/<mã>`.
 5. Sau buổi học, mục **"Kết quả của tôi"** giữ lại cho học viên tra cứu: 4 sản phẩm (chép được, tải được file `.md`),
    kho câu lệnh, video và các nguồn chính thức.
 
-Nội dung lấy từ *Giáo trình Buổi 1, phiên bản 2.0 (10/10/2026)*. Chỉ giữ phần dành cho học viên; phần chỉ dành
+Nội dung lấy từ *Giáo trình Buổi 1, phiên bản 3.0 (20/10/2026)*: cấu trúc 4 chặng tham khảo buổi học
+"Từ ô chat đến một đội AI cùng làm việc" (kênh Trương Phương, khách mời Hưng Kescy), viết lại bằng lời và ví dụ của Gifty Tech;
+phần ảnh ChatGPT giữ từ bản 2.x. Chỉ giữ phần dành cho học viên; phần chỉ dành
 cho giảng viên (tổ chức lớp, kịch bản quay video, phương án dự phòng) không đưa lên site.
 
 ## Công nghệ (kế thừa, không viết lại)
@@ -91,8 +95,13 @@ Kiểm tra trước khi push: `npm run lint && npm run typecheck && npm run buil
   - `nhomZalo.link` để trống thì trang học và email ghi "Gifty Tech mời vào nhóm qua số điện thoại đã đăng ký".
   - `ketQuaMau`: ảnh kết quả do giảng viên làm từ dữ liệu giả lập KH01–KH12, hiện ở mục "Anh chị mang về gì" trên trang chủ.
   - Địa điểm đang để trống: trang web và email sẽ ghi "Gifty Tech gửi địa điểm qua email".
-- **Thêm hoặc bớt bước**: tiến độ lưu theo mã bước `c05-b03` (chặng 5, bước 3). Chèn bước vào giữa chặng sẽ làm
-  dịch mã các bước phía sau. Sau khi đã có học viên, nên thêm bước mới vào **cuối** chặng.
+- **Thêm hoặc bớt bước**: tiến độ lưu theo mã bước `v3-c02-b03` (tiền tố `maBuocTienTo` trong `khoa-hoc.yml`, chặng 2,
+  bước 3). Chèn bước vào giữa chặng sẽ làm dịch mã các bước phía sau. Sau khi đã có học viên, nên thêm bước mới vào
+  **cuối** chặng. Đổi hẳn cấu trúc chặng thì đổi tiền tố, và ghi cách giữ tiến độ cũ trong `src/lib/tien-do-tuong-thich.ts`.
+- **Sửa màn trình chiếu**: mỗi chặng một file `content/man/NN.yml` (`00.yml` là màn mở đầu ở trang học). Mỗi màn có
+  `kieu` (bia, xacSuat, chat, bang, bac, the, ds, vs, luong, hop, songSong) và `loi` là phụ đề; mỗi dòng của `loi` là một
+  nhịp đọc. Viết `**chữ**` để nhấn màu. Màn dài hơn khung tự thu nhỏ cho vừa. Khi chiếu: phím → ← chuyển, P ẩn/hiện
+  phụ đề, F toàn màn hình.
 - **Vẽ lại chữ ký**: `node scripts/ve-chu-ky.mjs <font.ttf> public/chu-ky-hung.svg Hùng` (font OFL Alex Brush).
 
 ## Còn để sau

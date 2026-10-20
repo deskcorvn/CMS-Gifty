@@ -20,6 +20,7 @@ content:
         order: asc
     fields:
       - { name: so, label: Số chặng, type: number, required: true }
+      - { name: nhan, label: "Nhãn hiển thị (để trống = Chặng N; ví dụ Thực hành thêm, Chốt lại)", type: string }
       - { name: tieuDe, label: Tiêu đề, type: string, required: true }
       - { name: phut, label: Thời lượng (phút), type: number }
       - { name: mucTieu, label: Mục tiêu, type: text }
@@ -29,14 +30,8 @@ content:
         type: select
         list: true
         options: { values: [SP01, SP02, SP03, SP04] }
-      - { name: nguon, label: "Nguồn tham khảo (mã N01…N17)", type: string, list: true }
+      - { name: nguon, label: "Nguồn tham khảo (mã N01…N20)", type: string, list: true }
       - { name: coVideo, label: Chặng có video, type: boolean }
-      - name: video
-        label: Video bài học của chặng (chiếu tại lớp, xem lại trên trang học)
-        type: object
-        fields:
-          - { name: tieuDe, label: Tên video, type: string }
-          - { name: url, label: "Link video (YouTube hoặc /video/ten-file.mp4)", type: string }
       - name: buoc
         label: Các bước
         type: object
@@ -127,12 +122,6 @@ content:
         type: object
         fields:
           - { name: dich, label: Đích của buổi học, type: text }
-          - name: video
-            label: Video mở đầu
-            type: object
-            fields:
-              - { name: tieuDe, label: Tên video, type: string }
-              - { name: url, label: "Link video (YouTube hoặc /video/ten-file.mp4)", type: string }
           - name: phan
             label: Các phần
             type: object
@@ -142,7 +131,7 @@ content:
               - { name: moTa, label: Mô tả ngắn, type: string }
               - { name: chang, label: "Các chặng (số)", type: number, list: true }
       - name: video
-        label: Video chặng 8
+        label: Video làm mẫu chặng 4 (AI làm việc trên máy tính)
         type: object
         fields:
           - { name: tieuDe, label: Tên video, type: string }

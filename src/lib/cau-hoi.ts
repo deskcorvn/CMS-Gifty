@@ -39,7 +39,7 @@ export const cauHoi = [
   },
   {
     hoi: "Khi nào tôi nhận được chứng chỉ?",
-    dap: `Hoàn thành đủ 9 chặng, anh chị nhận chứng chỉ “${khoaHoc.chungChi.danhHieu}” có mã QR kiểm tra trực tuyến.`,
+    dap: `Hoàn thành đủ các chặng, anh chị nhận chứng chỉ “${khoaHoc.chungChi.danhHieu}” có mã QR kiểm tra trực tuyến.`,
   },
   {
     hoi: "Sau buổi học, tôi còn xem lại được gì?",

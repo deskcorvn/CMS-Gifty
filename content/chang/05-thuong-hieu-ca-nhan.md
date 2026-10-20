@@ -1,23 +1,20 @@
 ---
-so: 7
-tieuDe: Xây dựng thương hiệu cá nhân bằng Claude + ChatGPT
+so: 5
+nhan: Thực hành thêm
+tieuDe: Thương hiệu cá nhân bằng Claude + ChatGPT
 phut: 20
-video:
-  tieuDe: "Claude viết lời giới thiệu, ChatGPT làm ảnh (hỏi đáp, 2 phút)"
-  url: /video/h7-chang-7.mp4
 mucTieu: >-
-  Rời lớp với cách giới thiệu chuyên môn rõ ràng và ảnh đại diện chuyên nghiệp, hoặc mẫu yêu cầu
-  chỉnh ảnh dùng lại sau lớp. Không cố làm website trong buổi này.
+  Rời lớp với cách giới thiệu chuyên môn rõ ràng và ảnh đại diện chuyên nghiệp, hoặc mẫu yêu cầu chỉnh
+  ảnh dùng lại sau lớp. Không cố làm website trong buổi này.
 sanPham: [SP03, SP04]
 ghiNho: >-
-  Danh thiếp điện tử và website là nơi dùng kết quả vừa có; không phải thứ phải hoàn thành trong
-  20 phút.
+  Danh thiếp điện tử và website là nơi dùng kết quả vừa có; không phải thứ phải hoàn thành trong 20 phút.
 nguon: [N08, N09, N10]
 buoc:
   - tieuDe: Điền bốn thông tin về mình
     huongDan: >-
-      Viết ra bốn ý: nghề, khách hàng, thế mạnh thật (có thể kiểm chứng), lời mời liên hệ. Đây là
-      nguyên liệu cho câu định vị thô.
+      Viết ra bốn ý: nghề, khách hàng, thế mạnh thật (có thể kiểm chứng), lời mời liên hệ. Đây là nguyên
+      liệu cho câu định vị thô.
     ketQua: Anh chị có bốn dòng thông tin thật về mình.
   - tieuDe: Nhờ Claude viết phần giới thiệu
     huongDan: Chép mẫu dưới đây, điền thông tin trong ngoặc vuông và gửi cho Claude.
@@ -39,37 +36,35 @@ buoc:
       lớp. Khi đó giữ lại câu lệnh và ảnh gốc, hoàn thiện sau lớp.
   - tieuDe: Kiểm tra ảnh trước khi dùng
     huongDan: >-
-      Soát ảnh theo bốn câu hỏi ở phần “Cách kiểm tra ảnh” bên dưới. Có điểm khác thực tế thì yêu cầu
-      chỉnh tiếp hoặc trở lại ảnh gốc.
+      Soát ảnh theo bốn câu hỏi ở phần “Cách kiểm tra ảnh” bên dưới. Có điểm khác thực tế thì yêu cầu chỉnh
+      tiếp hoặc trở lại ảnh gốc.
     ketQua: Ảnh không gây hiểu nhầm về con người thật của anh chị.
   - tieuDe: Lưu SP03 và SP04
     huongDan: >-
-      Bấm “Lưu sản phẩm SP03” để lưu câu định vị, đoạn 70–100 chữ và lời 30 giây. Bấm “Lưu sản phẩm
-      SP04” để lưu ảnh đã chỉnh, hoặc câu lệnh chỉnh ảnh nếu chưa kịp chỉnh.
+      Bấm “Lưu sản phẩm SP03” để lưu câu định vị, đoạn 70–100 chữ và lời 30 giây. Bấm “Lưu sản phẩm SP04”
+      để lưu ảnh đã chỉnh, hoặc câu lệnh chỉnh ảnh nếu chưa kịp chỉnh.
     ketQua: Hồ sơ thương hiệu cá nhân nằm trong “Kết quả của tôi”, dùng lại cho danh thiếp, Zalo, Facebook.
 ---
 
 ## ChatGPT làm được gì với ảnh
 
 - **Tạo ảnh từ mô tả bằng lời:** tả cảnh, phong cách, màu sắc, ChatGPT vẽ ra ảnh mới.
-- **Chỉnh ảnh anh chị tải lên:** đổi nền, ánh sáng, trang phục, khung hình, giữ đúng gương mặt khi
-  câu lệnh yêu cầu rõ.
-- **Sửa tiếp bằng câu lệnh nối tiếp:** chưa ưng chỗ nào thì nói đúng chỗ đó, không cần làm lại từ
-  đầu.
-- **Bản miễn phí có hạn mức tạo ảnh riêng,** có thể hết giữa lớp. Khi đó giữ câu lệnh và ảnh gốc để
-  làm tiếp ở nhà.
+- **Chỉnh ảnh anh chị tải lên:** đổi nền, ánh sáng, trang phục, khung hình, giữ đúng gương mặt khi câu
+  lệnh yêu cầu rõ.
+- **Sửa tiếp bằng câu lệnh nối tiếp:** chưa ưng chỗ nào thì nói đúng chỗ đó, không cần làm lại từ đầu.
+- **Bản miễn phí có hạn mức tạo ảnh riêng,** có thể hết giữa lớp. Khi đó giữ câu lệnh và ảnh gốc để làm
+  tiếp ở nhà.
 
 ## Cách kiểm tra ảnh
 
-- Khuôn mặt có còn giống người thật trong ảnh gốc không? Có thêm/mất kính, nốt ruồi hoặc thay đổi
-  hình dáng mắt, miệng?
+- Khuôn mặt có còn giống người thật trong ảnh gốc không? Có thêm/mất kính, nốt ruồi hoặc thay đổi hình
+  dáng mắt, miệng?
 - Ánh sáng và nền có dễ nhìn khi thu nhỏ thành ảnh đại diện?
 - Trang phục có hợp với chuyên môn, khách hàng và văn hóa giao tiếp?
-- Nếu có điểm khác thực tế, yêu cầu chỉnh tiếp hoặc trở lại ảnh gốc; không dùng hình ảnh gây hiểu
-  nhầm.
+- Nếu có điểm khác thực tế, yêu cầu chỉnh tiếp hoặc trở lại ảnh gốc; không dùng hình ảnh gây hiểu nhầm.
 
-Claude không phải công cụ tạo ảnh chân dung/chụp ảnh chuyên dụng. Claude chủ yếu tạo biểu đồ, đồ
-họa tương tác, hình vẽ bằng mã và phân tích ảnh được tải lên.
+Claude không phải công cụ tạo ảnh chân dung/chụp ảnh chuyên dụng. Claude chủ yếu tạo biểu đồ, đồ họa
+tương tác, hình vẽ bằng mã và phân tích ảnh được tải lên.
 
 ## Phiếu “Xây dựng thương hiệu cá nhân”
 

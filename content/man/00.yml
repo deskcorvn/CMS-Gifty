@@ -1,0 +1,83 @@
+# Màn mở đầu: bản đồ buổi học (giáo trình v3.0, 20/10/2026).
+# Mỗi màn có "kieu" (bia, xacSuat, chat, bang, bac, the, ds, vs, luong, hop, songSong) và "loi" là phụ đề
+# giảng viên đọc theo. "loi" là danh sách: mỗi dòng một nhịp, bấm "Tiếp" sang nhịp sau rồi mới sang màn sau.
+# **chữ** để nhấn màu.
+man:
+  - kieu: bia
+    tieuDe: Từ ô chat đến **một đội AI** cùng làm việc
+    phu: Hiểu bản chất · biết giao việc · giải phóng bản thân khỏi việc lặp lại
+    loi:
+      - Chào anh chị. Hôm nay mình không học lập trình, mình học cách làm việc cùng AI.
+      - "Cuối buổi, mình muốn anh chị thay đổi ba điều: hiểu AI thực sự làm gì, biết giao việc cho nó, và biết đóng gói việc lặp lại để AI làm thay."
+
+  - kieu: the
+    tieuDe: Hôm nay đi **4 chặng**
+    cot: 4
+    the:
+      - ten: Hiểu AI
+        moTa: Nó “nghĩ” thế nào, vì sao hay bịa.
+      - ten: Giao việc
+        moTa: 5 yếu tố để AI làm đúng ý.
+      - ten: Nhân sự AI
+        moTa: Instruction, Memory, Knowledge, Skill, Tools.
+      - ten: AI làm trên máy
+        moTa: Cowork làm việc với tệp của anh chị, nhiều trợ lý chạy song song.
+    chot: "Đích: có tư duy đúng khi dùng AI và biết tự động hóa việc lặp lại."
+    loi:
+      - Buổi học có bốn chặng.
+      - Chặng một, hiểu AI. Nó nghĩ thế nào và vì sao có lúc nói rất tự tin mà vẫn sai.
+      - Chặng hai, giao việc. Năm yếu tố để AI làm đúng ý ngay từ đầu.
+      - Chặng ba, nhân sự AI. Mình biến Claude thành một nhân sự biết việc của mình, không phải giới thiệu lại mỗi lần mở.
+      - Chặng bốn hơi nâng cao nhưng ai cũng nên biết. AI làm việc ngay trên máy tính, với chính các tệp của anh chị.
+
+  - kieu: the
+    tieuDe: Thêm hai phần **thực hành**
+    cot: 2
+    danhSo: false
+    the:
+      - ten: Thương hiệu cá nhân
+        moTa: Claude viết lời giới thiệu, ChatGPT chỉnh ảnh đại diện.
+        nhan: SP03 · SP04
+      - ten: Chốt lại
+        moTa: Năm mảnh ghép và ba việc bắt đầu ngay tuần này.
+        nhan: Nhận chứng chỉ
+    loi:
+      - Sau bốn chặng có thêm hai phần ngắn.
+      - Một là làm lời giới thiệu và ảnh đại diện. Phần ảnh mình dùng ChatGPT.
+      - Hai là chốt lại những gì đã học, và chọn việc để làm ngay trong tuần.
+
+  - kieu: ds
+    tieuDe: Cuối buổi anh chị **mang về**
+    ds:
+      - ten: Kế hoạch chăm sóc 7 ngày
+        moTa: Từ 12 mối quan hệ giả lập (SP01)
+      - ten: Một trợ lý Claude biết việc của mình
+        moTa: Project “Trợ lý kinh doanh của tôi” (SP02)
+      - ten: Hồ sơ thương hiệu cá nhân
+        moTa: Câu định vị, đoạn 70–100 chữ, lời giới thiệu 30 giây (SP03)
+      - ten: Ảnh đại diện hoặc câu lệnh chỉnh ảnh
+        moTa: Làm tiếp ở nhà nếu hết lượt (SP04)
+    loi:
+      - Không chỉ nghe. Cuối buổi, anh chị có bốn thứ dùng được ngay.
+      - Bốn sản phẩm này đều lưu được trên trang học, mục “Kết quả của tôi”, để tra lại sau buổi.
+
+  - kieu: luong
+    tieuDe: Cách học hôm nay
+    buoc:
+      - ten: Xem
+        moTa: Giảng viên chiếu màn, giải thích
+      - ten: Làm
+        moTa: Tự làm trên máy theo các bước của trang học
+      - ten: Chốt
+        moTa: Bấm “Hoàn thành chặng” rồi sang chặng sau
+    noiBat: 2
+    loi:
+      - Mỗi chặng mình đi ba nhịp. Mình chiếu và giải thích, anh chị làm ngay trên máy, rồi cả lớp chốt lại.
+      - Làm tay ngay trên lớp thì về nhà mới nhớ. Chỗ nào vướng, anh chị giơ tay để trợ giảng hỗ trợ.
+
+  - kieu: hop
+    tieuDe: Một quy tắc cho cả buổi
+    noi: Chỉ dùng **dữ liệu giả lập** do lớp cung cấp. Không nhập tên thật, số điện thoại hay thông tin riêng của khách hàng.
+    loi:
+      - Một quy tắc duy nhất cho cả buổi. Hôm nay chỉ dùng dữ liệu giả lập do lớp cung cấp.
+      - Không đưa tên thật, số điện thoại hay thông tin riêng của khách vào AI khi chưa có quyền. Mình bắt đầu nhé.

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { tinhTrangHocVien } from "@/lib/hoan-thanh";
-import { anhBia, dsChang, khoaHoc, nhanLichHoc, tongSoBuoc } from "@/lib/noi-dung";
+import { dsChang, khoaHoc, nhanLichHoc, tongSoBuoc } from "@/lib/noi-dung";
+import TrinhChieu from "@/components/TrinhChieu";
 import NhomZalo from "@/components/NhomZalo";
 import ThongTinCuaToi from "@/components/ThongTinCuaToi";
 import { maDangKyCua } from "@/lib/ma-dang-ky";
@@ -45,7 +46,7 @@ export default async function TrangHoc() {
             <Link href="/hoc/chung-chi" className="rounded-lg bg-emerald-700 px-5 py-2.5 font-bold text-white">Nhận chứng chỉ “{khoaHoc.chungChi.danhHieu}”</Link>
           ) : (
             <Link href={`/hoc/chang/${tiepTheo.so}`} className="rounded-lg bg-amber px-5 py-2.5 font-bold text-[#1a1205] hover:bg-amber-light">
-              {chuaBatDau ? "Bắt đầu chặng 1" : `Học tiếp chặng ${tiepTheo.so}`}
+              {chuaBatDau ? `Bắt đầu ${dsChang[0].nhan.toLowerCase()}` : `Học tiếp: ${tiepTheo.nhan.toLowerCase()}`}
             </Link>
           )}
           <Link href="/hoc/thu-vien" className="rounded-lg border border-navy/25 px-5 py-2.5 font-bold text-navy hover:bg-navy hover:text-white">Kết quả của tôi</Link>
@@ -66,12 +67,11 @@ export default async function TrangHoc() {
       <section className="mt-8">
         <h2 className="text-xl font-bold text-navy">Bản đồ buổi học</h2>
         {khoaHoc.loTrinh?.dich && <p className="mt-1 text-body">{khoaHoc.loTrinh.dich}</p>}
-        {khoaHoc.loTrinh?.video && (
-          <div className="mt-4 rounded-xl border border-line bg-white p-4">
-            <p className="text-sm font-bold text-navy">{khoaHoc.loTrinh.video.tieuDe}</p>
-            <video className="mt-3 aspect-video w-full rounded-lg bg-[#eef4ff]" src={khoaHoc.loTrinh.video.url} poster={anhBia(khoaHoc.loTrinh.video.url)} controls preload="metadata" playsInline aria-label={khoaHoc.loTrinh.video.tieuDe} />
+        {khoaHoc.loTrinh?.man.length ? (
+          <div className="mt-4">
+            <TrinhChieu man={khoaHoc.loTrinh.man} nhan="Mở đầu" tieuDe="Bản đồ buổi học" />
           </div>
-        )}
+        ) : null}
         {(khoaHoc.loTrinh?.phan ?? [{ ten: `${dsChang.length} chặng`, moTa: "", chang: dsChang.map((c) => c.so) }]).map((phan, iPhan) => {
           const dsPhan = dsChang.filter((c) => phan.chang.includes(c.so));
           const soXong = dsPhan.filter((c) => c.buoc.every((b) => tt.buocXong.has(b.id))).length;
@@ -100,7 +100,7 @@ export default async function TrangHoc() {
                         <span className="min-w-0 flex-1">
                           <span className="block font-semibold text-navy">{c.tieuDe}</span>
                           <span className="text-sm text-muted">
-                            {c.phut} phút{c.video ? " · có video" : ""} · {hetChang ? "đã hoàn thành" : xong > 0 ? "đang học" : "chưa học"}{c.sanPham.length ? ` · làm ${c.sanPham.join(", ")}` : ""}
+                            {c.nhan} · {c.phut} phút · {hetChang ? "đã hoàn thành" : xong > 0 ? "đang học" : "chưa học"}{c.sanPham.length ? ` · làm ${c.sanPham.join(", ")}` : ""}
                           </span>
                         </span>
                       </Link>
@@ -143,7 +143,7 @@ function ManHinhCho({ hv, thongTin }: { hv: HocVien; thongTin: React.ReactNode }
           <b>Địa điểm:</b> {khoaHoc.lop.diaDiem || "Gifty Tech gửi địa điểm qua email"}
         </p>
         <p className="mt-3 text-sm text-body">
-          Nội dung 9 chặng sẽ mở khi lớp bắt đầu. Lúc đó anh chị quay lại trang này (đăng nhập bằng email hoặc mã đăng ký) để học theo từng chặng.
+          Nội dung {dsChang.length} chặng sẽ mở khi lớp bắt đầu. Lúc đó anh chị quay lại trang này (đăng nhập bằng email hoặc mã đăng ký) để học theo từng chặng.
         </p>
       </section>
       {thongTin}
@@ -160,7 +160,7 @@ function ManHinhCho({ hv, thongTin }: { hv: HocVien; thongTin: React.ReactNode }
             <li key={c.so} className="flex items-center gap-4 rounded-xl border border-line bg-white p-4 opacity-80">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#e8edf3] font-bold text-muted" aria-hidden="true">🔒</span>
               <span className="min-w-0 flex-1">
-                <span className="block font-semibold text-navy">Chặng {c.so}: {c.tieuDe}</span>
+                <span className="block font-semibold text-navy">{c.nhan}: {c.tieuDe}</span>
                 <span className="text-sm text-muted">{c.phut} phút · mở khi lớp bắt đầu</span>
               </span>
             </li>

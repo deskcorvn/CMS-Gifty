@@ -92,7 +92,7 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
           <p className={`mt-1 text-lg font-bold ${daMo ? "text-emerald-800" : "text-amber-ink"}`}>{daMo ? "Đang mở" : "Đang khóa"}</p>
           <p className="mt-1 text-sm text-body">
             {daMo
-              ? `Học viên đã đóng học phí vào học được 9 chặng.${moKhoa?.luc ? ` Mở lúc ${gio(new Date(moKhoa.luc))}.` : ""}`
+              ? `Học viên đã đóng học phí vào học được các chặng.${moKhoa?.luc ? ` Mở lúc ${gio(new Date(moKhoa.luc))}.` : ""}`
               : "Học viên đã đóng học phí chỉ thấy lịch học và phần chuẩn bị. Bạn (đang đăng nhập quản trị) vẫn xem trước được."}
           </p>
           <div className="mt-3"><NutMoKhoaHoc daMo={daMo} /></div>
@@ -116,10 +116,10 @@ export default async function QuanTri({ searchParams }: { searchParams: Promise<
         <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-6 text-body">
           <li><b>Trước 48 giờ:</b> nhắn nhóm Zalo nhắc học viên đăng nhập sẵn tài khoản Claude và ChatGPT trên laptop, làm theo phần chuẩn bị trong trang học.</li>
           <li><b>Trước giờ học:</b> kiểm tra học phí đang là {dinhDangTien(khoaHoc.hocPhi)} và đánh dấu “Tài khoản thử” cho các tài khoản đã đăng ký để test, để không bị tính vào {khoaHoc.soCho} chỗ.</li>
-          <li><b>Từ 30 phút trước giờ học:</b> mở bàn hỗ trợ đăng nhập. Ai kẹt xác minh tài khoản AI thì gỡ trước, đừng để cả lớp chờ ở chặng 2.</li>
+          <li><b>Từ 30 phút trước giờ học:</b> mở bàn hỗ trợ đăng nhập. Ai kẹt xác minh tài khoản AI thì gỡ trước, đừng để cả lớp chờ ở chặng 1.</li>
           <li><b>Đúng giờ học:</b> bấm “Mở khóa học” ở trên. Chiếu lên màn hình địa chỉ {"daotao.giftytech.com/dang-nhap"}: học viên đăng nhập trên laptop bằng <b>mã đăng ký GTAI…</b> (có trong email và trong nội dung chuyển khoản), không phải mở email trên laptop.</li>
-          <li><b>Trong buổi:</b> làm mẫu trên màn hình các bước chỉ cần xem để học viên để dành lượt dùng miễn phí của Claude cho chặng 5 và 6. Phần chỉnh ảnh SP04 làm mẫu là chính, học viên lưu câu lệnh làm tiếp ở nhà.</li>
-          <li><b>Cuối buổi:</b> nhắc học viên bấm “Hoàn thành chặng” đủ 9 chặng để nhận chứng chỉ qua email, và lưu kết quả vào “Kết quả của tôi”.</li>
+          <li><b>Trong buổi:</b> làm mẫu trên màn hình các bước chỉ cần xem để học viên để dành lượt dùng miễn phí của Claude cho chặng 2 và 3. Phần chỉnh ảnh SP04 làm mẫu là chính, học viên lưu câu lệnh làm tiếp ở nhà.</li>
+          <li><b>Cuối buổi:</b> nhắc học viên bấm “Hoàn thành chặng” đủ các chặng để nhận chứng chỉ qua email, và lưu kết quả vào “Kết quả của tôi”.</li>
           <li><b>Sau buổi:</b> trả lời câu hỏi trong nhóm Zalo; học viên cần gấp sẽ nhắn số {soLienHe}.</li>
         </ol>
       </details>

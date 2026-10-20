@@ -1,0 +1,63 @@
+# Màn phần thực hành thêm · Thương hiệu cá nhân bằng Claude + ChatGPT.
+man:
+  - kieu: bia
+    so: "+"
+    tieuDe: Thương hiệu cá nhân bằng **Claude + ChatGPT**
+    phu: Thực hành thêm · 20 phút · Claude lo phần chữ, ChatGPT lo phần ảnh · làm ra SP03, SP04
+    loi:
+      - Phần thực hành thêm. Mình làm lời giới thiệu bản thân và ảnh đại diện. Claude lo phần chữ, ChatGPT lo phần ảnh.
+
+  - kieu: ds
+    tieuDe: Bốn ý **thật** về mình
+    ds:
+      - ten: Nghề
+      - ten: Khách hàng
+      - ten: Thế mạnh có thể kiểm chứng
+      - ten: Lời mời liên hệ
+    loi:
+      - Đầu tiên anh chị viết ra bốn ý thật về mình. Nghề, khách hàng, thế mạnh có thể kiểm chứng, và lời mời liên hệ.
+
+  - kieu: ds
+    tieuDe: Claude viết **ba thứ**
+    ds:
+      - ten: Một câu giới thiệu dễ nhớ
+      - ten: Đoạn giới thiệu 70–100 chữ
+        moTa: Cho trang cá nhân, danh thiếp điện tử
+      - ten: Lời giới thiệu khoảng 30 giây
+        moTa: Để nói khi gặp đối tác
+    chot: Câu lệnh đã dặn không tự bịa số năm kinh nghiệm, thành tích hay đối tác. Anh chị vẫn đọc lại và xóa chỗ chưa đúng.
+    loi:
+      - Rồi gửi cho Claude theo mẫu trên trang học. Claude viết ba thứ. Một câu giới thiệu dễ nhớ, một đoạn bảy mươi đến một trăm chữ, và lời giới thiệu nói trong khoảng ba mươi giây.
+      - Câu lệnh đã dặn không tự bịa số năm kinh nghiệm hay thành tích. Nhưng anh chị vẫn phải đọc lại và xóa chỗ nào chưa đúng sự thật.
+
+  - kieu: the
+    tieuDe: ChatGPT làm được gì **với ảnh**
+    cot: 4
+    the:
+      - ten: Tạo ảnh từ mô tả
+        moTa: Tả cảnh, phong cách, màu sắc bằng lời.
+      - ten: Chỉnh ảnh tải lên
+        moTa: Đổi nền, ánh sáng, trang phục; giữ đúng gương mặt khi yêu cầu rõ.
+      - ten: Sửa tiếp từng chỗ
+        moTa: Chưa ưng chỗ nào thì nói đúng chỗ đó.
+      - ten: Hạn mức miễn phí
+        moTa: Có thể hết giữa lớp. Giữ câu lệnh và ảnh gốc để làm tiếp ở nhà.
+    noiBat: 2
+    loi:
+      - ChatGPT làm được bốn việc với ảnh. Một, tạo ảnh mới từ mô tả bằng lời.
+      - Hai, chỉnh ảnh anh chị tải lên. Đổi nền, ánh sáng, trang phục, và giữ đúng gương mặt khi câu lệnh yêu cầu rõ.
+      - Ba, chưa ưng chỗ nào thì nói đúng chỗ đó để sửa tiếp, không cần làm lại từ đầu.
+      - Bốn, bản miễn phí có hạn mức tạo ảnh riêng, có thể hết giữa lớp. Khi đó giữ câu lệnh và ảnh gốc để làm tiếp ở nhà.
+
+  - kieu: ds
+    tieuDe: Soát ảnh **trước khi dùng**
+    dau: tich
+    ds:
+      - ten: Gương mặt còn giống người thật?
+      - ten: Thu nhỏ thành ảnh đại diện vẫn dễ nhìn?
+      - ten: Trang phục hợp nghề và khách hàng?
+      - ten: Khác thực tế thì chỉnh tiếp, hoặc quay về ảnh gốc
+    chot: Chỉ dùng ảnh chân dung của chính mình. Không dùng hình ảnh gây hiểu nhầm về con người thật.
+    loi:
+      - Chỉ dùng ảnh chân dung của chính mình. Trước khi dùng, soát lại. Gương mặt còn giống thật không, thu nhỏ có dễ nhìn không, trang phục có hợp nghề không.
+      - Chỗ nào khác thực tế thì chỉnh lại, hoặc quay về ảnh gốc. Giờ anh chị làm năm bước, rồi lưu SP03 và SP04 nhé.

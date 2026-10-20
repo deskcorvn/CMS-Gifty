@@ -28,15 +28,6 @@ man:
       - Cho nên anh chị đừng chửi nó ngu. Mà nói thật, người mình cũng thế thôi. Sếp giao một câu cụt lủn, mình có phải tự nghĩ “chắc là thế này” không? Bị bảo sai thì lại “em tưởng…”.
       - Thế nên AI cũng giống người thôi. Mình hiểu là nó đang làm theo xác suất, để đừng kỳ vọng sai vào nó. Làm gì thì anh chị cũng nên kiểm tra lại.
 
-  - kieu: chat
-    tieuDe: Thử ngay trên máy của anh chị
-    hoi: "Điền đúng MỘT từ vào chỗ trống: 1. Một con vịt xòe ra hai cái ___  2. Lúc rảnh, tôi thường ___"
-    dap: "1. cánh  2. … (mỗi máy một kiểu)"
-    chot: So kết quả với người ngồi cạnh. Câu 1 giống nhau, câu 2 khác nhau.
-    loi:
-      - "Giờ anh chị thử luôn: làm bước ba trên trang học. Dán câu lệnh vào Claude, rồi quay sang nhìn bài người bên cạnh nhé."
-      - Câu con vịt thì cả lớp gần như giống hệt nhau. Câu lúc rảnh thì mỗi máy một kiểu. Chỗ khác nhau chính là chỗ AI đang đoán đấy ạ.
-
   - kieu: bang
     tieuDe: Mỗi AI học từ **một kho khác nhau**
     cotTieuDe: [ AI, Gắn với, Hợp cho việc ]

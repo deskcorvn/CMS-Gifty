@@ -101,25 +101,6 @@ man:
       - "Knowledge là kho tài liệu: quy chế, quy trình, thông tin sản phẩm, khách hàng."
       - Nhưng tải thẳng tệp lên thì hiện giờ không hiệu quả lắm, trả lời vừa thừa vừa thiếu. Nên chỉ đưa đúng thứ cần tra.
 
-  - kieu: luong
-    tieuDe: "Thực hành: tạo **Trợ lý kinh doanh của tôi**"
-    buoc:
-      - ten: Tạo Project
-        moTa: Đặt tên “Trợ lý kinh doanh của tôi”
-      - ten: Nói tự do
-        moTa: Claude viết lại thành hướng dẫn
-      - ten: Thêm mô tả dịch vụ
-        moTa: Knowledge ngắn, tự viết
-      - ten: Hỏi một câu ngắn
-        moTa: Dán 12 mối quan hệ, hỏi việc hôm nay
-    noiBat: 4
-    chot: So với chặng 2, lần này anh chị không phải gõ lại 5 yếu tố. Lưu SP02 nếu muốn giữ.
-    loi:
-      - Giờ anh chị làm. Tạo một Project, đặt tên là Trợ lý kinh doanh của tôi.
-      - Kể tự do vài câu về công việc của mình để Claude viết lại thành instruction, rồi dán vào dự án. Thêm một đoạn mô tả dịch vụ ngắn.
-      - "Rồi mở cuộc trò chuyện trong dự án, dán mười hai mối quan hệ, và chỉ hỏi một câu ngắn thôi: hôm nay tôi nên ưu tiên việc gì."
-      - Anh chị sẽ thấy câu hỏi ngắn mà câu trả lời vẫn đúng khuôn, đúng ngôn ngữ nghề của mình. Đó là nhờ instruction của dự án.
-
   - kieu: minhHoa
     tieuDe: "Tools: nối Google Calendar, **một câu** là có lịch"
     video: /minh-hoa/noi-lich.mp4
@@ -157,15 +138,6 @@ man:
       - Nhiều nơi nhảy thẳng vào tự động hóa, xây hệ thống, bỏ qua mấy bước đầu. Bối cảnh đổi một chút là hỏng, xây xong vứt vào xó.
       - Cái hay của AI là cập nhật quy trình cực nhanh. Với người, đổi quy trình là đổi thói quen của cả chục người, mất mấy tháng.
       - Với AI, bảo cập nhật skill này một phát, lần sau làm theo cách mới luôn.
-
-  - kieu: minhHoa
-    tieuDe: "Trước tiên: **bật Skills** (bản miễn phí cũng có)"
-    video: /minh-hoa/bat-skills.mp4
-    chot: Settings → Capabilities → bật Code execution and file creation. Rồi Customize → Skills → bật skill-creator.
-    loi:
-      - Muốn đóng gói skill thì trước tiên phải bật Skills lên. Bản miễn phí cũng có nhé ạ.
-      - Vào Settings, mục Capabilities, bật Code execution and file creation. Skills cần mục này mới chạy được.
-      - Rồi vào Customize, mục Skills, bật skill-creator lên. Đây là skill dùng để tạo ra skill mới.
 
   - kieu: minhHoa
     tieuDe: "Làm trước, gói sau: **đóng gói bằng skill-creator**"

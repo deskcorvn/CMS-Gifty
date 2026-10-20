@@ -54,12 +54,13 @@ man:
     tieuDe: An toàn khi để AI **chạm vào máy**
     dau: tich
     ds:
-      - ten: Chỉ cho phép đúng thư mục cần làm
-        moTa: Đừng giao kiểu “dọn cả ổ C”.
-      - ten: Thử trước ở thư mục thử nghiệm, dữ liệu giả lập
-      - ten: Không mở ngân hàng, email cá nhân, dữ liệu khách thật
-        moTa: AI có thể gặp lỗi, hoặc bị nội dung độc hại dẫn sai thao tác.
-      - ten: Luôn đề xuất trước, duyệt rồi mới làm
+      - ten: Cowork chỉ vào được thư mục anh chị cho phép
+        moTa: Cho thư mục nào, nó chỉ dùng được thư mục đó.
+      - ten: AI không tự đi làm, nó đợi lệnh của anh chị
+        moTa: Rủi ro thật là để người khác chiếm quyền chat với AI của mình.
+      - ten: Mật khẩu, tài liệu nhạy cảm cất ở nơi không cho AI vào
+      - ten: Đừng bảo nó “dọn cả ổ C”
+        moTa: Xóa nhầm tệp hệ thống là cài lại Windows. Đề xuất trước, duyệt rồi mới làm.
     loi:
       - "Nhiều người sẽ hỏi: thế có rủi ro bảo mật không, nó chọc vào máy mình mà? Với Cowork, anh chị cho thư mục nào thì nó chỉ dùng được thư mục đó thôi."
       - Có điều, anh chị đừng bảo nó dọn cả ổ C nhé. Dọn thư mục Tải về thì được, chứ dọn ổ C mà lỡ tay xóa nhầm tệp hệ thống là cài lại Windows luôn, vui lắm.
@@ -93,11 +94,3 @@ man:
       - Giống như anh chị là trưởng nhóm. Lên kế hoạch rồi giao xuống ba bạn.
       - Ba bạn không cần biết mình đã bàn gì, mình cũng không cần biết các bạn làm chi tiết ra sao, chỉ nghiệm thu đầu ra thôi.
       - "Mặc định AI cũng lười, ít khi tự gọi trợ lý phụ. Anh chị chỉ cần dặn: chia việc cho trợ lý phụ nhé. Em hay dùng cho ba việc: làm song song, soát lại kế hoạch, và nghiệm thu kết quả."
-
-  - kieu: hop
-    tieuDe: Những giới hạn cần biết
-    noi: Cowork **chỉ có ở gói trả phí**. Làm việc với tệp trên máy cần ứng dụng Claude Desktop. Hôm nay anh chị **xem minh họa và video làm mẫu**, chưa cần cài.
-    phu: Giờ xem video mẫu, rồi làm 4 bước của chặng 4.
-    loi:
-      - Lưu ý là Cowork chỉ có ở gói trả phí. Muốn nó làm việc với tệp trên máy thì cần cài ứng dụng Claude trên máy tính.
-      - "Hôm nay anh chị chưa cần cài. Mình xem minh họa và video làm mẫu, để ý trình tự: đề xuất, duyệt, làm, báo cáo. Rồi anh chị làm bốn bước của chặng bốn."

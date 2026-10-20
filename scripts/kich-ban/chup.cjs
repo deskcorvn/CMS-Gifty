@@ -47,6 +47,7 @@ fs.mkdirSync(path.join(__dirname, 'anh'), { recursive: true });
 .dau .moc{font-weight:400;color:#626873}
 img{display:block;width:72%;margin:0 auto;border:1px solid #dedfe3;border-radius:5px}
 .loi{margin-top:4mm}.loi p{margin:0 0 2.6mm;text-align:justify}
+.loi p.hoc{border-left:3px solid #2b5fa8;background:#eef3fb;padding:2mm 3.5mm;margin:3mm 0;font-style:italic}.loi p.hoc b{display:block;font-style:normal;font-size:9pt;letter-spacing:.04em;text-transform:uppercase;color:#2b5fa8;margin-bottom:.8mm}
 .hop{margin-top:3.5mm;border-left:3px solid #b51f34;background:#fcf1f3;padding:2.5mm 4mm;font-size:10.5pt}
 .hop.xam{border-color:#626873;background:#f4f4f5}.hop b{display:block;font-size:9pt;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1mm;color:#9f1b2d}
 .hop.xam b{color:#626873}.hop p{margin:0 0 1.5mm}
@@ -58,12 +59,13 @@ img{display:block;width:72%;margin:0 auto;border:1px solid #dedfe3;border-radius
 <p>Lời giảng bám sát cách trình bày của buổi “Từ ô chat đến một đội AI cùng làm việc” (kênh Trương Phương, khách mời Hưng Kescy). Mỗi trang có mốc thời gian của đoạn video gốc để xem lại trước buổi học. Tài liệu dùng riêng cho giảng viên, không phát cho học viên.</p>
 <ul>
 <li><b>Cách dùng trên lớp:</b> mở trang chặng, bấm “Chiếu toàn màn hình”, bấm P để ẩn phụ đề, rồi giảng theo lời trong file này. Hết ý của một màn thì bấm → sang màn sau (bấm vài lần cho hết các nhịp phụ đề).</li>
+<li><b>Hộp xanh “Người học”:</b> câu hỏi và nhận xét của người học trong buổi gốc (Trương Phương). Giảng viên đặt câu đó cho lớp, hoặc mời một học viên đọc, rồi trả lời bằng các đoạn tiếp theo.</li>
 <li><b>Chuyện kể trong lời giảng</b> giữ nguyên ngôi thứ nhất như diễn giả gốc nói (học viên cũ, mười bốn nghìn tệp thẻ, năm con AI soát lỗi…). Giảng viên tự đổi cách kể cho hợp với mình.</li>
-<li><b>Hộp xám “Khi giảng”:</b> ghi chú thời lượng, chỗ dừng hỏi lớp, và màn nào là của lớp thêm vào, video gốc không có.</li>
+<li><b>Hộp xám “Khi giảng”:</b> ghi chú thời lượng, chỗ dừng hỏi lớp, và phần nào lớp thêm vào, video gốc không có (chỉ còn phần thực hành thêm về thương hiệu cá nhân).</li>
 </ul></div>
 ${ds.map(d => `<div class="trang"><div class="dau"><span>${esc(d.phan)} · màn ${d.so}/${d.tong}</span>${d.moc ? `<span class="moc">Video gốc ${esc(d.moc)}</span>` : ''}</div><img src="${d.anh}">
 ${d.video ? `<p style="font-size:9.5pt;color:#626873;margin:2mm 0 0;text-align:center">Màn này chiếu video minh họa không lời: daotao.giftytech.com${esc(d.video)}</p>` : ''}
-<div class="loi">${d.loi.map(l => `<p>${esc(l)}</p>`).join('')}</div>
+<div class="loi">${d.loi.map(l => l.startsWith('» ') ? `<p class="hoc"><b>Người học</b>${esc(l.slice(2))}</p>` : `<p>${esc(l)}</p>`).join('')}</div>
 ${d.ke ? `<div class="hop"><b>Chuyện kể của diễn giả gốc</b>${d.ke.map(l => `<p>${esc(l)}</p>`).join('')}</div>` : ''}
 ${d.luuY ? `<div class="hop xam"><b>Khi giảng</b><p>${esc(d.luuY)}</p></div>` : ''}
 </div>`).join('')}`;
